@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/textures/pbr/wood_02/wood_02_normal.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/pbr/wood_02.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/pbr/wood_02/wood_02_roughness.png" type="Texture" id=3]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 2 )
+roughness_texture = ExtResource( 3 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 1 )
+
+[sub_resource type="CylinderMesh" id=1]
+material = SubResource( 2 )
+top_radius = 0.1
+bottom_radius = 0.1
+height = 6.4
+radial_segments = 6
+
+[node name="TVStand" type="Spatial"]
+
+[node name="Stand" type="CSGPolygon" parent="."]
+transform = Transform( 1.31134e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, -1.31134e-07, -5.73206e-15, -0.5, 2.67351, -1.5 )
+polygon = PoolVector2Array( 0, -0.5, 2.5, 2, 2.5, -0.5 )
+depth = 0.2
+material = SubResource( 2 )
+
+[node name="Foot" type="MeshInstance" parent="Stand"]
+transform = Transform( 1.31134e-07, 4.23516e-22, 1, 1, -4.37114e-08, -1.31134e-07, 4.37114e-08, 1, -5.73206e-15, 1.5, 0.5, -3.36592 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Hand" type="MeshInstance" parent="Stand"]
+transform = Transform( 1.31134e-07, 4.23516e-22, 1, 1, -4.37114e-08, -1.31134e-07, 4.37114e-08, 1, -5.73206e-15, 0.41238, -0.333926, 3.20571 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Hand2" type="MeshInstance" parent="Stand"]
+transform = Transform( 1.31134e-07, 4.23516e-22, 1, 1, -4.37114e-08, -1.31134e-07, 4.37114e-08, 1, -5.73206e-15, 2.22014, -0.281014, 3.20571 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Hand3" type="MeshInstance" parent="Stand"]
+transform = Transform( 1.31134e-07, 4.23516e-22, 1, 1, -4.37114e-08, -1.31134e-07, 4.37114e-08, 1, -5.73206e-15, 2.28647, 1.47218, 3.20571 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="TV" type="CSGBox" parent="."]
+transform = Transform( 0.850352, 0, -0.526214, 0, 1, 0, 0.526214, 0, 0.850352, -0.111249, 3.18849, 0.308655 )
+width = 1.4
+height = 1.0
+depth = 1.0
+
+[node name="Antenna" type="CSGSphere" parent="TV"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.439842, 0 )
+radius = 0.3
+radial_segments = 8

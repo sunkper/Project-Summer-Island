@@ -1,7 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/textures/pbr/brown_mud_03/brown_mud_03_normal.png" type="Texture" id=1]
 [ext_resource path="res://assets/textures/pbr/brown_mud_03/brown_mud_03_metallic.png" type="Texture" id=2]
+
+[sub_resource type="CylinderMesh" id=2]
+top_radius = 0.5
+bottom_radius = 0.5
+height = 0.2
+radial_segments = 16
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.0666667, 0.231373, 0.0588235, 1 )
@@ -12,38 +18,43 @@ roughness_texture = ExtResource( 1 )
 uv1_scale = Vector3( 0.75, 0.75, 0.75 )
 uv1_triplanar = true
 
-[node name="Stall" type="Spatial"]
-
-[node name="Seat" type="CSGCylinder" parent="."]
-radius = 0.5
-height = 0.2
-sides = 16
+[sub_resource type="CylinderMesh" id=3]
 material = SubResource( 1 )
+top_radius = 0.075
+bottom_radius = 0.075
+height = 1.5
+radial_segments = 6
 
-[node name="Leg0" type="CSGCylinder" parent="Seat"]
+[sub_resource type="CylinderShape" id=4]
+radius = 0.4
+height = 1.7
+
+[node name="Stall" type="StaticBody"]
+
+[node name="Seat" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+material/0 = SubResource( 1 )
+
+[node name="Leg0" type="MeshInstance" parent="Seat"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -0.8, 0 )
-radius = 0.075
-height = 1.5
-sides = 6
-material = SubResource( 1 )
+mesh = SubResource( 3 )
+material/0 = null
 
-[node name="Leg1" type="CSGCylinder" parent="Seat"]
+[node name="Leg1" type="MeshInstance" parent="Seat"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, -0.8, 0 )
-radius = 0.075
-height = 1.5
-sides = 6
-material = SubResource( 1 )
+mesh = SubResource( 3 )
+material/0 = null
 
-[node name="Leg2" type="CSGCylinder" parent="Seat"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0.4 )
-radius = 0.075
-height = 1.5
-sides = 6
-material = SubResource( 1 )
-
-[node name="Leg3" type="CSGCylinder" parent="Seat"]
+[node name="Leg2" type="MeshInstance" parent="Seat"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, -0.4 )
-radius = 0.075
-height = 1.5
-sides = 6
-material = SubResource( 1 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Leg3" type="MeshInstance" parent="Seat"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0.4 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.755409, 0 )
+shape = SubResource( 4 )

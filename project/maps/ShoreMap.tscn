@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/brown_mud_03/brown_mud_03_normal.png" type="Texture" id=2]
@@ -12,7 +12,9 @@
 [ext_resource path="res://assets/textures/pbr/Water_002/Water_002_roughness.png" type="Texture" id=10]
 [ext_resource path="res://assets/hdri/park.hdr" type="Texture" id=11]
 [ext_resource path="res://objects/Table.tscn" type="PackedScene" id=12]
+[ext_resource path="res://objects/PictureFrame.tscn" type="PackedScene" id=13]
 [ext_resource path="res://objects/Stall.tscn" type="PackedScene" id=14]
+[ext_resource path="res://objects/TVStand.tscn" type="PackedScene" id=15]
 
 [sub_resource type="PanoramaSky" id=1]
 panorama = ExtResource( 11 )
@@ -83,7 +85,7 @@ uv1_triplanar = true
 bounds = AABB( -76.2648, -27, -94.7671, 152.53, 54, 189.534 )
 cell_size = 1.48074
 to_cell_xform = Transform( 0.67534, 0, 0, 0, 0.67534, 0, 0, 0, 0.67534, 51.5047, 18.2342, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 64, 128, 1, 0, 0, 0, 0, 0, 0, 7, 0, 33, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_data = PoolIntArray( 0, 8, 128, 64, 128, 1, 0, 0, 0, 1094713344, 1094713344, 0, 281577664, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 2
 energy = 0.4
 bias = 1.5
@@ -105,7 +107,7 @@ directional_shadow_normal_bias = 0.5
 directional_shadow_max_distance = 600.0
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 1.3, 9.9, 11 )
+transform = Transform( -0.798636, -0.0524516, 0.599525, 0, 0.996195, 0.0871557, -0.601815, 0.0696057, -0.795597, 3.4, 11.9, 4.1 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -117,6 +119,9 @@ transform = Transform( 1, 0, 0, 0, 0.992546, 0.121869, 0, -0.121869, 0.992546, 0
 
 [node name="SeaToHouse" type="Position3D" parent="Camera/Positions"]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 1.3, 9.9, 11 )
+
+[node name="FromKitchen" type="Position3D" parent="Camera/Positions"]
+transform = Transform( -0.798636, -0.0524516, 0.599525, 0, 0.996195, 0.0871557, -0.601815, 0.0696057, -0.795597, 3.4, 11.9, 4.1 )
 
 [node name="Geometry" type="Node" parent="."]
 
@@ -149,7 +154,7 @@ energy = 0.4
 propagation = 0.2
 data = SubResource( 6 )
 
-[node name="TableLight" type="SpotLight" parent="Lightings"]
+[node name="HangingLight" type="SpotLight" parent="Lightings"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.415871, 14, 17.1492 )
 light_color = Color( 1, 0.956863, 0.756863, 1 )
 shadow_enabled = true
@@ -161,16 +166,22 @@ spot_angle_attenuation = 0.25
 [node name="Objects" type="Node" parent="."]
 
 [node name="Table" parent="Objects" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.230213, 7.9858, 16.6933 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49529, 7.9858, 16.6933 )
 
 [node name="Stall" parent="Objects" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.63167, 7.5, 15.1141 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3666, 7.5, 15.1141 )
 
 [node name="Stall2" parent="Objects" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5718, 7.5, 18 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30672, 7.5, 18 )
 
 [node name="Stall4" parent="Objects" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7748, 7.5, 14.9489 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03988, 7.5, 14.9489 )
 
 [node name="Stall3" parent="Objects" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7748, 7.5, 18 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03988, 7.5, 18 )
+
+[node name="PictureFrame" parent="Objects" instance=ExtResource( 13 )]
+transform = Transform( -0.996195, -0.0871557, -3.25841e-07, -0.0871557, 0.996195, 0, 3.24601e-07, 2.83989e-08, -1, 5.87402, 13.6699, 10.8101 )
+
+[node name="TVStand" parent="Objects" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.387, 8.25595, 22.5 )
