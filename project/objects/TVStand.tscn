@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/textures/pbr/wood_02/wood_02_normal.png" type="Texture" id=1]
 [ext_resource path="res://assets/textures/pbr/wood_02.png" type="Texture" id=2]
 [ext_resource path="res://assets/textures/pbr/wood_02/wood_02_roughness.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/base/MovieStill.jpg" type="Texture" id=4]
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 2 )
@@ -17,6 +18,27 @@ top_radius = 0.1
 bottom_radius = 0.1
 height = 6.4
 radial_segments = 6
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.509804, 0.643137, 0.607843, 1 )
+metallic = 0.75
+metallic_specular = 0.41
+roughness = 0.61
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.262745, 0.309804, 0.309804, 1 )
+metallic = 0.61
+metallic_specular = 0.8
+roughness = 0.42
+rim_enabled = true
+rim = 0.25
+rim_tint = 0.47
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 4 )
+rim_enabled = true
+rim = 0.09
+rim_tint = 1.0
 
 [node name="TVStand" type="Spatial"]
 
@@ -47,12 +69,22 @@ mesh = SubResource( 1 )
 material/0 = null
 
 [node name="TV" type="CSGBox" parent="."]
-transform = Transform( 0.850352, 0, -0.526214, 0, 1, 0, 0.526214, 0, 0.850352, -0.111249, 3.18849, 0.308655 )
+transform = Transform( 0.890404, 0, -0.455172, 0, 1, 0, 0.455172, 0, 0.890404, -0.171461, 3.18849, 0.292336 )
 width = 1.4
 height = 1.0
 depth = 1.0
+material = SubResource( 4 )
 
 [node name="Antenna" type="CSGSphere" parent="TV"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.439842, 0 )
 radius = 0.3
 radial_segments = 8
+material = SubResource( 5 )
+
+[node name="Screen" type="CSGBox" parent="TV"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.131003, 0, -0.657923 )
+operation = 2
+width = 0.858214
+height = 0.768294
+depth = 0.373478
+material = SubResource( 3 )

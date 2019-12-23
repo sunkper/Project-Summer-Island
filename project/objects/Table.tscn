@@ -36,16 +36,13 @@ normal_texture = ExtResource( 3 )
 uv1_triplanar = true
 
 [node name="Table" type="StaticBody"]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.374, 0 )
 shape = SubResource( 1 )
 
 [node name="TableCover" type="SoftBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.101, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.993988, 0 )
 mesh = SubResource( 3 )
 material/0 = null
 total_mass = 15.0
@@ -77,9 +74,6 @@ attachments/6/offset = Vector3( 0, 0, 0 )
 attachments/7/point_index = 72
 attachments/7/spatial_attachment_path = NodePath("")
 attachments/7/offset = Vector3( 0, 0, 0 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Leg0" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, -0.8, -3 )
