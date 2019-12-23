@@ -22,7 +22,7 @@ uv1_triplanar = true
 material = SubResource( 1 )
 top_radius = 0.075
 bottom_radius = 0.075
-height = 1.5
+height = 1.6
 radial_segments = 6
 
 [sub_resource type="CylinderShape" id=4]
@@ -36,22 +36,22 @@ mesh = SubResource( 2 )
 material/0 = SubResource( 1 )
 
 [node name="Leg0" type="MeshInstance" parent="Seat"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -0.8, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -0.883721, 0 )
 mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Leg1" type="MeshInstance" parent="Seat"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, -0.8, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, -0.883721, 0 )
 mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Leg2" type="MeshInstance" parent="Seat"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, -0.4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.883721, -0.4 )
 mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Leg3" type="MeshInstance" parent="Seat"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0.4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.883721, 0.4 )
 mesh = SubResource( 3 )
 material/0 = null
 

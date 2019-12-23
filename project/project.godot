@@ -399,6 +399,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Project Summer Island"
+run/main_scene="res://maps/ShoreMap.tscn"
 config/icon="res://icon.png"
 
 [display]

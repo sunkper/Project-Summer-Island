@@ -36,9 +36,6 @@ rim_tint = 0.47
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 4 )
-rim_enabled = true
-rim = 0.09
-rim_tint = 1.0
 
 [node name="TVStand" type="Spatial"]
 
@@ -49,7 +46,7 @@ depth = 0.2
 material = SubResource( 2 )
 
 [node name="Foot" type="MeshInstance" parent="Stand"]
-transform = Transform( 1.31134e-07, 4.23516e-22, 1, 1, -4.37114e-08, -1.31134e-07, 4.37114e-08, 1, -5.73206e-15, 1.5, 0.5, -3.36592 )
+transform = Transform( 1.31134e-07, 4.23516e-22, 1, 1, -4.37114e-08, -1.31134e-07, 4.37114e-08, 1, -5.73206e-15, 1.73583, 0.231458, -3.36592 )
 mesh = SubResource( 1 )
 material/0 = null
 
