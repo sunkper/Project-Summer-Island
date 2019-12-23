@@ -1,0 +1,102 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/textures/pbr/Fabric24/Fabric24_roughness.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/pbr/Fabric24.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/pbr/wood_02/wood_02_normal.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/pbr/wood_02.png" type="Texture" id=4]
+[ext_resource path="res://assets/textures/pbr/wood_02/wood_02_roughness.png" type="Texture" id=5]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 2.17082, 1.39879, 3.69216 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 2 )
+metallic = 0.44
+metallic_specular = 0.26
+roughness = 0.66
+roughness_texture = ExtResource( 1 )
+uv1_scale = Vector3( 0.25, 0.25, 0.25 )
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id=3]
+material = SubResource( 2 )
+size = Vector2( 6.5, 9 )
+subdivide_width = 20
+subdivide_depth = 20
+
+[sub_resource type="CubeMesh" id=4]
+size = Vector3( 0.3, 2.5, 0.3 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 4 )
+roughness_texture = ExtResource( 5 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 3 )
+uv1_triplanar = true
+
+[node name="Table" type="StaticBody"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.374, 0 )
+shape = SubResource( 1 )
+
+[node name="TableCover" type="SoftBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.101, 0 )
+mesh = SubResource( 3 )
+material/0 = null
+total_mass = 15.0
+linear_stiffness = 0.0
+areaAngular_stiffness = 0.0
+volume_stiffness = 0.1
+pinned_points = [ 379, 402, 390, 411, 81, 104, 93, 72 ]
+attachments/0/point_index = 379
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3( 0, 0, 0 )
+attachments/1/point_index = 402
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3( 0, 0, 0 )
+attachments/2/point_index = 390
+attachments/2/spatial_attachment_path = NodePath("")
+attachments/2/offset = Vector3( 0, 0, 0 )
+attachments/3/point_index = 411
+attachments/3/spatial_attachment_path = NodePath("")
+attachments/3/offset = Vector3( 0, 0, 0 )
+attachments/4/point_index = 81
+attachments/4/spatial_attachment_path = NodePath("")
+attachments/4/offset = Vector3( 0, 0, 0 )
+attachments/5/point_index = 104
+attachments/5/spatial_attachment_path = NodePath("")
+attachments/5/offset = Vector3( 0, 0, 0 )
+attachments/6/point_index = 93
+attachments/6/spatial_attachment_path = NodePath("")
+attachments/6/offset = Vector3( 0, 0, 0 )
+attachments/7/point_index = 72
+attachments/7/spatial_attachment_path = NodePath("")
+attachments/7/offset = Vector3( 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Leg0" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, -0.8, -3 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="Leg1" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, -0.8, -3 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="Leg2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, -0.8, 3 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="Leg3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, -0.8, 3 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )

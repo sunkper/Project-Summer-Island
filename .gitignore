@@ -6,5 +6,8 @@ export_presets.cfg
 # Ignore addons.
 addons/
 
+# Ignore generated geometry files.
+geometry/
+
 # Ignore Trenchbroom autosave files.
 autosave/

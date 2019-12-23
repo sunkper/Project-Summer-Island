@@ -9,16 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "ResourceFormatLoader",
-"class": "HTerrainDataLoader",
-"language": "GDScript",
-"path": "res://addons/zylann.hterrain/hterrain_resource_loader.gd"
-}, {
-"base": "ResourceFormatSaver",
-"class": "HTerrainDataSaver",
-"language": "GDScript",
-"path": "res://addons/zylann.hterrain/hterrain_resource_saver.gd"
-}, {
 "base": "QodotSpatial",
 "class": "QodotBrush",
 "language": "GDScript",
@@ -340,8 +330,6 @@ _global_script_classes=[ {
 "path": "res://addons/qodot/lib/texture_layered_mesh.gd"
 } ]
 _global_script_class_icons={
-"HTerrainDataLoader": "",
-"HTerrainDataSaver": "",
 "QodotBrush": "",
 "QodotBuildAreaConvexCollision": "",
 "QodotBuildAtlasedMesh": "",
@@ -413,10 +401,41 @@ _global_script_class_icons={
 config/name="Project Summer Island"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=640
+window/size/height=360
+window/stretch/aspect="keep"
+
 [editor_plugins]
 
-enabled=PoolStringArray( "qodot", "zylann.hterrain" )
+enabled=PoolStringArray( "qodot" )
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 2,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": true,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": true,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
 
 [rendering]
 
+quality/shadows/filter_mode=2
+quality/filters/msaa=3
 environment/default_environment="res://default_env.tres"
