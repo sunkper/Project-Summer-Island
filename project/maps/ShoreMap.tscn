@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/Rocks_08.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://objects/Wind.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/textures/pbr/Rocks_08/Rocks_08_roughness.png" type="Texture" id=18]
 [ext_resource path="res://objects/StallRed.tscn" type="PackedScene" id=19]
+[ext_resource path="res://objects/HangingLamp.tscn" type="PackedScene" id=20]
 
 [sub_resource type="PanoramaSky" id=1]
 panorama = ExtResource( 11 )
@@ -69,7 +70,7 @@ size = Vector2( 150, 200 )
 subdivide_width = 200
 subdivide_depth = 200
 
-[sub_resource type="SpatialMaterial" id=11]
+[sub_resource type="SpatialMaterial" id=5]
 albedo_texture = ExtResource( 2 )
 roughness_texture = ExtResource( 18 )
 normal_enabled = true
@@ -91,25 +92,25 @@ depth_texture = ExtResource( 5 )
 uv1_scale = Vector3( 0.08, 0.08, 0.08 )
 uv1_triplanar = true
 
-[sub_resource type="PlaneMesh" id=10]
-material = SubResource( 11 )
+[sub_resource type="PlaneMesh" id=6]
+material = SubResource( 5 )
 size = Vector2( 150, 200 )
 
-[sub_resource type="GIProbeData" id=6]
+[sub_resource type="GIProbeData" id=7]
 bounds = AABB( -76.2648, -27, -94.7671, 152.53, 54, 189.534 )
 cell_size = 1.48074
 to_cell_xform = Transform( 0.67534, 0, 0, 0, 0.67534, 0, 0, 0, 0.67534, 51.5047, 18.2342, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 64, 128, 1, 0, 0, 0, 1094713344, 1094713344, 0, 281569984, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_data = PoolIntArray( 0, 8, 128, 64, 128, 1, 0, 0, 1109656064, 1134339392, -1045247654, 1138878070, 0, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 2
 energy = 0.4
 bias = 1.5
 normal_bias = 0.0
 propagation = 0.5
 
-[sub_resource type="BoxShape" id=9]
+[sub_resource type="BoxShape" id=8]
 extents = Vector3( 1.37936, 0.225255, 0.202765 )
 
-[sub_resource type="SpatialMaterial" id=7]
+[sub_resource type="SpatialMaterial" id=9]
 flags_transparent = true
 params_blend_mode = 1
 params_cull_mode = 2
@@ -120,8 +121,8 @@ transmission_enabled = true
 transmission = Color( 0.972549, 0.964706, 0.929412, 1 )
 uv1_scale = Vector3( 4, 0.1, 1 )
 
-[sub_resource type="PlaneMesh" id=8]
-material = SubResource( 7 )
+[sub_resource type="PlaneMesh" id=10]
+material = SubResource( 9 )
 size = Vector2( 3.4, 3.2 )
 subdivide_width = 5
 subdivide_depth = 5
@@ -174,7 +175,7 @@ __meta__ = {
 
 [node name="SeaGround" type="MeshInstance" parent="Environs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.77846, 43 )
-mesh = SubResource( 10 )
+mesh = SubResource( 6 )
 material/0 = null
 
 [node name="Lightings" type="Node" parent="."]
@@ -185,16 +186,16 @@ extents = Vector3( 76.2648, 27, 94.7671 )
 dynamic_range = 2
 energy = 0.4
 propagation = 0.5
-data = SubResource( 6 )
+data = SubResource( 7 )
 
-[node name="HangingLight" type="SpotLight" parent="Lightings"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.415871, 14, 17.1492 )
-light_color = Color( 1, 0.956863, 0.756863, 1 )
+[node name="HangingLight" type="OmniLight" parent="Lightings"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.283007, 14.1938, 16.9953 )
+light_color = Color( 0.890196, 0.709804, 0.47451, 1 )
+light_energy = 3.0
+light_indirect_energy = 2.0
 shadow_enabled = true
-spot_range = 10.0
-spot_attenuation = 0.019915
-spot_angle = 82.0
-spot_angle_attenuation = 0.25
+omni_range = 10.0
+omni_attenuation = 2.37841
 
 [node name="Objects" type="Node" parent="."]
 
@@ -216,6 +217,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03988, 7.5, 14.9489 )
 [node name="Stall3" parent="Objects/TableStalls" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03988, 7.5, 18 )
 
+[node name="BarStalls" type="Spatial" parent="Objects"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30382, 7.71115, 8.52926 )
+
+[node name="StallRed" parent="Objects/BarStalls" instance=ExtResource( 19 )]
+
+[node name="StallRed4" parent="Objects/BarStalls" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.24205, 0, 22.7172 )
+
+[node name="StallRed2" parent="Objects/BarStalls" instance=ExtResource( 19 )]
+transform = Transform( 0.941476, 0, -0.337079, 0, 1, 0, 0.337079, 0, 0.941476, 2.60925, 0, 2.14365 )
+
+[node name="StallRed3" parent="Objects/BarStalls" instance=ExtResource( 19 )]
+transform = Transform( 0.861, 0, 0.508606, 0, 1, 0, -0.508606, 0, 0.861, 5.70851, 0, 2.14365 )
+
 [node name="PictureFrame" parent="Objects" instance=ExtResource( 13 )]
 transform = Transform( -0.996195, -0.0871557, -3.25841e-07, -0.0871557, 0.996195, 0, 3.24601e-07, 2.83989e-08, -1, 5.87402, 12.342, 10.8101 )
 
@@ -229,11 +244,11 @@ __meta__ = {
 }
 
 [node name="CollisionShape" type="CollisionShape" parent="Objects/Curtain"]
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="CurtainBody" type="SoftBody" parent="Objects/Curtain"]
 transform = Transform( 1, 0, 0, 0, 0.199607, 0.979876, 0, -0.979876, 0.199607, 0, 1.48525, -0.109335 )
-mesh = SubResource( 8 )
+mesh = SubResource( 10 )
 material/0 = null
 pinned_points = [ 0, 4, 8, 12 ]
 attachments/0/point_index = 0
@@ -249,19 +264,8 @@ attachments/3/point_index = 12
 attachments/3/spatial_attachment_path = NodePath("")
 attachments/3/offset = Vector3( 0, 0, 0 )
 
-[node name="BarStalls" type="Spatial" parent="Objects"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30382, 7.71115, 8.52926 )
-
-[node name="StallRed" parent="Objects/BarStalls" instance=ExtResource( 19 )]
-
-[node name="StallRed4" parent="Objects/BarStalls" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.24205, 0, 22.7172 )
-
-[node name="StallRed2" parent="Objects/BarStalls" instance=ExtResource( 19 )]
-transform = Transform( 0.941476, 0, -0.337079, 0, 1, 0, 0.337079, 0, 0.941476, 2.60925, 0, 2.14365 )
-
-[node name="StallRed3" parent="Objects/BarStalls" instance=ExtResource( 19 )]
-transform = Transform( 0.861, 0, 0.508606, 0, 1, 0, -0.508606, 0, 0.861, 5.70851, 0, 2.14365 )
+[node name="HangingLamp" parent="Objects" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 17 )
 
 [node name="Ambient" type="Node" parent="."]
 
@@ -270,7 +274,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.95944, 11, 26 )
 dir = Vector3( 0, 0, -1 )
 speed = 1.5
 length = 5.0
-radius = 0.5
 blow = true
 
 [node name="Wind2" parent="Ambient" instance=ExtResource( 17 )]
@@ -278,7 +281,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01246, 11.8054, 26 )
 dir = Vector3( 0, 0, -1 )
 speed = 1.5
 length = 5.0
-radius = 0.5
 blow = true
 
 [node name="Wind3" parent="Ambient" instance=ExtResource( 17 )]
@@ -286,7 +288,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01445, 11.147, 26 )
 dir = Vector3( 0, 0, -1 )
 speed = 0.9
 length = 5.0
-radius = 0.5
 blow = true
 
 [node name="Wind4" parent="Ambient" instance=ExtResource( 17 )]
@@ -294,5 +295,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.44122, 11.6599, 26.7317 )
 dir = Vector3( 0, 0, -1 )
 speed = 0.3
 length = 6.0
-radius = 0.5
 blow = true
