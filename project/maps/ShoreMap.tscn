@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/Rocks_08.png" type="Texture" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/textures/pbr/Water_002/Water_002_normal.png" type="Texture" id=8]
 [ext_resource path="res://assets/textures/pbr/Water_002/Water_002_depth.png" type="Texture" id=9]
 [ext_resource path="res://assets/textures/pbr/Water_002/Water_002_roughness.png" type="Texture" id=10]
-[ext_resource path="res://assets/hdri/park.hdr" type="Texture" id=11]
+[ext_resource path="res://maps/environs/ShoreMapEnv.tres" type="Environment" id=11]
 [ext_resource path="res://objects/Table.tscn" type="PackedScene" id=12]
 [ext_resource path="res://objects/PictureFrame.tscn" type="PackedScene" id=13]
 [ext_resource path="res://objects/Stall.tscn" type="PackedScene" id=14]
@@ -21,24 +21,9 @@
 [ext_resource path="res://objects/StallRed.tscn" type="PackedScene" id=19]
 [ext_resource path="res://objects/HangingLamp.tscn" type="PackedScene" id=20]
 [ext_resource path="res://objects/BookShelf.tscn" type="PackedScene" id=21]
+[ext_resource path="res://assets/materials/Glass.tres" type="Material" id=22]
 
-[sub_resource type="PanoramaSky" id=1]
-panorama = ExtResource( 11 )
-
-[sub_resource type="Environment" id=2]
-background_mode = 2
-background_sky = SubResource( 1 )
-ambient_light_color = Color( 0.219608, 0.219608, 0.219608, 1 )
-ambient_light_energy = 0.5
-ambient_light_sky_contribution = 0.4
-ss_reflections_enabled = true
-glow_enabled = true
-glow_intensity = 1.0
-glow_bloom = 0.6
-adjustment_enabled = true
-adjustment_contrast = 1.05
-
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=1]
 flags_transparent = true
 albedo_color = Color( 0.0509804, 0.168627, 0.321569, 0.803922 )
 metallic = 0.83
@@ -65,13 +50,13 @@ detail_blend_mode = 3
 detail_uv_layer = 0
 detail_normal = ExtResource( 7 )
 
-[sub_resource type="PlaneMesh" id=4]
-material = SubResource( 3 )
+[sub_resource type="PlaneMesh" id=2]
+material = SubResource( 1 )
 size = Vector2( 150, 200 )
 subdivide_width = 200
 subdivide_depth = 200
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 2 )
 roughness_texture = ExtResource( 18 )
 normal_enabled = true
@@ -93,25 +78,27 @@ depth_texture = ExtResource( 5 )
 uv1_scale = Vector3( 0.08, 0.08, 0.08 )
 uv1_triplanar = true
 
-[sub_resource type="PlaneMesh" id=6]
-material = SubResource( 5 )
+[sub_resource type="PlaneMesh" id=4]
+material = SubResource( 3 )
 size = Vector2( 150, 200 )
 
-[sub_resource type="GIProbeData" id=7]
-bounds = AABB( -76.2648, -27, -94.7671, 152.53, 54, 189.534 )
-cell_size = 1.48074
-to_cell_xform = Transform( 0.67534, 0, 0, 0, 0.67534, 0, 0, 0, 0.67534, 51.5047, 18.2342, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 64, 128, 1, 0, 0, 1109656064, 1134339392, -1045247654, 1138878070, 0, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+[sub_resource type="GIProbeData" id=5]
+bounds = AABB( -49.4284, -27, -47.4733, 98.8568, 54, 94.9466 )
+cell_size = 0.772319
+to_cell_xform = Transform( 1.2948, 0, 0, 0, 1.2948, 0, 0, 0, 1.2948, 64, 34.9597, 61.4685 )
+dynamic_data = PoolIntArray( 0, 8, 128, 128, 128, 36, 22, 0, 1031798784, 0, 1033895936, 0, 1035993088, 0, 1038090240, 0, -1, -1, -1, -1, -1, 1, -1, -1, 0, 0, 8355711, 0, -1, -1, 2, -1, -1, -1, -1, -1, 0, 0, 8355711, 65541, -1, -1, -1, -1, -1, -1, 3, -1, 0, 0, 8355711, 131115, -1, -1, -1, -1, -1, -1, 4, -1, 0, 0, 8355711, 196959, 14, 11, -1, -1, 5, 8, -1, -1, 0, 0, 8355711, 264959, -1, 6, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 331775, -1, 7, -1, 29, -1, 19, -1, 32, 0, 0, 8355711, 425983, -1, -1, -1, -1, -1, -1, -1, -1, 9975858, 0, 9437568, 524287, 9, 20, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 339967, 10, 22, 30, 26, 18, 17, 33, 34, 0, 0, 8355711, 458751, -1, -1, -1, -1, -1, -1, -1, -1, 13547168, -1718253017, 7602310, 524287, -1, -1, -1, -1, 12, -1, -1, -1, 0, 0, 8355711, 331775, -1, -1, -1, -1, 13, 24, 28, 27, 0, 0, 8355711, 425983, -1, -1, -1, -1, -1, -1, -1, -1, 10171181, 0, 8847500, 524287, -1, -1, -1, -1, -1, 15, -1, -1, 0, 0, 8355711, 329727, -1, -1, -1, -1, -1, 16, -1, 31, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 10229778, 0, 2634061, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10105389, 0, 7471475, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9975602, 0, 9110122, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10167584, 0, 6881931, 524287, 23, -1, 25, -1, 21, -1, 35, -1, 0, 0, 8355711, 425983, -1, -1, -1, -1, -1, -1, -1, -1, 10491408, 0, 12654235, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 11632755, -1718253037, 7340410, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10037025, 0, 10093432, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10171182, 0, 7602572, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10428441, 0, 15711091, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10319982, -1718253042, 16488839, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9981512, 0, 9429295, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9852496, 0, 12091121, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9914947, 0, 3332431, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10518132, -1718253039, 435594, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 8002584, 0, 1617476, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10429211, 0, 1948343, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9786446, 0, 13795614, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9786189, 0, 2992423, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10557453, 0, 15380401, 524287 )
 dynamic_range = 2
-energy = 0.4
+energy = 0.3
 bias = 1.5
 normal_bias = 0.0
 propagation = 0.5
 
-[sub_resource type="BoxShape" id=8]
+[sub_resource type="SphereMesh" id=6]
+
+[sub_resource type="BoxShape" id=7]
 extents = Vector3( 1.37936, 0.225255, 0.202765 )
 
-[sub_resource type="SpatialMaterial" id=9]
+[sub_resource type="SpatialMaterial" id=8]
 flags_transparent = true
 params_blend_mode = 1
 params_cull_mode = 2
@@ -122,23 +109,38 @@ transmission_enabled = true
 transmission = Color( 1, 1, 1, 1 )
 uv1_scale = Vector3( 4, 0.1, 1 )
 
-[sub_resource type="PlaneMesh" id=10]
-material = SubResource( 9 )
+[sub_resource type="PlaneMesh" id=9]
+material = SubResource( 8 )
 size = Vector2( 3.4, 3.2 )
 subdivide_width = 5
 subdivide_depth = 5
 
+[sub_resource type="CubeMesh" id=10]
+material = ExtResource( 22 )
+size = Vector3( 16, 0.1, 1.8 )
+
+[sub_resource type="CubeMesh" id=11]
+material = ExtResource( 22 )
+size = Vector3( 3.8, 0.1, 3 )
+
+[sub_resource type="CubeMesh" id=12]
+material = ExtResource( 22 )
+size = Vector3( 3.8, 0.1, 6 )
+
+[sub_resource type="CubeMesh" id=13]
+material = ExtResource( 22 )
+size = Vector3( 1.9, 0.1, 3 )
+
 [node name="ShoreMap" type="Node"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
+environment = ExtResource( 11 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.950588, 0.121651, 0.285627, -0.223398, 0.906909, 0.357225, -0.215581, -0.403382, 0.889274, 0, 13.4081, 12.2218 )
+transform = Transform( 0.95536, 0.132762, 0.263935, -0.234062, 0.885245, 0.401941, -0.180284, -0.445775, 0.876802, 0, 13.4081, 12.2218 )
+light_color = Color( 0.976471, 0.972549, 0.929412, 1 )
 shadow_enabled = true
 shadow_color = Color( 0.0588235, 0.0745098, 0.152941, 1 )
-shadow_bias = 0.5
-shadow_contact = 0.9
 directional_shadow_normal_bias = 0.5
 directional_shadow_max_distance = 600.0
 
@@ -174,7 +176,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
 
 [node name="SeaFace" type="MeshInstance" parent="Environs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 43 )
-mesh = SubResource( 4 )
+mesh = SubResource( 2 )
 material/0 = null
 __meta__ = {
 "_edit_lock_": true
@@ -182,25 +184,29 @@ __meta__ = {
 
 [node name="SeaGround" type="MeshInstance" parent="Environs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.77846, 43 )
-mesh = SubResource( 6 )
+mesh = SubResource( 4 )
 material/0 = null
 
 [node name="Lightings" type="Node" parent="."]
 
 [node name="GIProbe" type="GIProbe" parent="Lightings"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 49.4006 )
-extents = Vector3( 76.2648, 27, 94.7671 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5404, -2.75435, -7.06521 )
+extents = Vector3( 49.4284, 27, 47.4733 )
 dynamic_range = 2
-energy = 0.4
+energy = 0.3
 propagation = 0.5
-data = SubResource( 7 )
+data = SubResource( 5 )
 
 [node name="HangingLamp" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 17 )
 turn_on = true
-flicker = true
+flicker = false
 
 [node name="Objects" type="Node" parent="."]
+
+[node name="Sphere" type="CSGMesh" parent="Objects"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.262955, 12.6921, 5.61893 )
+mesh = SubResource( 6 )
 
 [node name="Table" parent="Objects" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49529, 7.9858, 16.6933 )
@@ -250,11 +256,11 @@ __meta__ = {
 }
 
 [node name="CollisionShape" type="CollisionShape" parent="Objects/Curtain"]
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="CurtainBody" type="SoftBody" parent="Objects/Curtain"]
 transform = Transform( 1, 0, 0, 0, 0.199607, 0.979876, 0, -0.979876, 0.199607, 0, 1.48525, -0.109335 )
-mesh = SubResource( 10 )
+mesh = SubResource( 9 )
 material/0 = null
 pinned_points = [ 0, 4, 8, 12 ]
 attachments/0/point_index = 0
@@ -302,3 +308,35 @@ dir = Vector3( 0, 0, -1 )
 speed = 0.3
 length = 6.0
 blow = true
+
+[node name="GlassTest" type="Node" parent="."]
+
+[node name="TestGlass" type="MeshInstance" parent="GlassTest"]
+transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 1.98946, 13.7, 24.2875 )
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="TestGlass2" type="MeshInstance" parent="GlassTest"]
+transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, -3.95932, 11.074, 24.2875 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="TestGlass3" type="MeshInstance" parent="GlassTest"]
+transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 0.140679, 9.46044, 24.3589 )
+mesh = SubResource( 12 )
+material/0 = null
+
+[node name="TestGlass4" type="MeshInstance" parent="GlassTest"]
+transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 0.951622, 9.46044, 24.1046 )
+mesh = SubResource( 12 )
+material/0 = null
+
+[node name="TestGlass5" type="MeshInstance" parent="GlassTest"]
+transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 8.96518, 11.074, 24.3848 )
+mesh = SubResource( 13 )
+material/0 = null
+
+[node name="TestGlass6" type="MeshInstance" parent="GlassTest"]
+transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 8.63677, 11.1295, 24.1394 )
+mesh = SubResource( 13 )
+material/0 = null

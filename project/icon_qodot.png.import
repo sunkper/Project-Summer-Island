@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/wood_02_depth.png-e6b48fd0eecc43143e67e73536608046.s3tc.stex"
-path.etc2="res://.import/wood_02_depth.png-e6b48fd0eecc43143e67e73536608046.etc2.stex"
+path.s3tc="res://.import/icon_qodot.png-08b084ec24e3774df8c9877d538944b6.s3tc.stex"
+path.etc2="res://.import/icon_qodot.png-08b084ec24e3774df8c9877d538944b6.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/pbr/wood_02/wood_02_depth.png"
-dest_files=[ "res://.import/wood_02_depth.png-e6b48fd0eecc43143e67e73536608046.s3tc.stex", "res://.import/wood_02_depth.png-e6b48fd0eecc43143e67e73536608046.etc2.stex" ]
+source_file="res://icon_qodot.png"
+dest_files=[ "res://.import/icon_qodot.png-08b084ec24e3774df8c9877d538944b6.s3tc.stex", "res://.import/icon_qodot.png-08b084ec24e3774df8c9877d538944b6.etc2.stex" ]
 
 [params]
 
@@ -23,9 +23,9 @@ compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
 flags/filter=false
-flags/mipmaps=false
+flags/mipmaps=true
 flags/anisotropic=true
-flags/srgb=2
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

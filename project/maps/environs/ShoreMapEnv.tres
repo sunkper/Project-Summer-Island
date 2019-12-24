@@ -1,0 +1,23 @@
+[gd_resource type="Environment" load_steps=3 format=2]
+
+[ext_resource path="res://assets/hdri/park.hdr" type="Texture" id=1]
+
+[sub_resource type="PanoramaSky" id=1]
+panorama = ExtResource( 1 )
+
+[resource]
+background_mode = 2
+background_sky = SubResource( 1 )
+ambient_light_color = Color( 0.219608, 0.219608, 0.219608, 1 )
+ambient_light_energy = 0.5
+ambient_light_sky_contribution = 0.4
+tonemap_mode = 2
+ss_reflections_enabled = true
+dof_blur_far_distance = 7.0
+dof_blur_far_transition = 10.0
+dof_blur_far_quality = 2
+glow_enabled = true
+glow_intensity = 1.0
+glow_bloom = 0.6
+adjustment_enabled = true
+adjustment_contrast = 1.05

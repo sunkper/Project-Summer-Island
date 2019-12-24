@@ -9,3 +9,4 @@ ground_horizon_color = Color( 0.243137, 0.231373, 0.219608, 1 )
 [resource]
 background_mode = 2
 background_sky = SubResource( 1 )
+adjustment_enabled = true

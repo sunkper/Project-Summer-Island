@@ -6,7 +6,6 @@ export (float, 0.001, 20.0) var length: = 1.0 setget _changed_length
 export (float, 0.001, 10.0) var radius: = 0.5 setget _changed_radius
 
 export var blow: = false setget _start_blow
-export var gradual_change: = false
 
 var orig_pos: = Vector3.ZERO
 
