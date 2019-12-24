@@ -406,6 +406,8 @@ config/icon="res://icon.png"
 
 window/size/width=640
 window/size/height=360
+window/size/test_width=1280
+window/size/test_height=720
 window/stretch/aspect="keep"
 
 [editor_plugins]
@@ -423,9 +425,9 @@ texture={
 "detect_3d": false,
 "flags/anisotropic": true,
 "flags/filter": false,
-"flags/mipmaps": false,
+"flags/mipmaps": true,
 "flags/repeat": true,
-"flags/srgb": 2,
+"flags/srgb": 1,
 "process/HDR_as_SRGB": false,
 "process/fix_alpha_border": true,
 "process/invert_color": false,
@@ -437,6 +439,5 @@ texture={
 
 [rendering]
 
-quality/shadows/filter_mode=2
-quality/filters/msaa=3
+quality/filters/msaa=2
 environment/default_environment="res://default_env.tres"

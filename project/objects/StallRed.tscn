@@ -5,18 +5,18 @@
 [ext_resource path="res://assets/textures/pbr/Metal24/Metal24_metallic.png" type="Texture" id=3]
 [ext_resource path="res://assets/textures/pbr/Metal24/Metal24_roughness.png" type="Texture" id=4]
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=6]
 albedo_texture = ExtResource( 2 )
 metallic_specular = 0.0
 
-[sub_resource type="CylinderMesh" id=5]
-material = SubResource( 8 )
+[sub_resource type="CylinderMesh" id=7]
+material = SubResource( 6 )
 top_radius = 0.5
 bottom_radius = 0.5
 height = 0.1
 radial_segments = 16
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=5]
 albedo_texture = ExtResource( 1 )
 metallic = 1.0
 metallic_specular = 0.14
@@ -25,28 +25,28 @@ roughness_texture = ExtResource( 4 )
 uv1_scale = Vector3( 0.75, 0.75, 0.75 )
 uv1_triplanar = true
 
-[sub_resource type="CylinderMesh" id=1]
-material = SubResource( 6 )
+[sub_resource type="CylinderMesh" id=8]
+material = SubResource( 5 )
 top_radius = 0.5
 bottom_radius = 0.5
 height = 0.1
 radial_segments = 16
 
-[sub_resource type="CylinderMesh" id=3]
-material = SubResource( 6 )
+[sub_resource type="CylinderMesh" id=9]
+material = SubResource( 5 )
 top_radius = 0.075
 bottom_radius = 0.075
 height = 1.9
 radial_segments = 6
 
-[sub_resource type="CylinderMesh" id=7]
-material = SubResource( 6 )
+[sub_resource type="CylinderMesh" id=10]
+material = SubResource( 5 )
 top_radius = 0.075
 bottom_radius = 0.075
 height = 1.2
 radial_segments = 6
 
-[sub_resource type="CylinderShape" id=4]
+[sub_resource type="CylinderShape" id=11]
 radius = 0.4
 height = 2.04038
 
@@ -54,17 +54,17 @@ height = 2.04038
 
 [node name="SeatCushion" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.334909, 0 )
-mesh = SubResource( 5 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="SeatSteel" type="MeshInstance" parent="SeatCushion"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0981285, 0 )
-mesh = SubResource( 1 )
+mesh = SubResource( 8 )
 material/0 = null
 
 [node name="Leg" type="MeshInstance" parent="SeatCushion"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.06304, 0 )
-mesh = SubResource( 3 )
+mesh = SubResource( 9 )
 material/0 = null
 
 [node name="Foot" type="CSGTorus" parent="SeatCushion"]
@@ -73,18 +73,18 @@ inner_radius = 0.55
 outer_radius = 0.7
 sides = 12
 ring_sides = 4
-material = SubResource( 6 )
+material = SubResource( 5 )
 
 [node name="FootSupport0" type="MeshInstance" parent="SeatCushion/Foot"]
 transform = Transform( -3.09086e-08, 0.707107, -0.707107, -1, -4.37114e-08, 0, -3.09086e-08, 0.707107, 0.707107, 0.00182979, 0.00191045, 0 )
-mesh = SubResource( 7 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="FootSupport1" type="MeshInstance" parent="SeatCushion/Foot"]
 transform = Transform( 3.09086e-08, -0.707107, -0.707107, -1, -4.37114e-08, 0, -3.09086e-08, 0.707107, -0.707107, 0.00182979, 0.00191045, 0 )
-mesh = SubResource( 7 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.693846, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
