@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/Rocks_08.png" type="Texture" id=2]
@@ -22,8 +22,81 @@
 [ext_resource path="res://objects/HangingLamp.tscn" type="PackedScene" id=20]
 [ext_resource path="res://objects/BookShelf.tscn" type="PackedScene" id=21]
 [ext_resource path="res://assets/materials/Glass.tres" type="Material" id=22]
+[ext_resource path="res://maps/ShoreMap.gd" type="Script" id=23]
+[ext_resource path="res://objects/BarGate.tscn" type="PackedScene" id=24]
+[ext_resource path="res://assets/audio/ambient/ocean.wav" type="AudioStream" id=25]
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="GDScript" id=1]
+script/source = "tool
+extends Camera
+
+export var change_pos: = false setget _change_position
+var current_pos: int = 0
+
+export var add_view_cam: = false setget _add_view_cam
+
+func _change_position(new_state) -> void:
+	var num_pos: = $Positions.get_child_count()
+	
+	current_pos = (current_pos + 1) % num_pos
+	var pos_node: = $Positions.get_child(current_pos)
+	
+	translation = pos_node.translation
+	rotation_degrees = pos_node.rotation_degrees
+	print(pos_node.name)
+
+func _add_view_cam(new_state) -> void:
+	pass
+
+func _input(event: InputEvent) -> void:
+	if not Engine.editor_hint:
+		if event.is_action_pressed(\"ui_focus_next\"):
+			self.change_pos = true
+"
+
+[sub_resource type="CubeMesh" id=5]
+material = ExtResource( 22 )
+size = Vector3( 16, 0.1, 1.8 )
+
+[sub_resource type="CubeMesh" id=3]
+material = ExtResource( 22 )
+size = Vector3( 3.8, 0.1, 3 )
+
+[sub_resource type="CubeMesh" id=4]
+material = ExtResource( 22 )
+size = Vector3( 3.8, 0.1, 6 )
+
+[sub_resource type="CubeMesh" id=16]
+material = ExtResource( 22 )
+size = Vector3( 1.9, 0.1, 3 )
+
+[sub_resource type="SphereMesh" id=6]
+
+[sub_resource type="SpatialMaterial" id=7]
+metallic = 0.82
+roughness = 0.57
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 1.37936, 0.225255, 0.202765 )
+
+[sub_resource type="SpatialMaterial" id=9]
+flags_transparent = true
+params_blend_mode = 1
+params_cull_mode = 2
+params_depth_draw_mode = 1
+albedo_color = Color( 1, 1, 1, 0.603922 )
+albedo_texture = ExtResource( 16 )
+transmission_enabled = true
+transmission = Color( 1, 1, 1, 1 )
+uv1_scale = Vector3( 4, 0.1, 1 )
+
+[sub_resource type="PlaneMesh" id=10]
+material = SubResource( 9 )
+size = Vector2( 3.4, 3.2 )
+subdivide_width = 5
+subdivide_depth = 5
+
+[sub_resource type="SpatialMaterial" id=11]
 flags_transparent = true
 albedo_color = Color( 0.0509804, 0.168627, 0.321569, 0.803922 )
 metallic = 0.83
@@ -50,13 +123,13 @@ detail_blend_mode = 3
 detail_uv_layer = 0
 detail_normal = ExtResource( 7 )
 
-[sub_resource type="PlaneMesh" id=2]
-material = SubResource( 1 )
+[sub_resource type="PlaneMesh" id=12]
+material = SubResource( 11 )
 size = Vector2( 150, 200 )
 subdivide_width = 200
 subdivide_depth = 200
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=13]
 albedo_texture = ExtResource( 2 )
 roughness_texture = ExtResource( 18 )
 normal_enabled = true
@@ -78,66 +151,28 @@ depth_texture = ExtResource( 5 )
 uv1_scale = Vector3( 0.08, 0.08, 0.08 )
 uv1_triplanar = true
 
-[sub_resource type="PlaneMesh" id=4]
-material = SubResource( 3 )
+[sub_resource type="PlaneMesh" id=14]
+material = SubResource( 13 )
 size = Vector2( 150, 200 )
 
-[sub_resource type="GIProbeData" id=5]
+[sub_resource type="GIProbeData" id=15]
 bounds = AABB( -49.4284, -27, -47.4733, 98.8568, 54, 94.9466 )
 cell_size = 0.772319
 to_cell_xform = Transform( 1.2948, 0, 0, 0, 1.2948, 0, 0, 0, 1.2948, 64, 34.9597, 61.4685 )
-dynamic_data = PoolIntArray( 0, 8, 128, 128, 128, 36, 22, 0, 1031798784, 0, 1033895936, 0, 1035993088, 0, 1038090240, 0, -1, -1, -1, -1, -1, 1, -1, -1, 0, 0, 8355711, 0, -1, -1, 2, -1, -1, -1, -1, -1, 0, 0, 8355711, 65541, -1, -1, -1, -1, -1, -1, 3, -1, 0, 0, 8355711, 131115, -1, -1, -1, -1, -1, -1, 4, -1, 0, 0, 8355711, 196959, 14, 11, -1, -1, 5, 8, -1, -1, 0, 0, 8355711, 264959, -1, 6, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 331775, -1, 7, -1, 29, -1, 19, -1, 32, 0, 0, 8355711, 425983, -1, -1, -1, -1, -1, -1, -1, -1, 9975858, 0, 9437568, 524287, 9, 20, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 339967, 10, 22, 30, 26, 18, 17, 33, 34, 0, 0, 8355711, 458751, -1, -1, -1, -1, -1, -1, -1, -1, 13547168, -1718253017, 7602310, 524287, -1, -1, -1, -1, 12, -1, -1, -1, 0, 0, 8355711, 331775, -1, -1, -1, -1, 13, 24, 28, 27, 0, 0, 8355711, 425983, -1, -1, -1, -1, -1, -1, -1, -1, 10171181, 0, 8847500, 524287, -1, -1, -1, -1, -1, 15, -1, -1, 0, 0, 8355711, 329727, -1, -1, -1, -1, -1, 16, -1, 31, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 10229778, 0, 2634061, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10105389, 0, 7471475, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9975602, 0, 9110122, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10167584, 0, 6881931, 524287, 23, -1, 25, -1, 21, -1, 35, -1, 0, 0, 8355711, 425983, -1, -1, -1, -1, -1, -1, -1, -1, 10491408, 0, 12654235, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 11632755, -1718253037, 7340410, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10037025, 0, 10093432, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10171182, 0, 7602572, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10428441, 0, 15711091, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10319982, -1718253042, 16488839, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9981512, 0, 9429295, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9852496, 0, 12091121, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9914947, 0, 3332431, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10518132, -1718253039, 435594, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 8002584, 0, 1617476, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10429211, 0, 1948343, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9786446, 0, 13795614, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9786189, 0, 2992423, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10557453, 0, 15380401, 524287 )
-dynamic_range = 2
-energy = 0.3
+dynamic_data = PoolIntArray( 0, 8, 128, 128, 128, 74, 47, 1, 2, 8314, 1179390556, 0, 2, 1, 1, 16464751, -1, -1, -1, -1, -1, 1, -1, -1, 0, 0, 8355711, 1, -1, -1, 2, -1, -1, -1, -1, -1, 0, 0, 8355711, 65547, -1, -1, 38, -1, -1, -1, 3, -1, 0, 0, 8355711, 131165, -1, -1, -1, -1, -1, -1, 4, -1, 0, 0, 8355711, 196975, 5, 9, -1, -1, 17, 13, -1, -1, 0, 0, 8355711, 265087, -1, -1, -1, -1, -1, 6, -1, -1, 0, 0, 8355711, 331775, -1, 7, -1, 33, -1, 8, -1, 31, 0, 0, 8355711, 425983, -1, -1, -1, -1, -1, -1, -1, -1, 10032913, 0, 5442150, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10040880, 0, 9634177, 524287, -1, -1, -1, -1, 10, 23, -1, -1, 0, 0, 8355711, 338943, 12, 25, 30, 28, 11, 22, 32, 27, 0, 0, 8355711, 458751, -1, -1, -1, -1, -1, -1, -1, -1, 13480862, 0, 7667838, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10170924, 0, 8847500, 524287, 14, 20, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 333823, 16, 15, 35, 36, -1, -1, -1, -1, 0, 0, 8355711, 425983, -1, -1, -1, -1, -1, -1, -1, -1, 10040881, 0, 7275118, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9975601, 0, 9044587, 524287, -1, 18, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 329727, -1, 19, -1, 34, -1, -1, -1, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 10102818, 0, 6489230, 524287, 21, -1, 37, -1, -1, -1, -1, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 10360592, 0, 12654237, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 11567219, 0, 6750843, 524287, 29, -1, -1, -1, 24, -1, 26, -1, 0, 0, 8355711, 417791, -1, -1, -1, -1, -1, -1, -1, -1, 10101790, 0, 10486906, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10235946, 0, 7995527, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10428442, 0, 15711351, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10319982, 0, 16490110, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9916748, 0, 2008520, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9771283, 0, 15359809, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9852496, 0, 12807914, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9914691, 0, 3070553, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10387059, 0, 303240, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9902097, 0, 1814080, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10491151, 0, 1947833, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9786189, 0, 14326314, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9850955, 0, 5565775, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10557453, 0, 15249587, 524287, -1, -1, -1, -1, -1, -1, 39, -1, 0, 0, 8355711, 196991, 40, 43, -1, -1, 49, 46, -1, -1, 0, 0, 8355711, 265215, -1, -1, -1, -1, -1, 41, -1, -1, 0, 0, 8355711, 329727, -1, -1, -1, -1, -1, 42, -1, 67, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 10032913, 0, 5442150, 524287, -1, -1, -1, -1, 44, 63, -1, -1, 0, 0, 8355711, 333823, -1, -1, -1, -1, 45, 59, 66, 61, 0, 0, 8355711, 425983, -1, -1, -1, -1, -1, -1, -1, -1, 10041395, 0, 9503377, 524287, 47, 55, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 339967, 52, 57, 73, 62, 53, 48, 70, 71, 0, 0, 8355711, 458751, -1, -1, -1, -1, -1, -1, -1, -1, 10040367, 0, 7602546, 524287, -1, 50, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 331775, -1, 51, -1, 68, -1, 54, -1, 69, 0, 0, 8355711, 425983, -1, -1, -1, -1, -1, -1, -1, -1, 9976630, 0, 10093444, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 13942696, 0, 7078275, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9845044, 0, 9241192, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10163985, 0, 3873446, 524287, 58, -1, 60, -1, 56, -1, 72, -1, 0, 0, 8355711, 425983, -1, -1, -1, -1, -1, -1, -1, -1, 10033169, 0, 11143832, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 11633526, 0, 6685303, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10167325, 0, 10814844, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10105645, 0, 7667850, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10495005, 0, 15646331, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9850954, 0, 4841021, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10254446, 0, 16489853, 524287, -1, -1, -1, -1, 64, -1, 65, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 9771283, 0, 15359809, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9771029, 0, 14922050, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9786704, 0, 12802275, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10229521, 0, 1881669, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10111813, 0, 3729048, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10425871, 0, 2013371, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9786446, 0, 15558722, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9786189, 0, 3056676, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10557711, 0, 15052730, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10321266, 0, 369538, 524287 )
+energy = 0.6
 bias = 1.5
 normal_bias = 0.0
 propagation = 0.5
 
-[sub_resource type="SphereMesh" id=6]
-
-[sub_resource type="BoxShape" id=7]
-extents = Vector3( 1.37936, 0.225255, 0.202765 )
-
-[sub_resource type="SpatialMaterial" id=8]
-flags_transparent = true
-params_blend_mode = 1
-params_cull_mode = 2
-params_depth_draw_mode = 1
-albedo_color = Color( 1, 1, 1, 0.603922 )
-albedo_texture = ExtResource( 16 )
-transmission_enabled = true
-transmission = Color( 1, 1, 1, 1 )
-uv1_scale = Vector3( 4, 0.1, 1 )
-
-[sub_resource type="PlaneMesh" id=9]
-material = SubResource( 8 )
-size = Vector2( 3.4, 3.2 )
-subdivide_width = 5
-subdivide_depth = 5
-
-[sub_resource type="CubeMesh" id=10]
-material = ExtResource( 22 )
-size = Vector3( 16, 0.1, 1.8 )
-
-[sub_resource type="CubeMesh" id=11]
-material = ExtResource( 22 )
-size = Vector3( 3.8, 0.1, 3 )
-
-[sub_resource type="CubeMesh" id=12]
-material = ExtResource( 22 )
-size = Vector3( 3.8, 0.1, 6 )
-
-[sub_resource type="CubeMesh" id=13]
-material = ExtResource( 22 )
-size = Vector3( 1.9, 0.1, 3 )
-
 [node name="ShoreMap" type="Node"]
+script = ExtResource( 23 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 11 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.95536, 0.132762, 0.263935, -0.234062, 0.885245, 0.401941, -0.180284, -0.445775, 0.876802, 0, 13.4081, 12.2218 )
+transform = Transform( 0.714598, 0.436971, -0.546266, -0.234062, 0.885245, 0.40194, 0.659216, -0.159366, 0.734872, 0, 28.5452, 12.2218 )
 light_color = Color( 0.976471, 0.972549, 0.929412, 1 )
 shadow_enabled = true
 shadow_color = Color( 0.0588235, 0.0745098, 0.152941, 1 )
@@ -146,16 +181,17 @@ directional_shadow_max_distance = 600.0
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -0.707107, -0.159064, 0.688984, 0, 0.97437, 0.224951, -0.707107, 0.159064, -0.688984, 8.7, 12.5, 15.5 )
+script = SubResource( 1 )
 __meta__ = {
 "_editor_description_": ""
 }
 
 [node name="Positions" type="Node" parent="Camera"]
 
-[node name="HouseToSea" type="Position3D" parent="Camera/Positions"]
-transform = Transform( 1, 0, 0, 0, 0.992546, 0.121869, 0, -0.121869, 0.992546, 0, 10.8, 25 )
-
 [node name="SeaToHouse" type="Position3D" parent="Camera/Positions"]
+transform = Transform( 1, 0, 0, 0, 0.829037, 0.559193, 0, -0.559193, 0.829037, 0, 14.4, 22.9 )
+
+[node name="HouseToSea" type="Position3D" parent="Camera/Positions"]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 1.3, 9.9, 11 )
 
 [node name="FromKitchen" type="Position3D" parent="Camera/Positions"]
@@ -165,48 +201,64 @@ transform = Transform( -0.798636, -0.0524516, 0.599525, 0, 0.996195, 0.0871557, 
 transform = Transform( -0.615662, -0.0960344, -0.782137, 0, 0.992546, -0.121869, 0.788011, -0.0750303, -0.611073, -5.8, 11.1, 9.9 )
 
 [node name="FromStair" type="Position3D" parent="Camera/Positions"]
-transform = Transform( -0.707107, -0.159064, 0.688984, 0, 0.97437, 0.224951, -0.707107, 0.159064, -0.688984, 8.7, 12.5, 15.5 )
+transform = Transform( -0.694659, -0.0751915, 0.715399, 0, 0.994522, 0.104529, -0.71934, 0.0726116, -0.690853, 8.6, 12.2, 16.4 )
 
-[node name="Geometry" type="Node" parent="."]
+[node name="ThroughWindow" type="Position3D" parent="Camera/Positions"]
+transform = Transform( 0.999391, 0.00665914, 0.0342583, 0, 0.981627, -0.190809, -0.0348995, 0.190693, 0.98103, -4.2, 11, 26.2 )
 
-[node name="HouseGeometry" parent="Geometry" instance=ExtResource( 1 )]
+[node name="Structures" type="Node" parent="."]
+
+[node name="HouseGeometry" parent="Structures" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
 
-[node name="Environs" type="Node" parent="."]
+[node name="GlassTest" type="Node" parent="Structures"]
 
-[node name="SeaFace" type="MeshInstance" parent="Environs"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 43 )
-mesh = SubResource( 2 )
+[node name="TestGlass" type="MeshInstance" parent="Structures/GlassTest"]
+transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 1.989, 13.7, 24.25 )
+mesh = SubResource( 5 )
 material/0 = null
-__meta__ = {
-"_edit_lock_": true
-}
 
-[node name="SeaGround" type="MeshInstance" parent="Environs"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.77846, 43 )
+[node name="TestGlass2" type="MeshInstance" parent="Structures/GlassTest"]
+transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, -3.959, 11.074, 24.25 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="TestGlass7" type="MeshInstance" parent="Structures/GlassTest"]
+transform = Transform( -4.38082e-08, -1, -4.36144e-08, 0.00221657, -4.37114e-08, 0.999998, -0.999998, 4.37114e-08, 0.00221657, -6.18282, 11.074, 22.0393 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="TestGlass8" type="MeshInstance" parent="Structures/GlassTest"]
+transform = Transform( -4.38082e-08, -1, -4.36144e-08, 0.00221657, -4.37114e-08, 0.999998, -0.999998, 4.37114e-08, 0.00221657, -6.18282, 14.374, 22.0393 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="TestGlass3" type="MeshInstance" parent="Structures/GlassTest"]
+transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 0.140679, 9.46044, 24.3635 )
 mesh = SubResource( 4 )
 material/0 = null
 
-[node name="Lightings" type="Node" parent="."]
+[node name="TestGlass4" type="MeshInstance" parent="Structures/GlassTest"]
+transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 0.951622, 9.46044, 24.1152 )
+mesh = SubResource( 4 )
+material/0 = null
 
-[node name="GIProbe" type="GIProbe" parent="Lightings"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5404, -2.75435, -7.06521 )
-extents = Vector3( 49.4284, 27, 47.4733 )
-dynamic_range = 2
-energy = 0.3
-propagation = 0.5
-data = SubResource( 5 )
+[node name="TestGlass5" type="MeshInstance" parent="Structures/GlassTest"]
+transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 8.96518, 11.074, 24.3848 )
+mesh = SubResource( 16 )
+material/0 = null
 
-[node name="HangingLamp" parent="Lightings" instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 17 )
-turn_on = true
-flicker = false
+[node name="TestGlass6" type="MeshInstance" parent="Structures/GlassTest"]
+transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 8.63677, 11.1295, 24.1394 )
+mesh = SubResource( 16 )
+material/0 = null
 
 [node name="Objects" type="Node" parent="."]
 
 [node name="Sphere" type="CSGMesh" parent="Objects"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.262955, 12.6921, 5.61893 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.843853, 12.4921, 6.84161 )
 mesh = SubResource( 6 )
+material = SubResource( 7 )
 
 [node name="Table" parent="Objects" instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49529, 7.9858, 16.6933 )
@@ -244,7 +296,7 @@ transform = Transform( 0.941476, 0, -0.337079, 0, 1, 0, 0.337079, 0, 0.941476, 2
 transform = Transform( 0.861, 0, 0.508606, 0, 1, 0, -0.508606, 0, 0.861, 5.70851, 0, 2.14365 )
 
 [node name="PictureFrame" parent="Objects" instance=ExtResource( 13 )]
-transform = Transform( -0.996195, -0.0871557, -3.25841e-07, -0.0871557, 0.996195, 0, 3.24601e-07, 2.83989e-08, -1, 5.87402, 12.342, 10.8101 )
+transform = Transform( -0.747146, -0.0653668, -2.92061e-07, -0.0653668, 0.747146, 1.16776e-14, 2.90949e-07, 2.54548e-08, -0.75, 5.87402, 12.042, 10.6101 )
 
 [node name="TVStand" parent="Objects" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.387, 8.25595, 22.5 )
@@ -256,11 +308,11 @@ __meta__ = {
 }
 
 [node name="CollisionShape" type="CollisionShape" parent="Objects/Curtain"]
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="CurtainBody" type="SoftBody" parent="Objects/Curtain"]
 transform = Transform( 1, 0, 0, 0, 0.199607, 0.979876, 0, -0.979876, 0.199607, 0, 1.48525, -0.109335 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 pinned_points = [ 0, 4, 8, 12 ]
 attachments/0/point_index = 0
@@ -279,64 +331,77 @@ attachments/3/offset = Vector3( 0, 0, 0 )
 [node name="BookShelf" parent="Objects" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.23, 6, 18 )
 
-[node name="Ambient" type="Node" parent="."]
+[node name="AmbientObjects" type="Node" parent="Objects"]
 
-[node name="Wind" parent="Ambient" instance=ExtResource( 17 )]
+[node name="Wind" parent="Objects/AmbientObjects" instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.95944, 11, 26 )
 dir = Vector3( 0, 0, -1 )
 speed = 1.5
 length = 5.0
 blow = true
 
-[node name="Wind2" parent="Ambient" instance=ExtResource( 17 )]
+[node name="Wind2" parent="Objects/AmbientObjects" instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01246, 11.8054, 26 )
 dir = Vector3( 0, 0, -1 )
 speed = 1.5
 length = 5.0
 blow = true
 
-[node name="Wind3" parent="Ambient" instance=ExtResource( 17 )]
+[node name="Wind3" parent="Objects/AmbientObjects" instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.01445, 11.147, 26 )
 dir = Vector3( 0, 0, -1 )
 speed = 0.9
 length = 5.0
 blow = true
 
-[node name="Wind4" parent="Ambient" instance=ExtResource( 17 )]
+[node name="Wind4" parent="Objects/AmbientObjects" instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.44122, 11.6599, 26.7317 )
 dir = Vector3( 0, 0, -1 )
 speed = 0.3
 length = 6.0
 blow = true
 
-[node name="GlassTest" type="Node" parent="."]
+[node name="BarGate" parent="Objects" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51162, 9.05787, 9.24657 )
 
-[node name="TestGlass" type="MeshInstance" parent="GlassTest"]
-transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 1.98946, 13.7, 24.2875 )
-mesh = SubResource( 10 )
-material/0 = null
+[node name="Environs" type="Node" parent="."]
 
-[node name="TestGlass2" type="MeshInstance" parent="GlassTest"]
-transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, -3.95932, 11.074, 24.2875 )
-mesh = SubResource( 11 )
-material/0 = null
-
-[node name="TestGlass3" type="MeshInstance" parent="GlassTest"]
-transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 0.140679, 9.46044, 24.3589 )
+[node name="SeaFace" type="MeshInstance" parent="Environs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 43 )
 mesh = SubResource( 12 )
 material/0 = null
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="TestGlass4" type="MeshInstance" parent="GlassTest"]
-transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 0.951622, 9.46044, 24.1046 )
-mesh = SubResource( 12 )
+[node name="SeaGround" type="MeshInstance" parent="Environs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.77846, 43 )
+mesh = SubResource( 14 )
 material/0 = null
 
-[node name="TestGlass5" type="MeshInstance" parent="GlassTest"]
-transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 8.96518, 11.074, 24.3848 )
-mesh = SubResource( 13 )
-material/0 = null
+[node name="Lightings" type="Node" parent="."]
 
-[node name="TestGlass6" type="MeshInstance" parent="GlassTest"]
-transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 8.63677, 11.1295, 24.1394 )
-mesh = SubResource( 13 )
-material/0 = null
+[node name="GIProbe" type="GIProbe" parent="Lightings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5404, -2.75435, -7.06521 )
+extents = Vector3( 49.4284, 27, 47.4733 )
+dynamic_range = 1
+energy = 0.6
+propagation = 0.5
+data = SubResource( 15 )
+
+[node name="HangingLamp" parent="Lightings" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 16.2 )
+
+[node name="HangingLamp2" parent="Lightings" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 4.54348 )
+flicker = true
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Ocean" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03211, 3.35432, 44.8451 )
+stream = ExtResource( 25 )
+unit_db = 5.0
+max_db = 5.0
+autoplay = true
+emission_angle_enabled = true
