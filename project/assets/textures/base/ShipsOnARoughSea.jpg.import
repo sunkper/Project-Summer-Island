@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/PortOfRotterdam.jpg-2348eb2a4f3305f55a83f784dea8d1ba.s3tc.stex"
-path.etc2="res://.import/PortOfRotterdam.jpg-2348eb2a4f3305f55a83f784dea8d1ba.etc2.stex"
+path.s3tc="res://.import/ShipsOnARoughSea.jpg-ec5dc22379abffb7213607233802d983.s3tc.stex"
+path.etc2="res://.import/ShipsOnARoughSea.jpg-ec5dc22379abffb7213607233802d983.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/base/PortOfRotterdam.jpg"
-dest_files=[ "res://.import/PortOfRotterdam.jpg-2348eb2a4f3305f55a83f784dea8d1ba.s3tc.stex", "res://.import/PortOfRotterdam.jpg-2348eb2a4f3305f55a83f784dea8d1ba.etc2.stex" ]
+source_file="res://assets/textures/base/ShipsOnARoughSea.jpg"
+dest_files=[ "res://.import/ShipsOnARoughSea.jpg-ec5dc22379abffb7213607233802d983.s3tc.stex", "res://.import/ShipsOnARoughSea.jpg-ec5dc22379abffb7213607233802d983.etc2.stex" ]
 
 [params]
 
