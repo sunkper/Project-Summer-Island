@@ -1,12 +1,15 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/textures/base/BookSpines.png" type="Texture" id=1]
 [ext_resource path="res://assets/textures/pbr/PaintedMetal_02.png" type="Texture" id=2]
 [ext_resource path="res://assets/textures/pbr/PaintedMetal_02/PaintedMetal_02_roughness.png" type="Texture" id=3]
 [ext_resource path="res://assets/textures/pbr/PaintedMetal_02/PaintedMetal_02_normal.png" type="Texture" id=4]
-[ext_resource path="res://assets/textures/pbr/PaintedMetal_02/PaintedMetal_02_depth.png" type="Texture" id=5]
+[ext_resource path="res://assets/textures/pbr/BookSpines/BookSpines_depth.png" type="Texture" id=5]
+[ext_resource path="res://assets/textures/pbr/RoofMetal/RoofMetal_depth.png" type="Texture" id=6]
+[ext_resource path="res://assets/textures/pbr/BookSpines/BookSpines_ao.png" type="Texture" id=7]
+[ext_resource path="res://assets/textures/pbr/BookSpines/BookSpines_normal.png" type="Texture" id=8]
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )
 roughness_texture = ExtResource( 3 )
 normal_enabled = true
@@ -17,37 +20,91 @@ depth_scale = 0.05
 depth_deep_parallax = false
 depth_flip_tangent = false
 depth_flip_binormal = false
+depth_texture = ExtResource( 6 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 1 )
+metallic = 0.71
+roughness = 0.8
+normal_enabled = true
+normal_scale = 0.8
+normal_texture = ExtResource( 8 )
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource( 7 )
+ao_on_uv2 = false
+ao_texture_channel = 4
+depth_enabled = true
+depth_scale = 0.2
+depth_deep_parallax = true
+depth_min_layers = 8
+depth_max_layers = 32
+depth_flip_tangent = false
+depth_flip_binormal = false
 depth_texture = ExtResource( 5 )
-uv1_triplanar = true
+uv1_scale = Vector3( 1.55, 0.95, 1 )
+uv1_offset = Vector3( -0.02, 0.06, 0 )
 
-[sub_resource type="SpatialMaterial" id=1]
-albedo_texture = ExtResource( 1 )
-uv1_offset = Vector3( 0.1, 0, 0.5 )
-uv1_triplanar = true
-
-[sub_resource type="PlaneMesh" id=2]
-material = SubResource( 1 )
+[sub_resource type="PlaneMesh" id=3]
+material = SubResource( 2 )
 size = Vector2( 1.9, 1 )
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=9]
 albedo_texture = ExtResource( 1 )
-uv1_offset = Vector3( 0.6, 0, 0.5 )
-uv1_triplanar = true
+metallic = 0.71
+roughness = 0.8
+normal_enabled = true
+normal_scale = 0.8
+normal_texture = ExtResource( 8 )
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource( 7 )
+ao_on_uv2 = false
+ao_texture_channel = 4
+depth_enabled = true
+depth_scale = 0.2
+depth_deep_parallax = true
+depth_min_layers = 8
+depth_max_layers = 32
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 5 )
+uv1_scale = Vector3( 1.55, 0.95, 1 )
+uv1_offset = Vector3( 0.48, 0.06, 0 )
 
-[sub_resource type="PlaneMesh" id=4]
-material = SubResource( 3 )
+[sub_resource type="PlaneMesh" id=5]
+material = SubResource( 9 )
 size = Vector2( 1.9, 1 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=10]
 albedo_texture = ExtResource( 1 )
-uv1_offset = Vector3( 0.3, 0, 0.5 )
-uv1_triplanar = true
+metallic = 0.71
+roughness = 0.8
+normal_enabled = true
+normal_scale = 0.8
+normal_texture = ExtResource( 8 )
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource( 7 )
+ao_on_uv2 = false
+ao_texture_channel = 4
+depth_enabled = true
+depth_scale = 0.2
+depth_deep_parallax = true
+depth_min_layers = 8
+depth_max_layers = 32
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 5 )
+uv1_scale = Vector3( 1.55, 0.95, 1 )
+uv1_offset = Vector3( -0.17, 0.06, 0 )
 
-[sub_resource type="PlaneMesh" id=6]
-material = SubResource( 5 )
+[sub_resource type="PlaneMesh" id=7]
+material = SubResource( 10 )
 size = Vector2( 1.9, 1 )
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=8]
 extents = Vector3( 0.789148, 1.73666, 1 )
 
 [node name="BookShelf" type="StaticBody"]
@@ -56,7 +113,7 @@ extents = Vector3( 0.789148, 1.73666, 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0 )
 width = 1.5
 height = 3.5
-material = SubResource( 8 )
+material = SubResource( 1 )
 
 [node name="RackTop" type="CSGBox" parent="Frame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 1.15, 0 )
@@ -64,7 +121,7 @@ operation = 2
 width = 0.480236
 height = 1.0
 depth = 1.8
-material = SubResource( 8 )
+material = SubResource( 1 )
 
 [node name="RackMiddle" type="CSGBox" parent="Frame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 0 )
@@ -72,7 +129,7 @@ operation = 2
 width = 0.480236
 height = 1.0
 depth = 1.8
-material = SubResource( 8 )
+material = SubResource( 1 )
 
 [node name="RackBottom" type="CSGBox" parent="Frame"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -1.1, 0 )
@@ -80,23 +137,23 @@ operation = 2
 width = 0.480236
 height = 1.0
 depth = 1.8
-material = SubResource( 8 )
+material = SubResource( 1 )
 
 [node name="BooksTop" type="MeshInstance" parent="Frame"]
 transform = Transform( -4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, -1, -1, -4.37114e-08, -4.37114e-08, 0.559871, 1.15, 0 )
-mesh = SubResource( 2 )
+mesh = SubResource( 3 )
 material/0 = null
 
 [node name="BooksMiddle" type="MeshInstance" parent="Frame"]
 transform = Transform( -4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, -1, -1, -4.37114e-08, -4.37114e-08, 0.559871, -0.0129915, 0 )
-mesh = SubResource( 4 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="BooksBottom" type="MeshInstance" parent="Frame"]
 transform = Transform( -4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, -1, -1, -4.37114e-08, -4.37114e-08, 0.559871, -1.10418, 0 )
-mesh = SubResource( 6 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76808, 0 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
