@@ -1,13 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://assets/textures/pbr/Metal24.png" type="Texture" id=1]
 [ext_resource path="res://assets/textures/pbr/MetalPainted01.png" type="Texture" id=2]
-[ext_resource path="res://assets/textures/pbr/Metal24/Metal24_metallic.png" type="Texture" id=3]
-[ext_resource path="res://assets/textures/pbr/Metal24/Metal24_roughness.png" type="Texture" id=4]
 [ext_resource path="res://assets/textures/pbr/MetalPainted01/MetalPainted01_roughness.png" type="Texture" id=5]
 [ext_resource path="res://assets/textures/pbr/Metal11/Metal11_roughness.png" type="Texture" id=6]
 [ext_resource path="res://assets/textures/pbr/Metal11.png" type="Texture" id=7]
 [ext_resource path="res://assets/textures/pbr/Metal11/Metal11_normal.png" type="Texture" id=8]
+[ext_resource path="res://assets/materials/MetalRusted01.tres" type="Material" id=9]
 
 [sub_resource type="GDScript" id=1]
 script/source = "tool
@@ -38,29 +36,20 @@ func _set_flicker(new_state):
 		$Anim.stop()
 "
 
-[sub_resource type="SpatialMaterial" id=2]
-albedo_texture = ExtResource( 1 )
-metallic = 1.0
-metallic_specular = 0.14
-metallic_texture = ExtResource( 3 )
-roughness_texture = ExtResource( 4 )
-uv1_scale = Vector3( 0.75, 0.75, 0.75 )
-uv1_triplanar = true
-
-[sub_resource type="CylinderMesh" id=3]
-material = SubResource( 2 )
+[sub_resource type="CylinderMesh" id=2]
+material = ExtResource( 9 )
 top_radius = 0.05
 bottom_radius = 0.05
 height = 4.8
 radial_segments = 8
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 2 )
 metallic_specular = 0.0
 roughness_texture = ExtResource( 5 )
 uv1_triplanar = true
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.890196, 0.870588, 0.815686, 1 )
 albedo_texture = ExtResource( 7 )
 metallic = 1.0
@@ -70,13 +59,13 @@ normal_scale = 0.5
 normal_texture = ExtResource( 8 )
 uv1_triplanar = true
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=5]
 flags_transparent = true
 albedo_color = Color( 0.870588, 0.807843, 0.705882, 0.439216 )
 metallic = 1.0
 roughness = 0.45
 emission_enabled = true
-emission = Color( 0.937255, 0.909804, 0.843137, 1 )
+emission = Color( 0, 0, 0, 1 )
 emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
@@ -86,7 +75,7 @@ rim_tint = 0.48
 transmission_enabled = true
 transmission = Color( 1, 0.87451, 0.443137, 1 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 resource_name = "Flicker00"
 length = 4.0
 loop = true
@@ -108,24 +97,24 @@ script = SubResource( 1 )
 
 [node name="Hanger" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.4, 0 )
-mesh = SubResource( 3 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="LampOuter" type="CSGSphere" parent="Hanger"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.099, 0 )
-material = SubResource( 4 )
+material = SubResource( 3 )
 
 [node name="LampOuterCut" type="CSGBox" parent="Hanger/LampOuter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.52526, 0 )
 operation = 2
 height = 1.5
-material = SubResource( 4 )
+material = SubResource( 3 )
 
 [node name="LampInner" type="CSGSphere" parent="Hanger/LampOuter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0151906, 0 )
 operation = 2
 radius = 0.9
-material = SubResource( 5 )
+material = SubResource( 4 )
 
 [node name="LampInnerCut" type="CSGBox" parent="Hanger/LampOuter/LampInner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.52526, 0 )
@@ -135,13 +124,13 @@ height = 1.5
 [node name="BulbHead" type="CSGSphere" parent="Hanger"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.633, 0 )
 radius = 0.2
-material = SubResource( 6 )
+material = SubResource( 5 )
 
 [node name="BulbBody" type="CSGCylinder" parent="Hanger/BulbHead"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.230063, 0 )
 radius = 0.12
 height = 0.25
-material = SubResource( 2 )
+material = ExtResource( 9 )
 
 [node name="HangingLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -5.20745, 0 )
@@ -153,4 +142,4 @@ omni_range = 10.0
 omni_attenuation = 2.37841
 
 [node name="Anim" type="AnimationPlayer" parent="."]
-anims/Flicker00 = SubResource( 7 )
+anims/Flicker00 = SubResource( 6 )
