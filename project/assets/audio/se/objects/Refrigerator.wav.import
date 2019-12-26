@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Refrigerator.wav-946682b98bfa583a78c7115b93e2b7ae.sample"
+
+[deps]
+
+source_file="res://assets/audio/se/objects/Refrigerator.wav"
+dest_files=[ "res://.import/Refrigerator.wav-946682b98bfa583a78c7115b93e2b7ae.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

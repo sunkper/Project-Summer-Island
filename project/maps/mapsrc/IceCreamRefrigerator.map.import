@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/IceCreamRefrigerator.map-692be0cd7b54773e038902e0110b6a16.tres"
+
+[deps]
+
+source_file="res://maps/mapsrc/IceCreamRefrigerator.map"
+dest_files=[ "res://.import/IceCreamRefrigerator.map-692be0cd7b54773e038902e0110b6a16.tres" ]
+
+[params]
+
