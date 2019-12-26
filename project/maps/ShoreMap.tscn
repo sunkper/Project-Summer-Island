@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/Rocks_08.png" type="Texture" id=2]
@@ -15,7 +15,7 @@
 [ext_resource path="res://objects/PictureFrame.tscn" type="PackedScene" id=13]
 [ext_resource path="res://objects/Stall.tscn" type="PackedScene" id=14]
 [ext_resource path="res://objects/TVStand.tscn" type="PackedScene" id=15]
-[ext_resource path="res://assets/textures/pbr/Fabric24.png" type="Texture" id=16]
+[ext_resource path="res://objects/Curtain.tscn" type="PackedScene" id=16]
 [ext_resource path="res://objects/Wind.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/textures/pbr/Rocks_08/Rocks_08_roughness.png" type="Texture" id=18]
 [ext_resource path="res://objects/StallRed.tscn" type="PackedScene" id=19]
@@ -25,6 +25,11 @@
 [ext_resource path="res://maps/ShoreMap.gd" type="Script" id=23]
 [ext_resource path="res://objects/BarGate.tscn" type="PackedScene" id=24]
 [ext_resource path="res://assets/audio/ambient/ocean.wav" type="AudioStream" id=25]
+[ext_resource path="res://assets/textures/pbr/brown_mud_03/brown_mud_03_normal.png" type="Texture" id=26]
+[ext_resource path="res://assets/materials/GlassAdditive.tres" type="Material" id=27]
+[ext_resource path="res://objects/Book.tscn" type="PackedScene" id=28]
+[ext_resource path="res://objects/SlideDoor.tscn" type="PackedScene" id=29]
+[ext_resource path="res://objects/IceCreamRefrigerator.tscn" type="PackedScene" id=31]
 
 [sub_resource type="GDScript" id=1]
 script/source = "tool
@@ -36,6 +41,8 @@ var current_pos: int = 0
 export var add_view_cam: = false setget _add_view_cam
 
 func _change_position(new_state) -> void:
+	if not has_node(\"Positions\"):
+		return
 	var num_pos: = $Positions.get_child_count()
 	
 	current_pos = (current_pos + 1) % num_pos
@@ -54,7 +61,7 @@ func _input(event: InputEvent) -> void:
 			self.change_pos = true
 "
 
-[sub_resource type="CubeMesh" id=5]
+[sub_resource type="CubeMesh" id=2]
 material = ExtResource( 22 )
 size = Vector3( 16, 0.1, 1.8 )
 
@@ -66,42 +73,22 @@ size = Vector3( 3.8, 0.1, 3 )
 material = ExtResource( 22 )
 size = Vector3( 3.8, 0.1, 6 )
 
-[sub_resource type="CubeMesh" id=16]
-material = ExtResource( 22 )
+[sub_resource type="CubeMesh" id=5]
+material = ExtResource( 27 )
 size = Vector3( 1.9, 0.1, 3 )
 
 [sub_resource type="SphereMesh" id=6]
 
 [sub_resource type="SpatialMaterial" id=7]
-metallic = 0.82
-roughness = 0.57
+metallic = 1.0
+roughness = 0.0
 
-[sub_resource type="BoxShape" id=8]
-extents = Vector3( 1.37936, 0.225255, 0.202765 )
-
-[sub_resource type="SpatialMaterial" id=9]
+[sub_resource type="SpatialMaterial" id=8]
 flags_transparent = true
-params_blend_mode = 1
-params_cull_mode = 2
-params_depth_draw_mode = 1
-albedo_color = Color( 1, 1, 1, 0.603922 )
-albedo_texture = ExtResource( 16 )
-transmission_enabled = true
-transmission = Color( 1, 1, 1, 1 )
-uv1_scale = Vector3( 4, 0.1, 1 )
-
-[sub_resource type="PlaneMesh" id=10]
-material = SubResource( 9 )
-size = Vector2( 3.4, 3.2 )
-subdivide_width = 5
-subdivide_depth = 5
-
-[sub_resource type="SpatialMaterial" id=11]
-flags_transparent = true
-albedo_color = Color( 0.0509804, 0.168627, 0.321569, 0.803922 )
-metallic = 0.83
-metallic_specular = 0.35
-roughness = 0.4
+albedo_color = Color( 0.282353, 0.321569, 0.345098, 0.74902 )
+metallic = 0.28
+metallic_specular = 0.87
+roughness = 0.25
 roughness_texture = ExtResource( 10 )
 normal_enabled = true
 normal_scale = 1.0
@@ -117,19 +104,23 @@ depth_deep_parallax = false
 depth_flip_tangent = false
 depth_flip_binormal = false
 depth_texture = ExtResource( 9 )
+refraction_enabled = true
+refraction_scale = 0.06
+refraction_texture = ExtResource( 26 )
+refraction_texture_channel = 0
 detail_enabled = true
 detail_mask = ExtResource( 7 )
 detail_blend_mode = 3
 detail_uv_layer = 0
 detail_normal = ExtResource( 7 )
 
-[sub_resource type="PlaneMesh" id=12]
-material = SubResource( 11 )
+[sub_resource type="PlaneMesh" id=9]
+material = SubResource( 8 )
 size = Vector2( 150, 200 )
 subdivide_width = 200
 subdivide_depth = 200
 
-[sub_resource type="SpatialMaterial" id=13]
+[sub_resource type="SpatialMaterial" id=10]
 albedo_texture = ExtResource( 2 )
 roughness_texture = ExtResource( 18 )
 normal_enabled = true
@@ -151,15 +142,15 @@ depth_texture = ExtResource( 5 )
 uv1_scale = Vector3( 0.08, 0.08, 0.08 )
 uv1_triplanar = true
 
-[sub_resource type="PlaneMesh" id=14]
-material = SubResource( 13 )
+[sub_resource type="PlaneMesh" id=11]
+material = SubResource( 10 )
 size = Vector2( 150, 200 )
 
-[sub_resource type="GIProbeData" id=15]
-bounds = AABB( -49.4284, -27, -47.4733, 98.8568, 54, 94.9466 )
-cell_size = 0.772319
-to_cell_xform = Transform( 1.2948, 0, 0, 0, 1.2948, 0, 0, 0, 1.2948, 64, 34.9597, 61.4685 )
-dynamic_data = PoolIntArray( 0, 8, 128, 128, 128, 74, 47, 1, 2, 8314, 1179390556, 0, 2, 1, 1, 16464751, -1, -1, -1, -1, -1, 1, -1, -1, 0, 0, 8355711, 1, -1, -1, 2, -1, -1, -1, -1, -1, 0, 0, 8355711, 65547, -1, -1, 38, -1, -1, -1, 3, -1, 0, 0, 8355711, 131165, -1, -1, -1, -1, -1, -1, 4, -1, 0, 0, 8355711, 196975, 5, 9, -1, -1, 17, 13, -1, -1, 0, 0, 8355711, 265087, -1, -1, -1, -1, -1, 6, -1, -1, 0, 0, 8355711, 331775, -1, 7, -1, 33, -1, 8, -1, 31, 0, 0, 8355711, 425983, -1, -1, -1, -1, -1, -1, -1, -1, 10032913, 0, 5442150, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10040880, 0, 9634177, 524287, -1, -1, -1, -1, 10, 23, -1, -1, 0, 0, 8355711, 338943, 12, 25, 30, 28, 11, 22, 32, 27, 0, 0, 8355711, 458751, -1, -1, -1, -1, -1, -1, -1, -1, 13480862, 0, 7667838, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10170924, 0, 8847500, 524287, 14, 20, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 333823, 16, 15, 35, 36, -1, -1, -1, -1, 0, 0, 8355711, 425983, -1, -1, -1, -1, -1, -1, -1, -1, 10040881, 0, 7275118, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9975601, 0, 9044587, 524287, -1, 18, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 329727, -1, 19, -1, 34, -1, -1, -1, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 10102818, 0, 6489230, 524287, 21, -1, 37, -1, -1, -1, -1, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 10360592, 0, 12654237, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 11567219, 0, 6750843, 524287, 29, -1, -1, -1, 24, -1, 26, -1, 0, 0, 8355711, 417791, -1, -1, -1, -1, -1, -1, -1, -1, 10101790, 0, 10486906, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10235946, 0, 7995527, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10428442, 0, 15711351, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10319982, 0, 16490110, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9916748, 0, 2008520, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9771283, 0, 15359809, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9852496, 0, 12807914, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9914691, 0, 3070553, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10387059, 0, 303240, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9902097, 0, 1814080, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10491151, 0, 1947833, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9786189, 0, 14326314, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9850955, 0, 5565775, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10557453, 0, 15249587, 524287, -1, -1, -1, -1, -1, -1, 39, -1, 0, 0, 8355711, 196991, 40, 43, -1, -1, 49, 46, -1, -1, 0, 0, 8355711, 265215, -1, -1, -1, -1, -1, 41, -1, -1, 0, 0, 8355711, 329727, -1, -1, -1, -1, -1, 42, -1, 67, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 10032913, 0, 5442150, 524287, -1, -1, -1, -1, 44, 63, -1, -1, 0, 0, 8355711, 333823, -1, -1, -1, -1, 45, 59, 66, 61, 0, 0, 8355711, 425983, -1, -1, -1, -1, -1, -1, -1, -1, 10041395, 0, 9503377, 524287, 47, 55, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 339967, 52, 57, 73, 62, 53, 48, 70, 71, 0, 0, 8355711, 458751, -1, -1, -1, -1, -1, -1, -1, -1, 10040367, 0, 7602546, 524287, -1, 50, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 331775, -1, 51, -1, 68, -1, 54, -1, 69, 0, 0, 8355711, 425983, -1, -1, -1, -1, -1, -1, -1, -1, 9976630, 0, 10093444, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 13942696, 0, 7078275, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9845044, 0, 9241192, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10163985, 0, 3873446, 524287, 58, -1, 60, -1, 56, -1, 72, -1, 0, 0, 8355711, 425983, -1, -1, -1, -1, -1, -1, -1, -1, 10033169, 0, 11143832, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 11633526, 0, 6685303, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10167325, 0, 10814844, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10105645, 0, 7667850, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10495005, 0, 15646331, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9850954, 0, 4841021, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10254446, 0, 16489853, 524287, -1, -1, -1, -1, 64, -1, 65, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 9771283, 0, 15359809, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9771029, 0, 14922050, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9786704, 0, 12802275, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10229521, 0, 1881669, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10111813, 0, 3729048, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10425871, 0, 2013371, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9786446, 0, 15558722, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9786189, 0, 3056676, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10557711, 0, 15052730, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 10321266, 0, 369538, 524287 )
+[sub_resource type="GIProbeData" id=12]
+bounds = AABB( -79.8693, -27, -151.196, 159.739, 54, 302.392 )
+cell_size = 2.36244
+to_cell_xform = Transform( 0.423292, 0, 0, 0, 0.423292, 0, 0, 0, 0.423292, 33.808, 11.4289, 64 )
+dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 15, 4, 1065353216, 1065353216, 0, 0, 1065353216, 1065353216, 0, 0, 1065353216, -1, -1, -1, -1, 1, -1, -1, -1, 0, 0, 8355711, 0, -1, 2, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 65536, -1, -1, 3, -1, -1, -1, -1, -1, 0, 0, 8355711, 131079, 10, -1, -1, -1, 4, -1, -1, -1, 0, 0, 8355711, 196671, 5, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 262399, -1, -1, -1, 6, -1, -1, -1, 8, 0, 0, 8355711, 329727, -1, -1, -1, -1, -1, 7, -1, -1, 0, 0, 8355711, 401407, -1, -1, -1, -1, -1, -1, -1, -1, 10775906, -1650819314, 8126606, 524287, -1, 9, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 401407, -1, -1, -1, -1, -1, -1, -1, -1, 9913406, 0, 8258150, 524287, -1, -1, -1, -1, 11, -1, -1, -1, 0, 0, 8355711, 262399, -1, -1, -1, 12, -1, -1, -1, -1, 0, 0, 8355711, 329727, -1, 13, -1, -1, -1, 14, -1, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 10776677, -1650819313, 7929983, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9977658, 0, 7798899, 524287 )
 energy = 0.6
 bias = 1.5
 normal_bias = 0.0
@@ -172,7 +163,7 @@ script = ExtResource( 23 )
 environment = ExtResource( 11 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.714598, 0.436971, -0.546266, -0.234062, 0.885245, 0.40194, 0.659216, -0.159366, 0.734872, 0, 28.5452, 12.2218 )
+transform = Transform( 0.670704, 0.642966, 0.369799, -0.741202, 0.599717, 0.301596, -0.0278587, -0.476377, 0.8788, 0, 9.5352, 12.2218 )
 light_color = Color( 0.976471, 0.972549, 0.929412, 1 )
 shadow_enabled = true
 shadow_color = Color( 0.0588235, 0.0745098, 0.152941, 1 )
@@ -180,13 +171,18 @@ directional_shadow_normal_bias = 0.5
 directional_shadow_max_distance = 600.0
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -0.707107, -0.159064, 0.688984, 0, 0.97437, 0.224951, -0.707107, 0.159064, -0.688984, 8.7, 12.5, 15.5 )
+transform = Transform( -0.731354, -0.0475738, -0.680337, 0, 0.997564, -0.0697565, 0.681998, -0.0510167, -0.729572, -5.7, 9.8, 8.7 )
 script = SubResource( 1 )
 __meta__ = {
 "_editor_description_": ""
 }
+change_pos = false
+add_view_cam = false
 
 [node name="Positions" type="Node" parent="Camera"]
+
+[node name="FromBackDoor" type="Position3D" parent="Camera/Positions"]
+transform = Transform( -0.731354, -0.0475738, -0.680337, 0, 0.997564, -0.0697565, 0.681999, -0.0510167, -0.729572, -5.7, 9.8, 8.7 )
 
 [node name="SeaToHouse" type="Position3D" parent="Camera/Positions"]
 transform = Transform( 1, 0, 0, 0, 0.829037, 0.559193, 0, -0.559193, 0.829037, 0, 14.4, 22.9 )
@@ -197,14 +193,11 @@ transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 1.3, 9.
 [node name="FromKitchen" type="Position3D" parent="Camera/Positions"]
 transform = Transform( -0.798636, -0.0524516, 0.599525, 0, 0.996195, 0.0871557, -0.601815, 0.0696057, -0.795597, 3.4, 11.9, 4.1 )
 
-[node name="FromBackDoor" type="Position3D" parent="Camera/Positions"]
-transform = Transform( -0.615662, -0.0960344, -0.782137, 0, 0.992546, -0.121869, 0.788011, -0.0750303, -0.611073, -5.8, 11.1, 9.9 )
-
 [node name="FromStair" type="Position3D" parent="Camera/Positions"]
 transform = Transform( -0.694659, -0.0751915, 0.715399, 0, 0.994522, 0.104529, -0.71934, 0.0726116, -0.690853, 8.6, 12.2, 16.4 )
 
 [node name="ThroughWindow" type="Position3D" parent="Camera/Positions"]
-transform = Transform( 0.999391, 0.00665914, 0.0342583, 0, 0.981627, -0.190809, -0.0348995, 0.190693, 0.98103, -4.2, 11, 26.2 )
+transform = Transform( 0.994522, 0.0323011, 0.0994125, 0, 0.951056, -0.309017, -0.104528, 0.307324, 0.945847, -0.6, 10.6, 27.1 )
 
 [node name="Structures" type="Node" parent="."]
 
@@ -215,7 +208,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
 
 [node name="TestGlass" type="MeshInstance" parent="Structures/GlassTest"]
 transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 1.989, 13.7, 24.25 )
-mesh = SubResource( 5 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="TestGlass11" type="MeshInstance" parent="Structures/GlassTest"]
+transform = Transform( -1.76867e-05, -1, 0, 0.00218149, -3.85832e-08, 0.999998, -0.999998, 1.76866e-05, 0.00218149, -10.253, 13.7, 7.94758 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="TestGlass2" type="MeshInstance" parent="Structures/GlassTest"]
@@ -239,24 +237,35 @@ mesh = SubResource( 4 )
 material/0 = null
 
 [node name="TestGlass4" type="MeshInstance" parent="Structures/GlassTest"]
-transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 0.951622, 9.46044, 24.1152 )
+transform = Transform( -1.62921e-07, -1, 0, -1.62921e-07, 2.65431e-14, -1, 1, -1.62921e-07, -1.62921e-07, -10.4128, 9.32646, 2.05606 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="TestGlass9" type="MeshInstance" parent="Structures/GlassTest"]
+transform = Transform( -1.62921e-07, -1, 0, -1.62921e-07, 2.65431e-14, -1, 1, -1.62921e-07, -1.62921e-07, -10.4128, 9.32646, 10.1251 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="TestGlass10" type="MeshInstance" parent="Structures/GlassTest"]
+transform = Transform( -1.62921e-07, -1, 0, -1.62921e-07, 2.65431e-14, -1, 1, -1.62921e-07, -1.62921e-07, -10.1148, 9.32646, 13.9731 )
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="TestGlass5" type="MeshInstance" parent="Structures/GlassTest"]
 transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 8.96518, 11.074, 24.3848 )
-mesh = SubResource( 16 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="TestGlass6" type="MeshInstance" parent="Structures/GlassTest"]
 transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 8.63677, 11.1295, 24.1394 )
-mesh = SubResource( 16 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="Objects" type="Node" parent="."]
 
-[node name="Sphere" type="CSGMesh" parent="Objects"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.843853, 12.4921, 6.84161 )
+[node name="ReflectingSphere" type="CSGMesh" parent="Objects"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.843853, 11.8921, 15.1816 )
+visible = false
 mesh = SubResource( 6 )
 material = SubResource( 7 )
 
@@ -301,35 +310,14 @@ transform = Transform( -0.747146, -0.0653668, -2.92061e-07, -0.0653668, 0.747146
 [node name="TVStand" parent="Objects" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.387, 8.25595, 22.5 )
 
-[node name="Curtain" type="StaticBody" parent="Objects"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 9.63849, 23.7599 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape" type="CollisionShape" parent="Objects/Curtain"]
-shape = SubResource( 8 )
-
-[node name="CurtainBody" type="SoftBody" parent="Objects/Curtain"]
-transform = Transform( 1, 0, 0, 0, 0.199607, 0.979876, 0, -0.979876, 0.199607, 0, 1.48525, -0.109335 )
-mesh = SubResource( 10 )
-material/0 = null
-pinned_points = [ 0, 4, 8, 12 ]
-attachments/0/point_index = 0
-attachments/0/spatial_attachment_path = NodePath("")
-attachments/0/offset = Vector3( 0, 0, 0 )
-attachments/1/point_index = 4
-attachments/1/spatial_attachment_path = NodePath("")
-attachments/1/offset = Vector3( 0, 0, 0 )
-attachments/2/point_index = 8
-attachments/2/spatial_attachment_path = NodePath("")
-attachments/2/offset = Vector3( 0, 0, 0 )
-attachments/3/point_index = 12
-attachments/3/spatial_attachment_path = NodePath("")
-attachments/3/offset = Vector3( 0, 0, 0 )
+[node name="Curtain" parent="Objects" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 9.638, 23.76 )
 
 [node name="BookShelf" parent="Objects" instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.23, 6, 18 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.23, 6, 17.55 )
+
+[node name="Book" parent="Objects/BookShelf" instance=ExtResource( 28 )]
+transform = Transform( -0.270046, 0, 0.962847, 0, 1, 0, -0.962847, 0, -0.270046, 0.14299, 3.36883, 0.142 )
 
 [node name="AmbientObjects" type="Node" parent="Objects"]
 
@@ -364,11 +352,20 @@ blow = true
 [node name="BarGate" parent="Objects" instance=ExtResource( 24 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51162, 9.05787, 9.24657 )
 
+[node name="SlideDoorFront" parent="Objects" instance=ExtResource( 29 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.953664, 9.37772, 24.1219 )
+
+[node name="SlideDoorBack" parent="Objects" instance=ExtResource( 29 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -10.1959, 9.37772, 3.2599 )
+
+[node name="IceCreamRefrigerator" parent="Objects" instance=ExtResource( 31 )]
+transform = Transform( -3.02394e-06, 0, 1, 0, 1, 0, -1, 0, -3.02394e-06, -9.316, 6, -0.204 )
+
 [node name="Environs" type="Node" parent="."]
 
 [node name="SeaFace" type="MeshInstance" parent="Environs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 43 )
-mesh = SubResource( 12 )
+mesh = SubResource( 9 )
 material/0 = null
 __meta__ = {
 "_edit_lock_": true
@@ -376,24 +373,34 @@ __meta__ = {
 
 [node name="SeaGround" type="MeshInstance" parent="Environs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.77846, 43 )
-mesh = SubResource( 14 )
+mesh = SubResource( 11 )
 material/0 = null
 
 [node name="Lightings" type="Node" parent="."]
 
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Lightings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.1, 15.679 )
+intensity = 0.5
+extents = Vector3( 17.44, 11.08, 17.6 )
+box_projection = true
+enable_shadows = true
+
 [node name="GIProbe" type="GIProbe" parent="Lightings"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5404, -2.75435, -7.06521 )
-extents = Vector3( 49.4284, 27, 47.4733 )
+extents = Vector3( 79.8693, 27, 151.196 )
 dynamic_range = 1
 energy = 0.6
 propagation = 0.5
-data = SubResource( 15 )
+data = SubResource( 12 )
 
 [node name="HangingLamp" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 16.2 )
+turn_on = true
+flicker = false
 
 [node name="HangingLamp2" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 4.54348 )
+turn_on = true
 flicker = true
 
 [node name="Audio" type="Node" parent="."]
