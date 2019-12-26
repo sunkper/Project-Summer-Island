@@ -7,11 +7,11 @@
 flags_transparent = true
 params_blend_mode = 1
 params_depth_draw_mode = 3
-albedo_color = Color( 0.333333, 0.333333, 0.333333, 0.780392 )
+albedo_color = Color( 0.407843, 0.407843, 0.407843, 0.952941 )
 metallic = 1.0
 metallic_specular = 0.64
 metallic_texture = ExtResource( 1 )
-roughness = 0.5
+roughness = 0.38
 roughness_texture = ExtResource( 2 )
 refraction_enabled = true
 refraction_scale = 0.02
