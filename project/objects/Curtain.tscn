@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/textures/pbr/RoofMetal/RoofMetal_ao.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/pbr/RoofMetal/RoofMetal_depth.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/pbr/Fabric24.png" type="Texture" id=3]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1.37936, 0.225255, 0.202765 )
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+params_blend_mode = 1
+params_cull_mode = 2
+albedo_color = Color( 1, 1, 1, 0.854902 )
+albedo_texture = ExtResource( 3 )
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource( 1 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+depth_enabled = true
+depth_scale = 0.2
+depth_deep_parallax = true
+depth_min_layers = 8
+depth_max_layers = 32
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 2 )
+transmission_enabled = true
+transmission = Color( 0.803922, 0.803922, 0.803922, 1 )
+
+[sub_resource type="PlaneMesh" id=3]
+material = SubResource( 2 )
+size = Vector2( 3.4, 3.2 )
+subdivide_width = 5
+subdivide_depth = 5
+
+[node name="Curtain" type="StaticBody"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="CurtainBody" type="SoftBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.199607, 0.979876, 0, -0.979876, 0.199607, 0, 1.48525, -0.109335 )
+mesh = SubResource( 3 )
+material/0 = null
+pinned_points = [ 0, 4, 8, 12 ]
+attachments/0/point_index = 0
+attachments/0/spatial_attachment_path = NodePath("")
+attachments/0/offset = Vector3( 0, 0, 0 )
+attachments/1/point_index = 4
+attachments/1/spatial_attachment_path = NodePath("")
+attachments/1/offset = Vector3( 0, 0, 0 )
+attachments/2/point_index = 8
+attachments/2/spatial_attachment_path = NodePath("")
+attachments/2/offset = Vector3( 0, 0, 0 )
+attachments/3/point_index = 12
+attachments/3/spatial_attachment_path = NodePath("")
+attachments/3/offset = Vector3( 0, 0, 0 )
