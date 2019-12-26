@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/Bookshelf.map-79628942a046e5b179eef57d58b4bf3b.tres"
+
+[deps]
+
+source_file="res://maps/mapsrc/Bookshelf.map"
+dest_files=[ "res://.import/Bookshelf.map-79628942a046e5b179eef57d58b4bf3b.tres" ]
+
+[params]
+

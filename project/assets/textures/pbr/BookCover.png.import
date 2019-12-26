@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/BookSpines.png-3a6a747d3675f57344ab0dea373e672a.s3tc.stex"
-path.etc2="res://.import/BookSpines.png-3a6a747d3675f57344ab0dea373e672a.etc2.stex"
+path.s3tc="res://.import/BookCover.png-6e09ae91aa554db1c98171dfa756e65b.s3tc.stex"
+path.etc2="res://.import/BookCover.png-6e09ae91aa554db1c98171dfa756e65b.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/base/BookSpines.png"
-dest_files=[ "res://.import/BookSpines.png-3a6a747d3675f57344ab0dea373e672a.s3tc.stex", "res://.import/BookSpines.png-3a6a747d3675f57344ab0dea373e672a.etc2.stex" ]
+source_file="res://assets/textures/pbr/BookCover.png"
+dest_files=[ "res://.import/BookCover.png-6e09ae91aa554db1c98171dfa756e65b.s3tc.stex", "res://.import/BookCover.png-6e09ae91aa554db1c98171dfa756e65b.etc2.stex" ]
 
 [params]
 
