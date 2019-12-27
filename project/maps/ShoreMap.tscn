@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/Rocks_08.png" type="Texture" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://objects/SlideDoor.tscn" type="PackedScene" id=29]
 [ext_resource path="res://assets/models/godette.gltf" type="PackedScene" id=30]
 [ext_resource path="res://objects/IceCreamRefrigerator.tscn" type="PackedScene" id=31]
+[ext_resource path="res://objects/Gachapon.tscn" type="PackedScene" id=32]
 
 [sub_resource type="GDScript" id=1]
 script/source = "tool
@@ -164,12 +165,20 @@ script = ExtResource( 23 )
 environment = ExtResource( 11 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.670704, 0.642966, 0.369799, -0.741202, 0.599717, 0.301596, -0.0278587, -0.476377, 0.8788, 0, 9.5352, 12.2218 )
+transform = Transform( -0.520101, 0.00973669, -0.85405, -0.624278, 0.678091, 0.387905, 0.5829, 0.734914, -0.346597, 0, 9.5352, 12.2218 )
 light_color = Color( 0.976471, 0.972549, 0.929412, 1 )
 shadow_enabled = true
 shadow_color = Color( 0.0588235, 0.0745098, 0.152941, 1 )
 directional_shadow_normal_bias = 0.5
 directional_shadow_max_distance = 600.0
+
+[node name="Positions" type="Node" parent="DirectionalLight"]
+
+[node name="SunsetLongShadow" type="Position3D" parent="DirectionalLight/Positions"]
+transform = Transform( 0.670704, 0.642966, 0.369799, -0.741202, 0.599717, 0.301596, -0.0278587, -0.476377, 0.8788, 0, 0, 0 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -0.731354, -0.0475738, -0.680337, 0, 0.997564, -0.0697565, 0.681998, -0.0510167, -0.729572, -5.7, 9.8, 8.7 )
@@ -182,7 +191,7 @@ add_view_cam = false
 
 [node name="Positions" type="Node" parent="Camera"]
 
-[node name="FromBackDoor" type="Position3D" parent="Camera/Positions"]
+[node name="FromFrontDoor" type="Position3D" parent="Camera/Positions"]
 transform = Transform( -0.731354, -0.0475738, -0.680337, 0, 0.997564, -0.0697565, 0.681999, -0.0510167, -0.729572, -5.7, 9.8, 8.7 )
 
 [node name="SeaToHouse" type="Position3D" parent="Camera/Positions"]
@@ -200,7 +209,7 @@ transform = Transform( -0.694659, -0.0751915, 0.715399, 0, 0.994522, 0.104529, -
 [node name="ThroughWindow" type="Position3D" parent="Camera/Positions"]
 transform = Transform( 0.994522, 0.0323011, 0.0994125, 0, 0.951056, -0.309017, -0.104528, 0.307324, 0.945847, -0.6, 10.6, 27.1 )
 
-[node name="FromOutside" type="Position3D" parent="Camera/Positions"]
+[node name="GullsEyeView" type="Position3D" parent="Camera/Positions"]
 transform = Transform( 0.956305, 0.159237, -0.245204, 0, 0.83867, 0.544639, 0.292372, -0.52084, 0.802025, -6.6, 26.2, 43.9 )
 
 [node name="GoDoIce" type="Position3D" parent="Camera/Positions"]
@@ -371,6 +380,9 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -10.195
 
 [node name="IceCreamRefrigerator" parent="Objects" instance=ExtResource( 31 )]
 transform = Transform( -3.62873e-06, 0, 1.3, 0, 1.2, 0, -1.2, 0, -3.93113e-06, -9.01889, 6, -0.21578 )
+
+[node name="Gachapon" parent="Objects" instance=ExtResource( 32 )]
+transform = Transform( 0.0719203, 0, -1.19784, 0, 1.2, 0, 1.19784, 0, 0.0719203, -11.3862, 6, 1.5559 )
 
 [node name="Environs" type="Node" parent="."]
 

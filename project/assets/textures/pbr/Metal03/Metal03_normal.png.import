@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/Metal03_normal.png-74db570a2304853853069c5df4244304.s3tc.stex"
+path.etc2="res://.import/Metal03_normal.png-74db570a2304853853069c5df4244304.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://assets/textures/pbr/Metal03/Metal03_normal.png"
+dest_files=[ "res://.import/Metal03_normal.png-74db570a2304853853069c5df4244304.s3tc.stex", "res://.import/Metal03_normal.png-74db570a2304853853069c5df4244304.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=1
+flags/repeat=true
+flags/filter=false
+flags/mipmaps=true
+flags/anisotropic=true
+flags/srgb=1
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
