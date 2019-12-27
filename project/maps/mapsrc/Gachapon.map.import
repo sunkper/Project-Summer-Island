@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/Gachapon.map-d8d69d630882df539ee3ffb33ce2759b.tres"
+
+[deps]
+
+source_file="res://maps/mapsrc/Gachapon.map"
+dest_files=[ "res://.import/Gachapon.map-d8d69d630882df539ee3ffb33ce2759b.tres" ]
+
+[params]
+

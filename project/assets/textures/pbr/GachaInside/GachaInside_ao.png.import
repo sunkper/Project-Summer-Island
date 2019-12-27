@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/BookSpines.png-48676be56bbcc1c5434c670fb6a39d84.s3tc.stex"
-path.etc2="res://.import/BookSpines.png-48676be56bbcc1c5434c670fb6a39d84.etc2.stex"
+path.s3tc="res://.import/GachaInside_ao.png-1c5a504b1b753a741d8b487d77861ff9.s3tc.stex"
+path.etc2="res://.import/GachaInside_ao.png-1c5a504b1b753a741d8b487d77861ff9.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/pbr/BookSpines.png"
-dest_files=[ "res://.import/BookSpines.png-48676be56bbcc1c5434c670fb6a39d84.s3tc.stex", "res://.import/BookSpines.png-48676be56bbcc1c5434c670fb6a39d84.etc2.stex" ]
+source_file="res://assets/textures/pbr/GachaInside/GachaInside_ao.png"
+dest_files=[ "res://.import/GachaInside_ao.png-1c5a504b1b753a741d8b487d77861ff9.s3tc.stex", "res://.import/GachaInside_ao.png-1c5a504b1b753a741d8b487d77861ff9.etc2.stex" ]
 
 [params]
 

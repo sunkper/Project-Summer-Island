@@ -165,7 +165,7 @@ script = ExtResource( 23 )
 environment = ExtResource( 11 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( -0.520101, 0.00973669, -0.85405, -0.624278, 0.678091, 0.387905, 0.5829, 0.734914, -0.346597, 0, 9.5352, 12.2218 )
+transform = Transform( -0.781182, -0.538289, -0.316227, -0.624278, 0.678091, 0.387905, 0.00562569, 0.500438, -0.865754, 0, 9.5352, 12.2218 )
 light_color = Color( 0.976471, 0.972549, 0.929412, 1 )
 shadow_enabled = true
 shadow_color = Color( 0.0588235, 0.0745098, 0.152941, 1 )
@@ -424,7 +424,7 @@ flicker = false
 [node name="HangingLamp2" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 4.54348 )
 turn_on = true
-flicker = true
+flicker = false
 
 [node name="Audio" type="Node" parent="."]
 
