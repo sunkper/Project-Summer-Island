@@ -24,19 +24,19 @@
 [ext_resource path="res://assets/textures/pbr/GoDoIceCreamTag/GoDoIceCreamTag_roughness.png" type="Texture" id=22]
 [ext_resource path="res://assets/audio/se/objects/Refrigerator.wav" type="AudioStream" id=23]
 
-[sub_resource type="SpatialMaterial" id=20]
+[sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 18 )
 metallic_texture = ExtResource( 19 )
 roughness_texture = ExtResource( 14 )
 
-[sub_resource type="SpatialMaterial" id=21]
+[sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 3 )
 roughness_texture = ExtResource( 5 )
 normal_enabled = true
 normal_scale = 1.0
 normal_texture = ExtResource( 4 )
 
-[sub_resource type="SpatialMaterial" id=22]
+[sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 16 )
 roughness_texture = ExtResource( 15 )
 normal_enabled = true
@@ -49,7 +49,7 @@ depth_flip_tangent = false
 depth_flip_binormal = false
 depth_texture = ExtResource( 17 )
 
-[sub_resource type="SpatialMaterial" id=23]
+[sub_resource type="SpatialMaterial" id=4]
 albedo_texture = ExtResource( 9 )
 roughness_texture = ExtResource( 12 )
 normal_enabled = true
@@ -62,7 +62,7 @@ depth_flip_tangent = false
 depth_flip_binormal = false
 depth_texture = ExtResource( 10 )
 
-[sub_resource type="ArrayMesh" id=24]
+[sub_resource type="ArrayMesh" id=12]
 surfaces/0 = {
 "aabb": AABB( -1.875, 0, 0.125, 1.625, 0.12501, 2.75 ),
 "array_data": PoolByteArray( 0, 0, 240, 191, 0, 0, 0, 62, 0, 0, 0, 62, 0, 0, 129, 0, 129, 0, 0, 127, 255, 255, 255, 255, 176, 60, 0, 173, 176, 60, 0, 173, 0, 0, 240, 191, 0, 0, 0, 0, 0, 0, 0, 62, 0, 0, 129, 0, 129, 0, 0, 127, 255, 255, 255, 255, 176, 60, 0, 0, 176, 60, 0, 0, 0, 0, 128, 190, 0, 0, 0, 0, 0, 0, 0, 62, 0, 0, 129, 0, 129, 0, 0, 127, 255, 255, 255, 255, 0, 49, 0, 0, 0, 49, 0, 0, 0, 0, 128, 190, 0, 0, 0, 62, 0, 0, 0, 62, 0, 0, 129, 0, 129, 0, 0, 127, 255, 255, 255, 255, 0, 49, 0, 173, 0, 49, 0, 173, 0, 0, 240, 191, 0, 0, 0, 62, 0, 0, 56, 64, 129, 0, 0, 0, 0, 0, 127, 127, 255, 255, 255, 255, 80, 63, 0, 173, 80, 63, 0, 173, 0, 0, 240, 191, 0, 0, 0, 0, 0, 0, 56, 64, 129, 0, 0, 0, 0, 0, 127, 127, 255, 255, 255, 255, 80, 63, 0, 0, 80, 63, 0, 0, 0, 0, 240, 191, 0, 0, 0, 0, 0, 0, 0, 62, 129, 0, 0, 0, 0, 0, 127, 127, 255, 255, 255, 255, 0, 47, 0, 0, 0, 47, 0, 0, 0, 0, 240, 191, 0, 0, 0, 62, 0, 0, 0, 62, 129, 0, 0, 0, 0, 0, 127, 127, 255, 255, 255, 255, 0, 47, 0, 173, 0, 47, 0, 173, 0, 0, 128, 190, 0, 0, 0, 0, 0, 0, 0, 62, 0, 129, 0, 0, 0, 0, 129, 127, 255, 255, 255, 255, 0, 175, 0, 49, 0, 175, 0, 49, 0, 0, 240, 191, 0, 0, 0, 0, 0, 0, 0, 62, 0, 129, 0, 0, 0, 0, 129, 127, 255, 255, 255, 255, 0, 175, 176, 60, 0, 175, 176, 60, 0, 0, 240, 191, 0, 0, 0, 0, 0, 0, 56, 64, 0, 129, 0, 0, 0, 0, 129, 127, 255, 255, 255, 255, 80, 191, 176, 60, 80, 191, 176, 60, 0, 0, 128, 190, 0, 0, 0, 0, 0, 0, 56, 64, 0, 129, 0, 0, 0, 0, 129, 127, 255, 255, 255, 255, 80, 191, 0, 49, 80, 191, 0, 49, 0, 0, 128, 190, 0, 0, 0, 62, 0, 0, 56, 64, 0, 127, 0, 0, 0, 0, 127, 127, 255, 255, 255, 255, 80, 63, 0, 49, 80, 63, 0, 49, 0, 0, 240, 191, 0, 0, 0, 62, 0, 0, 56, 64, 0, 127, 0, 0, 0, 0, 127, 127, 255, 255, 255, 255, 80, 63, 176, 60, 80, 63, 176, 60, 0, 0, 240, 191, 0, 0, 0, 62, 0, 0, 0, 62, 0, 127, 0, 0, 0, 0, 127, 127, 255, 255, 255, 255, 0, 47, 176, 60, 0, 47, 176, 60, 0, 0, 128, 190, 0, 0, 0, 62, 0, 0, 0, 62, 0, 127, 0, 0, 0, 0, 127, 127, 255, 255, 255, 255, 0, 47, 0, 49, 0, 47, 0, 49, 0, 0, 128, 190, 0, 0, 0, 62, 0, 0, 0, 62, 127, 0, 0, 0, 0, 0, 129, 127, 255, 255, 255, 255, 0, 175, 0, 173, 0, 175, 0, 173, 0, 0, 128, 190, 0, 0, 0, 0, 0, 0, 0, 62, 127, 0, 0, 0, 0, 0, 129, 127, 255, 255, 255, 255, 0, 175, 0, 0, 0, 175, 0, 0, 0, 0, 128, 190, 0, 0, 0, 0, 0, 0, 56, 64, 127, 0, 0, 0, 0, 0, 129, 127, 255, 255, 255, 255, 80, 191, 0, 0, 80, 191, 0, 0, 0, 0, 128, 190, 0, 0, 0, 62, 0, 0, 56, 64, 127, 0, 0, 0, 0, 0, 129, 127, 255, 255, 255, 255, 80, 191, 0, 173, 80, 191, 0, 173, 0, 0, 128, 190, 0, 0, 0, 62, 0, 0, 56, 64, 0, 0, 127, 0, 127, 0, 0, 127, 255, 255, 255, 255, 0, 177, 0, 173, 0, 177, 0, 173, 0, 0, 128, 190, 0, 0, 0, 0, 0, 0, 56, 64, 0, 0, 127, 0, 127, 0, 0, 127, 255, 255, 255, 255, 0, 177, 0, 0, 0, 177, 0, 0, 0, 0, 240, 191, 0, 0, 0, 0, 0, 0, 56, 64, 0, 0, 127, 0, 127, 0, 0, 127, 255, 255, 255, 255, 176, 188, 0, 0, 176, 188, 0, 0, 0, 0, 240, 191, 0, 0, 0, 62, 0, 0, 56, 64, 0, 0, 127, 0, 127, 0, 0, 127, 255, 255, 255, 255, 176, 188, 0, 173, 176, 188, 0, 173 ),
@@ -70,7 +70,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97599,
 "index_count": 36,
-"material": SubResource( 20 ),
+"material": SubResource( 1 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 24
@@ -82,7 +82,7 @@ surfaces/1 = {
 "blend_shape_data": [  ],
 "format": 97599,
 "index_count": 732,
-"material": SubResource( 21 ),
+"material": SubResource( 2 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 426
@@ -94,7 +94,7 @@ surfaces/2 = {
 "blend_shape_data": [  ],
 "format": 97599,
 "index_count": 204,
-"material": SubResource( 22 ),
+"material": SubResource( 3 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 136
@@ -106,13 +106,13 @@ surfaces/3 = {
 "blend_shape_data": [  ],
 "format": 97599,
 "index_count": 12,
-"material": SubResource( 23 ),
+"material": SubResource( 4 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 8
 }
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=6]
 flags_transparent = true
 albedo_texture = ExtResource( 6 )
 roughness = 0.25
@@ -121,11 +121,11 @@ normal_enabled = true
 normal_scale = 0.5
 normal_texture = ExtResource( 8 )
 
-[sub_resource type="QuadMesh" id=25]
-material = SubResource( 5 )
+[sub_resource type="QuadMesh" id=7]
+material = SubResource( 6 )
 size = Vector2( 1.5, 1.5 )
 
-[sub_resource type="SpatialMaterial" id=18]
+[sub_resource type="SpatialMaterial" id=8]
 flags_transparent = true
 albedo_texture = ExtResource( 20 )
 roughness = 0.46
@@ -134,11 +134,11 @@ normal_enabled = true
 normal_scale = 0.5
 normal_texture = ExtResource( 8 )
 
-[sub_resource type="QuadMesh" id=19]
-material = SubResource( 18 )
+[sub_resource type="QuadMesh" id=9]
+material = SubResource( 8 )
 size = Vector2( 1.2, 0.3 )
 
-[sub_resource type="SpatialMaterial" id=12]
+[sub_resource type="SpatialMaterial" id=10]
 flags_transparent = true
 params_blend_mode = 1
 params_depth_draw_mode = 3
@@ -155,7 +155,7 @@ refraction_texture_channel = 0
 uv1_triplanar = true
 
 [sub_resource type="QuadMesh" id=11]
-material = SubResource( 12 )
+material = SubResource( 10 )
 size = Vector2( 1, 2.7 )
 
 [node name="IceCreamRefrigerator" type="Spatial"]
@@ -176,7 +176,7 @@ __meta__ = {
 
 [node name="entity_0" type="MeshInstance" parent="QodotMap/Meshes"]
 use_in_baked_light = true
-mesh = SubResource( 24 )
+mesh = SubResource( 12 )
 material/0 = null
 material/1 = null
 material/2 = null
@@ -196,12 +196,12 @@ __meta__ = {
 
 [node name="Front" type="MeshInstance" parent="."]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -2.251, 1.15, 1.46 )
-mesh = SubResource( 25 )
+mesh = SubResource( 7 )
 material/0 = null
 
 [node name="Tag" type="MeshInstance" parent="."]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -0.891, 2.5871, 0.77 )
-mesh = SubResource( 19 )
+mesh = SubResource( 9 )
 material/0 = null
 
 [node name="Glass" type="MeshInstance" parent="."]
@@ -229,5 +229,5 @@ spot_angle_attenuation = 2.0
 
 [node name="MachineSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 23 )
-unit_db = -7.0
+unit_db = -5.0
 autoplay = true
