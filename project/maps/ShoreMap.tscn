@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/Rocks_08.png" type="Texture" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://assets/materials/GlassAdditive.tres" type="Material" id=27]
 [ext_resource path="res://objects/Book.tscn" type="PackedScene" id=28]
 [ext_resource path="res://objects/SlideDoor.tscn" type="PackedScene" id=29]
+[ext_resource path="res://assets/models/godette.gltf" type="PackedScene" id=30]
 [ext_resource path="res://objects/IceCreamRefrigerator.tscn" type="PackedScene" id=31]
 
 [sub_resource type="GDScript" id=1]
@@ -199,6 +200,12 @@ transform = Transform( -0.694659, -0.0751915, 0.715399, 0, 0.994522, 0.104529, -
 [node name="ThroughWindow" type="Position3D" parent="Camera/Positions"]
 transform = Transform( 0.994522, 0.0323011, 0.0994125, 0, 0.951056, -0.309017, -0.104528, 0.307324, 0.945847, -0.6, 10.6, 27.1 )
 
+[node name="FromOutside" type="Position3D" parent="Camera/Positions"]
+transform = Transform( 0.970296, 0.0906255, -0.224306, 0, 0.927183, 0.374607, 0.241922, -0.363479, 0.899643, -5.7, 17.9, 46.9 )
+
+[node name="GoDoIce" type="Position3D" parent="Camera/Positions"]
+transform = Transform( 0.743145, 0.303779, -0.5962, 0, 0.891006, 0.453991, 0.669131, -0.33738, 0.662147, -8.4, 9.6, 4.8 )
+
 [node name="Structures" type="Node" parent="."]
 
 [node name="HouseGeometry" parent="Structures" instance=ExtResource( 1 )]
@@ -232,7 +239,7 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="TestGlass3" type="MeshInstance" parent="Structures/GlassTest"]
-transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 0.140679, 9.46044, 24.3635 )
+transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 0.140679, 9.46044, 24.3222 )
 mesh = SubResource( 4 )
 material/0 = null
 
@@ -270,7 +277,7 @@ mesh = SubResource( 6 )
 material = SubResource( 7 )
 
 [node name="Table" parent="Objects" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49529, 7.9858, 16.6933 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49529, 7.6054, 16.6933 )
 
 [node name="TableStalls" type="Spatial" parent="Objects"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.122316, 0 )
@@ -285,7 +292,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85007, 7.5, 32.1107 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30672, 7.5, 18 )
 
 [node name="Stall4" parent="Objects/TableStalls" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03988, 7.5, 14.9489 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05522, 7.5, 14.9489 )
 
 [node name="Stall3" parent="Objects/TableStalls" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03988, 7.5, 18 )
@@ -294,6 +301,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03988, 7.5, 18 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30382, 7.71115, 8.52926 )
 
 [node name="StallRed" parent="Objects/BarStalls" instance=ExtResource( 19 )]
+
+[node name="StallRed5" parent="Objects/BarStalls" instance=ExtResource( 19 )]
+transform = Transform( 0.96197, 0, -0.273153, 0, 1, 0, 0.273153, 0, 0.96197, 0.71754, 0, -4.58777 )
 
 [node name="StallRed4" parent="Objects/BarStalls" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.24205, 0, 22.7172 )
@@ -359,7 +369,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.953664, 9.37772, 24.1219 )
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -10.1959, 9.37772, 3.2599 )
 
 [node name="IceCreamRefrigerator" parent="Objects" instance=ExtResource( 31 )]
-transform = Transform( -3.02394e-06, 0, 1, 0, 1, 0, -1, 0, -3.02394e-06, -9.316, 6, -0.204 )
+transform = Transform( -3.02394e-06, 0, 1, 0, 1, 0, -1, 0, -3.02394e-06, -9.22307, 6, -0.155211 )
 
 [node name="Environs" type="Node" parent="."]
 
@@ -412,3 +422,11 @@ unit_db = 5.0
 max_db = 5.0
 autoplay = true
 emission_angle_enabled = true
+
+[node name="Characters" type="Node" parent="."]
+
+[node name="godette" parent="Characters" instance=ExtResource( 30 )]
+transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.436162, 8.53018, 7.3414 )
+
+[node name="godette2" parent="Characters" instance=ExtResource( 30 )]
+transform = Transform( -0.561739, 0, -0.210831, 0, 0.6, 0, 0.210831, 0, -0.561739, -6.86657, 7.68679, 2.52554 )
