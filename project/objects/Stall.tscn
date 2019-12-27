@@ -3,13 +3,13 @@
 [ext_resource path="res://assets/textures/pbr/brown_mud_03/brown_mud_03_normal.png" type="Texture" id=1]
 [ext_resource path="res://assets/textures/pbr/brown_mud_03/brown_mud_03_metallic.png" type="Texture" id=2]
 
-[sub_resource type="CylinderMesh" id=2]
+[sub_resource type="CylinderMesh" id=1]
 top_radius = 0.5
 bottom_radius = 0.5
 height = 0.2
 radial_segments = 16
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.0666667, 0.231373, 0.0588235, 1 )
 metallic = 0.49
 metallic_specular = 0.0
@@ -19,7 +19,7 @@ uv1_scale = Vector3( 0.75, 0.75, 0.75 )
 uv1_triplanar = true
 
 [sub_resource type="CylinderMesh" id=3]
-material = SubResource( 1 )
+material = SubResource( 2 )
 top_radius = 0.075
 bottom_radius = 0.075
 height = 1.6
@@ -32,8 +32,8 @@ height = 1.7
 [node name="Stall" type="StaticBody"]
 
 [node name="Seat" type="MeshInstance" parent="."]
-mesh = SubResource( 2 )
-material/0 = SubResource( 1 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
 
 [node name="Leg0" type="MeshInstance" parent="Seat"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -0.883721, 0 )
