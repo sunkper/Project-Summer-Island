@@ -23,21 +23,22 @@ radial_segments = 16
 
 [sub_resource type="CylinderMesh" id=4]
 material = ExtResource( 1 )
-top_radius = 0.075
-bottom_radius = 0.075
-height = 1.9
+top_radius = 0.06
+bottom_radius = 0.06
+height = 1.75
 radial_segments = 6
 
 [sub_resource type="CylinderMesh" id=5]
 material = ExtResource( 1 )
-top_radius = 0.075
-bottom_radius = 0.075
-height = 1.2
-radial_segments = 6
+top_radius = 0.06
+bottom_radius = 0.06
+height = 1.1
+radial_segments = 4
+rings = 1
 
 [sub_resource type="CylinderShape" id=6]
 radius = 0.4
-height = 2.04038
+height = 1.91964
 
 [node name="StallRed" type="StaticBody"]
 
@@ -52,14 +53,14 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Leg" type="MeshInstance" parent="SeatCushion"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.06304, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.012, 0 )
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="Foot" type="CSGTorus" parent="SeatCushion"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.97516, 0 )
-inner_radius = 0.55
-outer_radius = 0.7
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.90942, 0 )
+inner_radius = 0.5
+outer_radius = 0.65
 sides = 12
 ring_sides = 4
 material = ExtResource( 1 )
@@ -75,5 +76,5 @@ mesh = SubResource( 5 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.693846, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.663641, 0 )
 shape = SubResource( 6 )

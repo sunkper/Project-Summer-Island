@@ -301,18 +301,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03988, 7.5, 18 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30382, 7.71115, 8.52926 )
 
 [node name="StallRed" parent="Objects/BarStalls" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.103455, 0 )
 
 [node name="StallRed5" parent="Objects/BarStalls" instance=ExtResource( 19 )]
-transform = Transform( 0.96197, 0, -0.273153, 0, 1, 0, 0.273153, 0, 0.96197, 0.71754, 0, -4.58777 )
+transform = Transform( 0.96197, 0, -0.273153, 0, 1, 0, 0.273153, 0, 0.96197, 0.531236, -0.113695, -4.58777 )
 
 [node name="StallRed4" parent="Objects/BarStalls" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.24205, 0, 22.7172 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.24205, -0.0879183, 22.7172 )
 
 [node name="StallRed2" parent="Objects/BarStalls" instance=ExtResource( 19 )]
-transform = Transform( 0.941476, 0, -0.337079, 0, 1, 0, 0.337079, 0, 0.941476, 2.60925, 0, 2.14365 )
+transform = Transform( 0.941476, 0, -0.337079, 0, 1, 0, 0.337079, 0, 0.941476, 2.60925, -0.127757, 2.14365 )
 
 [node name="StallRed3" parent="Objects/BarStalls" instance=ExtResource( 19 )]
-transform = Transform( 0.861, 0, 0.508606, 0, 1, 0, -0.508606, 0, 0.861, 5.70851, 0, 2.14365 )
+transform = Transform( 0.861, 0, 0.508606, 0, 1, 0, -0.508606, 0, 0.861, 5.70851, -0.0801687, 2.14365 )
 
 [node name="PictureFrame" parent="Objects" instance=ExtResource( 13 )]
 transform = Transform( -0.747146, -0.0653668, -2.92061e-07, -0.0653668, 0.747146, 1.16776e-14, 2.90949e-07, 2.54548e-08, -0.75, 5.87402, 12.042, 10.6101 )
@@ -369,7 +370,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.953664, 9.37772, 24.1219 )
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -10.1959, 9.37772, 3.2599 )
 
 [node name="IceCreamRefrigerator" parent="Objects" instance=ExtResource( 31 )]
-transform = Transform( -3.62873e-06, 0, 1.1, 0, 1.1, 0, -1.2, 0, -3.32634e-06, -9.51782, 6, -0.21578 )
+transform = Transform( -3.62873e-06, 0, 1.3, 0, 1.2, 0, -1.2, 0, -3.93113e-06, -9.01889, 6, -0.21578 )
 
 [node name="Environs" type="Node" parent="."]
 
@@ -429,4 +430,4 @@ emission_angle_enabled = true
 transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.436162, 8.53018, 7.3414 )
 
 [node name="godette2" parent="Characters" instance=ExtResource( 30 )]
-transform = Transform( -0.561739, 0, -0.210831, 0, 0.6, 0, 0.210831, 0, -0.561739, -6.53249, 7.68679, 2.88316 )
+transform = Transform( -0.655362, 0, -0.245969, 0, 0.7, 0, 0.245969, 0, -0.655362, -5.55889, 7.96792, 2.88316 )
