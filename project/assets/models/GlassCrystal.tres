@@ -1,0 +1,10 @@
+[gd_resource type="SphereMesh" load_steps=2 format=2]
+
+[ext_resource path="res://assets/materials/Crystal.tres" type="Material" id=1]
+
+[resource]
+material = ExtResource( 1 )
+radius = 0.05
+height = 0.4
+radial_segments = 4
+rings = 2
