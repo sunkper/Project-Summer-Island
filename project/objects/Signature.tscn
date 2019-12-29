@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/textures/pbr/GachaFlyer/GodotGachaFlyer_depth.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/base/SignatureMaybe.png" type="Texture" id=2]
+
+[sub_resource type="QuadMesh" id=1]
+size = Vector2( 0.5, 0.25 )
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+albedo_texture = ExtResource( 2 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_on_uv2 = false
+ao_texture_channel = 0
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = false
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 1 )
+uv1_scale = Vector3( 0.5, 0.5, 1 )
+uv1_offset = Vector3( 0.25, 0.25, 0 )
+
+[node name="Signature" type="Spatial"]
+
+[node name="Mesh" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
