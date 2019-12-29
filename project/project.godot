@@ -9,6 +9,56 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "ScatterDistribution",
+"class": "DistributionGrid",
+"language": "GDScript",
+"path": "res://addons/scatter/src/distributions/distribution_grid.gd"
+}, {
+"base": "ScatterDistribution",
+"class": "DistributionUniform",
+"language": "GDScript",
+"path": "res://addons/scatter/src/distributions/distribution_uniform.gd"
+}, {
+"base": "ScatterDistribution",
+"class": "DistributionUnique",
+"language": "GDScript",
+"path": "res://addons/scatter/src/distributions/distribution_unique.gd"
+}, {
+"base": "Spatial",
+"class": "PolygonPath",
+"language": "GDScript",
+"path": "res://addons/polygon_path/polygon_path.gd"
+}, {
+"base": "Reference",
+"class": "PolygonPathDragInfo",
+"language": "GDScript",
+"path": "res://addons/polygon_path/drag_info.gd"
+}, {
+"base": "ScatterProfile",
+"class": "ProfileJitterSimple",
+"language": "GDScript",
+"path": "res://addons/scatter/src/profiles/profile_jitter_simple.gd"
+}, {
+"base": "ScatterProfile",
+"class": "ProfilePositionSimple",
+"language": "GDScript",
+"path": "res://addons/scatter/src/profiles/profile_position_simple.gd"
+}, {
+"base": "ScatterProfile",
+"class": "ProfileRotationSimple",
+"language": "GDScript",
+"path": "res://addons/scatter/src/profiles/profile_rotation_simple.gd"
+}, {
+"base": "ScatterProfile",
+"class": "ProfileScaleNoise",
+"language": "GDScript",
+"path": "res://addons/scatter/src/profiles/profile_scale_noise.gd"
+}, {
+"base": "ScatterProfile",
+"class": "ProfileScaleSimple",
+"language": "GDScript",
+"path": "res://addons/scatter/src/profiles/profile_scale_simple.gd"
+}, {
 "base": "QodotSpatial",
 "class": "QodotBrush",
 "language": "GDScript",
@@ -324,12 +374,82 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/qodot/src/import_plugins/quake_wad_import_plugin.gd"
 }, {
+"base": "PolygonPath",
+"class": "ScatterBase",
+"language": "GDScript",
+"path": "res://addons/scatter/src/nodes/scatter_base.gd"
+}, {
+"base": "Reference",
+"class": "ScatterCommon",
+"language": "GDScript",
+"path": "res://addons/scatter/src/common.gd"
+}, {
+"base": "ScatterResource",
+"class": "ScatterDistribution",
+"language": "GDScript",
+"path": "res://addons/scatter/src/distributions/distribution_base.gd"
+}, {
+"base": "ScatterBase",
+"class": "ScatterDuplicates",
+"language": "GDScript",
+"path": "res://addons/scatter/src/nodes/scatter_duplicates.gd"
+}, {
+"base": "PolygonPath",
+"class": "ScatterExclude",
+"language": "GDScript",
+"path": "res://addons/scatter/src/nodes/scatter_exclude.gd"
+}, {
+"base": "Spatial",
+"class": "ScatterItem",
+"language": "GDScript",
+"path": "res://addons/scatter/src/nodes/scatter_item.gd"
+}, {
+"base": "ScatterResource",
+"class": "ScatterLogic",
+"language": "GDScript",
+"path": "res://addons/scatter/src/logic/logic_base.gd"
+}, {
+"base": "ScatterLogic",
+"class": "ScatterLogicGeneric",
+"language": "GDScript",
+"path": "res://addons/scatter/src/logic/logic_generic.gd"
+}, {
+"base": "ScatterLogic",
+"class": "ScatterLogicWall",
+"language": "GDScript",
+"path": "res://addons/scatter/src/logic/logic_wall.gd"
+}, {
+"base": "ScatterBase",
+"class": "ScatterMultiMesh",
+"language": "GDScript",
+"path": "res://addons/scatter/src/nodes/scatter_multi_mesh.gd"
+}, {
+"base": "ScatterResource",
+"class": "ScatterProfile",
+"language": "GDScript",
+"path": "res://addons/scatter/src/profiles/profile_base.gd"
+}, {
+"base": "Resource",
+"class": "ScatterResource",
+"language": "GDScript",
+"path": "res://addons/scatter/src/scatter_resource.gd"
+}, {
 "base": "QodotSpatial",
 "class": "TextureLayeredMesh",
 "language": "GDScript",
 "path": "res://addons/qodot/lib/texture_layered_mesh.gd"
 } ]
 _global_script_class_icons={
+"DistributionGrid": "",
+"DistributionUniform": "",
+"DistributionUnique": "",
+"PolygonPath": "",
+"PolygonPathDragInfo": "",
+"ProfileJitterSimple": "",
+"ProfilePositionSimple": "",
+"ProfileRotationSimple": "",
+"ProfileScaleNoise": "",
+"ProfileScaleSimple": "",
 "QodotBrush": "",
 "QodotBuildAreaConvexCollision": "",
 "QodotBuildAtlasedMesh": "",
@@ -393,6 +513,18 @@ _global_script_class_icons={
 "QuakePlaneAxes": "res://addons/qodot/icons/icon_qodot_spatial.svg",
 "QuakeWadFile": "",
 "QuakeWadImportPlugin": "",
+"ScatterBase": "",
+"ScatterCommon": "",
+"ScatterDistribution": "",
+"ScatterDuplicates": "",
+"ScatterExclude": "",
+"ScatterItem": "",
+"ScatterLogic": "",
+"ScatterLogicGeneric": "",
+"ScatterLogicWall": "",
+"ScatterMultiMesh": "",
+"ScatterProfile": "",
+"ScatterResource": "",
 "TextureLayeredMesh": ""
 }
 
@@ -410,7 +542,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "qodot" )
+enabled=PoolStringArray( "polygon_path", "qodot", "scatter" )
 
 [importer_defaults]
 
@@ -439,5 +571,5 @@ texture={
 
 quality/shadows/filter_mode=2
 quality/reflections/atlas_size=1024
-quality/filters/msaa=2
+quality/filters/msaa=3
 environment/default_environment="res://default_env.tres"
