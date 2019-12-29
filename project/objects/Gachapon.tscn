@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=1]
 [ext_resource path="res://addons/qodot/src/nodes/qodot_spatial.gd" type="Script" id=2]
@@ -299,6 +299,9 @@ jitter_profile = SubResource( 19 )
 rotation_profile = SubResource( 21 )
 scale_profile = SubResource( 23 )
 
+[sub_resource type="BoxShape" id=25]
+extents = Vector3( 0.5, 1.1, 0.5 )
+
 [node name="Gachapon" type="StaticBody"]
 
 [node name="QodotMap" type="Spatial" parent="."]
@@ -392,3 +395,7 @@ multimesh = ExtResource( 37 )
 
 [node name="MultiMeshInstance" type="MultiMeshInstance" parent="GachaBalls"]
 multimesh = ExtResource( 37 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0 )
+shape = SubResource( 25 )
