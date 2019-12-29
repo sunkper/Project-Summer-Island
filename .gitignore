@@ -12,3 +12,6 @@ addons/
 
 # Ignore Trenchbroom autosave files.
 autosave/
+
+# Assets I have no rights to use, only used tmeporary for reference
+_TEMP_THEFT_ASSETS/
