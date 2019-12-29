@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/Rocks_08.png" type="Texture" id=2]
@@ -33,10 +33,11 @@
 [ext_resource path="res://objects/IceCreamRefrigerator.tscn" type="PackedScene" id=31]
 [ext_resource path="res://objects/Gachapon.tscn" type="PackedScene" id=32]
 [ext_resource path="res://assets/models/BokuYuuka.glb" type="PackedScene" id=33]
-[ext_resource path="res://objects/HangingGlassBalls.tscn" type="PackedScene" id=34]
+[ext_resource path="res://objects/HangingGlass.tscn" type="PackedScene" id=34]
 [ext_resource path="res://objects/GoldenGodetue.tscn" type="PackedScene" id=35]
 [ext_resource path="res://objects/Bench.tscn" type="PackedScene" id=36]
 [ext_resource path="res://objects/Signature.tscn" type="PackedScene" id=37]
+[ext_resource path="res://objects/Bottle.tscn" type="PackedScene" id=38]
 
 [sub_resource type="GDScript" id=1]
 script/source = "tool
@@ -157,7 +158,7 @@ size = Vector2( 150, 200 )
 bounds = AABB( -79.8693, -27, -151.196, 159.739, 54, 302.392 )
 cell_size = 2.36244
 to_cell_xform = Transform( 0.423292, 0, 0, 0, 0.423292, 0, 0, 0, 0.423292, 33.808, 11.4289, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 15, 4, 1036831949, 0, 0, 1036831949, -2147483648, 0, 1036831949, -2147483648, -2147483648, -1, -1, -1, -1, 1, -1, -1, -1, 0, 0, 8355711, 0, -1, 2, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 65536, -1, -1, 3, -1, -1, -1, -1, -1, 0, 0, 8355711, 131079, 10, -1, -1, -1, 4, -1, -1, -1, 0, 0, 8355711, 196671, 5, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 262399, -1, -1, -1, 6, -1, -1, -1, 8, 0, 0, 8355711, 329727, -1, -1, -1, -1, -1, 7, -1, -1, 0, 0, 8355711, 401407, -1, -1, -1, -1, -1, -1, -1, -1, 10775906, -1650819314, 8126606, 524287, -1, 9, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 401407, -1, -1, -1, -1, -1, -1, -1, -1, 9913406, 0, 8258150, 524287, -1, -1, -1, -1, 11, -1, -1, -1, 0, 0, 8355711, 262399, -1, -1, -1, 12, -1, -1, -1, -1, 0, 0, 8355711, 329727, -1, 13, -1, -1, -1, 14, -1, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 10776677, -1650819313, 7929983, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9977658, 0, 7798899, 524287 )
+dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 15, 4, 1036831949, 0, 0, 1036831949, -2147483648, 0, 1036831949, -2147483648, -2147483648, -1, -1, -1, -1, 1, -1, -1, -1, 0, 0, 8355711, 0, -1, 2, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 65536, -1, -1, 3, -1, -1, -1, -1, -1, 0, 0, 8355711, 131079, 10, -1, -1, -1, 4, -1, -1, -1, 0, 0, 8355711, 196671, 5, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 262399, -1, -1, -1, 6, -1, -1, -1, 8, 0, 0, 8355711, 329727, -1, -1, -1, -1, -1, 7, -1, -1, 0, 0, 8355711, 401407, -1, -1, -1, -1, -1, -1, -1, -1, 10775649, -1583516146, 8126606, 524287, -1, 9, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 401407, -1, -1, -1, -1, -1, -1, -1, -1, 9913406, 0, 8258150, 524287, -1, -1, -1, -1, 11, -1, -1, -1, 0, 0, 8355711, 262399, -1, -1, -1, 12, -1, -1, -1, -1, 0, 0, 8355711, 329727, -1, 13, -1, -1, -1, 14, -1, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 10776420, -1583516145, 8061055, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9977658, 0, 7798899, 524287 )
 bias = 1.5
 normal_bias = 0.0
 propagation = 0.5
@@ -169,7 +170,7 @@ script = ExtResource( 23 )
 environment = ExtResource( 11 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( -0.765842, -0.435935, -0.472702, -0.626391, 0.339617, 0.701637, -0.145331, 0.833439, -0.533159, 0, 9.5352, 12.2218 )
+transform = Transform( -0.185416, 0.821661, -0.538974, -0.2899, 0.478335, 0.828948, 0.938924, 0.309949, 0.149508, 0, 9.5352, 12.2218 )
 light_color = Color( 0.976471, 0.972549, 0.929412, 1 )
 shadow_enabled = true
 shadow_color = Color( 0.0588235, 0.0745098, 0.152941, 1 )
@@ -255,12 +256,12 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="TestGlass3" type="MeshInstance" parent="Structures/GlassTest"]
-transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 0.140679, 9.46044, 24.3222 )
+transform = Transform( -0.999998, 1.78496e-05, 0.00218149, 0.00218149, -3.85832e-08, 0.999998, 1.78496e-05, 1, -3.55409e-10, 0.140679, 9.46044, 24.3222 )
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="TestGlass4" type="MeshInstance" parent="Structures/GlassTest"]
-transform = Transform( -1.62921e-07, -1, 0, -1.62921e-07, 2.65431e-14, -1, 1, -1.62921e-07, -1.62921e-07, -10.4128, 9.32646, 2.05606 )
+transform = Transform( -1.62921e-07, 1, -1.62921e-07, 0, -1.62921e-07, -1, -1, -1.62921e-07, 2.65431e-14, -10.4128, 9.32646, 2.05606 )
 mesh = SubResource( 4 )
 material/0 = null
 
@@ -276,6 +277,16 @@ material/0 = null
 
 [node name="TestGlass5" type="MeshInstance" parent="Structures/GlassTest"]
 transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, 8.96518, 11.074, 24.3848 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="TestGlass12" type="MeshInstance" parent="Structures/GlassTest"]
+transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, -6.99791, 11.074, -0.188099 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="TestGlass13" type="MeshInstance" parent="Structures/GlassTest"]
+transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999998, -9.68892e-11, -1, -4.37113e-08, -4.94541, 11.074, -0.308152 )
 mesh = SubResource( 5 )
 material/0 = null
 
@@ -387,7 +398,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.953664, 9.37772, 24.1219 )
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -10.1959, 9.37772, 3.2599 )
 
 [node name="IceCreamRefrigerator" parent="Objects" instance=ExtResource( 31 )]
-transform = Transform( -3.62873e-06, 0, 1.3, 0, 1.2, 0, -1.2, 0, -3.93113e-06, -9.01889, 6, -0.21578 )
+transform = Transform( -3.62873e-06, 0, 1.3, 0, 1.2, 0, -1.2, 0, -3.93113e-06, -9.01889, 6, 0.0717242 )
 
 [node name="Gachapon" parent="Objects" instance=ExtResource( 32 )]
 transform = Transform( 0.139443, 0, -1.19187, 0, 1.2, 0, 1.19187, 0, 0.139443, -11.3862, 6, 1.27765 )
@@ -397,14 +408,46 @@ transform = Transform( -0.056381, 0, -1.19867, 0, 1.2, 0, 1.19867, 0, -0.056381,
 
 [node name="BarSmallProps" type="Node" parent="Objects"]
 
-[node name="HangingGlassBalls" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.74761, 9.54735 )
+[node name="HangingGlass" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
+transform = Transform( -0.759777, 0, 0.650183, 0, 1, 0, -0.650183, 0, -0.759777, -0.44378, 13.5795, 8.50453 )
+string_length = 0.8
+type = "Bird"
+
+[node name="HangingGlass2" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, -0.13678, 13.5465, 8.50453 )
+string_length = 1.4
+
+[node name="HangingGlass3" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, -0.92978, 13.5475, 8.50453 )
+string_length = 1.2
+
+[node name="HangingGlass4" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, 0.16522, 13.5535, 8.50453 )
+string_length = 1.2
+
+[node name="HangingGlass7" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, -0.73978, 13.5745, 8.50453 )
+string_length = 1.6
+
+[node name="HangingGlass6" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, 0.01522, 13.5615, 8.50453 )
+string_length = 0.6
+
+[node name="HangingGlass5" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, -1.23178, 13.5565, 8.50453 )
+string_length = 0.8
 
 [node name="Bench" parent="Objects" instance=ExtResource( 36 )]
 transform = Transform( -1.95505e-07, 0, -1.2, 0, 1.2, 0, 1.2, 0, -1.95505e-07, -10.7555, 6, 8.18235 )
 
 [node name="Signature" parent="Objects/Bench" instance=ExtResource( 37 )]
-transform = Transform( 0.277163, -0.960822, -1.56538e-07, 0, -1.62921e-07, 0.999999, -0.960822, -0.277163, -4.51557e-08, 3.73794, 1.03669, 0.649636 )
+transform = Transform( 0.277163, -0.960822, -1.56538e-07, 0, -1.62921e-07, 0.999999, -0.960822, -0.277163, -4.51557e-08, 3.73794, 1.16276, 0.649636 )
+
+[node name="Bottle" parent="Objects" instance=ExtResource( 38 )]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.38332, 8.625, 9.14659 )
+
+[node name="Bottle2" parent="Objects" instance=ExtResource( 38 )]
+transform = Transform( 0.0792215, 0, 0.0610242, 0, 0.1, 0, -0.0610242, 0, 0.0792215, 1.89328, 8.625, 9.35312 )
 
 [node name="Environs" type="Node" parent="."]
 
@@ -439,12 +482,12 @@ data = SubResource( 12 )
 
 [node name="HangingLamp" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 16.2 )
-turn_on = false
+turn_on = true
 flicker = false
 
 [node name="HangingLamp2" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 4.54348 )
-turn_on = false
+turn_on = true
 flicker = false
 
 [node name="Audio" type="Node" parent="."]
