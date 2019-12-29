@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/textures/base/Black.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/pbr/PaintedMetal_02.png" type="Texture" id=2]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0, 1, 0.811765, 1 )
+albedo_texture = ExtResource( 2 )
+metallic_specular = 0.6
+roughness = 0.26
+rim_enabled = true
+rim = 0.13
+rim_tint = 0.62
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+albedo_texture = ExtResource( 1 )
+
+[node name="Bottle" type="Spatial"]
+
+[node name="MainBody" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.75, 0 )
+radius = 1.5
+height = 7.5
+sides = 6
+material = SubResource( 2 )
+
+[node name="TopCutter" type="CSGTorus" parent="MainBody"]
+transform = Transform( 1, 0, 0, 0, 1.8, 0, 0, 0, 1, 0, 3.37622, 0 )
+operation = 2
+inner_radius = 0.487938
+outer_radius = 4.00775
+sides = 6
+ring_sides = 12
+material = SubResource( 2 )
+
+[node name="MouthCutter" type="CSGSphere" parent="MainBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.51428, 0 )
+operation = 2
+radius = 0.5
+radial_segments = 6
+rings = 4
+material = SubResource( 1 )
