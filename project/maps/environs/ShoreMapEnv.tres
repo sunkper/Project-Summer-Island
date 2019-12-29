@@ -1,6 +1,6 @@
 [gd_resource type="Environment" load_steps=3 format=2]
 
-[ext_resource path="res://assets/hdri/park.hdr" type="Texture" id=1]
+[ext_resource path="res://_TEMP_THEFT_ASSETS/textures/Boku2SkyDay.jpg" type="Texture" id=1]
 
 [sub_resource type="PanoramaSky" id=1]
 panorama = ExtResource( 1 )
@@ -8,14 +8,15 @@ panorama = ExtResource( 1 )
 [resource]
 background_mode = 2
 background_sky = SubResource( 1 )
-ambient_light_color = Color( 0.219608, 0.219608, 0.219608, 1 )
+ambient_light_color = Color( 0.0784314, 0.0823529, 0.0862745, 1 )
 ambient_light_energy = 0.5
 ambient_light_sky_contribution = 0.4
 ss_reflections_enabled = true
 ssao_enabled = true
 ssao_intensity = 2.0
-dof_blur_far_distance = 7.0
-dof_blur_far_transition = 10.0
+dof_blur_far_enabled = true
+dof_blur_far_distance = 20.0
+dof_blur_far_transition = 15.0
 dof_blur_far_quality = 2
 glow_enabled = true
 glow_intensity = 0.9
