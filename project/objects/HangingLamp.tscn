@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/textures/pbr/MetalPainted01.png" type="Texture" id=2]
 [ext_resource path="res://assets/textures/pbr/MetalPainted01/MetalPainted01_roughness.png" type="Texture" id=5]
@@ -11,7 +11,7 @@
 script/source = "tool
 extends Spatial
 
-export var turn_on: = true setget _turn_onoff
+export var turn_on: = false setget _turn_onoff
 export var flicker: = false setget _set_flicker
 
 var energy: float
@@ -22,7 +22,8 @@ func _turn_onoff(new_state):
 	
 	turn_on = new_state
 	if has_node(\"HangingLight\"):
-		$Hanger/BulbHead.material.emission_enabled = turn_on
+		$Hanger/BulbBody/BulbHeadOn.visible = turn_on
+		$Hanger/BulbBody/BulbHeadOff.visible = !turn_on
 		$HangingLight.visible = turn_on
 
 func _set_flicker(new_state):
@@ -44,28 +45,12 @@ height = 4.8
 radial_segments = 8
 
 [sub_resource type="SpatialMaterial" id=3]
-albedo_texture = ExtResource( 2 )
-metallic_specular = 0.0
-roughness_texture = ExtResource( 5 )
-uv1_triplanar = true
-
-[sub_resource type="SpatialMaterial" id=4]
-albedo_color = Color( 0.890196, 0.870588, 0.815686, 1 )
-albedo_texture = ExtResource( 7 )
-metallic = 1.0
-roughness_texture = ExtResource( 6 )
-normal_enabled = true
-normal_scale = 0.5
-normal_texture = ExtResource( 8 )
-uv1_triplanar = true
-
-[sub_resource type="SpatialMaterial" id=5]
 flags_transparent = true
 albedo_color = Color( 0.870588, 0.807843, 0.705882, 0.439216 )
 metallic = 1.0
 roughness_texture = ExtResource( 5 )
 emission_enabled = true
-emission = Color( 0.933333, 0.913725, 0.756863, 1 )
+emission = Color( 1, 0.972549, 0.729412, 1 )
 emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
@@ -75,8 +60,34 @@ rim_tint = 0.48
 transmission_enabled = true
 transmission = Color( 1, 0.87451, 0.443137, 1 )
 
-[sub_resource type="Animation" id=6]
-resource_name = "Flicker00"
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+albedo_color = Color( 0.870588, 0.807843, 0.705882, 0.439216 )
+metallic = 1.0
+roughness_texture = ExtResource( 5 )
+rim_enabled = true
+rim = 1.0
+rim_tint = 0.48
+transmission_enabled = true
+transmission = Color( 1, 0.87451, 0.443137, 1 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 2 )
+metallic_specular = 0.0
+roughness_texture = ExtResource( 5 )
+uv1_triplanar = true
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.890196, 0.870588, 0.815686, 1 )
+albedo_texture = ExtResource( 7 )
+metallic = 1.0
+roughness_texture = ExtResource( 6 )
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource( 8 )
+uv1_triplanar = true
+
+[sub_resource type="Animation" id=7]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -100,40 +111,47 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.4, 0 )
 mesh = SubResource( 2 )
 material/0 = null
 
+[node name="BulbBody" type="CSGCylinder" parent="Hanger"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.40294, 0 )
+radius = 0.12
+height = 0.25
+material = ExtResource( 9 )
+
+[node name="BulbHeadOn" type="CSGSphere" parent="Hanger/BulbBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.230063, 0 )
+visible = false
+radius = 0.2
+material = SubResource( 3 )
+
+[node name="BulbHeadOff" type="CSGSphere" parent="Hanger/BulbBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.230063, 0 )
+radius = 0.2
+material = SubResource( 4 )
+
 [node name="LampOuter" type="CSGSphere" parent="Hanger"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.099, 0 )
-material = SubResource( 3 )
+material = SubResource( 5 )
 
 [node name="LampOuterCut" type="CSGBox" parent="Hanger/LampOuter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.52526, 0 )
 operation = 2
 height = 1.5
-material = SubResource( 3 )
+material = SubResource( 5 )
 
 [node name="LampInner" type="CSGSphere" parent="Hanger/LampOuter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0151906, 0 )
 operation = 2
 radius = 0.9
-material = SubResource( 4 )
+material = SubResource( 6 )
 
 [node name="LampInnerCut" type="CSGBox" parent="Hanger/LampOuter/LampInner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.52526, 0 )
 operation = 2
 height = 1.5
 
-[node name="BulbHead" type="CSGSphere" parent="Hanger"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.633, 0 )
-radius = 0.2
-material = SubResource( 5 )
-
-[node name="BulbBody" type="CSGCylinder" parent="Hanger/BulbHead"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.230063, 0 )
-radius = 0.12
-height = 0.25
-material = ExtResource( 9 )
-
 [node name="HangingLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -5.20745, 0 )
+visible = false
 light_color = Color( 0.890196, 0.709804, 0.478431, 1 )
 light_energy = 3.0
 light_indirect_energy = 15.0
@@ -142,4 +160,4 @@ omni_range = 10.0
 omni_attenuation = 2.37841
 
 [node name="Anim" type="AnimationPlayer" parent="."]
-anims/Flicker00 = SubResource( 6 )
+anims/Flicker00 = SubResource( 7 )
