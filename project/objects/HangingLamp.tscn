@@ -155,6 +155,7 @@ visible = false
 light_color = Color( 0.890196, 0.709804, 0.478431, 1 )
 light_energy = 3.0
 light_indirect_energy = 15.0
+light_bake_mode = 2
 shadow_enabled = true
 omni_range = 10.0
 omni_attenuation = 2.37841

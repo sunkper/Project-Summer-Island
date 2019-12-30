@@ -48,7 +48,7 @@ mesh = SubResource( 2 )
 material/0 = null
 
 [node name="SeatSteel" type="MeshInstance" parent="SeatCushion"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0981285, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0993146, 0 )
 mesh = SubResource( 3 )
 material/0 = null
 

@@ -409,33 +409,36 @@ transform = Transform( -0.056381, 0, -1.19867, 0, 1.2, 0, 1.19867, 0, -0.056381,
 [node name="BarSmallProps" type="Node" parent="Objects"]
 
 [node name="HangingGlass" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
-transform = Transform( -0.759777, 0, 0.650183, 0, 1, 0, -0.650183, 0, -0.759777, -0.44378, 13.5795, 8.50453 )
+transform = Transform( 0.686249, 0, -0.727366, 0, 1, 0, 0.727366, 0, 0.686249, -0.10278, 13.5795, 8.50453 )
 string_length = 0.8
 type = "Bird"
 
 [node name="HangingGlass2" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
-transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, -0.13678, 13.5465, 8.50453 )
-string_length = 1.4
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, 0.20422, 13.5465, 8.50453 )
 
 [node name="HangingGlass3" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
-transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, -0.92978, 13.5475, 8.50453 )
-string_length = 1.2
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, -0.58878, 13.5475, 8.50453 )
+string_length = 1.1
 
 [node name="HangingGlass4" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
-transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, 0.16522, 13.5535, 8.50453 )
-string_length = 1.2
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, 0.50622, 13.5535, 8.50453 )
+string_length = 1.15
 
 [node name="HangingGlass7" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
-transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, -0.73978, 13.5745, 8.50453 )
-string_length = 1.6
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, -0.39878, 13.5745, 8.50453 )
+string_length = 1.5
 
 [node name="HangingGlass6" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
-transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, 0.01522, 13.5615, 8.50453 )
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, 0.35622, 13.5615, 8.50453 )
 string_length = 0.6
 
+[node name="HangingGlass8" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, 0.69622, 13.5615, 8.50453 )
+string_length = 0.44
+
 [node name="HangingGlass5" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
-transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, -1.23178, 13.5565, 8.50453 )
-string_length = 0.8
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, -0.89078, 13.5565, 8.50453 )
+string_length = 0.9
 
 [node name="Bench" parent="Objects" instance=ExtResource( 36 )]
 transform = Transform( -1.95505e-07, 0, -1.2, 0, 1.2, 0, 1.2, 0, -1.95505e-07, -10.7555, 6, 8.18235 )
