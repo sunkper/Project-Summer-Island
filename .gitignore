@@ -13,5 +13,6 @@ addons/
 # Ignore Trenchbroom autosave files.
 autosave/
 
-# Assets I have no rights to use, only used tmeporary for reference
+# Things temporary or  using assets I have no rights to use for reference
 _TEMP_THEFT_ASSETS/
+_LABS/
