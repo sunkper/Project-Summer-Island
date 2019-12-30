@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/Bird.map-f6acd997cd87f9d9e9c124351cd0eb94.tres"
+
+[deps]
+
+source_file="res://assets/models/Bird.map"
+dest_files=[ "res://.import/Bird.map-f6acd997cd87f9d9e9c124351cd0eb94.tres" ]
+
+[params]
+
