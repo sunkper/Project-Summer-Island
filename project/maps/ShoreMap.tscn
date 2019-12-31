@@ -161,7 +161,7 @@ to_cell_xform = Transform( 0.423292, 0, 0, 0, 0.423292, 0, 0, 0, 0.423292, 33.80
 dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 15, 4, 1036831949, 0, 0, 1036831949, -2147483648, 0, 1036831949, -2147483648, -2147483648, -1, -1, -1, -1, 1, -1, -1, -1, 0, 0, 8355711, 0, -1, 2, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 65536, -1, -1, 3, -1, -1, -1, -1, -1, 0, 0, 8355711, 131079, 10, -1, -1, -1, 4, -1, -1, -1, 0, 0, 8355711, 196671, 5, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 262399, -1, -1, -1, 6, -1, -1, -1, 8, 0, 0, 8355711, 329727, -1, -1, -1, -1, -1, 7, -1, -1, 0, 0, 8355711, 401407, -1, -1, -1, -1, -1, -1, -1, -1, 10775649, -1583516146, 8126606, 524287, -1, 9, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 401407, -1, -1, -1, -1, -1, -1, -1, -1, 9913406, 0, 8258150, 524287, -1, -1, -1, -1, 11, -1, -1, -1, 0, 0, 8355711, 262399, -1, -1, -1, 12, -1, -1, -1, -1, 0, 0, 8355711, 329727, -1, 13, -1, -1, -1, 14, -1, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 10776420, -1583516145, 8061055, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9977658, 0, 7798899, 524287 )
 bias = 1.5
 normal_bias = 0.0
-propagation = 0.5
+propagation = 0.7
 
 [node name="ShoreMap" type="Node"]
 script = ExtResource( 23 )
@@ -251,7 +251,7 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="TestGlass8" type="MeshInstance" parent="Structures/GlassTest"]
-transform = Transform( -4.38082e-08, -1, -4.36144e-08, 0.00221657, -4.37114e-08, 0.999998, -0.999998, 4.37114e-08, 0.00221657, -6.18282, 14.374, 22.0393 )
+transform = Transform( -4.38082e-08, -1, -4.36144e-08, 0.00221657, -4.37114e-08, 0.999998, -0.999998, 4.37114e-08, 0.00221657, -6.25282, 14.374, 22.0393 )
 mesh = SubResource( 3 )
 material/0 = null
 
@@ -299,7 +299,6 @@ material/0 = null
 
 [node name="ReflectingSphere" type="CSGMesh" parent="Objects"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.843853, 11.8921, 15.1816 )
-visible = false
 mesh = SubResource( 6 )
 material = SubResource( 7 )
 
@@ -311,7 +310,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.122316, 0 )
 
 [node name="Stall" parent="Objects/TableStalls" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3666, 7.5, 15.1141 )
-visible = false
 
 [node name="Stall5" parent="Objects/TableStalls" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85007, 7.5, 32.1107 )
@@ -329,7 +327,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03988, 7.5, 18 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30382, 7.71115, 8.52926 )
 
 [node name="StallRed" parent="Objects/BarStalls" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.103455, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.608, -0.103455, -0.687 )
 
 [node name="StallRed5" parent="Objects/BarStalls" instance=ExtResource( 19 )]
 transform = Transform( 0.96197, 0, -0.273153, 0, 1, 0, 0.273153, 0, 0.96197, 0.531236, -0.113695, -4.58777 )
@@ -338,13 +336,13 @@ transform = Transform( 0.96197, 0, -0.273153, 0, 1, 0, 0.273153, 0, 0.96197, 0.5
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.24205, -0.0879183, 22.7172 )
 
 [node name="StallRed2" parent="Objects/BarStalls" instance=ExtResource( 19 )]
-transform = Transform( 0.941476, 0, -0.337079, 0, 1, 0, 0.337079, 0, 0.941476, 2.60925, -0.127757, 2.14365 )
+transform = Transform( 0.941476, 0, -0.337079, 0, 1, 0, 0.337079, 0, 0.941476, 3.15625, -0.127757, 1.77565 )
 
 [node name="StallRed3" parent="Objects/BarStalls" instance=ExtResource( 19 )]
-transform = Transform( 0.861, 0, 0.508606, 0, 1, 0, -0.508606, 0, 0.861, 5.70851, -0.0801687, 2.14365 )
+transform = Transform( 0.861, 0, 0.508606, 0, 1, 0, -0.508606, 0, 0.861, 5.40051, -0.0801687, 1.75665 )
 
 [node name="PictureFrame" parent="Objects" instance=ExtResource( 13 )]
-transform = Transform( -0.747146, -0.0653668, -2.92061e-07, -0.0653668, 0.747146, 1.16776e-14, 2.90949e-07, 2.54548e-08, -0.75, 5.87402, 12.042, 10.6101 )
+transform = Transform( -0.996195, -0.0871557, -3.89414e-07, -0.0871557, 0.996195, 8.02104e-14, 3.87933e-07, 3.39398e-08, -1, 5.87402, 12.525, 10.3411 )
 
 [node name="TVStand" parent="Objects" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.387, 8.25595, 22.5 )
@@ -389,7 +387,7 @@ length = 6.0
 blow = true
 
 [node name="BarGate" parent="Objects" instance=ExtResource( 24 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.512, 8.56, 9.247 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.512, 8.56, 8.75 )
 
 [node name="SlideDoorFront" parent="Objects" instance=ExtResource( 29 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.953664, 9.37772, 24.1219 )
@@ -406,38 +404,41 @@ transform = Transform( 0.139443, 0, -1.19187, 0, 1.2, 0, 1.19187, 0, 0.139443, -
 [node name="Gachapon2" parent="Objects" instance=ExtResource( 32 )]
 transform = Transform( -0.056381, 0, -1.19867, 0, 1.2, 0, 1.19867, 0, -0.056381, -11.3862, 6, 3.33895 )
 
+[node name="GoldenGodetue" parent="Objects" instance=ExtResource( 35 )]
+transform = Transform( -0.8, 0, -2.60673e-07, 0, 0.8, 0, 2.60673e-07, 0, -0.8, 8.28129, 8.70706, 10.9927 )
+
 [node name="BarSmallProps" type="Node" parent="Objects"]
 
 [node name="HangingGlass" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
-transform = Transform( 0.686249, 0, -0.727366, 0, 1, 0, 0.727366, 0, 0.686249, -0.10278, 13.5795, 8.50453 )
+transform = Transform( 0.686249, 0, -0.727366, 0, 1, 0, 0.727366, 0, 0.686249, -0.10278, 12.8145, 8 )
 string_length = 0.8
 type = "Bird"
 
 [node name="HangingGlass2" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
-transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, 0.20422, 13.5465, 8.50453 )
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, 0.20422, 12.7815, 8 )
 
 [node name="HangingGlass3" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
-transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, -0.58878, 13.5475, 8.50453 )
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, -0.58878, 12.7825, 8 )
 string_length = 1.1
 
 [node name="HangingGlass4" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
-transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, 0.50622, 13.5535, 8.50453 )
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, 0.50622, 12.7885, 8 )
 string_length = 1.15
 
 [node name="HangingGlass7" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
-transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, -0.39878, 13.5745, 8.50453 )
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, -0.39878, 12.8095, 8 )
 string_length = 1.5
 
 [node name="HangingGlass6" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
-transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, 0.35622, 13.5615, 8.50453 )
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, 0.35622, 12.7965, 8 )
 string_length = 0.6
 
 [node name="HangingGlass8" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
-transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, 0.69622, 13.5615, 8.50453 )
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, 0.69622, 12.7965, 8 )
 string_length = 0.44
 
 [node name="HangingGlass5" parent="Objects/BarSmallProps" instance=ExtResource( 34 )]
-transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, -0.89078, 13.5565, 8.50453 )
+transform = Transform( -0.766046, 0, 0.642786, 0, 1, 0, -0.642786, 0, -0.766046, -0.89078, 12.7915, 8 )
 string_length = 0.9
 
 [node name="Bench" parent="Objects" instance=ExtResource( 36 )]
@@ -447,10 +448,10 @@ transform = Transform( -1.95505e-07, 0, -1.2, 0, 1.2, 0, 1.2, 0, -1.95505e-07, -
 transform = Transform( 0.277163, -0.960822, -1.56538e-07, 0, -1.62921e-07, 0.999999, -0.960822, -0.277163, -4.51557e-08, 3.73794, 1.16276, 0.649636 )
 
 [node name="Bottle" parent="Objects" instance=ExtResource( 38 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.38332, 8.625, 9.14659 )
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.98468, 8.625, 8.76759 )
 
 [node name="Bottle2" parent="Objects" instance=ExtResource( 38 )]
-transform = Transform( 0.0792215, 0, 0.0610242, 0, 0.1, 0, -0.0610242, 0, 0.0792215, 1.89328, 8.625, 9.35312 )
+transform = Transform( 0.0792215, 0, 0.0610242, 0, 0.1, 0, -0.0610242, 0, 0.0792215, -1.68772, 8.625, 8.52912 )
 
 [node name="Environs" type="Node" parent="."]
 
@@ -480,7 +481,6 @@ enable_shadows = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5404, -2.75435, -7.06521 )
 extents = Vector3( 79.8693, 27, 151.196 )
 dynamic_range = 1
-propagation = 0.5
 data = SubResource( 12 )
 
 [node name="HangingLamp" parent="Lightings" instance=ExtResource( 20 )]
@@ -513,6 +513,3 @@ transform = Transform( -0.799766, 0, -0.0193643, 0, 0.8, 0, 0.0193643, 0, -0.799
 
 [node name="BokuYuuka" parent="Characters" instance=ExtResource( 33 )]
 transform = Transform( -0.676254, 0, -0.427411, 0, 0.8, 0, 0.427411, 0, -0.676254, -6.3765, 5.99839, 5.20132 )
-
-[node name="GoldenGodetue" parent="Characters" instance=ExtResource( 35 )]
-transform = Transform( -0.8, 0, -2.60673e-07, 0, 0.8, 0, 2.60673e-07, 0, -0.8, 8.28129, 8.70706, 10.9927 )
