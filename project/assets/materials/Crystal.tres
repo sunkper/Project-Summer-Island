@@ -1,7 +1,7 @@
 [gd_resource type="SpatialMaterial" load_steps=5 format=2]
 
 [ext_resource path="res://assets/textures/pbr/HangingGlass/HangingGlass_normal.png" type="Texture" id=1]
-[ext_resource path="res://assets/textures/pbr/HangingGlass.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/pbr/HangingGlass/HangingGlass_depth.png" type="Texture" id=2]
 [ext_resource path="res://assets/textures/pbr/HangingGlass/HangingGlass_roughness.png" type="Texture" id=3]
 [ext_resource path="res://assets/textures/pbr/HangingGlassB.png" type="Texture" id=4]
 
@@ -18,8 +18,10 @@ rim_enabled = true
 rim = 1.0
 rim_tint = 0.44
 depth_enabled = true
-depth_scale = 0.8
-depth_deep_parallax = false
+depth_scale = 1.0
+depth_deep_parallax = true
+depth_min_layers = 8
+depth_max_layers = 32
 depth_flip_tangent = false
 depth_flip_binormal = false
 depth_texture = ExtResource( 2 )
