@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/CrateStatic.map-0db8fdaf6c544964a577ced1ad695d80.tres"
+
+[deps]
+
+source_file="res://maps/mapsrc/CrateStatic.map"
+dest_files=[ "res://.import/CrateStatic.map-0db8fdaf6c544964a577ced1ad695d80.tres" ]
+
+[params]
+
