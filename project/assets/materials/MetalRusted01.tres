@@ -1,6 +1,6 @@
 [gd_resource type="SpatialMaterial" load_steps=4 format=2]
 
-[ext_resource path="res://assets/textures/pbr/Metal24/Metal24_roughness.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/pbr/PaintedMetal_02/PaintedMetal_02_roughness.png" type="Texture" id=1]
 [ext_resource path="res://assets/textures/pbr/Metal24/Metal24_metallic.png" type="Texture" id=2]
 [ext_resource path="res://assets/textures/pbr/Metal24.png" type="Texture" id=3]
 
