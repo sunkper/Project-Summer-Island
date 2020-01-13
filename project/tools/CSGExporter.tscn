@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "tool
+extends Node
+
+const WARN_PARENT_TYPE = \"Parent node must be a CSG node!\"
+
+export var export_mesh: = false setget export_mesh
+export (String) var file_name = \"\"
+export (String, DIR) var save_dir = \"res://assets/models/\"
+
+export var convert_to_meshinstance: = false setget convert_to_meshinstance
+
+func _get_configuration_warning() -> String:
+	var string = \"\"
+	
+	if not get_parent() is CSGShape:
+		string = WARN_PARENT_TYPE
+	
+	return string
+
+func export_mesh(state) -> void:
+	if get_parent() is CSGShape:
+		var mesh = get_mesh()
+		ResourceSaver.save(save_dir + file_name + \".mesh\", mesh)
+	else:
+		print(WARN_PARENT_TYPE)
+
+func convert_to_meshinstance(state) -> void:
+	if get_parent() is CSGShape:
+		var mesh = get_mesh()
+		var node = MeshInstance.new()
+		node.mesh = mesh
+		if file_name == get_parent().name:
+			file_name = file_name + \"Mesh\"
+		node.name = file_name
+		
+		get_parent().add_child(node)
+		node.set_owner(get_tree().get_edited_scene_root())
+		
+	else:
+		print(WARN_PARENT_TYPE)
+
+func get_mesh() -> Mesh:
+	get_parent()._update_shape()
+	var mesh = get_parent().get_meshes()[1]
+	if file_name == \"\":
+		file_name = get_parent().name
+	
+	return mesh
+"
+
+[node name="CSGExporter" type="Node"]
+script = SubResource( 1 )
