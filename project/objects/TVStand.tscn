@@ -14,14 +14,14 @@ bottom_radius = 0.1
 height = 6.4
 radial_segments = 6
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.509804, 0.643137, 0.607843, 1 )
 metallic = 0.42
 metallic_specular = 0.19
 metallic_texture = ExtResource( 3 )
 roughness_texture = ExtResource( 2 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.262745, 0.309804, 0.309804, 1 )
 metallic = 0.61
 metallic_specular = 0.8
@@ -30,10 +30,10 @@ rim_enabled = true
 rim = 0.25
 rim_tint = 0.47
 
-[sub_resource type="ViewportTexture" id=7]
+[sub_resource type="ViewportTexture" id=4]
 viewport_path = NodePath("TV/Screen/Viewport")
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=5]
 script/source = "extends VideoPlayer
 
 func _on_VideoPlayer_finished() -> void:
@@ -102,13 +102,13 @@ transform = Transform( 0.852795, 0, -0.522246, 0, 1, 0, 0.522246, 0, 0.852795, -
 width = 1.4
 height = 1.0
 depth = 1.0
-material = SubResource( 4 )
+material = SubResource( 2 )
 
 [node name="Antenna" type="CSGSphere" parent="TV"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.439842, 0 )
 radius = 0.3
 radial_segments = 8
-material = SubResource( 5 )
+material = SubResource( 3 )
 
 [node name="ScreenCutter" type="CSGBox" parent="TV"]
 transform = Transform( 1, 0, -1.49012e-07, 0, 1, 0, 1.49012e-07, 0, 1, 0.133736, 0.00420547, -0.600463 )
@@ -122,7 +122,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.134681, 0.00287008, -0.43595
 flip_h = true
 flip_v = true
 pixel_size = 0.0035
-texture = SubResource( 7 )
+shaded = true
+texture = SubResource( 4 )
 
 [node name="Viewport" type="Viewport" parent="TV/Screen"]
 size = Vector2( 256, 206 )
@@ -133,7 +134,7 @@ margin_bottom = 40.0
 stream = ExtResource( 4 )
 autoplay = true
 expand = false
-script = SubResource( 3 )
+script = SubResource( 5 )
 
 [node name="Sound" type="AudioStreamPlayer3D" parent="TV"]
 stream = ExtResource( 6 )
@@ -143,8 +144,9 @@ bus = "TVSound"
 
 [node name="TVLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.22541, -0.263271 )
+light_energy = 0.5
 shadow_enabled = true
-omni_range = 2.0
+omni_range = 1.0
 omni_attenuation = 0.732043
 script = SubResource( 6 )
 
