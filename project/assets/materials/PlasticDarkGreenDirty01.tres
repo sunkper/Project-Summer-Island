@@ -1,14 +1,13 @@
-[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+[gd_resource type="SpatialMaterial" load_steps=3 format=2]
 
 [ext_resource path="res://assets/textures/pbr/PlasticDarkGreenDirty01.png" type="Texture" id=1]
 [ext_resource path="res://assets/textures/pbr/PlasticDarkGreenDirty01/PlasticDarkGreenDirty01_normal.png" type="Texture" id=2]
-[ext_resource path="res://assets/textures/pbr/PlasticDarkGreenDirty01/PlasticDarkGreenDirty01_roughness.png" type="Texture" id=3]
 
 [resource]
 albedo_color = Color( 1, 0.494118, 0, 1 )
 albedo_texture = ExtResource( 1 )
-roughness_texture = ExtResource( 3 )
+roughness = 0.89
 normal_enabled = true
-normal_scale = 1.0
+normal_scale = 0.5
 normal_texture = ExtResource( 2 )
 uv1_triplanar = true
