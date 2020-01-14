@@ -226,13 +226,14 @@ surfaces/0 = {
 }
 
 [sub_resource type="SpatialMaterial" id=12]
-flags_transparent = true
 params_depth_draw_mode = 3
 albedo_texture = ExtResource( 29 )
-roughness = 0.47
+roughness = 0.85
 depth_enabled = true
 depth_scale = 0.05
-depth_deep_parallax = false
+depth_deep_parallax = true
+depth_min_layers = 8
+depth_max_layers = 32
 depth_flip_tangent = false
 depth_flip_binormal = false
 depth_texture = ExtResource( 11 )
