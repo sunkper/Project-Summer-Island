@@ -13,6 +13,9 @@ addons/
 # Ignore Trenchbroom autosave files.
 autosave/
 
+#Krita backup files
+*.png~
+
 # Things temporary or  using assets I have no rights to use for reference
 _TEMP_THEFT_ASSETS/
 _LABS/

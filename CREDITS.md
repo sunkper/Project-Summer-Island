@@ -8,6 +8,6 @@ Godette chracter model is made by linuxkone9. It's [available](https://www.blend
 
 This project uses [Qodot](https://github.com/ShiftyAxel/Qodot), the Quake map importer for Godot, and [HungryProton's Scatter plugin](https://github.com/HungryProton/scatter).
 
-I used and modified many textures from [3D TEXTURES](https://3dtextures.me/), [CC0 Textures](https://cc0textures.com/) [Texture Haven](https://texturehaven.com/), and [cgbookcase.com](https://www.cgbookcase.com/).
+I used and modified many textures from [3D TEXTURES](https://3dtextures.me/), [CC0 Textures](https://cc0textures.com/), [Texture Haven](https://texturehaven.com/), and [cgbookcase.com](https://www.cgbookcase.com/).
 
 I used [Materialize](http://boundingboxsoftware.com/materialize/) for some textures.
