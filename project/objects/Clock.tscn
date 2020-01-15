@@ -14,20 +14,20 @@ albedo_texture = ExtResource( 1 )
 material = SubResource( 1 )
 size = Vector2( 1.7, 1.7 )
 
-[sub_resource type="CylinderMesh" id=5]
+[sub_resource type="CylinderMesh" id=3]
 material = ExtResource( 5 )
 top_radius = 0.8
 bottom_radius = 0.8
 height = 0.01
 
-[sub_resource type="CylinderMesh" id=3]
+[sub_resource type="CylinderMesh" id=4]
 material = ExtResource( 2 )
 top_radius = 0.03
 bottom_radius = 0.03
 height = 0.5
 radial_segments = 5
 
-[sub_resource type="CylinderMesh" id=4]
+[sub_resource type="CylinderMesh" id=5]
 material = ExtResource( 2 )
 top_radius = 0.03
 bottom_radius = 0.03
@@ -51,21 +51,21 @@ sides = 32
 material = ExtResource( 3 )
 
 [node name="ClockFace" type="MeshInstance" parent="."]
-transform = Transform( -1.62921e-07, -1, -1.62921e-07, 0, -1.62921e-07, 1, -1, 1.62921e-07, 2.65431e-14, 0, 0.0237613, 0 )
+transform = Transform( -1.62921e-07, -1, -1.62921e-07, 0, -1.62921e-07, 1, -1, 1.62921e-07, 2.65431e-14, 0, 0.0231134, 0 )
 mesh = SubResource( 2 )
 material/0 = null
 
-[node name="ClockFace2" type="MeshInstance" parent="."]
+[node name="Glass" type="MeshInstance" parent="."]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0.0736345, 0 )
-mesh = SubResource( 5 )
-material/0 = null
-
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, -0.2562, 0.00399313, 0 )
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="MeshInstance2" type="MeshInstance" parent="."]
-transform = Transform( -7.18317e-09, -0.04409, -0.999028, 1, -1.62921e-07, 0, -1.62762e-07, -0.999028, 0.04409, -0.0213455, 0.00399313, -0.198761 )
+[node name="HandMinute" type="MeshInstance" parent="."]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, -0.2562, 0.00399313, 0 )
 mesh = SubResource( 4 )
+material/0 = null
+
+[node name="HandHour" type="MeshInstance" parent="."]
+transform = Transform( -7.18317e-09, -0.04409, -0.999028, 1, -1.62921e-07, 0, -1.62762e-07, -0.999028, 0.04409, -0.0213455, 0.00399313, -0.198761 )
+mesh = SubResource( 5 )
 material/0 = null
