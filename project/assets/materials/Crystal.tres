@@ -8,15 +8,15 @@
 [resource]
 flags_transparent = true
 params_depth_draw_mode = 3
-albedo_color = Color( 1, 1, 1, 0.172549 )
+albedo_color = Color( 1, 1, 1, 0.0509804 )
 albedo_texture = ExtResource( 4 )
 roughness_texture = ExtResource( 3 )
 normal_enabled = true
 normal_scale = 0.5
 normal_texture = ExtResource( 1 )
 rim_enabled = true
-rim = 1.0
-rim_tint = 0.44
+rim = 0.65
+rim_tint = 0.82
 depth_enabled = true
 depth_scale = 1.0
 depth_deep_parallax = true
