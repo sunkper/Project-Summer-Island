@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://actors/Player.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.244978, 0.256154, 0.599509 )
+
+[sub_resource type="CapsuleShape" id=2]
+radius = 0.604282
+height = 0.314003
+
+[node name="Player" type="KinematicBody"]
+collision_mask = 6
+script = ExtResource( 1 )
+zoom_fov = 15.0
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.636609, 0 )
+current = true
+fov = 75.0
+size = 0.1
+far = 500.0
+
+[node name="InteractionDetector" type="Area" parent="Camera"]
+monitorable = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="Collision" type="CollisionShape" parent="Camera/InteractionDetector"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
+shape = SubResource( 1 )
+
+[node name="Collision" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="EditorHint" type="Sprite3D" parent="."]
+visible = false
+opacity = 0.8
+pixel_size = 0.05
+billboard = 1
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EditorHintDir" type="Sprite3D" parent="EditorHint"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.36859 )
+opacity = 0.5
+pixel_size = 0.03
+billboard = 1
+texture = ExtResource( 3 )
