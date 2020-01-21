@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/WaterPot.glb-f36bfe1279ccd1e8caa6d3404d36b37d.scn"
+path="res://.import/TrayRect.glb-890c56258bdb9fb5ae05268ff7eca3f3.scn"
 
 [deps]
 
-source_file="res://assets/models/WaterPot.glb"
-dest_files=[ "res://.import/WaterPot.glb-f36bfe1279ccd1e8caa6d3404d36b37d.scn" ]
+source_file="res://assets/models/TrayRect.glb"
+dest_files=[ "res://.import/TrayRect.glb-890c56258bdb9fb5ae05268ff7eca3f3.scn" ]
 
 [params]
 
