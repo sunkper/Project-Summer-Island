@@ -1,0 +1,31 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://assets/textures/pbr/CurtainGodot/CurtainGodot_depth.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/pbr/CurtainGodot/CurtainGodot_ao.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/pbr/CurtainGodot/CurtainGodot_normal.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/pbr/CurtainGodot.png" type="Texture" id=4]
+
+[resource]
+flags_transparent = true
+albedo_color = Color( 1, 1, 1, 0.945098 )
+albedo_texture = ExtResource( 4 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 3 )
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource( 2 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+depth_enabled = true
+depth_scale = 0.1
+depth_deep_parallax = true
+depth_min_layers = 8
+depth_max_layers = 32
+depth_flip_tangent = false
+depth_flip_binormal = false
+depth_texture = ExtResource( 1 )
+transmission_enabled = true
+transmission = Color( 1, 1, 1, 1 )
+uv1_scale = Vector3( 1, 0.5, 1 )
+uv1_offset = Vector3( 0, 0.25, 0 )
