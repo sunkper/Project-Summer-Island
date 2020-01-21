@@ -13,7 +13,7 @@ var vel: = Vector3.ZERO
 
 var dir: = Vector3.ZERO
 
-export var mouse_def_sensi: = 0.4
+export var mouse_def_sensi: = 0.2
 export var mouse_zoomin_sensi: = 0.03
 var mouse_sensi: = mouse_def_sensi
 
