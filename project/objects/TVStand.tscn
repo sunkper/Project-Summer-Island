@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/textures/pbr/PaintedMetal_02/PaintedMetal_02_roughness.png" type="Texture" id=3]
 [ext_resource path="res://assets/videos/ManWithACamera.webm" type="VideoStream" id=4]
 [ext_resource path="res://objects/TVStand.gd" type="Script" id=5]
-[ext_resource path="res://assets/audio/music/AfterYouveGone.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/audio/music/Canal3.ogg" type="AudioStream" id=6]
 
 [sub_resource type="CylinderMesh" id=1]
 material = ExtResource( 1 )
@@ -16,7 +16,7 @@ radial_segments = 6
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.509804, 0.643137, 0.607843, 1 )
-metallic = 0.42
+metallic = 1.0
 metallic_specular = 0.19
 metallic_texture = ExtResource( 3 )
 roughness_texture = ExtResource( 2 )
