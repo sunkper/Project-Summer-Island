@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/materials/Glass.tres" type="Material" id=1]
+[ext_resource path="res://assets/textures/materials/WindowGlass.tres" type="Material" id=1]
 [ext_resource path="res://assets/materials/Wood02.tres" type="Material" id=2]
 
 [sub_resource type="CubeMesh" id=1]
