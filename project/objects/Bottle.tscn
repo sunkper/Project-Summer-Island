@@ -1,16 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tools/CSGExporter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/PaintedMetal_02.png" type="Texture" id=2]
-
-[sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0, 0.858824, 1, 1 )
-albedo_texture = ExtResource( 2 )
-metallic_specular = 0.6
-roughness = 0.11
-rim_enabled = true
-rim = 0.13
-rim_tint = 0.62
+[ext_resource path="res://assets/materials/GlassBottleGreen.tres" type="Material" id=3]
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0, 0, 0, 1 )
@@ -29,7 +21,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97303,
 "index_count": 0,
-"material": SubResource( 1 ),
+"material": ExtResource( 3 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 1221
@@ -46,6 +38,16 @@ surfaces/1 = {
 "skeleton_aabb": [  ],
 "vertex_count": 90
 }
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+albedo_color = Color( 0, 0.858824, 1, 0.631373 )
+albedo_texture = ExtResource( 2 )
+metallic_specular = 0.6
+roughness = 0.11
+rim_enabled = true
+rim = 0.19
+rim_tint = 0.8
 
 [node name="Bottle" type="Spatial"]
 
@@ -90,7 +92,10 @@ sides = 6
 material = SubResource( 2 )
 
 [node name="CSGExporter" parent="MainBody" instance=ExtResource( 1 )]
+export_mesh = false
 file_name = "Bottle"
+save_dir = "res://assets/models/"
+convert_to_meshinstance = false
 
 [node name="CSGTorus" type="CSGTorus" parent="MainBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.68012, 0 )
