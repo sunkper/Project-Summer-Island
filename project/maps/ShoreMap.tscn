@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/Rocks_08.png" type="Texture" id=2]
@@ -46,6 +46,7 @@
 [ext_resource path="res://assets/models/TrayRect.glb" type="PackedScene" id=44]
 [ext_resource path="res://assets/textures/materials/WindowGlass.tres" type="Material" id=45]
 [ext_resource path="res://assets/materials/GlassAdditive.tres" type="Material" id=46]
+[ext_resource path="res://assets/models/CruetSalt.glb" type="PackedScene" id=47]
 [ext_resource path="res://assets/models/TrayCircular.glb" type="PackedScene" id=48]
 [ext_resource path="res://assets/models/CruetSoy.glb" type="PackedScene" id=49]
 [ext_resource path="res://assets/models/Material_001.material" type="Material" id=50]
@@ -97,13 +98,23 @@ size = Vector3( 3.8, 0.1, 6 )
 material = ExtResource( 46 )
 size = Vector3( 1.9, 0.1, 3 )
 
-[sub_resource type="SphereMesh" id=6]
+[sub_resource type="GIProbeData" id=6]
+bounds = AABB( -79.8693, -27, -151.196, 159.739, 54, 302.392 )
+cell_size = 2.36244
+to_cell_xform = Transform( 0.423292, 0, 0, 0, 0.423292, 0, 0, 0, 0.423292, 33.808, 11.4289, 64 )
+dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 1, 0, 0, 0, 1098907648, 1098907648, 0, 747061968, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+energy = 0.8
+bias = 1.5
+normal_bias = 0.3
+propagation = 0.3
 
-[sub_resource type="SpatialMaterial" id=7]
+[sub_resource type="SphereMesh" id=7]
+
+[sub_resource type="SpatialMaterial" id=8]
 metallic = 1.0
 roughness = 0.0
 
-[sub_resource type="ArrayMesh" id=8]
+[sub_resource type="ArrayMesh" id=9]
 surfaces/0 = {
 "aabb": AABB( -1, 0.013382, -1, 2, 3.02952, 2 ),
 "array_data": PoolByteArray( 69, 242, 53, 62, 114, 137, 63, 64, 169, 192, 61, 191, 73, 73, 73, 0, 153, 51, 51, 129, 0, 57, 0, 52, 69, 242, 53, 62, 253, 74, 58, 64, 169, 192, 61, 191, 73, 183, 73, 0, 153, 205, 51, 129, 0, 57, 0, 56, 69, 242, 53, 190, 114, 137, 63, 64, 169, 192, 61, 191, 183, 73, 73, 0, 153, 205, 205, 129, 0, 59, 0, 52, 69, 242, 53, 190, 253, 74, 58, 64, 169, 192, 61, 191, 183, 183, 73, 0, 153, 51, 205, 129, 0, 59, 0, 56, 69, 242, 53, 190, 124, 240, 118, 63, 75, 86, 93, 191, 183, 183, 73, 0, 103, 205, 51, 129, 0, 48, 0, 52, 69, 242, 53, 190, 39, 245, 133, 63, 75, 86, 93, 191, 183, 73, 73, 0, 103, 51, 51, 129, 0, 48, 0, 56, 69, 242, 53, 62, 124, 240, 118, 63, 75, 86, 93, 191, 73, 183, 73, 0, 103, 51, 205, 129, 0, 54, 0, 52, 69, 242, 53, 62, 39, 245, 133, 63, 75, 86, 93, 191, 73, 73, 73, 0, 103, 205, 205, 129, 0, 54, 0, 56, 245, 242, 79, 191, 45, 64, 91, 60, 105, 30, 240, 190, 62, 104, 36, 0, 127, 0, 0, 129, 85, 49, 0, 56, 225, 179, 93, 191, 204, 236, 3, 62, 222, 255, 255, 190, 107, 25, 62, 0, 193, 0, 109, 129, 85, 49, 0, 56, 138, 30, 240, 190, 45, 64, 91, 60, 229, 242, 79, 191, 36, 104, 62, 0, 127, 0, 0, 129, 85, 45, 0, 56, 17, 0, 0, 191, 204, 236, 3, 62, 208, 179, 93, 191, 62, 25, 107, 0, 147, 0, 63, 129, 85, 45, 0, 56, 138, 30, 240, 190, 45, 64, 91, 60, 229, 242, 79, 191, 36, 104, 62, 0, 121, 225, 238, 127, 10, 57, 86, 56, 0, 0, 0, 0, 45, 64, 91, 60, 105, 30, 112, 191, 0, 104, 72, 0, 127, 0, 0, 127, 0, 58, 20, 56, 245, 242, 79, 191, 45, 64, 91, 60, 105, 30, 240, 190, 62, 104, 36, 0, 110, 197, 236, 127, 86, 56, 10, 57, 105, 30, 112, 191, 45, 64, 91, 60, 0, 0, 0, 0, 72, 104, 0, 0, 104, 184, 0, 127, 20, 56, 0, 58, 229, 242, 79, 191, 45, 64, 91, 60, 105, 30, 240, 62, 62, 104, 220, 0, 110, 197, 20, 127, 86, 56, 245, 58, 105, 30, 240, 190, 45, 64, 91, 60, 245, 242, 79, 63, 36, 104, 194, 0, 121, 225, 18, 127, 10, 57, 169, 59, 0, 0, 0, 0, 45, 64, 91, 60, 105, 30, 112, 63, 0, 104, 184, 0, 127, 0, 0, 127, 0, 58, 235, 59, 105, 30, 240, 62, 45, 64, 91, 60, 245, 242, 79, 63, 220, 104, 194, 0, 121, 31, 238, 127, 245, 58, 169, 59, 245, 242, 79, 63, 45, 64, 91, 60, 105, 30, 240, 62, 194, 104, 220, 0, 110, 59, 236, 127, 169, 59, 245, 58, 105, 30, 112, 63, 45, 64, 91, 60, 0, 0, 0, 0, 184, 104, 0, 0, 104, 72, 0, 127, 235, 59, 0, 58, 245, 242, 79, 63, 45, 64, 91, 60, 105, 30, 240, 190, 194, 104, 36, 0, 110, 59, 20, 127, 169, 59, 10, 57, 105, 30, 240, 62, 45, 64, 91, 60, 245, 242, 79, 191, 220, 104, 62, 0, 121, 31, 18, 127, 245, 58, 86, 56, 105, 30, 240, 62, 45, 64, 91, 60, 245, 242, 79, 191, 220, 104, 62, 0, 127, 0, 0, 129, 85, 59, 0, 56, 0, 0, 0, 63, 204, 236, 3, 62, 208, 179, 93, 191, 194, 25, 107, 0, 147, 0, 193, 129, 85, 59, 0, 56, 245, 242, 79, 63, 45, 64, 91, 60, 105, 30, 240, 190, 194, 104, 36, 0, 127, 0, 0, 129, 170, 58, 0, 56, 208, 179, 93, 63, 204, 236, 3, 62, 0, 0, 0, 191, 149, 25, 62, 0, 193, 0, 147, 129, 170, 58, 0, 56, 105, 30, 112, 191, 45, 64, 91, 60, 0, 0, 0, 0, 72, 104, 0, 0, 127, 0, 0, 127, 0, 52, 0, 56, 0, 0, 128, 191, 204, 236, 3, 62, 0, 0, 0, 0, 124, 25, 0, 0, 0, 0, 127, 129, 0, 52, 0, 56, 229, 242, 79, 191, 45, 64, 91, 60, 105, 30, 240, 62, 62, 104, 220, 0, 127, 0, 0, 127, 85, 53, 0, 56, 208, 179, 93, 191, 204, 236, 3, 62, 0, 0, 0, 63, 107, 25, 194, 0, 63, 0, 109, 129, 85, 53, 0, 56, 105, 30, 240, 190, 45, 64, 91, 60, 245, 242, 79, 63, 36, 104, 194, 0, 127, 0, 0, 127, 170, 54, 0, 56, 0, 0, 0, 191, 204, 236, 3, 62, 225, 179, 93, 63, 62, 25, 149, 0, 109, 0, 63, 129, 170, 54, 0, 56, 0, 0, 0, 0, 45, 64, 91, 60, 105, 30, 112, 63, 0, 104, 184, 0, 127, 0, 0, 127, 0, 56, 0, 56, 0, 0, 0, 0, 204, 236, 3, 62, 0, 0, 128, 63, 0, 25, 132, 0, 127, 0, 0, 129, 0, 56, 0, 56, 105, 30, 240, 62, 45, 64, 91, 60, 245, 242, 79, 63, 220, 104, 194, 0, 127, 0, 0, 127, 170, 56, 0, 56, 0, 0, 0, 63, 204, 236, 3, 62, 208, 179, 93, 63, 194, 25, 149, 0, 109, 0, 193, 129, 170, 56, 0, 56, 245, 242, 79, 63, 45, 64, 91, 60, 105, 30, 240, 62, 194, 104, 220, 0, 127, 0, 0, 127, 85, 57, 0, 56, 208, 179, 93, 63, 204, 236, 3, 62, 0, 0, 0, 63, 149, 25, 194, 0, 63, 0, 147, 129, 85, 57, 0, 56, 105, 30, 112, 63, 45, 64, 91, 60, 0, 0, 0, 0, 184, 104, 0, 0, 127, 0, 0, 127, 0, 58, 0, 56, 0, 0, 128, 63, 204, 236, 3, 62, 0, 0, 0, 0, 132, 25, 0, 0, 0, 0, 129, 129, 0, 58, 0, 56, 0, 0, 0, 0, 45, 64, 91, 60, 105, 30, 112, 191, 0, 104, 72, 0, 127, 0, 0, 129, 0, 0, 0, 56, 0, 0, 0, 0, 204, 236, 3, 62, 0, 0, 128, 191, 0, 25, 124, 0, 130, 250, 1, 129, 0, 0, 0, 56, 0, 0, 0, 0, 45, 64, 91, 60, 105, 30, 112, 191, 0, 104, 72, 0, 127, 0, 0, 129, 0, 60, 0, 56, 0, 0, 0, 0, 204, 236, 3, 62, 0, 0, 128, 191, 0, 25, 124, 0, 130, 6, 255, 129, 0, 60, 0, 56, 226, 2, 216, 62, 108, 94, 33, 64, 77, 18, 59, 191, 193, 248, 109, 0, 147, 0, 193, 129, 85, 59, 67, 40, 0, 0, 0, 0, 108, 94, 33, 64, 243, 2, 88, 191, 0, 248, 126, 0, 130, 254, 0, 129, 0, 60, 67, 40, 77, 18, 59, 63, 108, 94, 33, 64, 226, 2, 216, 190, 147, 248, 63, 0, 193, 0, 147, 129, 170, 58, 67, 40, 243, 2, 88, 63, 108, 94, 33, 64, 0, 0, 0, 0, 130, 248, 0, 0, 0, 0, 129, 129, 0, 58, 67, 40, 77, 18, 59, 63, 108, 94, 33, 64, 226, 2, 216, 62, 147, 248, 193, 0, 63, 0, 147, 129, 85, 57, 67, 40, 226, 2, 216, 62, 108, 94, 33, 64, 77, 18, 59, 63, 193, 248, 147, 0, 109, 0, 193, 129, 170, 56, 67, 40, 0, 0, 0, 0, 108, 94, 33, 64, 243, 2, 88, 63, 0, 248, 130, 0, 126, 0, 0, 129, 0, 56, 67, 40, 226, 2, 216, 190, 108, 94, 33, 64, 77, 18, 59, 63, 63, 248, 147, 0, 109, 0, 63, 129, 170, 54, 67, 40, 60, 18, 59, 191, 108, 94, 33, 64, 4, 3, 216, 62, 109, 248, 193, 0, 63, 0, 109, 129, 85, 53, 67, 40, 243, 2, 88, 191, 108, 94, 33, 64, 0, 0, 0, 0, 126, 248, 0, 0, 0, 0, 127, 129, 0, 52, 67, 40, 77, 18, 59, 191, 108, 94, 33, 64, 226, 2, 216, 190, 109, 248, 63, 0, 193, 0, 109, 129, 85, 49, 67, 40, 4, 3, 216, 190, 108, 94, 33, 64, 60, 18, 59, 191, 63, 248, 109, 0, 147, 0, 63, 129, 85, 45, 67, 40, 0, 0, 0, 0, 108, 94, 33, 64, 243, 2, 88, 191, 0, 248, 126, 0, 130, 2, 0, 129, 0, 0, 67, 40, 112, 181, 214, 62, 204, 178, 38, 64, 124, 241, 57, 191, 212, 90, 77, 0, 147, 0, 193, 129, 85, 59, 156, 36, 0, 0, 0, 0, 204, 178, 38, 64, 112, 181, 86, 191, 0, 90, 89, 0, 132, 16, 240, 129, 0, 60, 156, 36, 124, 241, 57, 63, 204, 178, 38, 64, 112, 181, 214, 190, 179, 90, 44, 0, 193, 0, 147, 129, 170, 58, 156, 36, 112, 181, 86, 63, 204, 178, 38, 64, 0, 0, 0, 0, 167, 90, 0, 0, 0, 0, 129, 129, 0, 58, 156, 36, 124, 241, 57, 63, 204, 178, 38, 64, 112, 181, 214, 62, 179, 90, 212, 0, 63, 0, 147, 129, 85, 57, 156, 36, 112, 181, 214, 62, 204, 178, 38, 64, 124, 241, 57, 63, 212, 90, 179, 0, 109, 0, 193, 129, 170, 56, 156, 36, 0, 0, 0, 0, 204, 178, 38, 64, 128, 181, 86, 63, 0, 90, 167, 0, 127, 0, 0, 129, 0, 56, 156, 36, 112, 181, 214, 190, 204, 178, 38, 64, 124, 241, 57, 63, 44, 90, 179, 0, 109, 0, 63, 129, 170, 54, 156, 36, 124, 241, 57, 191, 204, 178, 38, 64, 145, 181, 214, 62, 77, 90, 212, 0, 63, 0, 109, 129, 85, 53, 156, 36, 112, 181, 86, 191, 204, 178, 38, 64, 0, 0, 0, 0, 89, 90, 0, 0, 0, 0, 127, 129, 0, 52, 156, 36, 124, 241, 57, 191, 204, 178, 38, 64, 112, 181, 214, 190, 77, 90, 44, 0, 193, 0, 109, 129, 85, 49, 156, 36, 145, 181, 214, 190, 204, 178, 38, 64, 124, 241, 57, 191, 44, 90, 77, 0, 147, 0, 63, 129, 85, 45, 156, 36, 0, 0, 0, 0, 204, 178, 38, 64, 112, 181, 86, 191, 0, 90, 89, 0, 132, 240, 16, 129, 0, 0, 156, 36, 88, 226, 49, 62, 237, 99, 39, 64, 8, 227, 63, 63, 186, 94, 47, 0, 78, 85, 204, 129, 0, 54, 0, 56, 88, 226, 49, 190, 189, 55, 39, 64, 138, 118, 61, 63, 69, 93, 50, 0, 180, 85, 201, 129, 0, 54, 0, 58, 88, 226, 49, 62, 236, 190, 66, 64, 8, 227, 63, 63, 183, 183, 72, 0, 204, 103, 51, 129, 0, 57, 0, 56, 88, 226, 49, 190, 188, 146, 66, 64, 138, 118, 61, 63, 72, 184, 74, 0, 50, 104, 52, 129, 0, 57, 0, 58 ),
@@ -131,10 +142,10 @@ surfaces/1 = {
 "vertex_count": 157
 }
 
-[sub_resource type="CubeMesh" id=9]
+[sub_resource type="CubeMesh" id=10]
 size = Vector3( 0.15, 0.6, 0.55 )
 
-[sub_resource type="SpatialMaterial" id=10]
+[sub_resource type="SpatialMaterial" id=11]
 flags_transparent = true
 albedo_color = Color( 0.282353, 0.321569, 0.345098, 0.74902 )
 metallic = 0.28
@@ -165,13 +176,13 @@ detail_blend_mode = 3
 detail_uv_layer = 0
 detail_normal = ExtResource( 7 )
 
-[sub_resource type="PlaneMesh" id=11]
-material = SubResource( 10 )
+[sub_resource type="PlaneMesh" id=12]
+material = SubResource( 11 )
 size = Vector2( 150, 200 )
 subdivide_width = 200
 subdivide_depth = 200
 
-[sub_resource type="SpatialMaterial" id=12]
+[sub_resource type="SpatialMaterial" id=13]
 albedo_texture = ExtResource( 2 )
 roughness_texture = ExtResource( 18 )
 normal_enabled = true
@@ -193,19 +204,9 @@ depth_texture = ExtResource( 5 )
 uv1_scale = Vector3( 0.08, 0.08, 0.08 )
 uv1_triplanar = true
 
-[sub_resource type="PlaneMesh" id=13]
-material = SubResource( 12 )
+[sub_resource type="PlaneMesh" id=14]
+material = SubResource( 13 )
 size = Vector2( 150, 200 )
-
-[sub_resource type="GIProbeData" id=14]
-bounds = AABB( -79.8693, -27, -151.196, 159.739, 54, 302.392 )
-cell_size = 2.36244
-to_cell_xform = Transform( 0.423292, 0, 0, 0, 0.423292, 0, 0, 0, 0.423292, 33.808, 11.4289, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 1, 0, 0, 0, 1094713344, 0, 0, 7, 0, 9, 4022, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
-energy = 0.8
-bias = 1.5
-normal_bias = 0.3
-propagation = 0.3
 
 [node name="ShoreMap" type="Node"]
 script = ExtResource( 23 )
@@ -214,7 +215,7 @@ script = ExtResource( 23 )
 environment = ExtResource( 11 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( -0.934226, 0.253195, -0.251225, -0.35668, -0.664955, 0.656212, -0.000903713, 0.702657, 0.711528, 0, 9.5352, 12.2218 )
+transform = Transform( -0.936147, 0.31134, -0.163393, -0.349352, -0.771025, 0.532422, 0.0397843, 0.555507, 0.83056, 0, 9.5352, 12.2218 )
 light_color = Color( 0.976471, 0.972549, 0.929412, 1 )
 shadow_enabled = true
 shadow_bias = 0.0
@@ -354,37 +355,69 @@ transform = Transform( 0.999998, 0, -0.00221657, 0.00221657, -4.37114e-08, 0.999
 mesh = SubResource( 5 )
 material/0 = null
 
+[node name="Lightings" type="Node" parent="."]
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Lightings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.1, 15.679 )
+intensity = 0.5
+extents = Vector3( 17.44, 11.08, 17.6 )
+box_projection = true
+enable_shadows = true
+
+[node name="GIProbe" type="GIProbe" parent="Lightings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5404, -2.75435, -7.06521 )
+extents = Vector3( 79.8693, 27, 151.196 )
+dynamic_range = 1
+energy = 0.8
+propagation = 0.3
+normal_bias = 0.3
+data = SubResource( 6 )
+
+[node name="HangingLamp" parent="Lightings" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 16.2 )
+pattern = 0
+
+[node name="HangingLamp2" parent="Lightings" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 4.54348 )
+pattern = 1
+
 [node name="Objects" type="Node" parent="."]
 
 [node name="ReflectingSphere" type="CSGMesh" parent="Objects"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.843853, 11.8921, 15.1816 )
 visible = false
-mesh = SubResource( 6 )
-material = SubResource( 7 )
+mesh = SubResource( 7 )
+material = SubResource( 8 )
 
 [node name="Table" parent="Objects" instance=ExtResource( 12 )]
 transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.49529, 7.70132, 16.6933 )
 
 [node name="Waterpot" type="MeshInstance" parent="Objects/Table"]
-transform = Transform( -0.219587, 0, -0.272546, 0, 0.35, 0, 0.272546, 0, -0.219587, 0.329021, 0.982808, 0.246395 )
-mesh = SubResource( 8 )
+transform = Transform( 0.327002, 0, -0.124778, 0, 0.35, 0, 0.124778, 0, 0.327002, 0.251725, 0.982806, 0.0185642 )
+mesh = SubResource( 9 )
 material/0 = null
 material/1 = null
 
 [node name="TrayCircular" parent="Objects/Table" instance=ExtResource( 48 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.719432, 0.977772, 0.228483 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.664445, 0.977772, -0.3057 )
 
 [node name="CruetSoy" parent="Objects/Table/TrayCircular" instance=ExtResource( 49 )]
-transform = Transform( 0.618998, 0, 0.785393, 0, 1, 0, -0.785393, 0, 0.618998, 0.337456, 0.274231, 0.131672 )
+transform = Transform( 0.693452, 0, 0.720503, 0, 1, 0, -0.720503, 0, 0.693452, 0.264882, 0.274231, 0.131672 )
+
+[node name="CruetSalt" parent="Objects/Table/TrayCircular" instance=ExtResource( 47 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26501, 0.283452, -0.141333 )
 
 [node name="BarSmallProps" type="Spatial" parent="Objects"]
 transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, -0.10278, 12.3792, 8 )
 
 [node name="TrayRect" parent="Objects/BarSmallProps" instance=ExtResource( 44 )]
-transform = Transform( 0.0586789, 0, 0.998275, 0, 1, 0, -0.998275, 0, 0.0586789, -2.0663, -3.63472, 0.416271 )
+transform = Transform( 0.0586789, 0, 0.998275, 0, 1, 0, -0.998275, 0, 0.0586789, -2.0663, -3.63472, 0.41627 )
 
-[node name="CruetSoy" parent="Objects/BarSmallProps" instance=ExtResource( 49 )]
-transform = Transform( -0.895937, 0, -0.0854175, 0, 0.9, 0, 0.0854175, 0, -0.895937, -1.47657, -3.54176, 0.326979 )
+[node name="CruetSoy" parent="Objects/BarSmallProps/TrayRect" instance=ExtResource( 49 )]
+transform = Transform( -0.137843, 0, 0.889383, 0, 0.9, 0, -0.889383, 0, -0.137843, 0.123743, 0.0929604, 0.583476 )
+
+[node name="CruetSalt" parent="Objects/BarSmallProps/TrayRect" instance=ExtResource( 47 )]
+transform = Transform( 0.0528113, 0, -0.898452, 0, 0.9, 0, 0.898452, 0, 0.0528113, -0.134039, 0.0919418, 0.560237 )
 
 [node name="TableStalls" type="Spatial" parent="Objects"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.122316, 0 )
@@ -582,37 +615,37 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0460606 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Objects/Stand/Row"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.777397, 0.715646, 0.958735 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Objects/Stand/Row"]
 transform = Transform( 0.999501, 0, -0.0316027, 0, 1, 0, 0.0316027, 0, 0.999501, 0.599771, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Objects/Stand/Row"]
 transform = Transform( 0.999039, 0, -0.0438286, 0, 1, 0, 0.0438286, 0, 0.999039, 0.43543, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="Objects/Stand/Row"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.258983, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="Objects/Stand/Row"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.0892668, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="Objects/Stand/Row"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.0782814, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="Objects/Stand/Row"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.267818, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="Row2" type="Spatial" parent="Objects/Stand"]
@@ -620,37 +653,37 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.615919 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Objects/Stand/Row2"]
 transform = Transform( 0.999612, 0, 0.0278518, 0, 1, 0, -0.0278518, 0, 0.999612, 0.797693, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Objects/Stand/Row2"]
 transform = Transform( 0.999501, 0, -0.0316027, 0, 1, 0, 0.0316027, 0, 0.999501, 0.599771, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Objects/Stand/Row2"]
 transform = Transform( 0.999039, 0, -0.0438286, 0, 1, 0, 0.0438286, 0, 0.999039, 0.43543, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="Objects/Stand/Row2"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.258983, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="Objects/Stand/Row2"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.0892668, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="Objects/Stand/Row2"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.0782814, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="Objects/Stand/Row2"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.267818, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="Row3" type="Spatial" parent="Objects/Stand"]
@@ -658,37 +691,37 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.28443 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Objects/Stand/Row3"]
 transform = Transform( 0.996826, 0, -0.0796074, 0, 1, 0, 0.0796074, 0, 0.996826, 0.790895, 0.715646, 1.00642 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Objects/Stand/Row3"]
 transform = Transform( 0.999501, 0, -0.0316027, 0, 1, 0, 0.0316027, 0, 0.999501, 0.599771, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Objects/Stand/Row3"]
 transform = Transform( 0.999039, 0, -0.0438286, 0, 1, 0, 0.0438286, 0, 0.999039, 0.43543, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="Objects/Stand/Row3"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.258983, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="Objects/Stand/Row3"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.0892668, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="Objects/Stand/Row3"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.0782814, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="Objects/Stand/Row3"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.267818, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="Row4" type="Spatial" parent="Objects/Stand"]
@@ -696,37 +729,37 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.89705 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Objects/Stand/Row4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.768579, 0.715646, 0.933764 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Objects/Stand/Row4"]
 transform = Transform( 0.999501, 0, -0.0316027, 0, 1, 0, 0.0316027, 0, 0.999501, 0.599771, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Objects/Stand/Row4"]
 transform = Transform( 0.999039, 0, -0.0438286, 0, 1, 0, 0.0438286, 0, 0.999039, 0.43543, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="Objects/Stand/Row4"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.258983, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="Objects/Stand/Row4"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.0892668, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="Objects/Stand/Row4"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.0782814, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="Objects/Stand/Row4"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.267818, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="Row8" type="Spatial" parent="Objects/Stand"]
@@ -734,37 +767,37 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3375, 0.0460606 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Objects/Stand/Row8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.777397, 0.715646, 0.958735 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Objects/Stand/Row8"]
 transform = Transform( 0.999501, 0, -0.0316027, 0, 1, 0, 0.0316027, 0, 0.999501, 0.599771, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Objects/Stand/Row8"]
 transform = Transform( 0.999039, 0, -0.0438286, 0, 1, 0, 0.0438286, 0, 0.999039, 0.43543, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="Objects/Stand/Row8"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.258983, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="Objects/Stand/Row8"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.0892668, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="Objects/Stand/Row8"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.0782814, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="Objects/Stand/Row8"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.267818, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="Row7" type="Spatial" parent="Objects/Stand"]
@@ -772,37 +805,37 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33881, -0.615919 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Objects/Stand/Row7"]
 transform = Transform( 0.999612, 0, 0.0278518, 0, 1, 0, -0.0278518, 0, 0.999612, 0.797693, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Objects/Stand/Row7"]
 transform = Transform( 0.999501, 0, -0.0316027, 0, 1, 0, 0.0316027, 0, 0.999501, 0.599771, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Objects/Stand/Row7"]
 transform = Transform( 0.999039, 0, -0.0438286, 0, 1, 0, 0.0438286, 0, 0.999039, 0.43543, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="Objects/Stand/Row7"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.258983, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="Objects/Stand/Row7"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.0892668, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="Objects/Stand/Row7"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.0782814, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="Objects/Stand/Row7"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.267818, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="Row6" type="Spatial" parent="Objects/Stand"]
@@ -810,37 +843,37 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33654, -1.28443 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Objects/Stand/Row6"]
 transform = Transform( 0.996826, 0, -0.0796074, 0, 1, 0, 0.0796074, 0, 0.996826, 0.790895, 0.715646, 1.00642 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Objects/Stand/Row6"]
 transform = Transform( 0.999501, 0, -0.0316027, 0, 1, 0, 0.0316027, 0, 0.999501, 0.599771, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Objects/Stand/Row6"]
 transform = Transform( 0.999039, 0, -0.0438286, 0, 1, 0, 0.0438286, 0, 0.999039, 0.43543, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="Objects/Stand/Row6"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.258983, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="Objects/Stand/Row6"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.0892668, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="Objects/Stand/Row6"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.0782814, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="Objects/Stand/Row6"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.267818, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="Row5" type="Spatial" parent="Objects/Stand"]
@@ -848,37 +881,37 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33663, -1.89705 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Objects/Stand/Row5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.768579, 0.715646, 0.933764 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Objects/Stand/Row5"]
 transform = Transform( 0.999501, 0, -0.0316027, 0, 1, 0, 0.0316027, 0, 0.999501, 0.599771, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Objects/Stand/Row5"]
 transform = Transform( 0.999039, 0, -0.0438286, 0, 1, 0, 0.0438286, 0, 0.999039, 0.43543, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="Objects/Stand/Row5"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.258983, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="Objects/Stand/Row5"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.0892668, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="Objects/Stand/Row5"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.0782814, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="Objects/Stand/Row5"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.267818, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="Row12" type="Spatial" parent="Objects/Stand"]
@@ -886,37 +919,37 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.72568, 0.0460606 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Objects/Stand/Row12"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.777397, 0.715646, 0.958735 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Objects/Stand/Row12"]
 transform = Transform( 0.999501, 0, -0.0316027, 0, 1, 0, 0.0316027, 0, 0.999501, 0.599771, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Objects/Stand/Row12"]
 transform = Transform( 0.999039, 0, -0.0438286, 0, 1, 0, 0.0438286, 0, 0.999039, 0.43543, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="Objects/Stand/Row12"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.258983, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="Objects/Stand/Row12"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.0892668, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="Objects/Stand/Row12"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.0782814, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="Objects/Stand/Row12"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.267818, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="Row11" type="Spatial" parent="Objects/Stand"]
@@ -924,37 +957,37 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.72533, -0.615919 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Objects/Stand/Row11"]
 transform = Transform( 0.999612, 0, 0.0278518, 0, 1, 0, -0.0278518, 0, 0.999612, 0.797693, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Objects/Stand/Row11"]
 transform = Transform( 0.999501, 0, -0.0316027, 0, 1, 0, 0.0316027, 0, 0.999501, 0.599771, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Objects/Stand/Row11"]
 transform = Transform( 0.999039, 0, -0.0438286, 0, 1, 0, 0.0438286, 0, 0.999039, 0.43543, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="Objects/Stand/Row11"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.258983, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="Objects/Stand/Row11"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.0892668, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="Objects/Stand/Row11"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.0782814, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="Objects/Stand/Row11"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.267818, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="Row10" type="Spatial" parent="Objects/Stand"]
@@ -962,37 +995,37 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.72527, -1.28443 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Objects/Stand/Row10"]
 transform = Transform( 0.996826, 0, -0.0796074, 0, 1, 0, 0.0796074, 0, 0.996826, 0.790895, 0.715646, 1.00642 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Objects/Stand/Row10"]
 transform = Transform( 0.999501, 0, -0.0316027, 0, 1, 0, 0.0316027, 0, 0.999501, 0.599771, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Objects/Stand/Row10"]
 transform = Transform( 0.999039, 0, -0.0438286, 0, 1, 0, 0.0438286, 0, 0.999039, 0.43543, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="Objects/Stand/Row10"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.258983, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="Objects/Stand/Row10"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.0892668, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="Objects/Stand/Row10"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.0782814, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="Objects/Stand/Row10"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.267818, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="Row9" type="Spatial" parent="Objects/Stand"]
@@ -1000,44 +1033,44 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.72534, -1.89705 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Objects/Stand/Row9"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.768579, 0.715646, 0.933764 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="Objects/Stand/Row9"]
 transform = Transform( 0.999501, 0, -0.0316027, 0, 1, 0, 0.0316027, 0, 0.999501, 0.599771, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="Objects/Stand/Row9"]
 transform = Transform( 0.999039, 0, -0.0438286, 0, 1, 0, 0.0438286, 0, 0.999039, 0.43543, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance4" type="MeshInstance" parent="Objects/Stand/Row9"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.258983, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance5" type="MeshInstance" parent="Objects/Stand/Row9"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, 0.0892668, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance6" type="MeshInstance" parent="Objects/Stand/Row9"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.0782814, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="MeshInstance7" type="MeshInstance" parent="Objects/Stand/Row9"]
 transform = Transform( 0.999696, 0, -0.0246416, 0, 1, 0, 0.0246416, 0, 0.999696, -0.267818, 0.715646, 0.985703 )
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="Environs" type="Node" parent="."]
 
 [node name="SeaFace" type="MeshInstance" parent="Environs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 43 )
-mesh = SubResource( 11 )
+mesh = SubResource( 12 )
 material/0 = null
 __meta__ = {
 "_edit_lock_": true
@@ -1045,34 +1078,8 @@ __meta__ = {
 
 [node name="SeaGround" type="MeshInstance" parent="Environs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.77846, 43 )
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
-
-[node name="Lightings" type="Node" parent="."]
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="Lightings"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.1, 15.679 )
-intensity = 0.5
-extents = Vector3( 17.44, 11.08, 17.6 )
-box_projection = true
-enable_shadows = true
-
-[node name="GIProbe" type="GIProbe" parent="Lightings"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5404, -2.75435, -7.06521 )
-extents = Vector3( 79.8693, 27, 151.196 )
-dynamic_range = 1
-energy = 0.8
-propagation = 0.3
-normal_bias = 0.3
-data = SubResource( 14 )
-
-[node name="HangingLamp" parent="Lightings" instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 16.2 )
-pattern = 1
-
-[node name="HangingLamp2" parent="Lightings" instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 4.54348 )
-pattern = 1
 
 [node name="Audio" type="Node" parent="."]
 
