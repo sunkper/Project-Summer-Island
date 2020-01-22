@@ -30,7 +30,7 @@ radial_segments = 6
 radius = 0.4
 height = 1.7
 
-[node name="Stall" type="StaticBody"]
+[node name="Stool" type="StaticBody"]
 
 [node name="Seat" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
