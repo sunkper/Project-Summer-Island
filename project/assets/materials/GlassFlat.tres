@@ -11,5 +11,5 @@ metallic = 1.0
 metallic_specular = 0.64
 metallic_texture = ExtResource( 1 )
 roughness_texture = ExtResource( 2 )
-uv1_scale = Vector3( 0.25, 1, 0.25 )
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
 uv1_triplanar = true
