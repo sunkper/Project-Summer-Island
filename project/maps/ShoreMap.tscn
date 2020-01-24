@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/Rocks_08.png" type="Texture" id=2]
@@ -59,6 +59,7 @@
 [ext_resource path="res://tools/LineUpMeshInstance.tscn" type="PackedScene" id=57]
 [ext_resource path="res://assets/models/CupGlass.material" type="Material" id=58]
 [ext_resource path="res://tools/DayNightCycle.gd" type="Script" id=59]
+[ext_resource path="res://assets/models/Ladle.glb" type="PackedScene" id=60]
 [ext_resource path="res://assets/models/SnackPopChips.material" type="Material" id=61]
 
 [sub_resource type="GDScript" id=2]
@@ -541,7 +542,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30382, 7.71115, 8.52926 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.608, -0.103455, -0.687 )
 
 [node name="StoolRed5" parent="Objects/BarStools" instance=ExtResource( 19 )]
-transform = Transform( 0.96197, 0, -0.273153, 0, 1, 0, 0.273153, 0, 0.96197, 0.531236, -0.113695, -4.58777 )
+transform = Transform( 0.96197, 0, -0.273153, 0, 1, 0, 0.273153, 0, 0.96197, 1.04043, -0.113695, -3.53035 )
 
 [node name="StoolRed4" parent="Objects/BarStools" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.24205, -0.0879183, 22.7172 )
@@ -714,6 +715,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.975611, 9.01183, 1.214 )
 [node name="FryingPan" parent="Objects/Cookwares" instance=ExtResource( 55 )]
 transform = Transform( -8.14603e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -8.14603e-08, 0, -0.600501, 0.0946887 )
 
+[node name="Ladle" parent="Objects/Cookwares" instance=ExtResource( 60 )]
+transform = Transform( 1, 0, 0, 0, 0.927862, 0.372923, 0, -0.372923, 0.927862, -1.70488, 0.177833, -1.06913 )
+
 [node name="Environs" type="Node" parent="."]
 
 [node name="SeaFace" type="MeshInstance" parent="Environs"]
@@ -745,12 +749,12 @@ emission_angle_enabled = true
 transform = Transform( 0.454335, 0, -0.532522, 0, 0.7, 0, 0.532522, 0, 0.454335, 4.31106, 7.96792, 34.3159 )
 
 [node name="godette3" parent="Characters" instance=ExtResource( 30 )]
-transform = Transform( -0.785989, 0, 0.149069, 0, 0.8, 0, -0.149069, 0, -0.785989, 0.0839543, 8.48427, 10.3299 )
+transform = Transform( -0.799991, 0, 0.00386819, 0, 0.8, 0, -0.00386819, 0, -0.799991, 0.943759, 8.48427, 3.25912 )
 
 [node name="BokuYuuka" parent="Characters" instance=ExtResource( 33 )]
-transform = Transform( -0.676254, 0, -0.427411, 0, 0.8, 0, 0.427411, 0, -0.676254, -6.3765, 5.99839, 5.20132 )
+transform = Transform( -0.349215, 0, -0.719756, 0, 0.8, 0, 0.719756, 0, -0.349215, -7.00943, 5.99839, 10.462 )
 
 [node name="Player" parent="." instance=ExtResource( 42 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.21235, 19.4311, 8.66198 )
+transform = Transform( 0.642961, 0, 0.765899, 0, 1, 0, -0.765899, 0, 0.642961, 8.21235, 19.4311, 8.66198 )
 mouse_def_sensi = 0.8
 def_fov = 70.0
