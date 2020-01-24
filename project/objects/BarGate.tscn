@@ -27,7 +27,7 @@ func _input(event: InputEvent) -> void:
 
 [sub_resource type="CubeMesh" id=2]
 material = ExtResource( 2 )
-size = Vector3( 3.5, 0.1, 1.5 )
+size = Vector3( 2.6, 0.13, 1.45 )
 
 [sub_resource type="CylinderMesh" id=3]
 material = ExtResource( 1 )
@@ -59,7 +59,7 @@ extents = Vector3( 1.75, 1, 0.75 )
 script = SubResource( 1 )
 
 [node name="Body" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31805, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = null
 
