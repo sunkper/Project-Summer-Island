@@ -14,6 +14,8 @@ onready var panorama_night = preload("res://_TEMP_THEFT_ASSETS/textures/Boku2Sky
 
 func _set_time(new_time) -> void:
 	time = new_time
+	if get_parent() == null:
+		return
 	if not get_parent().get_child_count() > 0:
 		return
 	var env = get_node(environment).environment

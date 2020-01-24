@@ -12,8 +12,9 @@ export (String, DIR) var save_dir = \"res://assets/models/\"
 
 export var convert_to_meshinstance: = false setget _convert_to_meshinstance
 
+
 func _get_configuration_warning() -> String:
-	var string = \"\"
+	var string := \"\"
 	
 	if not get_parent() is CSGShape:
 		string = WARN_PARENT_TYPE
@@ -21,16 +22,20 @@ func _get_configuration_warning() -> String:
 	return string
 
 func _export_mesh(state) -> void:
+	if get_parent() == null:
+		return
 	if get_parent() is CSGShape:
-		var mesh = get_mesh()
+		var mesh := get_mesh()
 		ResourceSaver.save(save_dir + file_name + \".mesh\", mesh)
 	else:
 		print(WARN_PARENT_TYPE)
 
 func _convert_to_meshinstance(state) -> void:
+	if get_parent() == null:
+		return
 	if get_parent() is CSGShape:
-		var mesh = get_mesh()
-		var node = MeshInstance.new()
+		var mesh := get_mesh()
+		var node := MeshInstance.new()
 		node.mesh = mesh
 		if file_name == get_parent().name:
 			file_name = file_name + \"Mesh\"
