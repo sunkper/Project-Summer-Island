@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/Rocks_08.png" type="Texture" id=2]
@@ -58,6 +58,7 @@
 [ext_resource path="res://assets/models/ChopstickHolder.glb" type="PackedScene" id=56]
 [ext_resource path="res://tools/LineUpMeshInstance.tscn" type="PackedScene" id=57]
 [ext_resource path="res://assets/models/CupGlass.material" type="Material" id=58]
+[ext_resource path="res://tools/DayNightCycle.gd" type="Script" id=59]
 
 [sub_resource type="GDScript" id=2]
 script/source = "tool
@@ -109,7 +110,8 @@ size = Vector3( 1.9, 0.1, 3 )
 bounds = AABB( -79.8693, -27, -151.196, 159.739, 54, 302.392 )
 cell_size = 2.36244
 to_cell_xform = Transform( 0.423292, 0, 0, 0, 0.423292, 0, 0, 0, 0.423292, 33.808, 11.4289, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 1, 0, 0, 0, 1098907648, 1098907648, 0, 285636560, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 1, 0, 0, 0, 0, 0, 0, 7, 0, 9, 1901, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_range = 4
 energy = 0.8
 bias = 1.5
 normal_bias = 0.3
@@ -239,12 +241,17 @@ size = Vector2( 150, 200 )
 [node name="ShoreMap" type="Node"]
 script = ExtResource( 23 )
 
+[node name="DayNightCycle" type="Node" parent="."]
+script = ExtResource( 59 )
+environment = NodePath("../WorldEnvironment")
+dir_light = NodePath("../DirectionalLight")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 11 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.936147, 0.31134, -0.163393, -0.349352, -0.771025, 0.532422, 0.0397843, 0.555507, 0.83056, 0, 9.5352, 12.2218 )
-light_color = Color( 0.976471, 0.972549, 0.929412, 1 )
+light_color = Color( 0.98, 0.97, 0.93, 1 )
 shadow_enabled = true
 shadow_bias = 0.0
 directional_shadow_blend_splits = true
@@ -307,7 +314,7 @@ transform = Transform( -0.970296, 0.0210848, -0.241001, 0, 0.996194, 0.0871558, 
 [node name="Structures" type="Node" parent="."]
 
 [node name="HouseGeometry" parent="Structures" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.93662e-05, 6, 0.000152111 )
 
 [node name="Sunshade" parent="Structures" instance=ExtResource( 39 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.492, 13.375, 4.269 )
@@ -404,10 +411,14 @@ data = SubResource( 7 )
 [node name="HangingLamp" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 16.2 )
 pattern = 0
+sway = true
+sway_ang_deg = 10.0
 
 [node name="HangingLamp2" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 4.54348 )
 pattern = 1
+sway = false
+sway_ang_deg = 10.0
 
 [node name="Objects" type="Node" parent="."]
 
@@ -421,7 +432,7 @@ material = SubResource( 9 )
 transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.49529, 7.70132, 16.6933 )
 
 [node name="Waterpot" type="MeshInstance" parent="Objects/Table"]
-transform = Transform( 0.327002, 0, -0.124778, 0, 0.35, 0, 0.124778, 0, 0.327002, 0.513851, 0.982806, -0.0446243 )
+transform = Transform( -0.0348231, 0, 0.348263, 0, 0.35, 0, -0.348263, 0, -0.0348231, 0.513851, 0.982806, -0.0446243 )
 mesh = SubResource( 10 )
 material/0 = null
 material/1 = null
@@ -1156,7 +1167,7 @@ emission_angle_enabled = true
 transform = Transform( 0.454335, 0, -0.532522, 0, 0.7, 0, 0.532522, 0, 0.454335, 4.31106, 7.96792, 34.3159 )
 
 [node name="godette3" parent="Characters" instance=ExtResource( 30 )]
-transform = Transform( 0.737095, 0, -0.310952, 0, 0.8, 0, 0.310952, 0, 0.737095, 0.0860929, 8.24905, 7.55965 )
+transform = Transform( 0.737095, 0, -0.310952, 0, 0.8, 0, 0.310952, 0, 0.737095, 0.576005, 8.24905, 7.24425 )
 
 [node name="BokuYuuka" parent="Characters" instance=ExtResource( 33 )]
 transform = Transform( -0.676254, 0, -0.427411, 0, 0.8, 0, 0.427411, 0, -0.676254, -6.3765, 5.99839, 5.20132 )
