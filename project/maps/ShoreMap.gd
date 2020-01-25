@@ -12,6 +12,22 @@ func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.scancode == KEY_F10:
 			_capture()
+	if event.is_action_pressed("ui_cancel"):
+		if $DayNightCycle.time == $DayNightCycle.times.DAY:
+			$DayNightCycle.time = $DayNightCycle.times.NIGHT
+		else:
+			$DayNightCycle.time = $DayNightCycle.times.DAY
+	if event is InputEventKey and event.pressed:
+		if event.scancode == KEY_1:
+			if $Lightings/HangingLamp.pattern == $Lightings/HangingLamp.patterns.ON:
+				$Lightings/HangingLamp.pattern = $Lightings/HangingLamp.patterns.OFF
+			else:
+				$Lightings/HangingLamp.pattern = $Lightings/HangingLamp.patterns.ON
+		if event.scancode == KEY_2:
+			if $Lightings/HangingLamp2.pattern == $Lightings/HangingLamp2.patterns.ON:
+				$Lightings/HangingLamp2.pattern = $Lightings/HangingLamp2.patterns.OFF
+			else:
+				$Lightings/HangingLamp2.pattern = $Lightings/HangingLamp2.patterns.ON
 
 func _capture():
 	# Start thread for capturing images
@@ -30,4 +46,3 @@ func _capture_thread(_arg):
 func _exit_tree():
 	for task in _capture_tasks:
 		task.wait_to_finish()
-

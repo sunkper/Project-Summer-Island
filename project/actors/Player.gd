@@ -80,3 +80,6 @@ func _input(event):
 		is_sprinting = true
 	elif event.is_action_released("sprint"):
 		is_sprinting = false
+	
+	if event.is_action_pressed("flashlight"):
+		$Flashlight.visible = !$Flashlight.visible

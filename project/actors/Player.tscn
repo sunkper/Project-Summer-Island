@@ -8,7 +8,7 @@ extents = Vector3( 0.244978, 0.256154, 0.599509 )
 
 [sub_resource type="CapsuleShape" id=2]
 radius = 0.682626
-height = 2.90643
+height = 1.31132
 
 [node name="Player" type="KinematicBody"]
 collision_mask = 6
@@ -16,7 +16,7 @@ script = ExtResource( 1 )
 zoom_fov = 15.0
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41399, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0319737, 0 )
 current = true
 fov = 75.0
 size = 0.1
@@ -51,3 +51,12 @@ opacity = 0.5
 pixel_size = 0.03
 billboard = 1
 texture = ExtResource( 3 )
+
+[node name="Flashlight" type="SpotLight" parent="."]
+visible = false
+light_color = Color( 1, 0.937255, 0.764706, 1 )
+light_energy = 2.0
+light_indirect_energy = 3.0
+shadow_enabled = true
+spot_range = 7.91494
+spot_angle = 37.9926
