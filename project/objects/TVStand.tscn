@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/materials/Wood02.tres" type="Material" id=1]
 [ext_resource path="res://assets/models/TV.glb" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://assets/videos/ManWithACamera.webm" type="VideoStream" id=4]
 [ext_resource path="res://objects/TVStand.gd" type="Script" id=5]
 [ext_resource path="res://assets/audio/music/Canal3.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/models/TVScreen.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CylinderMesh" id=1]
 material = ExtResource( 1 )
@@ -13,17 +15,14 @@ bottom_radius = 0.1
 height = 6.4
 radial_segments = 6
 
-[sub_resource type="CylinderMesh" id=5]
+[sub_resource type="CylinderMesh" id=2]
 material = ExtResource( 1 )
 top_radius = 0.1
 bottom_radius = 0.1
 height = 7.6
 radial_segments = 6
 
-[sub_resource type="ViewportTexture" id=6]
-viewport_path = NodePath("TV/Screen/Viewport")
-
-[sub_resource type="GDScript" id=7]
+[sub_resource type="GDScript" id=3]
 script/source = "extends VideoPlayer
 
 func _on_VideoPlayer_finished() -> void:
@@ -58,60 +57,71 @@ func _on_Timer_timeout() -> void:
 	light_energy = rand_range(min_energy, max_energy)
 "
 
+[sub_resource type="ViewportTexture" id=5]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="SpatialMaterial" id=6]
+resource_local_to_scene = true
+resource_name = "TVScreen"
+albedo_color = Color( 0.521158, 0.642419, 0.631247, 1 )
+albedo_texture = SubResource( 5 )
+metallic = 0.111111
+roughness = 0.782051
+
 [node name="TVStand" type="Spatial"]
 script = ExtResource( 5 )
 
 [node name="Stand" type="CSGPolygon" parent="."]
 transform = Transform( 1.31134e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, -1.31134e-07, -5.73206e-15, -0.5, 2.67351, -1.5 )
+use_in_baked_light = true
 polygon = PoolVector2Array( 0, -0.5, 2.5, 2, 2.5, -0.5 )
 depth = 0.2
 material = ExtResource( 1 )
 
 [node name="Foot" type="MeshInstance" parent="Stand"]
 transform = Transform( 1.31134e-07, 4.23516e-22, 1, 1, -4.37114e-08, -1.31134e-07, 4.37114e-08, 1, -5.73206e-15, 1.73583, 0.231458, -3.36592 )
+use_in_baked_light = true
 mesh = SubResource( 1 )
 material/0 = null
 
 [node name="Hand" type="MeshInstance" parent="Stand"]
 transform = Transform( 1.31134e-07, 4.23516e-22, 1, 1, -4.37114e-08, -1.31134e-07, 4.37114e-08, 1, -5.73206e-15, 0.41238, -0.333926, 3.20571 )
+use_in_baked_light = true
 mesh = SubResource( 1 )
 material/0 = null
 
 [node name="Hand2" type="MeshInstance" parent="Stand"]
 transform = Transform( 1.31134e-07, 4.23516e-22, 1, 1, -4.37114e-08, -1.31134e-07, 4.37114e-08, 1, -5.73206e-15, 2.22014, -0.281014, 3.20571 )
+use_in_baked_light = true
 mesh = SubResource( 1 )
 material/0 = null
 
 [node name="Hand3" type="MeshInstance" parent="Stand"]
 transform = Transform( 1.31134e-07, 4.23516e-22, 1, 1, -4.37114e-08, -1.31134e-07, 4.37114e-08, 1, -5.73206e-15, 2.28647, 1.47218, 3.65106 )
-mesh = SubResource( 5 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Sound" type="AudioStreamPlayer3D" parent="."]
-transform = Transform( 0.852795, 0, -0.522246, 0, 1, 0, 0.522246, 0, 0.852795, -0.171461, 3.18849, 0.292336 )
+transform = Transform( 0.852795, 0, -0.522246, 0, 1, 0, 0.522246, 0, 0.852795, -0.308365, 3.18849, -0.71533 )
 stream = ExtResource( 6 )
 unit_db = -25.0
 autoplay = true
 bus = "TVSound"
 
-[node name="Screen" type="Sprite3D" parent="."]
-transform = Transform( 0.852795, 0, -0.522246, 0, 1, 0, 0.522246, 0, 0.852795, 0.171071, 3.19136, -0.00910938 )
-flip_h = true
-flip_v = true
-pixel_size = 0.0035
-shaded = true
-texture = SubResource( 6 )
-
-[node name="Viewport" type="Viewport" parent="Screen"]
+[node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 256, 206 )
 
-[node name="VideoPlayer" type="VideoPlayer" parent="Screen/Viewport"]
+[node name="VideoPlayer" type="VideoPlayer" parent="Viewport"]
 margin_right = 40.0
 margin_bottom = 40.0
 stream = ExtResource( 4 )
 autoplay = true
 expand = false
-script = SubResource( 7 )
+script = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Viewport"]
+texture = ExtResource( 3 )
 
 [node name="TVLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.560275, 3.40148, -0.638363 )
@@ -126,5 +136,10 @@ script = SubResource( 4 )
 
 [node name="TV" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.690365, 0, 0.723461, 0, 1, 0, -0.723461, 0, 0.690365, -0.365824, 3.32102, 0.270738 )
-[connection signal="finished" from="Screen/Viewport/VideoPlayer" to="Screen/Viewport/VideoPlayer" method="_on_VideoPlayer_finished"]
+
+[node name="Screen" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.690365, 0, 0.723461, 0, 1, 0, -0.723461, 0, 0.690365, -0.365824, 3.32102, 0.270738 )
+material_override = SubResource( 6 )
+use_in_baked_light = true
+[connection signal="finished" from="Viewport/VideoPlayer" to="Viewport/VideoPlayer" method="_on_VideoPlayer_finished"]
 [connection signal="timeout" from="TVLight/Timer" to="TVLight" method="_on_Timer_timeout"]
