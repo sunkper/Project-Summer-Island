@@ -203,22 +203,27 @@ __meta__ = {
 
 [node name="Front" type="MeshInstance" parent="."]
 transform = Transform( -1.62921e-07, -0.0871558, -0.996195, 0, 0.996195, -0.0871558, 1, -1.41995e-08, -1.62301e-07, -1.943, 1.28, 1.46 )
+use_in_baked_light = true
 mesh = SubResource( 7 )
 material/0 = null
 
 [node name="Tag" type="MeshInstance" parent="."]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -0.63, 2.587, 0.77 )
+use_in_baked_light = true
 mesh = SubResource( 9 )
 material/0 = null
 
 [node name="Glass" type="MeshInstance" parent="."]
 transform = Transform( 0.973045, 3.75722e-08, -0.230616, 0.230616, -1.58529e-07, 0.973045, 0, -1, -1.62921e-07, -1.099, 2.061, 1.493 )
+use_in_baked_light = true
 mesh = SubResource( 11 )
 material/0 = null
 
 [node name="SpotLight" type="SpotLight" parent="."]
 transform = Transform( -5.77445e-08, -0.0871556, 0.996195, 1.6611e-07, 0.996195, 0.0871556, -1, 1.70511e-07, -4.30473e-08, -0.53, 2.06771, 0.85 )
 light_energy = 8.0
+light_indirect_energy = 2.0
+light_bake_mode = 2
 shadow_enabled = true
 spot_range = 1.8
 spot_attenuation = 1.07178
@@ -228,6 +233,8 @@ spot_angle_attenuation = 2.63902
 [node name="SpotLight2" type="SpotLight" parent="."]
 transform = Transform( -5.77445e-08, -0.0871556, 0.996195, 1.6611e-07, 0.996195, 0.0871556, -1, 1.70511e-07, -4.30473e-08, -0.53, 2.06771, 2.09 )
 light_energy = 8.0
+light_indirect_energy = 2.0
+light_bake_mode = 2
 shadow_enabled = true
 spot_range = 1.8
 spot_attenuation = 1.07178

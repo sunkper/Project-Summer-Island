@@ -7,7 +7,7 @@
 
 [resource]
 flags_transparent = true
-albedo_color = Color( 1, 1, 1, 0.945098 )
+albedo_color = Color( 0.937255, 0.988235, 0.92549, 0.945098 )
 albedo_texture = ExtResource( 4 )
 normal_enabled = true
 normal_scale = 1.0
@@ -26,6 +26,6 @@ depth_flip_tangent = false
 depth_flip_binormal = false
 depth_texture = ExtResource( 1 )
 transmission_enabled = true
-transmission = Color( 1, 1, 1, 1 )
+transmission = Color( 0.756863, 0.929412, 0.737255, 1 )
 uv1_scale = Vector3( 1, 0.5, 1 )
 uv1_offset = Vector3( 0, 0.25, 0 )

@@ -241,32 +241,38 @@ script = SubResource( 1 )
 
 [node name="Hanger" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.4, 0 )
+use_in_baked_light = true
 mesh = SubResource( 2 )
 material/0 = null
 
 [node name="BulbBody" type="MeshInstance" parent="Hanger"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.40294, 0 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="BulbHeadOn" type="MeshInstance" parent="Hanger/BulbBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.230063, 0 )
 visible = false
+use_in_baked_light = true
 mesh = SubResource( 6 )
 material/0 = null
 
 [node name="BulbHeadOff" type="MeshInstance" parent="Hanger/BulbBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.230063, 0 )
+use_in_baked_light = true
 mesh = SubResource( 8 )
 material/0 = null
 
 [node name="MeshInstance" type="MeshInstance" parent="Hanger"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.15337, 0 )
+use_in_baked_light = true
 mesh = SubResource( 9 )
 material/0 = null
 
 [node name="LampOuterMesh" type="MeshInstance" parent="Hanger"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.099, 0 )
+use_in_baked_light = true
 mesh = SubResource( 12 )
 material/0 = null
 material/1 = null
@@ -304,12 +310,11 @@ convert_to_meshinstance = false
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -5.20745, 0 )
 visible = false
 light_color = Color( 0.890196, 0.709804, 0.478431, 1 )
-light_energy = 2.0
-light_indirect_energy = 6.0
+light_indirect_energy = 8.0
 shadow_enabled = true
 shadow_bias = 0.05
-omni_range = 20.0
-omni_attenuation = 6.5
+omni_range = 27.0
+omni_attenuation = 6.96652
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 anims/Flicker00 = SubResource( 13 )

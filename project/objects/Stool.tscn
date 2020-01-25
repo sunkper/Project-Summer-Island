@@ -33,31 +33,37 @@ height = 1.7
 [node name="Stool" type="StaticBody"]
 
 [node name="Seat" type="MeshInstance" parent="."]
+use_in_baked_light = true
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
 [node name="Leg0" type="MeshInstance" parent="Seat"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -0.883721, 0 )
+use_in_baked_light = true
 mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Leg1" type="MeshInstance" parent="Seat"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, -0.883721, 0 )
+use_in_baked_light = true
 mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Leg2" type="MeshInstance" parent="Seat"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.883721, -0.4 )
+use_in_baked_light = true
 mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Leg3" type="MeshInstance" parent="Seat"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.883721, 0.4 )
+use_in_baked_light = true
 mesh = SubResource( 3 )
 material/0 = null
 
-[node name="MeshInstance" type="MeshInstance" parent="Seat"]
+[node name="LegRing" type="MeshInstance" parent="Seat"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.139, 0 )
+use_in_baked_light = true
 mesh = ExtResource( 3 )
 material/0 = null
 

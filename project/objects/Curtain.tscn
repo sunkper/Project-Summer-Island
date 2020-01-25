@@ -5,7 +5,7 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1.37936, 0.225255, 0.202765 )
 
-[sub_resource type="PlaneMesh" id=3]
+[sub_resource type="PlaneMesh" id=2]
 material = ExtResource( 1 )
 size = Vector2( 3.4, 3.2 )
 subdivide_width = 5
@@ -21,7 +21,8 @@ shape = SubResource( 1 )
 
 [node name="CurtainBody" type="SoftBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.199607, 0.979876, 0, -0.979876, 0.199607, 0, 1.48525, -0.109335 )
-mesh = SubResource( 3 )
+use_in_baked_light = true
+mesh = SubResource( 2 )
 material/0 = null
 pinned_points = [ 0, 4, 8, 12 ]
 attachments/0/point_index = 0
