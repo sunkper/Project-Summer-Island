@@ -222,7 +222,7 @@ material/0 = null
 [node name="SpotLight" type="SpotLight" parent="."]
 transform = Transform( -5.77445e-08, -0.0871556, 0.996195, 1.6611e-07, 0.996195, 0.0871556, -1, 1.70511e-07, -4.30473e-08, -0.53, 2.06771, 0.85 )
 light_energy = 8.0
-light_indirect_energy = 2.0
+light_indirect_energy = 3.0
 light_bake_mode = 2
 shadow_enabled = true
 spot_range = 1.8
@@ -233,7 +233,7 @@ spot_angle_attenuation = 2.63902
 [node name="SpotLight2" type="SpotLight" parent="."]
 transform = Transform( -5.77445e-08, -0.0871556, 0.996195, 1.6611e-07, 0.996195, 0.0871556, -1, 1.70511e-07, -4.30473e-08, -0.53, 2.06771, 2.09 )
 light_energy = 8.0
-light_indirect_energy = 2.0
+light_indirect_energy = 3.0
 light_bake_mode = 2
 shadow_enabled = true
 spot_range = 1.8
