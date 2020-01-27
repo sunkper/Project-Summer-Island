@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/Rocks_08.png" type="Texture" id=2]
@@ -62,6 +62,9 @@
 [ext_resource path="res://assets/models/Ladle.glb" type="PackedScene" id=60]
 [ext_resource path="res://assets/models/SnackPopChips.material" type="Material" id=61]
 [ext_resource path="res://assets/models/TrayCircular.glb" type="PackedScene" id=62]
+[ext_resource path="res://assets/textures/pbr/Dirt01/Dirt01_roughness.png" type="Texture" id=63]
+[ext_resource path="res://assets/textures/pbr/Metal24/Metal24_metallic.png" type="Texture" id=64]
+[ext_resource path="res://assets/textures/pbr/WallPlaster/WallPlaster_normal.png" type="Texture" id=65]
 
 [sub_resource type="GDScript" id=2]
 script/source = "tool
@@ -109,7 +112,31 @@ size = Vector3( 3.8, 0.1, 6 )
 material = ExtResource( 46 )
 size = Vector3( 1.9, 0.1, 3 )
 
-[sub_resource type="GIProbeData" id=7]
+[sub_resource type="SpatialMaterial" id=22]
+flags_transparent = true
+params_depth_draw_mode = 3
+albedo_color = Color( 0.87451, 0.87451, 0.87451, 0.0862745 )
+metallic = 1.0
+metallic_specular = 0.64
+metallic_texture = ExtResource( 64 )
+roughness = 0.28
+roughness_texture = ExtResource( 63 )
+normal_enabled = true
+normal_scale = 0.2
+normal_texture = ExtResource( 65 )
+transmission_enabled = true
+transmission = Color( 0, 0, 0, 1 )
+refraction_enabled = true
+refraction_scale = 0.02
+refraction_texture_channel = 0
+uv1_scale = Vector3( 0.25, 0.25, 0.25 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=7]
+material = SubResource( 22 )
+size = Vector3( 0.05, 5.2, 24 )
+
+[sub_resource type="GIProbeData" id=8]
 bounds = AABB( -29.3259, -19.8514, -52.8596, 58.6518, 39.7028, 105.719 )
 cell_size = 0.825931
 to_cell_xform = Transform( 1.21075, 0, 0, 0, 1.21075, 0, 0, 0, 1.21075, 35.5065, 24.0352, 64 )
@@ -120,12 +147,12 @@ bias = 1.5
 normal_bias = 0.0
 propagation = 0.75
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=9]
 flags_unshaded = true
 vertex_color_use_as_albedo = true
 vertex_color_is_srgb = true
 
-[sub_resource type="ArrayMesh" id=9]
+[sub_resource type="ArrayMesh" id=10]
 surfaces/0 = {
 "aabb": AABB( -1, -1, -1, 2.00001, 2.00001, 2.00001 ),
 "array_data": PoolByteArray( 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 255, 255, 255, 255, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 191, 255, 255, 255, 255, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 191, 255, 255, 255, 255, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 191, 255, 255, 255, 255, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 63, 255, 255, 255, 255, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 255, 255, 255, 255, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 255, 255, 255, 255, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 63, 255, 255, 255, 255, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 191, 255, 255, 255, 255, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 191, 255, 255, 255, 255, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 191, 255, 255, 255, 255, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 255, 255, 255, 255, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 255, 255, 255, 255, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 63, 255, 255, 255, 255, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 63, 255, 255, 255, 255, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 63, 255, 255, 255, 255, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 63, 255, 255, 255, 255, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 255, 255, 255, 255, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 191, 255, 255, 255, 255, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 63, 255, 255, 255, 255, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 63, 255, 255, 255, 255, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 63, 255, 255, 255, 255, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 191, 255, 255, 255, 255, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 191, 255, 255, 255, 255, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 63, 255, 255, 255, 255, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 63, 255, 255, 255, 255, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 191, 255, 255, 255, 255, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 191, 255, 255, 255, 255, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 191, 255, 255, 255, 255, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 63, 255, 255, 255, 255, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 191, 255, 255, 255, 255, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 191, 255, 255, 255, 255, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 191, 255, 255, 255, 255, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 191, 255, 255, 255, 255, 0, 0, 128, 191, 0, 0, 128, 191, 0, 0, 128, 191, 255, 255, 255, 255, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 191, 255, 255, 255, 255 ),
@@ -133,24 +160,24 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97289,
 "index_count": 0,
-"material": SubResource( 8 ),
+"material": SubResource( 9 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 36
 }
 
-[sub_resource type="MultiMesh" id=10]
+[sub_resource type="MultiMesh" id=11]
 color_format = 1
 transform_format = 1
-mesh = SubResource( 9 )
+mesh = SubResource( 10 )
 
-[sub_resource type="SphereMesh" id=11]
+[sub_resource type="SphereMesh" id=12]
 
-[sub_resource type="SpatialMaterial" id=12]
+[sub_resource type="SpatialMaterial" id=13]
 metallic = 1.0
 roughness = 0.0
 
-[sub_resource type="ArrayMesh" id=13]
+[sub_resource type="ArrayMesh" id=14]
 surfaces/0 = {
 "aabb": AABB( -1, 0.013382, -1, 2, 3.02952, 2 ),
 "array_data": PoolByteArray( 69, 242, 53, 62, 114, 137, 63, 64, 169, 192, 61, 191, 73, 73, 73, 0, 153, 51, 51, 129, 0, 57, 0, 52, 69, 242, 53, 62, 253, 74, 58, 64, 169, 192, 61, 191, 73, 183, 73, 0, 153, 205, 51, 129, 0, 57, 0, 56, 69, 242, 53, 190, 114, 137, 63, 64, 169, 192, 61, 191, 183, 73, 73, 0, 153, 205, 205, 129, 0, 59, 0, 52, 69, 242, 53, 190, 253, 74, 58, 64, 169, 192, 61, 191, 183, 183, 73, 0, 153, 51, 205, 129, 0, 59, 0, 56, 69, 242, 53, 190, 124, 240, 118, 63, 75, 86, 93, 191, 183, 183, 73, 0, 103, 205, 51, 129, 0, 48, 0, 52, 69, 242, 53, 190, 39, 245, 133, 63, 75, 86, 93, 191, 183, 73, 73, 0, 103, 51, 51, 129, 0, 48, 0, 56, 69, 242, 53, 62, 124, 240, 118, 63, 75, 86, 93, 191, 73, 183, 73, 0, 103, 51, 205, 129, 0, 54, 0, 52, 69, 242, 53, 62, 39, 245, 133, 63, 75, 86, 93, 191, 73, 73, 73, 0, 103, 205, 205, 129, 0, 54, 0, 56, 245, 242, 79, 191, 45, 64, 91, 60, 105, 30, 240, 190, 62, 104, 36, 0, 127, 0, 0, 129, 85, 49, 0, 56, 225, 179, 93, 191, 204, 236, 3, 62, 222, 255, 255, 190, 107, 25, 62, 0, 193, 0, 109, 129, 85, 49, 0, 56, 138, 30, 240, 190, 45, 64, 91, 60, 229, 242, 79, 191, 36, 104, 62, 0, 127, 0, 0, 129, 85, 45, 0, 56, 17, 0, 0, 191, 204, 236, 3, 62, 208, 179, 93, 191, 62, 25, 107, 0, 147, 0, 63, 129, 85, 45, 0, 56, 138, 30, 240, 190, 45, 64, 91, 60, 229, 242, 79, 191, 36, 104, 62, 0, 121, 225, 238, 127, 10, 57, 86, 56, 0, 0, 0, 0, 45, 64, 91, 60, 105, 30, 112, 191, 0, 104, 72, 0, 127, 0, 0, 127, 0, 58, 20, 56, 245, 242, 79, 191, 45, 64, 91, 60, 105, 30, 240, 190, 62, 104, 36, 0, 110, 197, 236, 127, 86, 56, 10, 57, 105, 30, 112, 191, 45, 64, 91, 60, 0, 0, 0, 0, 72, 104, 0, 0, 104, 184, 0, 127, 20, 56, 0, 58, 229, 242, 79, 191, 45, 64, 91, 60, 105, 30, 240, 62, 62, 104, 220, 0, 110, 197, 20, 127, 86, 56, 245, 58, 105, 30, 240, 190, 45, 64, 91, 60, 245, 242, 79, 63, 36, 104, 194, 0, 121, 225, 18, 127, 10, 57, 169, 59, 0, 0, 0, 0, 45, 64, 91, 60, 105, 30, 112, 63, 0, 104, 184, 0, 127, 0, 0, 127, 0, 58, 235, 59, 105, 30, 240, 62, 45, 64, 91, 60, 245, 242, 79, 63, 220, 104, 194, 0, 121, 31, 238, 127, 245, 58, 169, 59, 245, 242, 79, 63, 45, 64, 91, 60, 105, 30, 240, 62, 194, 104, 220, 0, 110, 59, 236, 127, 169, 59, 245, 58, 105, 30, 112, 63, 45, 64, 91, 60, 0, 0, 0, 0, 184, 104, 0, 0, 104, 72, 0, 127, 235, 59, 0, 58, 245, 242, 79, 63, 45, 64, 91, 60, 105, 30, 240, 190, 194, 104, 36, 0, 110, 59, 20, 127, 169, 59, 10, 57, 105, 30, 240, 62, 45, 64, 91, 60, 245, 242, 79, 191, 220, 104, 62, 0, 121, 31, 18, 127, 245, 58, 86, 56, 105, 30, 240, 62, 45, 64, 91, 60, 245, 242, 79, 191, 220, 104, 62, 0, 127, 0, 0, 129, 85, 59, 0, 56, 0, 0, 0, 63, 204, 236, 3, 62, 208, 179, 93, 191, 194, 25, 107, 0, 147, 0, 193, 129, 85, 59, 0, 56, 245, 242, 79, 63, 45, 64, 91, 60, 105, 30, 240, 190, 194, 104, 36, 0, 127, 0, 0, 129, 170, 58, 0, 56, 208, 179, 93, 63, 204, 236, 3, 62, 0, 0, 0, 191, 149, 25, 62, 0, 193, 0, 147, 129, 170, 58, 0, 56, 105, 30, 112, 191, 45, 64, 91, 60, 0, 0, 0, 0, 72, 104, 0, 0, 127, 0, 0, 127, 0, 52, 0, 56, 0, 0, 128, 191, 204, 236, 3, 62, 0, 0, 0, 0, 124, 25, 0, 0, 0, 0, 127, 129, 0, 52, 0, 56, 229, 242, 79, 191, 45, 64, 91, 60, 105, 30, 240, 62, 62, 104, 220, 0, 127, 0, 0, 127, 85, 53, 0, 56, 208, 179, 93, 191, 204, 236, 3, 62, 0, 0, 0, 63, 107, 25, 194, 0, 63, 0, 109, 129, 85, 53, 0, 56, 105, 30, 240, 190, 45, 64, 91, 60, 245, 242, 79, 63, 36, 104, 194, 0, 127, 0, 0, 127, 170, 54, 0, 56, 0, 0, 0, 191, 204, 236, 3, 62, 225, 179, 93, 63, 62, 25, 149, 0, 109, 0, 63, 129, 170, 54, 0, 56, 0, 0, 0, 0, 45, 64, 91, 60, 105, 30, 112, 63, 0, 104, 184, 0, 127, 0, 0, 127, 0, 56, 0, 56, 0, 0, 0, 0, 204, 236, 3, 62, 0, 0, 128, 63, 0, 25, 132, 0, 127, 0, 0, 129, 0, 56, 0, 56, 105, 30, 240, 62, 45, 64, 91, 60, 245, 242, 79, 63, 220, 104, 194, 0, 127, 0, 0, 127, 170, 56, 0, 56, 0, 0, 0, 63, 204, 236, 3, 62, 208, 179, 93, 63, 194, 25, 149, 0, 109, 0, 193, 129, 170, 56, 0, 56, 245, 242, 79, 63, 45, 64, 91, 60, 105, 30, 240, 62, 194, 104, 220, 0, 127, 0, 0, 127, 85, 57, 0, 56, 208, 179, 93, 63, 204, 236, 3, 62, 0, 0, 0, 63, 149, 25, 194, 0, 63, 0, 147, 129, 85, 57, 0, 56, 105, 30, 112, 63, 45, 64, 91, 60, 0, 0, 0, 0, 184, 104, 0, 0, 127, 0, 0, 127, 0, 58, 0, 56, 0, 0, 128, 63, 204, 236, 3, 62, 0, 0, 0, 0, 132, 25, 0, 0, 0, 0, 129, 129, 0, 58, 0, 56, 0, 0, 0, 0, 45, 64, 91, 60, 105, 30, 112, 191, 0, 104, 72, 0, 127, 0, 0, 129, 0, 0, 0, 56, 0, 0, 0, 0, 204, 236, 3, 62, 0, 0, 128, 191, 0, 25, 124, 0, 130, 250, 1, 129, 0, 0, 0, 56, 0, 0, 0, 0, 45, 64, 91, 60, 105, 30, 112, 191, 0, 104, 72, 0, 127, 0, 0, 129, 0, 60, 0, 56, 0, 0, 0, 0, 204, 236, 3, 62, 0, 0, 128, 191, 0, 25, 124, 0, 130, 6, 255, 129, 0, 60, 0, 56, 226, 2, 216, 62, 108, 94, 33, 64, 77, 18, 59, 191, 193, 248, 109, 0, 147, 0, 193, 129, 85, 59, 67, 40, 0, 0, 0, 0, 108, 94, 33, 64, 243, 2, 88, 191, 0, 248, 126, 0, 130, 254, 0, 129, 0, 60, 67, 40, 77, 18, 59, 63, 108, 94, 33, 64, 226, 2, 216, 190, 147, 248, 63, 0, 193, 0, 147, 129, 170, 58, 67, 40, 243, 2, 88, 63, 108, 94, 33, 64, 0, 0, 0, 0, 130, 248, 0, 0, 0, 0, 129, 129, 0, 58, 67, 40, 77, 18, 59, 63, 108, 94, 33, 64, 226, 2, 216, 62, 147, 248, 193, 0, 63, 0, 147, 129, 85, 57, 67, 40, 226, 2, 216, 62, 108, 94, 33, 64, 77, 18, 59, 63, 193, 248, 147, 0, 109, 0, 193, 129, 170, 56, 67, 40, 0, 0, 0, 0, 108, 94, 33, 64, 243, 2, 88, 63, 0, 248, 130, 0, 126, 0, 0, 129, 0, 56, 67, 40, 226, 2, 216, 190, 108, 94, 33, 64, 77, 18, 59, 63, 63, 248, 147, 0, 109, 0, 63, 129, 170, 54, 67, 40, 60, 18, 59, 191, 108, 94, 33, 64, 4, 3, 216, 62, 109, 248, 193, 0, 63, 0, 109, 129, 85, 53, 67, 40, 243, 2, 88, 191, 108, 94, 33, 64, 0, 0, 0, 0, 126, 248, 0, 0, 0, 0, 127, 129, 0, 52, 67, 40, 77, 18, 59, 191, 108, 94, 33, 64, 226, 2, 216, 190, 109, 248, 63, 0, 193, 0, 109, 129, 85, 49, 67, 40, 4, 3, 216, 190, 108, 94, 33, 64, 60, 18, 59, 191, 63, 248, 109, 0, 147, 0, 63, 129, 85, 45, 67, 40, 0, 0, 0, 0, 108, 94, 33, 64, 243, 2, 88, 191, 0, 248, 126, 0, 130, 2, 0, 129, 0, 0, 67, 40, 112, 181, 214, 62, 204, 178, 38, 64, 124, 241, 57, 191, 212, 90, 77, 0, 147, 0, 193, 129, 85, 59, 156, 36, 0, 0, 0, 0, 204, 178, 38, 64, 112, 181, 86, 191, 0, 90, 89, 0, 132, 16, 240, 129, 0, 60, 156, 36, 124, 241, 57, 63, 204, 178, 38, 64, 112, 181, 214, 190, 179, 90, 44, 0, 193, 0, 147, 129, 170, 58, 156, 36, 112, 181, 86, 63, 204, 178, 38, 64, 0, 0, 0, 0, 167, 90, 0, 0, 0, 0, 129, 129, 0, 58, 156, 36, 124, 241, 57, 63, 204, 178, 38, 64, 112, 181, 214, 62, 179, 90, 212, 0, 63, 0, 147, 129, 85, 57, 156, 36, 112, 181, 214, 62, 204, 178, 38, 64, 124, 241, 57, 63, 212, 90, 179, 0, 109, 0, 193, 129, 170, 56, 156, 36, 0, 0, 0, 0, 204, 178, 38, 64, 128, 181, 86, 63, 0, 90, 167, 0, 127, 0, 0, 129, 0, 56, 156, 36, 112, 181, 214, 190, 204, 178, 38, 64, 124, 241, 57, 63, 44, 90, 179, 0, 109, 0, 63, 129, 170, 54, 156, 36, 124, 241, 57, 191, 204, 178, 38, 64, 145, 181, 214, 62, 77, 90, 212, 0, 63, 0, 109, 129, 85, 53, 156, 36, 112, 181, 86, 191, 204, 178, 38, 64, 0, 0, 0, 0, 89, 90, 0, 0, 0, 0, 127, 129, 0, 52, 156, 36, 124, 241, 57, 191, 204, 178, 38, 64, 112, 181, 214, 190, 77, 90, 44, 0, 193, 0, 109, 129, 85, 49, 156, 36, 145, 181, 214, 190, 204, 178, 38, 64, 124, 241, 57, 191, 44, 90, 77, 0, 147, 0, 63, 129, 85, 45, 156, 36, 0, 0, 0, 0, 204, 178, 38, 64, 112, 181, 86, 191, 0, 90, 89, 0, 132, 240, 16, 129, 0, 0, 156, 36, 88, 226, 49, 62, 237, 99, 39, 64, 8, 227, 63, 63, 186, 94, 47, 0, 78, 85, 204, 129, 0, 54, 0, 56, 88, 226, 49, 190, 189, 55, 39, 64, 138, 118, 61, 63, 69, 93, 50, 0, 180, 85, 201, 129, 0, 54, 0, 58, 88, 226, 49, 62, 236, 190, 66, 64, 8, 227, 63, 63, 183, 183, 72, 0, 204, 103, 51, 129, 0, 57, 0, 56, 88, 226, 49, 190, 188, 146, 66, 64, 138, 118, 61, 63, 72, 184, 74, 0, 50, 104, 52, 129, 0, 57, 0, 58 ),
@@ -193,13 +220,13 @@ surfaces/0 = {
 "vertex_count": 564
 }
 
-[sub_resource type="MultiMesh" id=14]
+[sub_resource type="MultiMesh" id=23]
 transform_format = 1
 instance_count = 18
 mesh = SubResource( 1 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.6 )
 
-[sub_resource type="ArrayMesh" id=15]
+[sub_resource type="ArrayMesh" id=24]
 resource_name = "Cube"
 surfaces/0 = {
 "aabb": AABB( -0.160375, -0.366984, -0.28308, 0.330242, 0.795396, 0.566159 ),
@@ -214,13 +241,13 @@ surfaces/0 = {
 "vertex_count": 132
 }
 
-[sub_resource type="MultiMesh" id=16]
+[sub_resource type="MultiMesh" id=25]
 transform_format = 1
 instance_count = 16
-mesh = SubResource( 15 )
+mesh = SubResource( 24 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 1.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 1.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 1.8 )
 
-[sub_resource type="SpatialMaterial" id=17]
+[sub_resource type="SpatialMaterial" id=18]
 flags_transparent = true
 albedo_color = Color( 0.282353, 0.321569, 0.345098, 0.74902 )
 metallic = 0.28
@@ -251,11 +278,11 @@ detail_blend_mode = 3
 detail_uv_layer = 0
 detail_normal = ExtResource( 7 )
 
-[sub_resource type="PlaneMesh" id=18]
-material = SubResource( 17 )
+[sub_resource type="PlaneMesh" id=19]
+material = SubResource( 18 )
 size = Vector2( 150, 200 )
 
-[sub_resource type="SpatialMaterial" id=19]
+[sub_resource type="SpatialMaterial" id=20]
 albedo_texture = ExtResource( 2 )
 roughness_texture = ExtResource( 18 )
 normal_enabled = true
@@ -277,8 +304,8 @@ depth_texture = ExtResource( 5 )
 uv1_scale = Vector3( 0.08, 0.08, 0.08 )
 uv1_triplanar = true
 
-[sub_resource type="PlaneMesh" id=20]
-material = SubResource( 19 )
+[sub_resource type="PlaneMesh" id=21]
+material = SubResource( 20 )
 size = Vector2( 150, 200 )
 
 [node name="ShoreMap" type="Node"]
@@ -286,6 +313,7 @@ script = ExtResource( 23 )
 
 [node name="DayNightCycle" type="Node" parent="."]
 script = ExtResource( 59 )
+time = 1
 environment = NodePath("../WorldEnvironment")
 dir_light = NodePath("../DirectionalLight")
 
@@ -293,8 +321,8 @@ dir_light = NodePath("../DirectionalLight")
 environment = ExtResource( 11 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( -0.936147, 0.31134, -0.163393, -0.349352, -0.771025, 0.532422, 0.0397843, 0.555507, 0.83056, 0, 9.5352, 12.2218 )
-light_color = Color( 0.98, 0.97, 0.93, 1 )
+transform = Transform( 0.505294, 0.626626, 0.593311, -0.827803, 0.546189, 0.128141, -0.243764, -0.555893, 0.794709, 0, 9.5352, 12.2218 )
+light_color = Color( 0.08, 0.12, 0.24, 1 )
 light_bake_mode = 2
 shadow_enabled = true
 shadow_bias = 0.0
@@ -447,9 +475,23 @@ use_in_baked_light = true
 mesh = SubResource( 6 )
 material/0 = null
 
+[node name="BridgeGlass" type="Spatial" parent="Structures"]
+
+[node name="TestGlass14" type="MeshInstance" parent="Structures/BridgeGlass"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06928, 19.0387, -15.8204 )
+use_in_baked_light = true
+mesh = SubResource( 7 )
+material/0 = null
+
+[node name="TestGlass15" type="MeshInstance" parent="Structures/BridgeGlass"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4377, 19.0387, -15.8204 )
+use_in_baked_light = true
+mesh = SubResource( 7 )
+material/0 = null
+
 [node name="Lightings" type="Node" parent="."]
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="Lightings"]
+[node name="HouseReflectionProbe" type="ReflectionProbe" parent="Lightings"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.1, 14.9668 )
 intensity = 0.5
 extents = Vector3( 10.2862, 11.5338, 12.1849 )
@@ -457,11 +499,18 @@ origin_offset = Vector3( 0.341797, 0.0742188, -0.725586 )
 box_projection = true
 enable_shadows = true
 
-[node name="ReflectionProbe2" type="ReflectionProbe" parent="Lightings"]
+[node name="HouseReflectionProbe2" type="ReflectionProbe" parent="Lightings"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8186, 9.1, 5.20505 )
 intensity = 0.5
 extents = Vector3( 8.64601, 12.9008, 5.99025 )
 origin_offset = Vector3( 1.93164, 0, 0 )
+box_projection = true
+enable_shadows = true
+
+[node name="BridgeReflectionProbe" type="ReflectionProbe" parent="Lightings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.51223, 19.7796, -12.9024 )
+intensity = 0.5
+extents = Vector3( 4.34219, 3.99392, 18.1393 )
 box_projection = true
 enable_shadows = true
 
@@ -471,20 +520,20 @@ extents = Vector3( 29.3259, 19.8514, 52.8596 )
 dynamic_range = 3
 energy = 1.2
 propagation = 0.75
-data = SubResource( 7 )
+data = SubResource( 8 )
 
 [node name="MultiMeshInstance" type="MultiMeshInstance" parent="Lightings/GIProbe"]
-multimesh = SubResource( 10 )
+multimesh = SubResource( 11 )
 
 [node name="HangingLamp" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 16.2 )
-pattern = 0
+pattern = 1
 sway = false
 sway_ang_deg = 10.0
 
 [node name="HangingLamp2" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 4.54348 )
-pattern = 0
+pattern = 1
 sway = false
 sway_ang_deg = 10.0
 
@@ -493,8 +542,8 @@ sway_ang_deg = 10.0
 [node name="ReflectingSphere" type="CSGMesh" parent="Objects"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.843853, 11.8921, 15.1816 )
 visible = false
-mesh = SubResource( 11 )
-material = SubResource( 12 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="Table" parent="Objects" instance=ExtResource( 12 )]
 transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.49529, 7.70132, 16.6933 )
@@ -502,7 +551,7 @@ transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.49529, 7.70132, 16.693
 [node name="Waterpot" type="MeshInstance" parent="Objects/Table"]
 transform = Transform( -0.0348231, 0, 0.348263, 0, 0.35, 0, -0.348263, 0, -0.0348231, 0.513851, 0.982806, -0.0446243 )
 use_in_baked_light = true
-mesh = SubResource( 13 )
+mesh = SubResource( 14 )
 material/0 = null
 material/1 = null
 
@@ -548,7 +597,7 @@ transform = Transform( 0.0588946, 0, 0.898076, 0, 0.899999, 0, -0.898076, 0, 0.0
 [node name="LineUpMeshInstance" parent="Objects/BarSmallProps/TrayRect" instance=ExtResource( 57 )]
 transform = Transform( -0.79993, 3.11505e-07, 0.010709, -3.11531e-07, -0.8, 1.42108e-15, 0.010709, -4.17028e-09, 0.79993, 0.103579, 0.205538, 0.100182 )
 use_in_baked_light = true
-multimesh = SubResource( 14 )
+multimesh = SubResource( 23 )
 node = "res://assets/models/CupGlass.glb"
 grid = Vector3( 2, 3, 3 )
 offset = Vector3( 0.3, 0.06, 0.3 )
@@ -747,7 +796,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.27734, 5.97481, 9.60632 )
 [node name="LineUpMeshInstance" parent="Objects/Stand" instance=ExtResource( 57 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.204041, 2.14537, -0.891679 )
 use_in_baked_light = true
-multimesh = SubResource( 16 )
+multimesh = SubResource( 25 )
 node = "res://assets/models/SnackPopChips.glb"
 grid = Vector3( 4, 1, 4 )
 offset = Vector3( 0.3, 2, 0.6 )
@@ -768,7 +817,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.33526, -0.772157, 5.20279 )
 
 [node name="SeaFace" type="MeshInstance" parent="Environs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 43 )
-mesh = SubResource( 18 )
+mesh = SubResource( 19 )
 material/0 = null
 __meta__ = {
 "_edit_lock_": true
@@ -776,7 +825,7 @@ __meta__ = {
 
 [node name="SeaGround" type="MeshInstance" parent="Environs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.77846, 43 )
-mesh = SubResource( 20 )
+mesh = SubResource( 21 )
 material/0 = null
 
 [node name="Audio" type="Node" parent="."]
