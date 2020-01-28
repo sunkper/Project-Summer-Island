@@ -87,15 +87,18 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
 [node name="Bird" type="MeshInstance" parent="String/Bodies"]
 transform = Transform( 1, 0, 0, 0, 0.996993, 0.0774929, 0, -0.0774929, 0.996993, 0, -0.197, -0.135 )
 visible = false
+use_in_baked_light = true
 mesh = ExtResource( 4 )
 material/0 = null
 
 [node name="Crystal" type="MeshInstance" parent="String/Bodies"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.241, 0 )
+use_in_baked_light = true
 mesh = ExtResource( 3 )
 material/0 = null
 
 [node name="Pin" type="MeshInstance" parent="."]
+use_in_baked_light = true
 mesh = SubResource( 3 )
 material/0 = null
 
