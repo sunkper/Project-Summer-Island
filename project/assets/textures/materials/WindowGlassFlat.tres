@@ -1,8 +1,8 @@
 [gd_resource type="SpatialMaterial" load_steps=4 format=2]
 
-[ext_resource path="res://assets/textures/pbr/MetalPainted01/MetalPainted01_roughness.png" type="Texture" id=1]
-[ext_resource path="res://assets/textures/pbr/Metal24/Metal24_metallic.png" type="Texture" id=2]
-[ext_resource path="res://assets/textures/pbr/Glass/Glass_normal.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/pbr/Metal24/Metal24_metallic.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/pbr/WallPlaster/WallPlaster_normal.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/pbr/Dirt01/Dirt01_roughness.png" type="Texture" id=3]
 
 [resource]
 flags_transparent = true
@@ -11,12 +11,12 @@ params_depth_draw_mode = 3
 albedo_color = Color( 0.87451, 0.87451, 0.87451, 0.0862745 )
 metallic = 1.0
 metallic_specular = 0.64
-metallic_texture = ExtResource( 2 )
-roughness = 0.62
-roughness_texture = ExtResource( 1 )
+metallic_texture = ExtResource( 1 )
+roughness = 0.28
+roughness_texture = ExtResource( 3 )
 normal_enabled = true
-normal_scale = 1.0
-normal_texture = ExtResource( 3 )
+normal_scale = 0.2
+normal_texture = ExtResource( 2 )
 transmission_enabled = true
 transmission = Color( 0, 0, 0, 1 )
 refraction_enabled = true
