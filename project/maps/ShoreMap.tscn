@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/Rocks_08.png" type="Texture" id=2]
@@ -176,13 +176,13 @@ surfaces/0 = {
 "vertex_count": 564
 }
 
-[sub_resource type="MultiMesh" id=17]
+[sub_resource type="MultiMesh" id=10]
 transform_format = 1
 instance_count = 18
 mesh = SubResource( 1 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.6 )
 
-[sub_resource type="ArrayMesh" id=18]
+[sub_resource type="ArrayMesh" id=11]
 resource_name = "Cube"
 surfaces/0 = {
 "aabb": AABB( -0.160375, -0.366984, -0.28308, 0.330242, 0.795396, 0.566159 ),
@@ -197,10 +197,10 @@ surfaces/0 = {
 "vertex_count": 132
 }
 
-[sub_resource type="MultiMesh" id=19]
+[sub_resource type="MultiMesh" id=12]
 transform_format = 1
 instance_count = 16
-mesh = SubResource( 18 )
+mesh = SubResource( 11 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 1.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 1.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 1.8 )
 
 [sub_resource type="SpatialMaterial" id=13]
@@ -263,6 +263,33 @@ uv1_triplanar = true
 [sub_resource type="PlaneMesh" id=16]
 material = SubResource( 15 )
 size = Vector2( 150, 200 )
+
+[sub_resource type="Shader" id=17]
+code = "shader_type canvas_item;
+
+uniform float strength = 16.0;
+
+void fragment() {
+	vec4 color = texture(SCREEN_TEXTURE, SCREEN_UV);
+	
+	float x = (SCREEN_UV.x + 4.0 ) * (SCREEN_UV.y + 4.0 ) * (TIME * 10.0);
+	vec4 grain = vec4(mod((mod(x, 13.0) + 1.0) * (mod(x, 123.0) + 1.0), 0.01)-0.005) * strength;
+	
+	if (COLOR.r > 0.5) {
+		grain = 10.0 - grain;
+		COLOR = color * grain;
+	}
+	else {
+		COLOR = color * grain;
+	}
+//	grain = 1.0 - grain;
+	COLOR = color * grain;
+}
+"
+
+[sub_resource type="ShaderMaterial" id=18]
+shader = SubResource( 17 )
+shader_param/strength = 16.0
 
 [node name="ShoreMap" type="Node"]
 script = ExtResource( 23 )
@@ -456,7 +483,7 @@ transform = Transform( 0.0588946, 0, 0.898076, 0, 0.899999, 0, -0.898076, 0, 0.0
 [node name="LineUpMeshInstance" parent="Objects/BarSmallProps/TrayRect" instance=ExtResource( 57 )]
 transform = Transform( -0.79993, 3.11505e-07, 0.010709, -3.11531e-07, -0.8, 1.42108e-15, 0.010709, -4.17028e-09, 0.79993, 0.103579, 0.205538, 0.100182 )
 use_in_baked_light = true
-multimesh = SubResource( 17 )
+multimesh = SubResource( 10 )
 node = "res://assets/models/CupGlass.glb"
 grid = Vector3( 2, 3, 3 )
 offset = Vector3( 0.3, 0.06, 0.3 )
@@ -655,7 +682,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.27734, 5.97481, 9.60632 )
 [node name="LineUpMeshInstance" parent="Objects/Stand" instance=ExtResource( 57 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.204041, 2.14537, -0.891679 )
 use_in_baked_light = true
-multimesh = SubResource( 19 )
+multimesh = SubResource( 12 )
 node = "res://assets/models/SnackPopChips.glb"
 grid = Vector3( 4, 1, 4 )
 offset = Vector3( 0.3, 2, 0.6 )
@@ -716,3 +743,11 @@ transform = Transform( -0.349215, 0, -0.719756, 0, 0.8, 0, 0.719756, 0, -0.34921
 transform = Transform( 0.642961, 0, 0.765899, 0, 1, 0, -0.765899, 0, 0.642961, 8.21235, 19.4311, 8.66198 )
 mouse_def_sensi = 0.8
 def_fov = 70.0
+
+[node name="FilmGrain" type="ColorRect" parent="."]
+material = SubResource( 18 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

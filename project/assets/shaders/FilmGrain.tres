@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=17]
+code = "shader_type canvas_item;
+
+uniform float strength = 16.0;
+
+void fragment() {
+	vec4 color = texture(SCREEN_TEXTURE, SCREEN_UV);
+	
+	float x = (SCREEN_UV.x + 4.0 ) * (SCREEN_UV.y + 4.0 ) * (TIME * 10.0);
+	vec4 grain = vec4(mod((mod(x, 13.0) + 1.0) * (mod(x, 123.0) + 1.0), 0.01)-0.005) * strength;
+	
+	if (COLOR.r > 0.5) {
+		grain = 1.0 - grain;
+		COLOR = color * grain;
+	}
+	else {
+		COLOR = color * grain;
+	}
+//	grain = 1.0 - grain;
+	COLOR = color * grain;
+}
+"
+
+[resource]
+shader = SubResource( 17 )
+shader_param/strength = 16.0
