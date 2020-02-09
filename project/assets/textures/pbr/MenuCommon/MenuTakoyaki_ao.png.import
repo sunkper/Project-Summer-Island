@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/MenuTakoyaki_ao.png-0296e3e8f685eb827fcaf10c9b907cc3.s3tc.stex"
-path.etc2="res://.import/MenuTakoyaki_ao.png-0296e3e8f685eb827fcaf10c9b907cc3.etc2.stex"
+path.s3tc="res://.import/MenuTakoyaki_ao.png-099c67d5d7a56921967cb158490c2f2d.s3tc.stex"
+path.etc2="res://.import/MenuTakoyaki_ao.png-099c67d5d7a56921967cb158490c2f2d.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/pbr/MenuTakoyaki/MenuTakoyaki_ao.png"
-dest_files=[ "res://.import/MenuTakoyaki_ao.png-0296e3e8f685eb827fcaf10c9b907cc3.s3tc.stex", "res://.import/MenuTakoyaki_ao.png-0296e3e8f685eb827fcaf10c9b907cc3.etc2.stex" ]
+source_file="res://assets/textures/pbr/MenuCommon/MenuTakoyaki_ao.png"
+dest_files=[ "res://.import/MenuTakoyaki_ao.png-099c67d5d7a56921967cb158490c2f2d.s3tc.stex", "res://.import/MenuTakoyaki_ao.png-099c67d5d7a56921967cb158490c2f2d.etc2.stex" ]
 
 [params]
 

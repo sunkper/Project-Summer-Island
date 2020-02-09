@@ -7,6 +7,7 @@
 
 [resource]
 flags_transparent = true
+params_depth_draw_mode = 3
 albedo_color = Color( 0.937255, 0.988235, 0.92549, 0.945098 )
 albedo_texture = ExtResource( 4 )
 normal_enabled = true
