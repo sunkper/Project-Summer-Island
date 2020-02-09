@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/icon_qodot.png-ffc564b7c554b45caa593986cfdbd783.s3tc.stex"
-path.etc2="res://.import/icon_qodot.png-ffc564b7c554b45caa593986cfdbd783.etc2.stex"
+path.s3tc="res://.import/Wood34_normal.png-ba64b1c2a146bb6c172b70839d4fb697.s3tc.stex"
+path.etc2="res://.import/Wood34_normal.png-ba64b1c2a146bb6c172b70839d4fb697.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/base/icon_qodot.png"
-dest_files=[ "res://.import/icon_qodot.png-ffc564b7c554b45caa593986cfdbd783.s3tc.stex", "res://.import/icon_qodot.png-ffc564b7c554b45caa593986cfdbd783.etc2.stex" ]
+source_file="res://assets/textures/pbr/Wood34/Wood34_normal.png"
+dest_files=[ "res://.import/Wood34_normal.png-ba64b1c2a146bb6c172b70839d4fb697.s3tc.stex", "res://.import/Wood34_normal.png-ba64b1c2a146bb6c172b70839d4fb697.etc2.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
-compress/normal_map=0
+compress/normal_map=1
 flags/repeat=true
 flags/filter=false
 flags/mipmaps=true
