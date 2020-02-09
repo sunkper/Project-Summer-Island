@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/Rocks_08.png" type="Texture" id=2]
@@ -62,6 +62,8 @@
 [ext_resource path="res://assets/models/Ladle.glb" type="PackedScene" id=60]
 [ext_resource path="res://assets/models/SnackPopChips.material" type="Material" id=61]
 [ext_resource path="res://assets/models/TrayCircular.glb" type="PackedScene" id=62]
+[ext_resource path="res://assets/models/KitchenKnife02.glb" type="PackedScene" id=63]
+[ext_resource path="res://assets/models/CookingTurner.glb" type="PackedScene" id=64]
 [ext_resource path="res://assets/models/Pot01.glb" type="PackedScene" id=66]
 
 [sub_resource type="GDScript" id=2]
@@ -311,12 +313,15 @@ dir_light = NodePath("../Sunlight")
 environment = ExtResource( 11 )
 
 [node name="Sunlight" type="DirectionalLight" parent="."]
-transform = Transform( 0.505294, 0.626626, 0.593311, -0.827803, 0.546189, 0.128141, -0.243764, -0.555893, 0.794709, 0, 9.5352, 12.2218 )
+transform = Transform( -0.796472, -0.00558549, -0.60465, -0.330242, -0.833635, 0.442711, -0.50653, 0.552287, 0.662123, 0, 9.5352, 12.2218 )
 light_color = Color( 0.98, 0.97, 0.93, 1 )
 light_bake_mode = 2
 shadow_enabled = true
 shadow_bias = 0.0
 directional_shadow_blend_splits = true
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Positions" type="Node" parent="Sunlight"]
 
@@ -377,23 +382,34 @@ transform = Transform( -0.970296, 0.0210848, -0.241001, 0, 0.996194, 0.0871558, 
 
 [node name="ReflectionProbes" type="Node" parent="Lightings"]
 
-[node name="HouseReflectionProbe" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.1, 14.9668 )
+[node name="RefProbeHouseHall" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.1, 16.6918 )
 intensity = 0.5
-extents = Vector3( 10.2862, 11.5338, 12.1849 )
+extents = Vector3( 10.2862, 11.5338, 8.50647 )
 origin_offset = Vector3( 0.341797, 0.0742188, -0.725586 )
 box_projection = true
 enable_shadows = true
 
-[node name="HouseReflectionProbe2" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8186, 9.1, 5.20505 )
+[node name="RefProbeHouseBar" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13932, 11.0391, 3.83866 )
 intensity = 0.5
-extents = Vector3( 8.64601, 12.9008, 5.99025 )
+extents = Vector3( 11.387, 7.20574, 5.85443 )
+origin_offset = Vector3( -0.217773, -3.28027, 0.638672 )
+box_projection = true
+enable_shadows = true
+interior_ambient_color = Color( 0.11, 0.12, 0.14, 1 )
+
+[node name="RefProbeFront" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1828, 9.16223, 6.72674 )
+intensity = 0.5
+extents = Vector3( 11.9727, 9.34266, 9.73908 )
 origin_offset = Vector3( 1.93164, 0, 0 )
 box_projection = true
 enable_shadows = true
+interior_ambient_color = Color( 0.109804, 0.121569, 0.14902, 1 )
+interior_ambient_contrib = 0.1
 
-[node name="BridgeReflectionProbe" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
+[node name="RefProbeBridge" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.51223, 18.8188, -14.5112 )
 intensity = 0.5
 extents = Vector3( 2.8556, 5.20544, 31.5563 )
@@ -419,7 +435,7 @@ sway_ang_deg = 10.0
 
 [node name="HangingLamp2" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 4.54348 )
-pattern = 1
+pattern = 0
 sway = false
 sway_ang_deg = 10.0
 
@@ -434,8 +450,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.492, 13.375, 4.269 )
 [node name="Objects" type="Node" parent="."]
 
 [node name="ReflectingSphere" type="CSGMesh" parent="Objects"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.843853, 11.8921, 16.1514 )
-visible = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1757, 11.1316, 5.43398 )
 mesh = SubResource( 7 )
 material = SubResource( 8 )
 
@@ -722,7 +737,13 @@ transform = Transform( 1, 0, 0, 0, 0.911697, -0.410862, 0, 0.410862, 0.911697, 0
 transform = Transform( 0.999743, 0, 0.0226699, 0, 1, 0, -0.0226699, 0, 0.999743, -2.32104, -0.700604, 1.1671 )
 
 [node name="KitchenKnife01" parent="Objects/Cookwares" instance=ExtResource( 46 )]
-transform = Transform( 0.470156, -0.143517, 0.870836, -0.291955, -0.956432, 0, 0.832896, -0.254245, -0.491573, -2.12822, -0.606306, 0.620368 )
+transform = Transform( 0.478993, -0.113756, 0.870416, -0.277219, -0.960426, 0.0270346, 0.832896, -0.254245, -0.491573, -2.12822, -0.611688, 0.620368 )
+
+[node name="KitchenKnife02" parent="Objects/Cookwares" instance=ExtResource( 63 )]
+transform = Transform( 1, 0, 0, 0, -0.117191, 0.993109, 0, -0.993109, -0.117191, -1.53766, 0.497727, -1.13846 )
+
+[node name="CookingTurner" parent="Objects/Cookwares" instance=ExtResource( 64 )]
+transform = Transform( 2.82909e-08, 1.60446e-07, -1, 0.99043, 0.138015, 5.0164e-08, 0.138015, -0.99043, -1.55006e-07, -2.02374, 0.166251, -0.98877 )
 
 [node name="Environs" type="Node" parent="."]
 

@@ -25,7 +25,9 @@ func _set_time(new_time) -> void:
 			env.background_sky.panorama = panorama_day
 			env.background_energy = 0.2
 			get_node(dir_light).light_color = Color(0.98, 0.97, 0.93)
+			get_node("../Lightings/ReflectionProbes/RefProbeHouseBar").interior_ambient_color = Color(0.11, 0.12, 0.14)
 		times.NIGHT:
 			env.background_sky.panorama = panorama_night
 			env.background_energy = 0.2
 			get_node(dir_light).light_color = Color(0.08, 0.12, 0.24)
+			get_node("../Lightings/ReflectionProbes/RefProbeHouseBar").interior_ambient_color = Color(0.03, 0.05, 0.1)
