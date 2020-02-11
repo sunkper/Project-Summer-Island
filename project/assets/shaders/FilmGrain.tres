@@ -27,4 +27,4 @@ void fragment() {
 
 [resource]
 shader = SubResource( 1 )
-shader_param/strength = 12.0
+shader_param/strength = 16.0
