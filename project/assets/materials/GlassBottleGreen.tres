@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/textures/pbr/PaintedMetal_02.png" type="Texture" id=1]
 
 [resource]
-albedo_color = Color( 0, 0.858824, 1, 1 )
+albedo_color = Color( 0.572549, 0.235294, 0.0235294, 1 )
 albedo_texture = ExtResource( 1 )
 metallic_specular = 0.6
 roughness = 0.11

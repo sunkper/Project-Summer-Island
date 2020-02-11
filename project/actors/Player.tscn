@@ -34,6 +34,7 @@ shape = SubResource( 1 )
 [node name="Collision" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.230311, 0 )
 shape = SubResource( 2 )
+disabled = true
 
 [node name="EditorHint" type="Sprite3D" parent="."]
 visible = false
