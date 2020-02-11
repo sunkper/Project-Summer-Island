@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=2]
+[gd_scene load_steps=109 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/Rocks_08.png" type="Texture" id=2]
@@ -164,13 +164,13 @@ surfaces/0 = {
 "vertex_count": 564
 }
 
-[sub_resource type="MultiMesh" id=38]
+[sub_resource type="MultiMesh" id=43]
 transform_format = 1
 instance_count = 18
 mesh = SubResource( 1 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.6 )
 
-[sub_resource type="MultiMesh" id=39]
+[sub_resource type="MultiMesh" id=44]
 transform_format = 1
 instance_count = 36
 mesh = SubResource( 1 )
@@ -191,11 +191,18 @@ surfaces/0 = {
 "vertex_count": 1044
 }
 
-[sub_resource type="MultiMesh" id=40]
+[sub_resource type="MultiMesh" id=45]
 transform_format = 1
 instance_count = 12
 mesh = SubResource( 35 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.9 )
+
+[sub_resource type="Gradient" id=41]
+offsets = PoolRealArray( 0.148148, 0.37037, 0.674074, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.0627451, 1, 1, 1, 0.0352941, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=42]
+gradient = SubResource( 41 )
 
 [sub_resource type="ParticlesMaterial" id=16]
 emission_shape = 2
@@ -209,6 +216,7 @@ angle = 360.0
 angle_random = 1.0
 scale = 1.5
 scale_random = 1.0
+color_ramp = SubResource( 42 )
 
 [sub_resource type="SpatialMaterial" id=17]
 flags_transparent = true
@@ -240,7 +248,7 @@ surfaces/0 = {
 "vertex_count": 132
 }
 
-[sub_resource type="MultiMesh" id=41]
+[sub_resource type="MultiMesh" id=46]
 transform_format = 1
 instance_count = 16
 mesh = SubResource( 37 )
@@ -387,7 +395,6 @@ script = ExtResource( 23 )
 
 [node name="DayNightCycle" type="Node" parent="."]
 script = ExtResource( 59 )
-time = 1
 environment = NodePath("../WorldEnvironment")
 dir_light = NodePath("../Sunlight")
 
@@ -396,7 +403,7 @@ environment = ExtResource( 11 )
 
 [node name="Sunlight" type="DirectionalLight" parent="."]
 transform = Transform( -0.796472, -0.00558549, -0.60465, -0.330242, -0.833635, 0.442711, -0.50653, 0.552287, 0.662123, 0, 9.5352, 12.2218 )
-light_color = Color( 0.08, 0.12, 0.24, 1 )
+light_color = Color( 0.98, 0.97, 0.93, 1 )
 light_bake_mode = 2
 shadow_enabled = true
 shadow_bias = 0.0
@@ -479,7 +486,7 @@ extents = Vector3( 11.387, 9.12523, 5.85443 )
 origin_offset = Vector3( -0.217773, -1.0918, 0.638672 )
 box_projection = true
 enable_shadows = true
-interior_ambient_color = Color( 0.03, 0.05, 0.1, 1 )
+interior_ambient_color = Color( 0.11, 0.12, 0.14, 1 )
 
 [node name="RefProbeFront" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1828, 9.16223, 6.72674 )
@@ -511,13 +518,13 @@ multimesh = SubResource( 6 )
 
 [node name="HangingLamp" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 16.2 )
-pattern = 1
+pattern = 0
 sway = false
 sway_ang_deg = 10.0
 
 [node name="HangingLamp2" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 4.54348 )
-pattern = 1
+pattern = 0
 sway = false
 sway_ang_deg = 10.0
 
@@ -584,13 +591,13 @@ transform = Transform( 0.0588946, 0, 0.898076, 0, 0.899999, 0, -0.898076, 0, 0.0
 [node name="Cups" parent="Objects/BarSmallProps/TrayRect" instance=ExtResource( 57 )]
 transform = Transform( 0.799095, -3.11179e-07, -0.0381035, -3.11531e-07, -0.8, 1.42108e-15, -0.0381035, 1.48381e-08, -0.799095, -0.0903721, 0.205538, 0.606952 )
 use_in_baked_light = true
-multimesh = SubResource( 38 )
+multimesh = SubResource( 43 )
 node = "res://assets/models/CupGlass.glb"
 grid = Vector3( 2, 3, 3 )
 offset = Vector3( 0.3, 0.06, 0.3 )
 
 [node name="CupGlass" parent="Objects/BarSmallProps/TrayRect" instance=ExtResource( 74 )]
-transform = Transform( 1, 0, 2.6077e-08, 0, 1, 0, -2.6077e-08, 0, 1, -0.524053, 0.103509, 2.77284 )
+transform = Transform( 0.861632, 0, -0.50754, 0, 1, 0, 0.50754, 0, 0.861632, -0.536943, 0.103509, 2.66264 )
 
 [node name="ChopstickHolder" parent="Objects/BarSmallProps" instance=ExtResource( 56 )]
 transform = Transform( 0.850746, 0, 0.525575, 0, 1, 0, -0.525575, 0, 0.850746, -1.10239, 0.139513, 0.000174522 )
@@ -601,7 +608,7 @@ transform = Transform( 0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 1.05619, -0.0538597, 
 [node name="Cups2" parent="Objects/BarSmallProps" instance=ExtResource( 57 )]
 transform = Transform( -0.0998371, 3.88781e-08, 0.793747, -3.11531e-07, -0.8, 1.42108e-15, 0.793747, -3.09097e-07, 0.0998371, 1.48584, -1.03052, 0.0390253 )
 use_in_baked_light = true
-multimesh = SubResource( 39 )
+multimesh = SubResource( 44 )
 node = "res://assets/models/CupGlass.glb"
 grid = Vector3( 3, 3, 4 )
 offset = Vector3( 0.3, 0.06, 0.3 )
@@ -609,23 +616,23 @@ offset = Vector3( 0.3, 0.06, 0.3 )
 [node name="Dishes" parent="Objects/BarSmallProps" instance=ExtResource( 57 )]
 transform = Transform( 0.0431374, 0, 0.798836, 0, 0.8, 0, -0.798836, 0, 0.0431374, 0.0927696, -1.19657, 0.186379 )
 use_in_baked_light = true
-multimesh = SubResource( 40 )
+multimesh = SubResource( 45 )
 node = "res://assets/models/Dish.glb"
 grid = Vector3( 1, 6, 2 )
 offset = Vector3( 0.3, 0.06, 0.9 )
 
 [node name="Yakisoba" parent="Objects/BarSmallProps" instance=ExtResource( 72 )]
-transform = Transform( 0.999998, 0, 0, 0, 1, 0, 0, 0, 0.999998, 0.0865491, 0.0158176, 0.269942 )
+transform = Transform( -0.356134, 0, 0.934432, 0, 1, 0, -0.934432, 0, -0.356134, 0.0865495, 0.0158176, 0.26995 )
 
 [node name="Steam" type="Particles" parent="Objects/BarSmallProps/Yakisoba"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0712528, 0 )
+transform = Transform( -0.356135, 0, -0.934435, 0, 1, 0, 0.934435, 0, -0.356135, 2.86102e-06, 0.0983486, 9.53674e-07 )
 amount = 16
 lifetime = 2.0
 process_material = SubResource( 16 )
 draw_pass_1 = SubResource( 18 )
 
 [node name="ChopsticksWithStand" parent="Objects/BarSmallProps/Yakisoba" instance=ExtResource( 76 )]
-transform = Transform( 0.999084, 0, -0.0427649, 0, 1, 0, 0.0427649, 0, 0.999084, -0.19478, -0.0696659, 0.530465 )
+transform = Transform( -0.39577, 0, -0.918349, 0, 1, 0, 0.918349, 0, -0.39577, -0.426313, -0.0696659, -0.370925 )
 
 [node name="TableStools" type="Spatial" parent="Objects"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.122316, 0 )
@@ -815,7 +822,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.27734, 5.97481, 9.60632 )
 [node name="LineUpMeshInstance" parent="Objects/Stand" instance=ExtResource( 57 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.204041, 2.14537, -0.891679 )
 use_in_baked_light = true
-multimesh = SubResource( 41 )
+multimesh = SubResource( 46 )
 node = "res://assets/models/SnackPopChips.glb"
 grid = Vector3( 4, 1, 4 )
 offset = Vector3( 0.3, 2, 0.6 )
