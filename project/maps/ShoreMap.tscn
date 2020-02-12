@@ -1,15 +1,12 @@
-[gd_scene load_steps=108 format=2]
+[gd_scene load_steps=103 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/Rocks_08.png" type="Texture" id=2]
-[ext_resource path="res://assets/textures/pbr/Water_002/Water_002_ao.png" type="Texture" id=3]
+[ext_resource path="res://assets/shaders/water/Water.material" type="Material" id=3]
 [ext_resource path="res://assets/textures/pbr/Rocks_08/Rocks_08_ao.png" type="Texture" id=4]
 [ext_resource path="res://assets/textures/pbr/Rocks_08/Rocks_08_depth.png" type="Texture" id=5]
 [ext_resource path="res://assets/textures/pbr/Rocks_08/Rocks_08_normal.png" type="Texture" id=6]
-[ext_resource path="res://assets/textures/pbr/water_uv_offset.png" type="Texture" id=7]
-[ext_resource path="res://assets/textures/pbr/Water_002/Water_002_normal.png" type="Texture" id=8]
-[ext_resource path="res://assets/textures/pbr/Water_002/Water_002_depth.png" type="Texture" id=9]
-[ext_resource path="res://assets/textures/pbr/Water_002/Water_002_roughness.png" type="Texture" id=10]
+[ext_resource path="res://assets/shaders/water/seaweed/Seaweed.tscn" type="PackedScene" id=9]
 [ext_resource path="res://maps/environs/ShoreMapEnv.tres" type="Environment" id=11]
 [ext_resource path="res://objects/Table.tscn" type="PackedScene" id=12]
 [ext_resource path="res://objects/PictureFrame.tscn" type="PackedScene" id=13]
@@ -25,7 +22,6 @@
 [ext_resource path="res://maps/ShoreMap.gd" type="Script" id=23]
 [ext_resource path="res://objects/BarGate.tscn" type="PackedScene" id=24]
 [ext_resource path="res://assets/audio/ambient/ocean.wav" type="AudioStream" id=25]
-[ext_resource path="res://assets/textures/pbr/brown_mud_03/brown_mud_03_normal.png" type="Texture" id=26]
 [ext_resource path="res://objects/BeverageRefrigerator.tscn" type="PackedScene" id=27]
 [ext_resource path="res://objects/Book.tscn" type="PackedScene" id=28]
 [ext_resource path="res://objects/SlideDoor.tscn" type="PackedScene" id=29]
@@ -113,7 +109,7 @@ func _input(event: InputEvent) -> void:
 bounds = AABB( -79.8107, -19.8514, -131.604, 159.621, 39.7028, 263.208 )
 cell_size = 2.05631
 to_cell_xform = Transform( 0.486307, 0, 0, 0, 0.486307, 0, 0, 0, 0.486307, 38.8125, 9.65388, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 30, 12, 0, 846096416, 0, 846096128, 0, 846096224, 0, 846096560, 0, 15, -1, -1, -1, 1, -1, -1, -1, 0, 0, 8355711, 0, -1, 2, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 65537, 3, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 131083, -1, -1, -1, 4, -1, -1, -1, -1, 0, 0, 8355711, 196703, -1, -1, 5, -1, -1, -1, -1, -1, 0, 0, 8355711, 262911, 8, -1, 6, -1, 11, -1, -1, -1, 0, 0, 8355711, 333823, -1, -1, -1, -1, 7, -1, -1, -1, 0, 0, 8355711, 401407, -1, -1, -1, -1, -1, -1, -1, -1, 4736328, 0, 11722435, 524287, -1, -1, -1, -1, 10, 14, 9, -1, 0, 0, 8355711, 417791, -1, -1, -1, -1, -1, -1, -1, -1, 4999759, 0, 13402085, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 8611938, -1583516148, 10946448, 524287, 13, 12, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 9783620, 0, 6359892, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9913407, 0, 9045340, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9848127, 0, 6161539, 524287, -1, -1, -1, -1, -1, 16, -1, -1, 0, 0, 8355711, 65537, -1, -1, -1, -1, 17, -1, -1, -1, 0, 0, 8355711, 131083, -1, -1, -1, -1, -1, -1, -1, 18, 0, 0, 8355711, 196703, -1, -1, 25, -1, -1, -1, 19, -1, 0, 0, 8355711, 262911, 22, -1, 20, -1, -1, -1, -1, -1, 0, 0, 8355711, 331775, 21, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 401407, -1, -1, -1, -1, -1, -1, -1, -1, 4736328, 0, 12113354, 524287, 24, 28, 23, -1, -1, -1, -1, -1, 0, 0, 8355711, 417791, -1, -1, -1, -1, -1, -1, -1, -1, 4999759, 0, 13402085, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 8546145, -1583516149, 10749585, 524287, -1, -1, -1, -1, 26, -1, -1, -1, 0, 0, 8355711, 329727, -1, -1, -1, -1, 27, 29, -1, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 9848127, 0, 10028443, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9913920, 0, 6096488, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9848127, 0, 5966238, 524287 )
+dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 30, 12, 2, 2, 6, 10, 14, 18, 22, 26, 30, 15, -1, -1, -1, 1, -1, -1, -1, 0, 0, 8355711, 0, -1, 2, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 65537, 3, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 131083, -1, -1, -1, 4, -1, -1, -1, -1, 0, 0, 8355711, 196703, -1, -1, 5, -1, -1, -1, -1, -1, 0, 0, 8355711, 262911, 8, -1, 6, -1, 11, -1, -1, -1, 0, 0, 8355711, 333823, -1, -1, -1, -1, 7, -1, -1, -1, 0, 0, 8355711, 401407, -1, -1, -1, -1, -1, -1, -1, -1, 4736328, 0, 11722435, 524287, -1, -1, -1, -1, 10, 14, 9, -1, 0, 0, 8355711, 417791, -1, -1, -1, -1, -1, -1, -1, -1, 4999759, 0, 13402085, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 8611938, -1583516148, 10946448, 524287, 13, 12, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 9783620, 0, 6359892, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9913407, 0, 9045340, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9848127, 0, 6161539, 524287, -1, -1, -1, -1, -1, 16, -1, -1, 0, 0, 8355711, 65537, -1, -1, -1, -1, 17, -1, -1, -1, 0, 0, 8355711, 131083, -1, -1, -1, -1, -1, -1, -1, 18, 0, 0, 8355711, 196703, -1, -1, 25, -1, -1, -1, 19, -1, 0, 0, 8355711, 262911, 22, -1, 20, -1, -1, -1, -1, -1, 0, 0, 8355711, 331775, 21, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 401407, -1, -1, -1, -1, -1, -1, -1, -1, 4736328, 0, 12113354, 524287, 24, 28, 23, -1, -1, -1, -1, -1, 0, 0, 8355711, 417791, -1, -1, -1, -1, -1, -1, -1, -1, 4999759, 0, 13402085, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 8546145, -1583516149, 10749585, 524287, -1, -1, -1, -1, 26, -1, -1, -1, 0, 0, 8355711, 329727, -1, -1, -1, -1, 27, 29, -1, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 9848127, 0, 10028443, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9913920, 0, 6096488, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9848127, 0, 5966238, 524287 )
 dynamic_range = 3
 energy = 1.2
 bias = 1.5
@@ -165,19 +161,19 @@ surfaces/0 = {
 "vertex_count": 564
 }
 
-[sub_resource type="MultiMesh" id=30]
+[sub_resource type="MultiMesh" id=29]
 transform_format = 1
 instance_count = 18
 mesh = SubResource( 1 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.6 )
 
-[sub_resource type="MultiMesh" id=31]
+[sub_resource type="MultiMesh" id=30]
 transform_format = 1
 instance_count = 36
 mesh = SubResource( 1 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.06, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.12, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.12, 0.9 )
 
-[sub_resource type="ArrayMesh" id=32]
+[sub_resource type="ArrayMesh" id=31]
 resource_name = "Circle"
 surfaces/0 = {
 "aabb": AABB( -0.367104, -0.115527, -0.367104, 0.734208, 0.114524, 0.734208 ),
@@ -192,10 +188,10 @@ surfaces/0 = {
 "vertex_count": 1044
 }
 
-[sub_resource type="MultiMesh" id=33]
+[sub_resource type="MultiMesh" id=32]
 transform_format = 1
 instance_count = 12
-mesh = SubResource( 32 )
+mesh = SubResource( 31 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18, 0.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24, 0.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.8 )
 
 [sub_resource type="Gradient" id=13]
@@ -234,7 +230,7 @@ albedo_texture = ExtResource( 73 )
 material = SubResource( 16 )
 size = Vector2( 0.2, 0.2 )
 
-[sub_resource type="ArrayMesh" id=34]
+[sub_resource type="ArrayMesh" id=33]
 resource_name = "Cube"
 surfaces/0 = {
 "aabb": AABB( -0.160375, -0.366984, -0.28308, 0.330242, 0.795396, 0.566159 ),
@@ -249,10 +245,10 @@ surfaces/0 = {
 "vertex_count": 132
 }
 
-[sub_resource type="MultiMesh" id=35]
+[sub_resource type="MultiMesh" id=34]
 transform_format = 1
 instance_count = 16
-mesh = SubResource( 34 )
+mesh = SubResource( 33 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 1.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 1.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 1.8 )
 
 [sub_resource type="SpatialMaterial" id=20]
@@ -301,42 +297,13 @@ uv1_scale = Vector3( 0.9, 0.8, 1 )
 material = SubResource( 24 )
 size = Vector2( 0.725, 1.935 )
 
-[sub_resource type="SpatialMaterial" id=26]
-flags_transparent = true
-albedo_color = Color( 0.282353, 0.321569, 0.345098, 0.74902 )
-metallic = 0.28
-metallic_specular = 0.87
-roughness = 0.25
-roughness_texture = ExtResource( 10 )
-normal_enabled = true
-normal_scale = 1.0
-normal_texture = ExtResource( 8 )
-ao_enabled = true
-ao_light_affect = 0.0
-ao_texture = ExtResource( 3 )
-ao_on_uv2 = false
-ao_texture_channel = 0
-depth_enabled = true
-depth_scale = 0.05
-depth_deep_parallax = false
-depth_flip_tangent = false
-depth_flip_binormal = false
-depth_texture = ExtResource( 9 )
-refraction_enabled = true
-refraction_scale = 0.06
-refraction_texture = ExtResource( 26 )
-refraction_texture_channel = 0
-detail_enabled = true
-detail_mask = ExtResource( 7 )
-detail_blend_mode = 3
-detail_uv_layer = 0
-detail_normal = ExtResource( 7 )
-
-[sub_resource type="PlaneMesh" id=27]
-material = SubResource( 26 )
+[sub_resource type="PlaneMesh" id=26]
+material = ExtResource( 3 )
 size = Vector2( 150, 200 )
+subdivide_width = 128
+subdivide_depth = 128
 
-[sub_resource type="SpatialMaterial" id=28]
+[sub_resource type="SpatialMaterial" id=27]
 albedo_texture = ExtResource( 2 )
 roughness_texture = ExtResource( 18 )
 normal_enabled = true
@@ -358,8 +325,8 @@ depth_texture = ExtResource( 5 )
 uv1_scale = Vector3( 0.08, 0.08, 0.08 )
 uv1_triplanar = true
 
-[sub_resource type="PlaneMesh" id=29]
-material = SubResource( 28 )
+[sub_resource type="PlaneMesh" id=28]
+material = SubResource( 27 )
 size = Vector2( 150, 200 )
 
 [node name="ShoreMap" type="Node"]
@@ -444,27 +411,27 @@ transform = Transform( -0.970296, 0.0210848, -0.241001, 0, 0.996194, 0.0871558, 
 [node name="ReflectionProbes" type="Node" parent="Lightings"]
 
 [node name="RefProbeHouseHall" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.1, 16.6918 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.9885, 16.6918 )
 intensity = 0.5
-extents = Vector3( 10.2862, 11.5338, 8.50647 )
-origin_offset = Vector3( 0.341797, 0.0742188, -0.725586 )
+extents = Vector3( 10.2862, 8.5642, 8.50647 )
+origin_offset = Vector3( 0.341797, -0.269531, -0.725586 )
 box_projection = true
 enable_shadows = true
 
 [node name="RefProbeHouseBar" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13932, 11.0391, 3.83866 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13932, 11.7661, 3.83866 )
 intensity = 0.5
-extents = Vector3( 11.387, 9.12523, 5.85443 )
+extents = Vector3( 11.387, 8.55128, 5.85443 )
 origin_offset = Vector3( -0.217773, -1.0918, 0.638672 )
 box_projection = true
 enable_shadows = true
 interior_ambient_color = Color( 0.11, 0.12, 0.14, 1 )
 
 [node name="RefProbeFront" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1828, 9.16223, 6.72674 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1828, 12.5364, 6.72674 )
 intensity = 0.5
-extents = Vector3( 11.9727, 9.34266, 9.73908 )
-origin_offset = Vector3( 1.93164, 0, 0 )
+extents = Vector3( 11.9727, 5.83466, 9.73908 )
+origin_offset = Vector3( 1.93164, -0.213867, -1.58203 )
 box_projection = true
 enable_shadows = true
 interior_ambient_color = Color( 0.109804, 0.121569, 0.14902, 1 )
@@ -474,6 +441,13 @@ interior_ambient_contrib = 0.1
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.51223, 18.8188, -14.5112 )
 intensity = 0.5
 extents = Vector3( 2.8556, 5.20544, 31.5563 )
+box_projection = true
+enable_shadows = true
+
+[node name="RefProbeUnderHouse" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4445, 3.60575, 16.9792 )
+extents = Vector3( 24.8981, 2.14331, 23.1701 )
+origin_offset = Vector3( 3.11719, -1.02734, -3.61914 )
 box_projection = true
 enable_shadows = true
 
@@ -490,15 +464,11 @@ multimesh = SubResource( 6 )
 
 [node name="HangingLamp" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 16.2 )
-pattern = 0
-sway = false
-sway_ang_deg = 10.0
+pattern = 1
 
 [node name="HangingLamp2" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 4.54348 )
-pattern = 0
-sway = false
-sway_ang_deg = 10.0
+pattern = 1
 
 [node name="Structures" type="Node" parent="."]
 
@@ -563,7 +533,7 @@ transform = Transform( 0.0588946, 0, 0.898076, 0, 0.899999, 0, -0.898076, 0, 0.0
 [node name="Cups" parent="Objects/BarSmallProps/TrayRect" instance=ExtResource( 57 )]
 transform = Transform( 0.799095, -3.11179e-07, -0.0381035, -3.11531e-07, -0.8, 1.42108e-15, -0.0381035, 1.48381e-08, -0.799095, -0.0903721, 0.205538, 0.606952 )
 use_in_baked_light = true
-multimesh = SubResource( 30 )
+multimesh = SubResource( 29 )
 node = "res://assets/models/CupGlass.glb"
 grid = Vector3( 2, 3, 3 )
 offset = Vector3( 0.3, 0.06, 0.3 )
@@ -580,7 +550,7 @@ transform = Transform( 0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 1.05619, -0.0538597, 
 [node name="Cups2" parent="Objects/BarSmallProps" instance=ExtResource( 57 )]
 transform = Transform( -0.0998371, 3.88781e-08, 0.793747, -3.11531e-07, -0.8, 1.42108e-15, 0.793747, -3.09097e-07, 0.0998371, 1.48584, -1.03052, 0.0390253 )
 use_in_baked_light = true
-multimesh = SubResource( 31 )
+multimesh = SubResource( 30 )
 node = "res://assets/models/CupGlass.glb"
 grid = Vector3( 3, 3, 4 )
 offset = Vector3( 0.3, 0.06, 0.3 )
@@ -588,7 +558,7 @@ offset = Vector3( 0.3, 0.06, 0.3 )
 [node name="Dishes" parent="Objects/BarSmallProps" instance=ExtResource( 57 )]
 transform = Transform( 0.0431374, 0, 0.798836, 0, 0.8, 0, -0.798836, 0, 0.0431374, 0.0927696, -1.19657, 0.186379 )
 use_in_baked_light = true
-multimesh = SubResource( 33 )
+multimesh = SubResource( 32 )
 node = "res://assets/models/Dish.glb"
 grid = Vector3( 1, 6, 2 )
 offset = Vector3( 0.3, 0.06, 0.8 )
@@ -795,7 +765,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.27734, 5.97481, 9.60632 )
 [node name="LineUpMeshInstance" parent="Objects/Stand" instance=ExtResource( 57 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.204041, 2.14537, -0.891679 )
 use_in_baked_light = true
-multimesh = SubResource( 35 )
+multimesh = SubResource( 34 )
 node = "res://assets/models/SnackPopChips.glb"
 grid = Vector3( 4, 1, 4 )
 offset = Vector3( 0.3, 2, 0.6 )
@@ -807,7 +777,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.975611, 9.01183, 1.214 )
 transform = Transform( -8.14603e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -8.14603e-08, 0.765808, -0.600501, 0.032133 )
 
 [node name="TrayCircular" parent="Objects/Cookwares" instance=ExtResource( 62 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86162, -0.363707, 7.84557 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38534, -0.75644, 5.26158 )
 
 [node name="Apple" parent="Objects/Cookwares/TrayCircular" instance=ExtResource( 79 )]
 transform = Transform( 0.122055, -0.0397907, -0.991725, -0.922179, 0.36492, -0.128138, 0.366999, 0.930188, 0.00784631, 0.157629, 0.184737, 0.194447 )
@@ -873,16 +843,17 @@ material/0 = null
 
 [node name="SeaFace" type="MeshInstance" parent="Environs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 43 )
-mesh = SubResource( 27 )
+mesh = SubResource( 26 )
 material/0 = null
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="SeaGround" type="MeshInstance" parent="Environs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.77846, 43 )
-mesh = SubResource( 29 )
+mesh = SubResource( 28 )
 material/0 = null
+
+[node name="Seaweed" parent="Environs" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.72088, 66.4303 )
+amount = 1000
 
 [node name="Audio" type="Node" parent="."]
 

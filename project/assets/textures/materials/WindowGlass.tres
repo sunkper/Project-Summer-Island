@@ -6,19 +6,15 @@
 
 [resource]
 flags_transparent = true
-flags_world_triplanar = true
 params_depth_draw_mode = 3
 albedo_color = Color( 0.87451, 0.87451, 0.87451, 0.0862745 )
 metallic = 1.0
-metallic_specular = 0.64
 metallic_texture = ExtResource( 2 )
 roughness = 0.62
 roughness_texture = ExtResource( 1 )
 normal_enabled = true
 normal_scale = 1.0
 normal_texture = ExtResource( 3 )
-transmission_enabled = true
-transmission = Color( 0, 0, 0, 1 )
 refraction_enabled = true
 refraction_scale = 0.02
 refraction_texture_channel = 0

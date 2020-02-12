@@ -8,8 +8,10 @@ Godette chracter model is made by linuxkone9. It's [available](https://www.blend
 
 This project uses [Qodot](https://github.com/ShiftyAxel/Qodot), the Quake map importer for Godot, and [HungryProton's Scatter plugin](https://github.com/HungryProton/scatter).
 
-Film grain shader is ported from [a GLSL shader](http://devlog-martinsh.blogspot.com/2013/05/image-imperfections-and-film-grain-post.html) by Martins Upitis, used under Creative Commons Attribution 3.0 Unported License.
-
 I used and modified many textures from [3D TEXTURES](https://3dtextures.me/), [CC0 Textures](https://cc0textures.com/), [Texture Haven](https://texturehaven.com/), and [cgbookcase.com](https://www.cgbookcase.com/).
 
 I used [Materialize](http://boundingboxsoftware.com/materialize/) for some textures.
+
+## Shaders
+- Film grain shader is ported from [a GLSL shader](http://devlog-martinsh.blogspot.com/2013/05/image-imperfections-and-film-grain-post.html) by Martins Upitis, used under Creative Commons Attribution 3.0 Unported License.
+- Water shader: [Godot Realistic Water](https://github.com/godot-extended-libraries/godot-realistic-water)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/shaders/water/seaweed/Seaweed_Process.material" type="Material" id=1]
+[ext_resource path="res://assets/shaders/water/seaweed/Seaweed.material" type="Material" id=2]
+[ext_resource path="res://assets/shaders/water/seaweed/Seaweed.obj" type="ArrayMesh" id=3]
+
+
+
+
+[node name="Seaweed" type="Particles"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 1.25 )
+material_override = ExtResource( 2 )
+amount = 10000
+explosiveness = 1.0
+visibility_aabb = AABB( -16, -16, -16, 32, 32, 32 )
+local_coords = false
+draw_order = 2
+process_material = ExtResource( 1 )
+draw_pass_1 = ExtResource( 3 )

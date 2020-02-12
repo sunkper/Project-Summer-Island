@@ -69,7 +69,7 @@ func turn_on(state: bool) -> void:
 func _set_sway(new_state) -> void:
 	sway = new_state
 	if not Engine.is_editor_hint():
-		$SwayAnim.play()
+		$SwayAnim.play(\"Sway\")
 
 func _set_sway_ang(new_angle) -> void:
 	if new_angle == sway_ang_deg:
@@ -233,10 +233,11 @@ tracks/0/keys = {
 "times": PoolRealArray( 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 15, 0, 0 ), Vector3( -15, 0, 0 ) ]
+"values": [ 10.0, 10.0 ]
 }
 
 [node name="HangingLamp" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0 )
 script = SubResource( 1 )
 
 [node name="Hanger" type="MeshInstance" parent="."]
@@ -321,4 +322,5 @@ omni_attenuation = 6.96652
 anims/Flicker00 = SubResource( 13 )
 
 [node name="SwayAnim" type="AnimationPlayer" parent="."]
+playback_speed = 0.1
 anims/Sway = SubResource( 14 )
