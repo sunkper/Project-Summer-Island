@@ -165,19 +165,19 @@ surfaces/0 = {
 "vertex_count": 564
 }
 
-[sub_resource type="MultiMesh" id=9]
+[sub_resource type="MultiMesh" id=30]
 transform_format = 1
 instance_count = 18
 mesh = SubResource( 1 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.6 )
 
-[sub_resource type="MultiMesh" id=10]
+[sub_resource type="MultiMesh" id=31]
 transform_format = 1
 instance_count = 36
 mesh = SubResource( 1 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.06, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.12, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.12, 0.9 )
 
-[sub_resource type="ArrayMesh" id=11]
+[sub_resource type="ArrayMesh" id=32]
 resource_name = "Circle"
 surfaces/0 = {
 "aabb": AABB( -0.426168, -0.134115, -0.426168, 0.852336, 0.13295, 0.852336 ),
@@ -192,10 +192,10 @@ surfaces/0 = {
 "vertex_count": 1044
 }
 
-[sub_resource type="MultiMesh" id=12]
+[sub_resource type="MultiMesh" id=33]
 transform_format = 1
 instance_count = 12
-mesh = SubResource( 11 )
+mesh = SubResource( 32 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.9 )
 
 [sub_resource type="Gradient" id=13]
@@ -234,7 +234,7 @@ albedo_texture = ExtResource( 73 )
 material = SubResource( 16 )
 size = Vector2( 0.2, 0.2 )
 
-[sub_resource type="ArrayMesh" id=18]
+[sub_resource type="ArrayMesh" id=34]
 resource_name = "Cube"
 surfaces/0 = {
 "aabb": AABB( -0.160375, -0.366984, -0.28308, 0.330242, 0.795396, 0.566159 ),
@@ -249,10 +249,10 @@ surfaces/0 = {
 "vertex_count": 132
 }
 
-[sub_resource type="MultiMesh" id=19]
+[sub_resource type="MultiMesh" id=35]
 transform_format = 1
 instance_count = 16
-mesh = SubResource( 18 )
+mesh = SubResource( 34 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 1.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 1.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 1.8 )
 
 [sub_resource type="SpatialMaterial" id=20]
@@ -367,7 +367,6 @@ script = ExtResource( 23 )
 
 [node name="DayNightCycle" type="Node" parent="."]
 script = ExtResource( 59 )
-time = 1
 environment = NodePath("../WorldEnvironment")
 dir_light = NodePath("../Sunlight")
 
@@ -376,7 +375,7 @@ environment = ExtResource( 11 )
 
 [node name="Sunlight" type="DirectionalLight" parent="."]
 transform = Transform( -0.796472, -0.00558549, -0.60465, -0.330242, -0.833635, 0.442711, -0.50653, 0.552287, 0.662123, 0, 9.5352, 12.2218 )
-light_color = Color( 0.08, 0.12, 0.24, 1 )
+light_color = Color( 0.98, 0.97, 0.93, 1 )
 light_bake_mode = 2
 shadow_enabled = true
 shadow_bias = 0.0
@@ -459,7 +458,7 @@ extents = Vector3( 11.387, 9.12523, 5.85443 )
 origin_offset = Vector3( -0.217773, -1.0918, 0.638672 )
 box_projection = true
 enable_shadows = true
-interior_ambient_color = Color( 0.03, 0.05, 0.1, 1 )
+interior_ambient_color = Color( 0.11, 0.12, 0.14, 1 )
 
 [node name="RefProbeFront" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1828, 9.16223, 6.72674 )
@@ -497,7 +496,7 @@ sway_ang_deg = 10.0
 
 [node name="HangingLamp2" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 4.54348 )
-pattern = 1
+pattern = 0
 sway = false
 sway_ang_deg = 10.0
 
@@ -564,7 +563,7 @@ transform = Transform( 0.0588946, 0, 0.898076, 0, 0.899999, 0, -0.898076, 0, 0.0
 [node name="Cups" parent="Objects/BarSmallProps/TrayRect" instance=ExtResource( 57 )]
 transform = Transform( 0.799095, -3.11179e-07, -0.0381035, -3.11531e-07, -0.8, 1.42108e-15, -0.0381035, 1.48381e-08, -0.799095, -0.0903721, 0.205538, 0.606952 )
 use_in_baked_light = true
-multimesh = SubResource( 9 )
+multimesh = SubResource( 30 )
 node = "res://assets/models/CupGlass.glb"
 grid = Vector3( 2, 3, 3 )
 offset = Vector3( 0.3, 0.06, 0.3 )
@@ -581,7 +580,7 @@ transform = Transform( 0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 1.05619, -0.0538597, 
 [node name="Cups2" parent="Objects/BarSmallProps" instance=ExtResource( 57 )]
 transform = Transform( -0.0998371, 3.88781e-08, 0.793747, -3.11531e-07, -0.8, 1.42108e-15, 0.793747, -3.09097e-07, 0.0998371, 1.48584, -1.03052, 0.0390253 )
 use_in_baked_light = true
-multimesh = SubResource( 10 )
+multimesh = SubResource( 31 )
 node = "res://assets/models/CupGlass.glb"
 grid = Vector3( 3, 3, 4 )
 offset = Vector3( 0.3, 0.06, 0.3 )
@@ -589,7 +588,7 @@ offset = Vector3( 0.3, 0.06, 0.3 )
 [node name="Dishes" parent="Objects/BarSmallProps" instance=ExtResource( 57 )]
 transform = Transform( 0.0431374, 0, 0.798836, 0, 0.8, 0, -0.798836, 0, 0.0431374, 0.0927696, -1.19657, 0.186379 )
 use_in_baked_light = true
-multimesh = SubResource( 12 )
+multimesh = SubResource( 33 )
 node = "res://assets/models/Dish.glb"
 grid = Vector3( 1, 6, 2 )
 offset = Vector3( 0.3, 0.06, 0.9 )
@@ -795,7 +794,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.27734, 5.97481, 9.60632 )
 [node name="LineUpMeshInstance" parent="Objects/Stand" instance=ExtResource( 57 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.204041, 2.14537, -0.891679 )
 use_in_baked_light = true
-multimesh = SubResource( 19 )
+multimesh = SubResource( 35 )
 node = "res://assets/models/SnackPopChips.glb"
 grid = Vector3( 4, 1, 4 )
 offset = Vector3( 0.3, 2, 0.6 )

@@ -138,9 +138,9 @@ void fragment()
 
 [resource]
 shader = SubResource( 1 )
-shader_param/screen_size = Vector2( 1280, 720 )
+shader_param/screen_size = Vector2( 1280, 480 )
 shader_param/grain_amount = 0.03
 shader_param/colored = true
 shader_param/color_amount = 0.6
-shader_param/grainsize = 4.0
-shader_param/lum_amount = 1.2
+shader_param/grainsize = 2.45
+shader_param/lum_amount = 1.0
