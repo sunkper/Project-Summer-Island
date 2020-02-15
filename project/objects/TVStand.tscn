@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/materials/Wood02.tres" type="Material" id=1]
 [ext_resource path="res://assets/models/TV.glb" type="PackedScene" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/pbr/WannaBeJetpaca.png" type="Texture" id=3]
 [ext_resource path="res://assets/videos/ManWithACamera.webm" type="VideoStream" id=4]
 [ext_resource path="res://objects/TVStand.gd" type="Script" id=5]
 [ext_resource path="res://assets/audio/music/Canal3.ogg" type="AudioStream" id=6]
@@ -63,7 +63,7 @@ viewport_path = NodePath("Viewport")
 [sub_resource type="SpatialMaterial" id=6]
 resource_local_to_scene = true
 resource_name = "TVScreen"
-albedo_color = Color( 0.521158, 0.642419, 0.631247, 1 )
+flags_do_not_receive_shadows = true
 albedo_texture = SubResource( 5 )
 metallic = 0.111111
 roughness = 0.782051
@@ -121,6 +121,7 @@ expand = false
 script = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Viewport"]
+visible = false
 texture = ExtResource( 3 )
 
 [node name="TVLight" type="OmniLight" parent="."]
@@ -138,7 +139,7 @@ script = SubResource( 4 )
 transform = Transform( 0.690365, 0, 0.723461, 0, 1, 0, -0.723461, 0, 0.690365, -0.365824, 3.32102, 0.270738 )
 
 [node name="Screen" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.690365, 0, 0.723461, 0, 1, 0, -0.723461, 0, 0.690365, -0.365824, 3.32102, 0.270738 )
+transform = Transform( 0.690365, 0, 0.723461, 0, -1, 0, -0.723461, 0, 0.690365, -0.365824, 3.32102, 0.270738 )
 material_override = SubResource( 6 )
 use_in_baked_light = true
 [connection signal="finished" from="Viewport/VideoPlayer" to="Viewport/VideoPlayer" method="_on_VideoPlayer_finished"]
