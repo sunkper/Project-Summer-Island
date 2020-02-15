@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=2]
+[gd_scene load_steps=110 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/Rocks_08.png" type="Texture" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://assets/textures/pbr/Rocks_08/Rocks_08_depth.png" type="Texture" id=5]
 [ext_resource path="res://assets/textures/pbr/Rocks_08/Rocks_08_normal.png" type="Texture" id=6]
 [ext_resource path="res://assets/models/Cliff.glb" type="PackedScene" id=7]
-[ext_resource path="res://assets/models/Tree01.glb" type="PackedScene" id=8]
+[ext_resource path="res://assets/models/MilkBottle.glb" type="PackedScene" id=8]
 [ext_resource path="res://assets/shaders/water/seaweed/Seaweed.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/textures/pbr/WannaBeJetpaca/WannaBeJetpaca_ao.png" type="Texture" id=10]
 [ext_resource path="res://maps/environs/ShoreMapEnv.tres" type="Environment" id=11]
 [ext_resource path="res://objects/Table.tscn" type="PackedScene" id=12]
 [ext_resource path="res://objects/PictureFrame.tscn" type="PackedScene" id=13]
@@ -24,6 +25,7 @@
 [ext_resource path="res://maps/ShoreMap.gd" type="Script" id=23]
 [ext_resource path="res://objects/BarGate.tscn" type="PackedScene" id=24]
 [ext_resource path="res://assets/audio/ambient/ocean.wav" type="AudioStream" id=25]
+[ext_resource path="res://assets/textures/pbr/WannaBeJetpaca/WannaBeJetpaca_normal.png" type="Texture" id=26]
 [ext_resource path="res://objects/BeverageRefrigerator.tscn" type="PackedScene" id=27]
 [ext_resource path="res://objects/Book.tscn" type="PackedScene" id=28]
 [ext_resource path="res://objects/SlideDoor.tscn" type="PackedScene" id=29]
@@ -75,6 +77,7 @@
 [ext_resource path="res://assets/models/YakisobaBowl.material" type="Material" id=75]
 [ext_resource path="res://assets/models/ChopsticksWithStand.glb" type="PackedScene" id=76]
 [ext_resource path="res://assets/models/Box.glb" type="PackedScene" id=77]
+[ext_resource path="res://assets/textures/pbr/WannaBeJetpaca.png" type="Texture" id=78]
 [ext_resource path="res://assets/models/Apple.glb" type="PackedScene" id=79]
 
 [sub_resource type="GDScript" id=2]
@@ -108,11 +111,11 @@ func _input(event: InputEvent) -> void:
 "
 
 [sub_resource type="GIProbeData" id=3]
-bounds = AABB( -263.96, -39.1782, -259.391, 527.92, 78.3563, 518.782 )
+bounds = AABB( -263.96, -39.1782, -259.391, 527.92, 78.3564, 518.782 )
 cell_size = 4.12437
-to_cell_xform = Transform( 0.242461, 0, 0, 0, 0.242461, 0, 0, 0, 0.242461, 64, 9.49917, 62.8922 )
-dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 19, 6, -844032, 97, 1196585729, -827457470, 59676, 1145670403, -1925688255, 1339019813, -1073739949, 1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0, -1, 11, -1, -1, -1, 2, -1, -1, 0, 0, 8355711, 65537, -1, 3, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 131077, -1, 4, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 196655, -1, -1, -1, 5, -1, -1, -1, -1, 0, 0, 8355711, 262527, -1, -1, -1, 6, -1, -1, -1, 9, 0, 0, 8355711, 330751, -1, -1, -1, -1, 8, -1, 7, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 4867915, 0, 12963641, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 8873054, 0, 12784750, 524287, 10, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 401407, -1, -1, -1, -1, -1, -1, -1, -1, 9719112, 0, 8129354, 524287, -1, -1, -1, -1, -1, 12, -1, -1, 0, 0, 8355711, 131077, -1, -1, -1, -1, -1, 13, -1, -1, 0, 0, 8355711, 196655, -1, -1, -1, -1, -1, -1, -1, 14, 0, 0, 8355711, 262527, -1, -1, -1, -1, -1, -1, -1, 15, 0, 0, 8355711, 330751, 18, -1, -1, -1, 17, -1, 16, -1, 0, 0, 8355711, 417791, -1, -1, -1, -1, -1, -1, -1, -1, 4867915, 0, 12963782, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 8742239, 0, 12130480, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9719369, 0, 8850614, 524287 )
-dynamic_range = 3
+to_cell_xform = Transform( 0.242461, 0, 0, 0, 0.242461, 0, 0, 0, 0.242461, 64, 9.49918, 62.8922 )
+dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 19, 6, 1065353216, 613232640, 0, -1082130432, 1065353216, -1087044365, 0, -1087044365, 1065353216, 1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0, -1, 11, -1, -1, -1, 2, -1, -1, 0, 0, 8355711, 65537, -1, 3, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 131077, -1, 4, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 196655, -1, -1, -1, 5, -1, -1, -1, -1, 0, 0, 8355711, 262527, -1, -1, -1, 6, -1, -1, -1, 9, 0, 0, 8355711, 330751, -1, -1, -1, -1, 7, -1, 8, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 9267040, -1583516150, 12127862, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 4801865, 0, 11920713, 524287, 10, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 401407, -1, -1, -1, -1, -1, -1, -1, -1, 9719112, 0, 8129354, 524287, -1, -1, -1, -1, -1, 12, -1, -1, 0, 0, 8355711, 131077, -1, -1, -1, -1, -1, 13, -1, -1, 0, 0, 8355711, 196655, -1, -1, -1, -1, -1, -1, -1, 14, 0, 0, 8355711, 262527, -1, -1, -1, -1, -1, -1, -1, 15, 0, 0, 8355711, 330751, 18, -1, -1, -1, 16, -1, 17, -1, 0, 0, 8355711, 417791, -1, -1, -1, -1, -1, -1, -1, -1, 9201761, 0, 11473062, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 4801865, 0, 11920821, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9719369, 0, 8850614, 524287 )
+dynamic_range = 2
 energy = 1.2
 bias = 1.5
 normal_bias = 0.0
@@ -163,19 +166,19 @@ surfaces/0 = {
 "vertex_count": 564
 }
 
-[sub_resource type="MultiMesh" id=29]
+[sub_resource type="MultiMesh" id=37]
 transform_format = 1
 instance_count = 18
 mesh = SubResource( 1 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.6 )
 
-[sub_resource type="MultiMesh" id=30]
+[sub_resource type="MultiMesh" id=38]
 transform_format = 1
 instance_count = 36
 mesh = SubResource( 1 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.06, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.12, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.06, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.06, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.06, 0.9, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.12, 0.3, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.12, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.12, 0.9 )
 
-[sub_resource type="ArrayMesh" id=31]
+[sub_resource type="ArrayMesh" id=39]
 resource_name = "Circle"
 surfaces/0 = {
 "aabb": AABB( -0.367104, -0.115527, -0.367104, 0.734208, 0.114524, 0.734208 ),
@@ -190,10 +193,10 @@ surfaces/0 = {
 "vertex_count": 1044
 }
 
-[sub_resource type="MultiMesh" id=32]
+[sub_resource type="MultiMesh" id=40]
 transform_format = 1
 instance_count = 12
-mesh = SubResource( 31 )
+mesh = SubResource( 39 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18, 0.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24, 0.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.8 )
 
 [sub_resource type="Gradient" id=13]
@@ -232,7 +235,7 @@ albedo_texture = ExtResource( 73 )
 material = SubResource( 16 )
 size = Vector2( 0.2, 0.2 )
 
-[sub_resource type="ArrayMesh" id=33]
+[sub_resource type="ArrayMesh" id=41]
 resource_name = "Cube"
 surfaces/0 = {
 "aabb": AABB( -0.160375, -0.366984, -0.28308, 0.330242, 0.795396, 0.566159 ),
@@ -247,11 +250,26 @@ surfaces/0 = {
 "vertex_count": 132
 }
 
-[sub_resource type="MultiMesh" id=34]
+[sub_resource type="MultiMesh" id=42]
 transform_format = 1
 instance_count = 16
-mesh = SubResource( 33 )
+mesh = SubResource( 41 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 1.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 1.8, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 0.6, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 1.2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 1.8 )
+
+[sub_resource type="SpatialMaterial" id=35]
+albedo_texture = ExtResource( 78 )
+normal_enabled = true
+normal_scale = 0.2
+normal_texture = ExtResource( 26 )
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource( 10 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+
+[sub_resource type="QuadMesh" id=36]
+material = SubResource( 35 )
+size = Vector2( 0.6, 0.6 )
 
 [sub_resource type="SpatialMaterial" id=20]
 albedo_texture = ExtResource( 67 )
@@ -345,6 +363,8 @@ environment = ExtResource( 11 )
 [node name="Sunlight" type="DirectionalLight" parent="."]
 transform = Transform( -0.796472, -0.00558549, -0.60465, -0.330242, -0.833635, 0.442711, -0.50653, 0.552287, 0.662123, 0, 9.5352, 12.2218 )
 light_color = Color( 0.98, 0.97, 0.93, 1 )
+light_energy = 1.5
+light_indirect_energy = 2.0
 light_bake_mode = 2
 shadow_enabled = true
 shadow_bias = 0.0
@@ -455,9 +475,8 @@ enable_shadows = true
 
 [node name="GIProbe" type="GIProbe" parent="Lightings"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.09069, 27.6049, 135.798 )
-visible = false
 extents = Vector3( 263.96, 39.1782, 259.391 )
-dynamic_range = 3
+dynamic_range = 2
 energy = 1.2
 propagation = 0.75
 data = SubResource( 3 )
@@ -471,7 +490,6 @@ pattern = 1
 
 [node name="HangingLamp2" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 4.54348 )
-pattern = 1
 
 [node name="Structures" type="Node" parent="."]
 
@@ -536,7 +554,7 @@ transform = Transform( 0.0588946, 0, 0.898076, 0, 0.899999, 0, -0.898076, 0, 0.0
 [node name="Cups" parent="Objects/BarSmallProps/TrayRect" instance=ExtResource( 57 )]
 transform = Transform( 0.799095, -3.11179e-07, -0.0381035, -3.11531e-07, -0.8, 1.42108e-15, -0.0381035, 1.48381e-08, -0.799095, -0.0903721, 0.205538, 0.606952 )
 use_in_baked_light = true
-multimesh = SubResource( 29 )
+multimesh = SubResource( 37 )
 node = "res://assets/models/CupGlass.glb"
 grid = Vector3( 2, 3, 3 )
 offset = Vector3( 0.3, 0.06, 0.3 )
@@ -553,7 +571,7 @@ transform = Transform( 0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 1.05619, -0.0538597, 
 [node name="Cups2" parent="Objects/BarSmallProps" instance=ExtResource( 57 )]
 transform = Transform( -0.0998371, 3.88781e-08, 0.793747, -3.11531e-07, -0.8, 1.42108e-15, 0.793747, -3.09097e-07, 0.0998371, 1.48584, -1.03052, 0.0390253 )
 use_in_baked_light = true
-multimesh = SubResource( 30 )
+multimesh = SubResource( 38 )
 node = "res://assets/models/CupGlass.glb"
 grid = Vector3( 3, 3, 4 )
 offset = Vector3( 0.3, 0.06, 0.3 )
@@ -561,7 +579,7 @@ offset = Vector3( 0.3, 0.06, 0.3 )
 [node name="Dishes" parent="Objects/BarSmallProps" instance=ExtResource( 57 )]
 transform = Transform( 0.0431374, 0, 0.798836, 0, 0.8, 0, -0.798836, 0, 0.0431374, 0.0927696, -1.19657, 0.186379 )
 use_in_baked_light = true
-multimesh = SubResource( 32 )
+multimesh = SubResource( 40 )
 node = "res://assets/models/Dish.glb"
 grid = Vector3( 1, 6, 2 )
 offset = Vector3( 0.3, 0.06, 0.8 )
@@ -578,6 +596,9 @@ draw_pass_1 = SubResource( 17 )
 
 [node name="ChopsticksWithStand" parent="Objects/BarSmallProps/Yakisoba" instance=ExtResource( 76 )]
 transform = Transform( -0.39577, 0, -0.918349, 0, 1, 0, 0.918349, 0, -0.39577, -0.426313, -0.0696659, -0.370925 )
+
+[node name="MilkBottle" parent="Objects/BarSmallProps" instance=ExtResource( 8 )]
+transform = Transform( 0.667248, 0, 0.744835, 0, 1, 0, -0.744835, 0, 0.667248, -0.490295, 0.133142, 0.773385 )
 
 [node name="TableStools" type="Spatial" parent="Objects"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.122316, 0 )
@@ -683,7 +704,7 @@ transform = Transform( -0.8, 0, -2.60673e-07, 0, 0.8, 0, 2.60673e-07, 0, -0.8, 8
 visible = false
 
 [node name="BarHangingGlasses" type="Spatial" parent="Objects"]
-transform = Transform( 0.686249, 0, -0.727366, 0, 1, 0, 0.727366, 0, 0.686249, -0.10278, 12.3792, 8 )
+transform = Transform( 0.686249, 0, -0.727366, 0, 1, 0, 0.727366, 0, 0.686249, -0.10278, 12.1923, 8 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -691,49 +712,33 @@ __meta__ = {
 [node name="HangingGlass" parent="Objects/BarHangingGlasses" instance=ExtResource( 34 )]
 string_length = 0.8
 type = "Bird"
-sway_intensity = 100.0
 
 [node name="HangingGlass2" parent="Objects/BarHangingGlasses" instance=ExtResource( 34 )]
 transform = Transform( -0.99324, 0, -0.116085, 0, 1, 0, 0.116085, 0, -0.99324, 0.210679, -0.033, -0.223301 )
-string_length = 1.0
-type = "Crystal"
-sway_intensity = 100.0
 
 [node name="HangingGlass3" parent="Objects/BarHangingGlasses" instance=ExtResource( 34 )]
 transform = Transform( -0.99324, 0, -0.116085, 0, 1, 0, 0.116085, 0, -0.99324, -0.333518, -0.0319996, 0.3535 )
 string_length = 1.1
-type = "Crystal"
-sway_intensity = 100.0
 
 [node name="HangingGlass4" parent="Objects/BarHangingGlasses" instance=ExtResource( 34 )]
 transform = Transform( -0.99324, 0, -0.116085, 0, 1, 0, 0.116085, 0, -0.99324, 0.417926, -0.026, -0.442966 )
 string_length = 1.15
-type = "Crystal"
-sway_intensity = 100.0
 
 [node name="HangingGlass7" parent="Objects/BarHangingGlasses" instance=ExtResource( 34 )]
 transform = Transform( -0.99324, 0, -0.116085, 0, 1, 0, 0.116085, 0, -0.99324, -0.20313, -0.00500011, 0.215301 )
 string_length = 1.5
-type = "Crystal"
-sway_intensity = 100.0
 
 [node name="HangingGlass6" parent="Objects/BarHangingGlasses" instance=ExtResource( 34 )]
 transform = Transform( -0.99324, 0, -0.116085, 0, 1, 0, 0.116085, 0, -0.99324, 0.314989, -0.0179996, -0.333861 )
 string_length = 0.6
-type = "Crystal"
-sway_intensity = 100.0
 
 [node name="HangingGlass8" parent="Objects/BarHangingGlasses" instance=ExtResource( 34 )]
 transform = Transform( -0.99324, 0, -0.116085, 0, 1, 0, 0.116085, 0, -0.99324, 0.548314, -0.0179996, -0.581166 )
 string_length = 0.44
-type = "Crystal"
-sway_intensity = 100.0
 
 [node name="HangingGlass5" parent="Objects/BarHangingGlasses" instance=ExtResource( 34 )]
 transform = Transform( -0.99324, 0, -0.116085, 0, 1, 0, 0.116085, 0, -0.99324, -0.540765, -0.0229998, 0.573165 )
 string_length = 0.9
-type = "Crystal"
-sway_intensity = 100.0
 
 [node name="Bench" parent="Objects" instance=ExtResource( 36 )]
 transform = Transform( 0.0355156, 0, -1.19947, 0, 1.2, 0, 1.19947, 0, 0.0355156, -10.8494, 6, 8.18235 )
@@ -768,7 +773,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.27734, 5.97481, 9.60632 )
 [node name="LineUpMeshInstance" parent="Objects/Stand" instance=ExtResource( 57 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.204041, 2.14537, -0.891679 )
 use_in_baked_light = true
-multimesh = SubResource( 34 )
+multimesh = SubResource( 42 )
 node = "res://assets/models/SnackPopChips.glb"
 grid = Vector3( 4, 1, 4 )
 offset = Vector3( 0.3, 2, 0.6 )
@@ -814,6 +819,11 @@ transform = Transform( -0.0233504, 0, -0.999727, 0, 1, 0, 0.999727, 0, -0.023350
 
 [node name="Box" parent="Objects/KitchenFridge" instance=ExtResource( 77 )]
 transform = Transform( -0.4962, 0, 0.0615324, 0, 0.5, 0, -0.0615324, 0, -0.4962, -0.189134, 1.80594, -0.447555 )
+
+[node name="WannaBeJetpaca" type="MeshInstance" parent="Objects/KitchenFridge"]
+transform = Transform( -0.00502777, 0.00101722, 0.99999, 0.0236145, 0.999721, -0.000898215, -0.999712, 0.0236098, -0.00505037, 1.09874, 0.467355, -0.306198 )
+mesh = SubResource( 36 )
+material/0 = null
 
 [node name="Box2" parent="Objects" instance=ExtResource( 77 )]
 transform = Transform( -0.498989, 0, -0.0317872, 0, 0.5, 0, 0.0317872, 0, -0.498989, 4.84383, 11.1559, 0.786951 )
@@ -867,9 +877,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 79.4253 )
 
 [node name="Cliff" parent="Environs/DistantCliffs" instance=ExtResource( 7 )]
 transform = Transform( 0.520945, 0, 0.984808, 0, 2, 0, -2.95442, 0, 0.173648, -40.1718, -1.24728, 119.531 )
-
-[node name="Tree01" parent="Environs/DistantCliffs/Cliff" instance=ExtResource( 8 )]
-transform = Transform( 3.13231, 0, -3.4202, 0, 5, 0, 1.14007, 0, 9.39693, 1.58187, 11.8896, -0.836781 )
 
 [node name="Cliff6" parent="Environs/DistantCliffs" instance=ExtResource( 7 )]
 transform = Transform( -2.88073, -0.183758, 0.263602, -0.335313, 1.98366, -0.0614523, -0.767409, -0.176945, -0.962672, 144.156, -22.2691, 21.8263 )

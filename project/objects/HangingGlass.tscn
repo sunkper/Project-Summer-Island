@@ -66,8 +66,8 @@ rings = 1
 material = ExtResource( 1 )
 radius = 0.02
 height = 0.04
-radial_segments = 6
-rings = 4
+radial_segments = 4
+rings = 1
 
 [sub_resource type="Animation" id=4]
 resource_name = "sway"

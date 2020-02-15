@@ -9,6 +9,7 @@ top_radius = 0.5
 bottom_radius = 0.5
 height = 0.15
 radial_segments = 16
+rings = 1
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.0941176, 0.368627, 0.0392157, 1 )
@@ -25,6 +26,7 @@ top_radius = 0.05
 bottom_radius = 0.05
 height = 1.6
 radial_segments = 6
+rings = 1
 
 [sub_resource type="CylinderShape" id=4]
 radius = 0.4

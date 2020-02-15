@@ -70,6 +70,7 @@ top_radius = 0.04
 bottom_radius = 0.04
 height = 4.8
 radial_segments = 8
+rings = 1
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 4 )
@@ -86,6 +87,7 @@ top_radius = 0.11
 bottom_radius = 0.12
 height = 0.27
 radial_segments = 12
+rings = 1
 
 [sub_resource type="SpatialMaterial" id=5]
 flags_transparent = true
@@ -206,10 +208,7 @@ tracks/0/keys = {
 }
 
 [node name="HangingLamp" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 script = SubResource( 1 )
-sway = false
-sway_ang_deg = 10.0
 
 [node name="Hanger" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.4, 0 )

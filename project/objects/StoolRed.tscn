@@ -13,6 +13,7 @@ top_radius = 0.5
 bottom_radius = 0.5
 height = 0.1
 radial_segments = 16
+rings = 1
 
 [sub_resource type="CylinderMesh" id=3]
 material = ExtResource( 1 )
@@ -20,6 +21,7 @@ top_radius = 0.5
 bottom_radius = 0.5
 height = 0.1
 radial_segments = 16
+rings = 1
 
 [sub_resource type="CylinderMesh" id=4]
 material = ExtResource( 1 )
@@ -27,6 +29,7 @@ top_radius = 0.06
 bottom_radius = 0.06
 height = 1.75
 radial_segments = 6
+rings = 1
 
 [sub_resource type="ArrayMesh" id=5]
 surfaces/0 = {
