@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://tools/CSGExporter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/MetalPainted01.png" type="Texture" id=2]
@@ -19,9 +19,6 @@ enum patterns {OFF, ON, FLICKER}
 export (patterns) var pattern setget _set_pattern
 #export var turn_on: = false setget _turn_onoff
 #export var flicker: = false setget _set_flicker
-
-export var sway: = false setget _set_sway
-export var sway_ang_deg: = 10.0 setget _set_sway_ang
 
 func _set_pattern(new_pattern) -> void:
 	if new_pattern == pattern:
@@ -65,18 +62,6 @@ func turn_on(state: bool) -> void:
 #		$Anim.play(\"Flicker00\")
 #	else:
 #		$Anim.stop()
-
-func _set_sway(new_state) -> void:
-	sway = new_state
-	if not Engine.is_editor_hint():
-		$SwayAnim.play(\"Sway\")
-
-func _set_sway_ang(new_angle) -> void:
-	if new_angle == sway_ang_deg:
-		return
-	sway_ang_deg = new_angle
-	$SwayAnim.get_animation(\"Sway\").track_set_key_value(0, 0, sway_ang_deg)
-	$SwayAnim.get_animation(\"Sway\").track_set_key_value(0, 1, sway_ang_deg)
 "
 
 [sub_resource type="CylinderMesh" id=2]
@@ -220,25 +205,11 @@ tracks/0/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=14]
-resource_name = "Sway"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 10.0, 10.0 ]
-}
-
 [node name="HangingLamp" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 script = SubResource( 1 )
+sway = false
+sway_ang_deg = 10.0
 
 [node name="Hanger" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.4, 0 )
@@ -320,7 +291,3 @@ omni_attenuation = 6.96652
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 anims/Flicker00 = SubResource( 13 )
-
-[node name="SwayAnim" type="AnimationPlayer" parent="."]
-playback_speed = 0.1
-anims/Sway = SubResource( 14 )

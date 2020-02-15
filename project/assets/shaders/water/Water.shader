@@ -176,8 +176,8 @@ void fragment()
 	// Set all values:
 	ALBEDO = color;
 	METALLIC = 0.1;
-	ROUGHNESS = 0.2;
-	SPECULAR = 0.2 + depth_blend_pow * 0.4;
+	ROUGHNESS = 0.3;
+	SPECULAR = 0.0 + depth_blend_pow * 0.4;
 	NORMALMAP = normalmap;
 	NORMALMAP_DEPTH = 1.25;
 }

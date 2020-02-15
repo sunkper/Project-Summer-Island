@@ -1,6 +1,6 @@
 [gd_resource type="Environment" load_steps=3 format=2]
 
-[ext_resource path="res://_TEMP_THEFT_ASSETS/textures/Boku2SkyDay.jpg" type="Texture" id=1]
+[ext_resource path="res://assets/textures/base/Sky2.png" type="Texture" id=1]
 
 [sub_resource type="PanoramaSky" id=1]
 panorama = ExtResource( 1 )
@@ -11,6 +11,15 @@ background_sky = SubResource( 1 )
 background_energy = 0.2
 ambient_light_energy = 0.6
 ambient_light_sky_contribution = 0.4
+fog_enabled = true
+fog_color = Color( 0.0117647, 0.231373, 0.372549, 1 )
+fog_sun_amount = 0.14
+fog_depth_begin = 140.0
+fog_depth_end = 300.0
+fog_height_enabled = true
+fog_height_min = -0.5
+fog_height_max = -8.0
+fog_height_curve = 12.5533
 tonemap_mode = 2
 tonemap_white = 2.0
 auto_exposure_enabled = true
@@ -19,7 +28,8 @@ ss_reflections_enabled = true
 ssao_enabled = true
 ssao_light_affect = 0.5
 ssao_ao_channel_affect = 1.0
-dof_blur_far_quality = 2
+dof_blur_far_distance = 180.0
+dof_blur_far_quality = 0
 glow_enabled = true
 glow_strength = 0.8
 glow_blend_mode = 1

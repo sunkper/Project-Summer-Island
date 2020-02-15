@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=2]
+[gd_scene load_steps=105 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/Rocks_08.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://assets/textures/pbr/Rocks_08/Rocks_08_ao.png" type="Texture" id=4]
 [ext_resource path="res://assets/textures/pbr/Rocks_08/Rocks_08_depth.png" type="Texture" id=5]
 [ext_resource path="res://assets/textures/pbr/Rocks_08/Rocks_08_normal.png" type="Texture" id=6]
+[ext_resource path="res://assets/models/Cliff.glb" type="PackedScene" id=7]
+[ext_resource path="res://assets/models/Tree01.glb" type="PackedScene" id=8]
 [ext_resource path="res://assets/shaders/water/seaweed/Seaweed.tscn" type="PackedScene" id=9]
 [ext_resource path="res://maps/environs/ShoreMapEnv.tres" type="Environment" id=11]
 [ext_resource path="res://objects/Table.tscn" type="PackedScene" id=12]
@@ -106,10 +108,10 @@ func _input(event: InputEvent) -> void:
 "
 
 [sub_resource type="GIProbeData" id=3]
-bounds = AABB( -79.8107, -19.8514, -131.604, 159.621, 39.7028, 263.208 )
-cell_size = 2.05631
-to_cell_xform = Transform( 0.486307, 0, 0, 0, 0.486307, 0, 0, 0, 0.486307, 38.8125, 9.65388, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 30, 12, 2, 2, 6, 10, 14, 18, 22, 26, 30, 15, -1, -1, -1, 1, -1, -1, -1, 0, 0, 8355711, 0, -1, 2, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 65537, 3, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 131083, -1, -1, -1, 4, -1, -1, -1, -1, 0, 0, 8355711, 196703, -1, -1, 5, -1, -1, -1, -1, -1, 0, 0, 8355711, 262911, 8, -1, 6, -1, 11, -1, -1, -1, 0, 0, 8355711, 333823, -1, -1, -1, -1, 7, -1, -1, -1, 0, 0, 8355711, 401407, -1, -1, -1, -1, -1, -1, -1, -1, 4736328, 0, 11722435, 524287, -1, -1, -1, -1, 10, 14, 9, -1, 0, 0, 8355711, 417791, -1, -1, -1, -1, -1, -1, -1, -1, 4999759, 0, 13402085, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 8611938, -1583516148, 10946448, 524287, 13, 12, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 9783620, 0, 6359892, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9913407, 0, 9045340, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9848127, 0, 6161539, 524287, -1, -1, -1, -1, -1, 16, -1, -1, 0, 0, 8355711, 65537, -1, -1, -1, -1, 17, -1, -1, -1, 0, 0, 8355711, 131083, -1, -1, -1, -1, -1, -1, -1, 18, 0, 0, 8355711, 196703, -1, -1, 25, -1, -1, -1, 19, -1, 0, 0, 8355711, 262911, 22, -1, 20, -1, -1, -1, -1, -1, 0, 0, 8355711, 331775, 21, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 401407, -1, -1, -1, -1, -1, -1, -1, -1, 4736328, 0, 12113354, 524287, 24, 28, 23, -1, -1, -1, -1, -1, 0, 0, 8355711, 417791, -1, -1, -1, -1, -1, -1, -1, -1, 4999759, 0, 13402085, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 8546145, -1583516149, 10749585, 524287, -1, -1, -1, -1, 26, -1, -1, -1, 0, 0, 8355711, 329727, -1, -1, -1, -1, 27, 29, -1, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 9848127, 0, 10028443, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9913920, 0, 6096488, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9848127, 0, 5966238, 524287 )
+bounds = AABB( -263.96, -39.1782, -259.391, 527.92, 78.3563, 518.782 )
+cell_size = 4.12437
+to_cell_xform = Transform( 0.242461, 0, 0, 0, 0.242461, 0, 0, 0, 0.242461, 64, 9.49917, 62.8922 )
+dynamic_data = PoolIntArray( 0, 8, 128, 32, 128, 19, 6, -844032, 97, 1196585729, -827457470, 59676, 1145670403, -1925688255, 1339019813, -1073739949, 1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0, -1, 11, -1, -1, -1, 2, -1, -1, 0, 0, 8355711, 65537, -1, 3, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 131077, -1, 4, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 196655, -1, -1, -1, 5, -1, -1, -1, -1, 0, 0, 8355711, 262527, -1, -1, -1, 6, -1, -1, -1, 9, 0, 0, 8355711, 330751, -1, -1, -1, -1, 8, -1, 7, -1, 0, 0, 8355711, 409599, -1, -1, -1, -1, -1, -1, -1, -1, 4867915, 0, 12963641, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 8873054, 0, 12784750, 524287, 10, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 401407, -1, -1, -1, -1, -1, -1, -1, -1, 9719112, 0, 8129354, 524287, -1, -1, -1, -1, -1, 12, -1, -1, 0, 0, 8355711, 131077, -1, -1, -1, -1, -1, 13, -1, -1, 0, 0, 8355711, 196655, -1, -1, -1, -1, -1, -1, -1, 14, 0, 0, 8355711, 262527, -1, -1, -1, -1, -1, -1, -1, 15, 0, 0, 8355711, 330751, 18, -1, -1, -1, 17, -1, 16, -1, 0, 0, 8355711, 417791, -1, -1, -1, -1, -1, -1, -1, -1, 4867915, 0, 12963782, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 8742239, 0, 12130480, 524287, -1, -1, -1, -1, -1, -1, -1, -1, 9719369, 0, 8850614, 524287 )
 dynamic_range = 3
 energy = 1.2
 bias = 1.5
@@ -299,7 +301,7 @@ size = Vector2( 0.725, 1.935 )
 
 [sub_resource type="PlaneMesh" id=26]
 material = ExtResource( 3 )
-size = Vector2( 150, 200 )
+size = Vector2( 512, 512 )
 subdivide_width = 128
 subdivide_depth = 128
 
@@ -327,7 +329,7 @@ uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id=28]
 material = SubResource( 27 )
-size = Vector2( 150, 200 )
+size = Vector2( 512, 512 )
 
 [node name="ShoreMap" type="Node"]
 script = ExtResource( 23 )
@@ -452,8 +454,9 @@ box_projection = true
 enable_shadows = true
 
 [node name="GIProbe" type="GIProbe" parent="Lightings"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93616, 8.81249, 12.5633 )
-extents = Vector3( 79.8107, 19.8514, 131.604 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.09069, 27.6049, 135.798 )
+visible = false
+extents = Vector3( 263.96, 39.1782, 259.391 )
 dynamic_range = 3
 energy = 1.2
 propagation = 0.75
@@ -842,18 +845,46 @@ material/0 = null
 [node name="Environs" type="Node" parent="."]
 
 [node name="SeaFace" type="MeshInstance" parent="Environs"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 43 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 135 )
 mesh = SubResource( 26 )
 material/0 = null
 
 [node name="SeaGround" type="MeshInstance" parent="Environs"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.77846, 43 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.75, 135 )
 mesh = SubResource( 28 )
 material/0 = null
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Seaweed" parent="Environs" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.72088, 66.4303 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.05256, 66.4303 )
 amount = 1000
+visibility_aabb = AABB( -54.2039, -2.01566, -44.0425, 108.408, 4.03131, 88.085 )
+
+[node name="DistantCliffs" type="Spatial" parent="Environs"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 79.4253 )
+
+[node name="Cliff" parent="Environs/DistantCliffs" instance=ExtResource( 7 )]
+transform = Transform( 0.520945, 0, 0.984808, 0, 2, 0, -2.95442, 0, 0.173648, -40.1718, -1.24728, 119.531 )
+
+[node name="Tree01" parent="Environs/DistantCliffs/Cliff" instance=ExtResource( 8 )]
+transform = Transform( 3.13231, 0, -3.4202, 0, 5, 0, 1.14007, 0, 9.39693, 1.58187, 11.8896, -0.836781 )
+
+[node name="Cliff6" parent="Environs/DistantCliffs" instance=ExtResource( 7 )]
+transform = Transform( -2.88073, -0.183758, 0.263602, -0.335313, 1.98366, -0.0614523, -0.767409, -0.176945, -0.962672, 144.156, -22.2691, 21.8263 )
+
+[node name="Cliff4" parent="Environs/DistantCliffs" instance=ExtResource( 7 )]
+transform = Transform( -0.750581, -0.484935, -0.937344, 0.482421, 1.88856, -0.287184, 2.86424, -0.445166, -0.197263, -169.847, -17.4132, 86.7643 )
+
+[node name="Cliff2" parent="Environs/DistantCliffs" instance=ExtResource( 7 )]
+transform = Transform( -0.640035, 0, -0.947412, 0, 1, 0, 1.89482, 0, -0.320018, -83.014, -5.62827, 83.9436 )
+
+[node name="Cliff5" parent="Environs/DistantCliffs" instance=ExtResource( 7 )]
+transform = Transform( -0.303004, 0, 0.988457, 0, 1, 0, -1.97691, 0, -0.151502, -152.256, -7.62634, 75.5755 )
+
+[node name="Cliff3" parent="Environs/DistantCliffs" instance=ExtResource( 7 )]
+transform = Transform( 0.766786, -0.590548, 0.12579, -0.199318, 0.153507, 0.483918, -0.610173, -0.792268, 1.73156e-08, 33.1641, 2.84554, 119.624 )
 
 [node name="Audio" type="Node" parent="."]
 
