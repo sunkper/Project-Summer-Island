@@ -9,10 +9,12 @@ extents = Vector3( 2.17082, 1.39879, 3.69216 )
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 2 )
-metallic = 0.15
-metallic_specular = 0.26
-roughness = 0.84
+roughness = 0.83
 roughness_texture = ExtResource( 1 )
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 0.5
+transmission_enabled = true
+transmission = Color( 0.647059, 0.647059, 0.647059, 1 )
 uv1_scale = Vector3( 0.25, 0.25, 0.25 )
 uv1_triplanar = true
 

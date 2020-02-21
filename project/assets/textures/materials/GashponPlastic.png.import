@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Metal03_depth.png-503f06faef4688d1ec158064c33f95a6.s3tc.stex"
-path.etc2="res://.import/Metal03_depth.png-503f06faef4688d1ec158064c33f95a6.etc2.stex"
+path.s3tc="res://.import/GashponPlastic.png-25645369f21dc2745f50b6f7df0179a2.s3tc.stex"
+path.etc2="res://.import/GashponPlastic.png-25645369f21dc2745f50b6f7df0179a2.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/pbr/Metal03/Metal03_depth.png"
-dest_files=[ "res://.import/Metal03_depth.png-503f06faef4688d1ec158064c33f95a6.s3tc.stex", "res://.import/Metal03_depth.png-503f06faef4688d1ec158064c33f95a6.etc2.stex" ]
+source_file="res://assets/textures/materials/GashponPlastic.png"
+dest_files=[ "res://.import/GashponPlastic.png-25645369f21dc2745f50b6f7df0179a2.s3tc.stex", "res://.import/GashponPlastic.png-25645369f21dc2745f50b6f7df0179a2.etc2.stex" ]
 
 [params]
 
