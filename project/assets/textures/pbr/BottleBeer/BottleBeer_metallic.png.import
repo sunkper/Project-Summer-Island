@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/BootleBeer.png-c9f86aa7f51bfa522870a13bd4317655.s3tc.stex"
-path.etc2="res://.import/BootleBeer.png-c9f86aa7f51bfa522870a13bd4317655.etc2.stex"
+path.s3tc="res://.import/BottleBeer_metallic.png-2c1276e1ee650b48ed9a4ca244803e7c.s3tc.stex"
+path.etc2="res://.import/BottleBeer_metallic.png-2c1276e1ee650b48ed9a4ca244803e7c.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/pbr/BootleBeer.png"
-dest_files=[ "res://.import/BootleBeer.png-c9f86aa7f51bfa522870a13bd4317655.s3tc.stex", "res://.import/BootleBeer.png-c9f86aa7f51bfa522870a13bd4317655.etc2.stex" ]
+source_file="res://assets/textures/pbr/BottleBeer/BottleBeer_metallic.png"
+dest_files=[ "res://.import/BottleBeer_metallic.png-2c1276e1ee650b48ed9a4ca244803e7c.s3tc.stex", "res://.import/BottleBeer_metallic.png-2c1276e1ee650b48ed9a4ca244803e7c.etc2.stex" ]
 
 [params]
 
