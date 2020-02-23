@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/materials/Wood02.tres" type="Material" id=1]
 [ext_resource path="res://assets/models/TV.glb" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://objects/TVStand.gd" type="Script" id=5]
 [ext_resource path="res://assets/audio/music/Canal3.ogg" type="AudioStream" id=6]
 [ext_resource path="res://assets/models/TVScreen.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/models/TVScreenOn.material" type="Material" id=8]
 
 [sub_resource type="CylinderMesh" id=1]
 material = ExtResource( 1 )
@@ -56,17 +57,6 @@ func _ready() -> void:
 func _on_Timer_timeout() -> void:
 	light_energy = rand_range(min_energy, max_energy)
 "
-
-[sub_resource type="ViewportTexture" id=5]
-viewport_path = NodePath("Viewport")
-
-[sub_resource type="SpatialMaterial" id=6]
-resource_local_to_scene = true
-resource_name = "TVScreen"
-flags_do_not_receive_shadows = true
-albedo_texture = SubResource( 5 )
-metallic = 0.111111
-roughness = 0.782051
 
 [node name="TVStand" type="Spatial"]
 script = ExtResource( 5 )
@@ -140,7 +130,7 @@ transform = Transform( 0.690365, 0, 0.723461, 0, 1, 0, -0.723461, 0, 0.690365, -
 
 [node name="Screen" parent="." instance=ExtResource( 7 )]
 transform = Transform( 0.690365, 0, 0.723461, 0, -1, 0, -0.723461, 0, 0.690365, -0.365824, 3.32102, 0.270738 )
-material_override = SubResource( 6 )
+material_override = ExtResource( 8 )
 use_in_baked_light = true
 [connection signal="finished" from="Viewport/VideoPlayer" to="Viewport/VideoPlayer" method="_on_VideoPlayer_finished"]
 [connection signal="timeout" from="TVLight/Timer" to="TVLight" method="_on_Timer_timeout"]
