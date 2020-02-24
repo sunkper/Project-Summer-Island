@@ -5,7 +5,7 @@ period = 0.1
 persistence = 0.1
 
 [resource]
-flags = 2
+flags = 3
 width = 256
 height = 256
 noise = SubResource( 1 )
