@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/materials/Wood02.tres" type="Material" id=1]
 [ext_resource path="res://assets/models/TV.glb" type="PackedScene" id=2]
-[ext_resource path="res://assets/textures/pbr/WannaBeJetpaca.png" type="Texture" id=3]
 [ext_resource path="res://assets/videos/ManWithACamera.webm" type="VideoStream" id=4]
 [ext_resource path="res://objects/TVStand.gd" type="Script" id=5]
 [ext_resource path="res://assets/audio/music/Canal3.ogg" type="AudioStream" id=6]
@@ -30,36 +29,9 @@ func _on_VideoPlayer_finished() -> void:
 	play()
 "
 
-[sub_resource type="GDScript" id=4]
-script/source = "extends OmniLight
-
-var flicker: = false setget _set_flicker
-
-var flick_delay: = 0.1
-var max_energy: = 1.0
-var min_energy: = 0.4
-
-func _set_flicker(new_state) -> void:
-	if new_state == flicker:
-		return
-	
-	flicker = new_state
-	if flicker:
-		$Timer.start()
-		light_energy = max_energy
-	else:
-		$Timer.stop()
-		light_energy = 0.0
-
-func _ready() -> void:
-	$Timer.wait_time = flick_delay
-
-func _on_Timer_timeout() -> void:
-	light_energy = rand_range(min_energy, max_energy)
-"
-
 [node name="TVStand" type="Spatial"]
 script = ExtResource( 5 )
+switch = true
 
 [node name="Stand" type="CSGPolygon" parent="."]
 transform = Transform( 1.31134e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, -1.31134e-07, -5.73206e-15, -0.5, 2.67351, -1.5 )
@@ -96,7 +68,6 @@ material/0 = null
 transform = Transform( 0.852795, 0, -0.522246, 0, 1, 0, 0.522246, 0, 0.852795, -0.308365, 3.18849, -0.71533 )
 stream = ExtResource( 6 )
 unit_db = -25.0
-autoplay = true
 bus = "TVSound"
 
 [node name="Viewport" type="Viewport" parent="."]
@@ -106,24 +77,14 @@ size = Vector2( 256, 206 )
 margin_right = 40.0
 margin_bottom = 40.0
 stream = ExtResource( 4 )
-autoplay = true
 expand = false
 script = SubResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="Viewport"]
+[node name="ColorRect" type="ColorRect" parent="Viewport"]
 visible = false
-texture = ExtResource( 3 )
-
-[node name="TVLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.560275, 3.40148, -0.638363 )
-visible = false
-light_energy = 0.5
-shadow_enabled = true
-omni_range = 1.29201
-omni_attenuation = 2.73208
-script = SubResource( 4 )
-
-[node name="Timer" type="Timer" parent="TVLight"]
+margin_right = 500.0
+margin_bottom = 500.0
+color = Color( 0.521569, 0.643137, 0.631373, 1 )
 
 [node name="TV" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.690365, 0, 0.723461, 0, 1, 0, -0.723461, 0, 0.690365, -0.365824, 3.32102, 0.270738 )
@@ -133,4 +94,3 @@ transform = Transform( 0.690365, 0, 0.723461, 0, -1, 0, -0.723461, 0, 0.690365, 
 material_override = ExtResource( 8 )
 use_in_baked_light = true
 [connection signal="finished" from="Viewport/VideoPlayer" to="Viewport/VideoPlayer" method="_on_VideoPlayer_finished"]
-[connection signal="timeout" from="TVLight/Timer" to="TVLight" method="_on_Timer_timeout"]

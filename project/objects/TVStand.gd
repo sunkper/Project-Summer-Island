@@ -1,16 +1,20 @@
+tool
 extends Spatial
 
-#export var turn_on: = false setget _turn_onoff
-#
-#func _turn_onoff(new_state) -> void:
-#	if new_state == turn_on:
-#		return
-#
-#	turn_on = new_state
-#	if has_node("Screen/Viewport/VideoPlayer"):
-#		if turn_on:
-#			$TV/Screen/Viewport/VideoPlayer.play()
-#			$TVLight.flicker = true
-#		else:
-#			$TV/Screen/Viewport/VideoPlayer.stop()
-#			$TVLight.flicker = false
+export var switch: = false setget _toggle_switch
+
+func _toggle_switch(new_state) -> void:
+	if new_state == switch:
+		return
+
+	switch = new_state
+	if switch:
+		$Viewport/VideoPlayer.play()
+		$Sound.play()
+		$Viewport/ColorRect.visible = false
+		$Screen.material_override.emission_enabled = true
+	else:
+		$Viewport/VideoPlayer.stop()
+		$Sound.stop()
+		$Viewport/ColorRect.visible = true
+		$Screen.material_override.emission_enabled = false
