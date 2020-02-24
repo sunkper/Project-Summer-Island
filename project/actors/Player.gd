@@ -26,7 +26,7 @@ var zoomout_lerp: = 0.15
 
 
 func _ready() -> void:
-	$EditorHint.hide()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _physics_process(delta: float) -> void:
 	dir = Vector3.ZERO
@@ -83,3 +83,9 @@ func _input(event):
 	
 	if event.is_action_pressed("flashlight"):
 		$Flashlight.visible = !$Flashlight.visible
+	
+	if event.is_action_pressed("capture_mouse"):
+		if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

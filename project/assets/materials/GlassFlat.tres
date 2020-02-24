@@ -1,15 +1,11 @@
-[gd_resource type="SpatialMaterial" load_steps=3 format=2]
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
 
-[ext_resource path="res://assets/textures/pbr/Metal24/Metal24_metallic.png" type="Texture" id=1]
 [ext_resource path="res://assets/textures/pbr/MetalPainted01/MetalPainted01_roughness.png" type="Texture" id=2]
 
 [resource]
 params_blend_mode = 1
 params_depth_draw_mode = 3
 albedo_color = Color( 0.407843, 0.407843, 0.407843, 0.952941 )
-metallic = 1.0
-metallic_specular = 0.64
-metallic_texture = ExtResource( 1 )
 roughness_texture = ExtResource( 2 )
 uv1_scale = Vector3( 0.5, 0.5, 0.5 )
 uv1_triplanar = true

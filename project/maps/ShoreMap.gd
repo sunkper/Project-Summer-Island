@@ -5,7 +5,6 @@ var _capture_tasks = []
 
 func _ready() -> void:
 	randomize()
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Directory.new().make_dir(_screenshot_directory)
 
 func _input(event):
