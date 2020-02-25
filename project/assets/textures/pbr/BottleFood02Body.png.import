@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/BottleFood02Lid.png-e882b8f8e9fb1a16ddd5b20deb566e2d.s3tc.stex"
-path.etc2="res://.import/BottleFood02Lid.png-e882b8f8e9fb1a16ddd5b20deb566e2d.etc2.stex"
+path.s3tc="res://.import/BottleFood02Body.png-8d9f57ff396773973e005b618a87fd3f.s3tc.stex"
+path.etc2="res://.import/BottleFood02Body.png-8d9f57ff396773973e005b618a87fd3f.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/pbr/BottleFood02Lid.png"
-dest_files=[ "res://.import/BottleFood02Lid.png-e882b8f8e9fb1a16ddd5b20deb566e2d.s3tc.stex", "res://.import/BottleFood02Lid.png-e882b8f8e9fb1a16ddd5b20deb566e2d.etc2.stex" ]
+source_file="res://assets/textures/pbr/BottleFood02Body.png"
+dest_files=[ "res://.import/BottleFood02Body.png-8d9f57ff396773973e005b618a87fd3f.s3tc.stex", "res://.import/BottleFood02Body.png-8d9f57ff396773973e005b618a87fd3f.etc2.stex" ]
 
 [params]
 
