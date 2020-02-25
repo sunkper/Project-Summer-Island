@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/RoofMetal_ao.png-912aa324a7257abed313d33f5fd16e6d.s3tc.stex"
-path.etc2="res://.import/RoofMetal_ao.png-912aa324a7257abed313d33f5fd16e6d.etc2.stex"
+path.s3tc="res://.import/WallPlaster_ao.png-a5377b309ca493de1f667f70d7c41f4b.s3tc.stex"
+path.etc2="res://.import/WallPlaster_ao.png-a5377b309ca493de1f667f70d7c41f4b.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/pbr/RoofMetal/RoofMetal_ao.png"
-dest_files=[ "res://.import/RoofMetal_ao.png-912aa324a7257abed313d33f5fd16e6d.s3tc.stex", "res://.import/RoofMetal_ao.png-912aa324a7257abed313d33f5fd16e6d.etc2.stex" ]
+source_file="res://assets/textures/pbr/WallPlaster/WallPlaster_ao.png"
+dest_files=[ "res://.import/WallPlaster_ao.png-a5377b309ca493de1f667f70d7c41f4b.s3tc.stex", "res://.import/WallPlaster_ao.png-a5377b309ca493de1f667f70d7c41f4b.etc2.stex" ]
 
 [params]
 
@@ -25,7 +25,7 @@ flags/repeat=true
 flags/filter=false
 flags/mipmaps=true
 flags/anisotropic=true
-flags/srgb=2
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
