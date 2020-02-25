@@ -3,7 +3,9 @@ extends MultiMeshInstance
 
 export (String, FILE) var node setget _set_mesh
 
-export var shuffle: = false setget _shuffle
+export var shuffle:= false setget _shuffle
+
+export var lock:= true
 
 export var grid := Vector3(2, 2, 2) setget _set_grid
 export var grid_random := Vector3(0, 0, 0) setget _set_grid_random
@@ -16,6 +18,8 @@ export var rot_random:= Vector3(0.0, 0.0, 0.0) setget _set_rot_random
 
 
 func _set_mesh(new_mesh) -> void:
+	if lock:
+		return
 	node = new_mesh
 	if not new_mesh:
 		return
@@ -37,7 +41,8 @@ func _set_mesh(new_mesh) -> void:
 	multimesh.mesh = mesh
 
 func _shuffle(s) -> void:
-	update()
+	if not lock:
+		update()
 
 func _set_grid(new_grid: Vector3) -> void:
 	if grid == new_grid:
@@ -48,7 +53,9 @@ func _set_grid(new_grid: Vector3) -> void:
 	new_grid.y = max(new_grid.y, 1.0)
 	new_grid.z = max(new_grid.z, 1.0)
 	grid = new_grid
-	update()
+	
+	if not lock:
+		update()
 
 func _set_grid_random(new_grid_random: Vector3) -> void:
 	if grid_random == new_grid_random:
@@ -59,35 +66,45 @@ func _set_grid_random(new_grid_random: Vector3) -> void:
 	new_grid_random.y = max(new_grid_random.y, 0.0)
 	new_grid_random.z = max(new_grid_random.z, 0.0)
 	grid_random = new_grid_random
-	update()
+	
+	if not lock:
+		update()
 
 func _set_offset(new_offset: Vector3) -> void:
 	if new_offset == offset:
 		return
 	
 	offset = new_offset
-	update()
+	
+	if not lock:
+		update()
 
 func _set_offset_random(new_offset_random: Vector3) -> void:
 	if new_offset_random == offset_random:
 		return
 	
 	offset_random = new_offset_random
-	update()
+	
+	if not lock:
+		update()
 
 func _set_rot(new_rot: Vector3) -> void:
 	if new_rot == rot:
 		return
 	
 	rot = new_rot
-	update()
+	
+	if not lock:
+		update()
 
 func _set_rot_random(new_rot_random: Vector3) -> void:
 	if new_rot_random == rot_random:
 		return
 	
 	rot_random = new_rot_random
-	update()
+	
+	if not lock:
+		update()
 
 func _create_multimesh() -> void:
 	multimesh = MultiMesh.new()
