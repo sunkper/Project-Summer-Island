@@ -22,16 +22,19 @@ func _set_mesh(new_mesh) -> void:
 	
 	var n = load(node)
 	var i = n.instance()
-	var children = i.get_children()
-	var mesh_node
-	for c in children:
-		if c is MeshInstance:
-			mesh_node = c
-			break
+	var mesh
+	if i is MeshInstance:
+		mesh = i.mesh
+	else:
+		var children = i.get_children()
+		for c in children:
+			if c is MeshInstance:
+				mesh = c.mesh
+				break
 	i.queue_free()
 	
 	_create_multimesh()
-	multimesh.mesh = mesh_node.mesh
+	multimesh.mesh = mesh
 
 func _shuffle(s) -> void:
 	update()
@@ -129,11 +132,11 @@ func _get_basis(base: Vector3, rand: Vector3) -> Basis:
 		return basis
 	
 	if rand.x != 0.0:
-		base.x = base.x + rand_range(0.0, rand.x)
+		base.x = base.x + rand_range(-rand.x/2, rand.x/2)
 	if rand.y != 0.0:
-		base.y = base.y + rand_range(0.0, rand.y)
+		base.y = base.y + rand_range(-rand.y/2, rand.y/2)
 	if rand.z != 0.0:
-		base.z = base.z + rand_range(0.0, rand.z)
+		base.z = base.z + rand_range(-rand.z/2, rand.z/2)
 	
 	# x rotation
 	basis = basis.rotated(Vector3(1, 0, 0), deg2rad(base.x))
