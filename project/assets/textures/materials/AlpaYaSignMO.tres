@@ -1,0 +1,29 @@
+[gd_resource type="SpatialMaterial" load_steps=6 format=2]
+
+[ext_resource path="res://assets/textures/pbr/AlpaYaSign/AlpaYaSign_metallic.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/pbr/AlpaYaSign/AlpaYaSign_normal.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/pbr/AlpaYaSign.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/pbr/AlpaYaSign/AlpaYaSign_ao.png" type="Texture" id=4]
+[ext_resource path="res://assets/textures/pbr/AlpaYaSign/AlpaYaSign_roughness.png" type="Texture" id=5]
+
+[resource]
+albedo_texture = ExtResource( 3 )
+metallic = 1.0
+metallic_specular = 0.2
+metallic_texture = ExtResource( 1 )
+roughness_texture = ExtResource( 5 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 2 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 4 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+depth_enabled = true
+depth_scale = 0.15
+depth_deep_parallax = true
+depth_min_layers = 8
+depth_max_layers = 32
+depth_flip_tangent = false
+depth_flip_binormal = false
