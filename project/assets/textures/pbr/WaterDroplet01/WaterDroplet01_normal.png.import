@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/WaterDroplet01_normal.png-77e4a3238bd9f60a40e982176b1c1329.s3tc.stex"
+path.etc2="res://.import/WaterDroplet01_normal.png-77e4a3238bd9f60a40e982176b1c1329.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://assets/textures/pbr/WaterDroplet01/WaterDroplet01_normal.png"
+dest_files=[ "res://.import/WaterDroplet01_normal.png-77e4a3238bd9f60a40e982176b1c1329.s3tc.stex", "res://.import/WaterDroplet01_normal.png-77e4a3238bd9f60a40e982176b1c1329.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=1
+flags/repeat=true
+flags/filter=false
+flags/mipmaps=true
+flags/anisotropic=true
+flags/srgb=1
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
