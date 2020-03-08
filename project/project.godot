@@ -291,7 +291,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "polygon_path", "qodot", "scatter" )
+enabled=PoolStringArray( "qodot" )
 
 [importer_defaults]
 
@@ -1419,5 +1419,8 @@ capture_mouse={
 
 quality/shadows/filter_mode=2
 quality/reflections/atlas_size=512
-quality/filters/msaa=2
+quality/filters/msaa=3
 environment/default_environment="res://default_env.tres"
+quality/godrays/sample_number=32
+quality/godrays/use_pcf5=true
+quality/godrays/dither_amount=3.0

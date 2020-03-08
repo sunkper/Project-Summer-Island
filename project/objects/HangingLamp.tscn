@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://tools/CSGExporter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/MetalPainted01.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/textures/pbr/Metal11/Metal11_normal.png" type="Texture" id=8]
 [ext_resource path="res://assets/materials/MetalRusted01.tres" type="Material" id=9]
 [ext_resource path="res://assets/textures/pbr/PaintedMetal_02/PaintedMetal_02_roughness.png" type="Texture" id=10]
+[ext_resource path="res://assets/materials/HangingLampRay.tres" type="Material" id=12]
 
 [sub_resource type="GDScript" id=1]
 script/source = "tool
@@ -180,6 +181,10 @@ surfaces/1 = {
 "vertex_count": 396
 }
 
+[sub_resource type="QuadMesh" id=15]
+material = ExtResource( 12 )
+size = Vector2( 10, 10 )
+
 [sub_resource type="Animation" id=13]
 length = 4.0
 loop = true
@@ -287,6 +292,11 @@ shadow_enabled = true
 shadow_bias = 0.05
 omni_range = 27.0
 omni_attenuation = 6.96652
+
+[node name="Ray" type="MeshInstance" parent="HangingLight"]
+transform = Transform( -4.37114e-08, 4.37114e-08, -1, -4.37114e-08, 1, 4.37114e-08, 1, 4.37114e-08, -4.37114e-08, 0, 7.22931e-08, -1.65387 )
+mesh = SubResource( 15 )
+material/0 = null
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 anims/Flicker00 = SubResource( 13 )

@@ -246,7 +246,7 @@ spot_angle_attenuation = 2.63902
 
 [node name="MachineSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 23 )
-unit_db = -13.0
+unit_db = -8.0
 autoplay = true
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
