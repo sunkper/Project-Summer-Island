@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "mapversion" "220"
-"_tb_textures" "textures/base;textures/pbr"
+"_tb_textures" "textures/base;textures/materials;textures/pbr"
 // brush 0
 {
 ( -0 8 -0 ) ( -0 -24 88 ) ( -0 -24 -0 ) pbr/MetalPaintedRust01 [ 0 -1 0 -0 ] [ 0 0 -1 -0 ] -0 0.25 0.25
@@ -332,5 +332,14 @@
 ( -0 -62 64 ) ( -0 -56 64 ) ( 96 -56 64 ) pbr/MetalPaintedRust01 [ 1 0 0 8 ] [ 0 -1 0 -0 ] -0 0.25 0.25
 ( 96 -56 64 ) ( -0 -56 64 ) ( -0 -56 16 ) pbr/MetalPaintedRust01 [ -1 0 0 -8 ] [ 0 0 -0.75 -64 ] -0 0.25 0.25
 ( 96 -60 18 ) ( 96 -64 62 ) ( 96 -62 64 ) pbr/MetalPaintedRust01 [ 0 1 0 -0 ] [ 0 0 -1 -0 ] -0 0.25 0.25
+}
+// brush 36
+{
+( 4 -12 69 ) ( 4 -12 71 ) ( 4 -54 63 ) materials/FridgeDoorGlass [ 0 -1 0 -0 ] [ 0 0.190476 -1 0.285714 ] 10.9052 1 1
+( 92 -54 61 ) ( 4 -54 61 ) ( 4 -54 63 ) materials/FridgeDoorGlass [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 4 -53.816192560175054 62.03501094091903 ) ( 4 -11.816192560175054 70.035010940919022 ) ( 92 -11.816192560175054 70.035010940919022 ) materials/FridgeDoorGlass [ 1 0 -0 -0 ] [ 0 -0.982339 -0.187112 0 ] -0 1 1
+( 92 -12 69 ) ( 4 -12 69 ) ( 4 -54 61 ) materials/FridgeDoorGlass [ -1 0 0 -0 ] [ 0 -0.964989 -0.183807 0.286652 ] -0 1 1
+( 92 -12 71 ) ( 4 -12 71 ) ( 4 -12 69 ) materials/FridgeDoorGlass [ -1 0 0 -0 ] [ 0 0 -1 -0 ] -0 1 1
+( 92 -12 69 ) ( 92 -54 61 ) ( 92 -54 63 ) materials/FridgeDoorGlass [ 0 1 0 -0 ] [ 0 0.190476 -1 0.285714 ] 349.095 1 1
 }
 }

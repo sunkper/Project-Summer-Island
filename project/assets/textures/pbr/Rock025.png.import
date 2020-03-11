@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/WoodPlank02_depth.png-b83fbcea6f1dd43c671a3ce18403c2e7.s3tc.stex"
-path.etc2="res://.import/WoodPlank02_depth.png-b83fbcea6f1dd43c671a3ce18403c2e7.etc2.stex"
+path.s3tc="res://.import/Rock025.png-bf35c615d7e1c195dd11bc06e706e856.s3tc.stex"
+path.etc2="res://.import/Rock025.png-bf35c615d7e1c195dd11bc06e706e856.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/pbr/WoodPlank02/WoodPlank02_depth.png"
-dest_files=[ "res://.import/WoodPlank02_depth.png-b83fbcea6f1dd43c671a3ce18403c2e7.s3tc.stex", "res://.import/WoodPlank02_depth.png-b83fbcea6f1dd43c671a3ce18403c2e7.etc2.stex" ]
+source_file="res://assets/textures/pbr/Rock025.png"
+dest_files=[ "res://.import/Rock025.png-bf35c615d7e1c195dd11bc06e706e856.s3tc.stex", "res://.import/Rock025.png-bf35c615d7e1c195dd11bc06e706e856.etc2.stex" ]
 
 [params]
 

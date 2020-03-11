@@ -178,11 +178,11 @@ surfaces/1 = {
 "vertex_count": 396
 }
 
-[sub_resource type="QuadMesh" id=15]
+[sub_resource type="QuadMesh" id=13]
 material = ExtResource( 12 )
 size = Vector2( 10, 10 )
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=14]
 length = 4.0
 loop = true
 tracks/0/type = "method"
@@ -263,8 +263,8 @@ omni_attenuation = 6.96652
 
 [node name="Ray" type="MeshInstance" parent="HangingLight"]
 transform = Transform( -4.37114e-08, 4.37114e-08, -1, -4.37114e-08, 1, 4.37114e-08, 1, 4.37114e-08, -4.37114e-08, 0, 9.31234e-08, -2.13041 )
-mesh = SubResource( 15 )
+mesh = SubResource( 13 )
 material/0 = null
 
 [node name="Anim" type="AnimationPlayer" parent="."]
-anims/Flicker00 = SubResource( 13 )
+anims/Flicker00 = SubResource( 14 )
