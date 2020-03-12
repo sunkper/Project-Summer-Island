@@ -6,7 +6,10 @@ export var switch: = false setget _toggle_switch
 func _toggle_switch(new_state) -> void:
 	if new_state == switch:
 		return
-
+	
+	if get_child_count() == 0:
+		return
+	
 	switch = new_state
 	if switch:
 		$Viewport/VideoPlayer.play()
