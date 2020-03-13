@@ -280,6 +280,9 @@ _global_script_class_icons={
 
 config/name="Project Summer Island"
 run/main_scene="res://maps/ShoreMap.tscn"
+boot_splash/image="res://icon.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://icon.png"
 
 [display]
@@ -1421,6 +1424,6 @@ quality/shadows/filter_mode=2
 quality/reflections/atlas_size=512
 quality/filters/msaa=3
 environment/default_environment="res://default_env.tres"
-quality/godrays/sample_number=32
-quality/godrays/use_pcf5=true
 quality/godrays/dither_amount=3.0
+quality/godrays/use_pcf5=true
+quality/godrays/sample_number=32

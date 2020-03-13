@@ -1,3 +1,6 @@
+# LUMI (Line-Up MeshInstance)
+# set instances on grid
+
 tool
 extends MultiMeshInstance
 
@@ -5,7 +8,7 @@ export (String, FILE) var node setget _set_mesh
 
 export var shuffle:= false setget _shuffle
 
-export var lock:= true
+export var seedn:= 0 setget _set_seed
 
 export var grid := Vector3(2, 2, 2) setget _set_grid
 export var grid_random := Vector3(0, 0, 0) setget _set_grid_random
@@ -13,13 +16,14 @@ export var grid_random := Vector3(0, 0, 0) setget _set_grid_random
 export var offset := Vector3(0.5, 0.5, 0.5) setget _set_offset
 export var offset_random:= Vector3(0, 0, 0) setget _set_offset_random
 
-export var rot := Vector3(0.0, 0.0, 0.0) setget _set_rot
-export var rot_random:= Vector3(0.0, 0.0, 0.0) setget _set_rot_random
+export var rot := Vector3.ZERO setget _set_rot
+export var rot_random:= Vector3.ZERO setget _set_rot_random
+
+export var object_scale := Vector3.ONE setget _set_scale
+export var object_scale_random:= Vector3.ZERO setget _set_scale_random
 
 
 func _set_mesh(new_mesh) -> void:
-	if lock:
-		return
 	node = new_mesh
 	if not new_mesh:
 		return
@@ -41,8 +45,15 @@ func _set_mesh(new_mesh) -> void:
 	multimesh.mesh = mesh
 
 func _shuffle(s) -> void:
-	if not lock:
-		update()
+	_set_seed(randi() % 60000)
+	update()
+
+func _set_seed(new_seed: int) -> void:
+	if new_seed == seedn:
+		return
+	
+	seedn = new_seed
+	update()
 
 func _set_grid(new_grid: Vector3) -> void:
 	if grid == new_grid:
@@ -54,8 +65,7 @@ func _set_grid(new_grid: Vector3) -> void:
 	new_grid.z = max(new_grid.z, 1.0)
 	grid = new_grid
 	
-	if not lock:
-		update()
+	update()
 
 func _set_grid_random(new_grid_random: Vector3) -> void:
 	if grid_random == new_grid_random:
@@ -67,8 +77,7 @@ func _set_grid_random(new_grid_random: Vector3) -> void:
 	new_grid_random.z = max(new_grid_random.z, 0.0)
 	grid_random = new_grid_random
 	
-	if not lock:
-		update()
+	update()
 
 func _set_offset(new_offset: Vector3) -> void:
 	if new_offset == offset:
@@ -76,8 +85,7 @@ func _set_offset(new_offset: Vector3) -> void:
 	
 	offset = new_offset
 	
-	if not lock:
-		update()
+	update()
 
 func _set_offset_random(new_offset_random: Vector3) -> void:
 	if new_offset_random == offset_random:
@@ -85,8 +93,7 @@ func _set_offset_random(new_offset_random: Vector3) -> void:
 	
 	offset_random = new_offset_random
 	
-	if not lock:
-		update()
+	update()
 
 func _set_rot(new_rot: Vector3) -> void:
 	if new_rot == rot:
@@ -94,8 +101,7 @@ func _set_rot(new_rot: Vector3) -> void:
 	
 	rot = new_rot
 	
-	if not lock:
-		update()
+	update()
 
 func _set_rot_random(new_rot_random: Vector3) -> void:
 	if new_rot_random == rot_random:
@@ -103,14 +109,30 @@ func _set_rot_random(new_rot_random: Vector3) -> void:
 	
 	rot_random = new_rot_random
 	
-	if not lock:
-		update()
+	update()
+
+func _set_scale(new_scale: Vector3) -> void:
+	if new_scale == object_scale:
+		return
+	
+	object_scale = new_scale
+	
+	update()
+
+func _set_scale_random(new_scale_random: Vector3) -> void:
+	if new_scale_random == object_scale_random:
+		return
+	
+	object_scale_random = new_scale_random
+	
+	update()
 
 func _create_multimesh() -> void:
 	multimesh = MultiMesh.new()
 	multimesh.transform_format = MultiMesh.TRANSFORM_3D
 
 func update() -> void:
+	seed(seedn)
 	var final_grid := grid
 	
 	if grid_random.x != 0.0:
@@ -128,7 +150,7 @@ func update() -> void:
 		for y in range(int(final_grid.y)):
 			for z in range(int(final_grid.z)):
 				var final_pos = _get_final_pos(offset, offset_random)
-				var final_basis = _get_basis(rot, rot_random)
+				var final_basis = _get_basis(rot, rot_random, object_scale, object_scale_random)
 				var xform = Transform(final_basis, Vector3(x * final_pos.x, y * final_pos.y, z * final_pos.z))
 				multimesh.set_instance_transform(i, xform)
 				i += 1
@@ -143,23 +165,28 @@ func _get_final_pos(base: Vector3, rand: Vector3) -> Vector3:
 	
 	return base
 
-func _get_basis(base: Vector3, rand: Vector3) -> Basis:
+func _get_basis(rot_base: Vector3, rot_rand: Vector3, scale_base: Vector3, scale_rand: Vector3) -> Basis:
 	var basis := Basis()
-	if base == Vector3() and rand == Vector3():
-		return basis
 	
-	if rand.x != 0.0:
-		base.x = base.x + rand_range(-rand.x/2, rand.x/2)
-	if rand.y != 0.0:
-		base.y = base.y + rand_range(-rand.y/2, rand.y/2)
-	if rand.z != 0.0:
-		base.z = base.z + rand_range(-rand.z/2, rand.z/2)
+	if rot_rand != Vector3.ZERO:
+		rot_base.x += rand_range(-rot_rand.x/2, rot_rand.x/2)
+		rot_base.y += rand_range(-rot_rand.y/2, rot_rand.y/2)
+		rot_base.z += rand_range(-rot_rand.z/2, rot_rand.z/2)
 	
-	# x rotation
-	basis = basis.rotated(Vector3(1, 0, 0), deg2rad(base.x))
-	# y rotation
-	basis = basis.rotated(Vector3(0, 1, 0), deg2rad(base.y))
-	# z rotation
-	basis = basis.rotated(Vector3(0, 0, 1), deg2rad(base.z))
+	if rot_base != Vector3.ZERO:
+		# x rotation
+		basis = basis.rotated(Vector3(1, 0, 0), deg2rad(rot_base.x))
+		# y rotation
+		basis = basis.rotated(Vector3(0, 1, 0), deg2rad(rot_base.y))
+		# z rotation
+		basis = basis.rotated(Vector3(0, 0, 1), deg2rad(rot_base.z))
+	
+	if scale_rand != Vector3.ZERO:
+		scale_base.x += rand_range(-scale_rand.x/2, scale_rand.x/2)
+		scale_base.y += rand_range(-scale_rand.y/2, scale_rand.y/2)
+		scale_base.z += rand_range(-scale_rand.z/2, scale_rand.z/2)
+	
+	if scale_base != Vector3.ONE:
+		basis = basis.scaled(scale_base)
 	
 	return basis
