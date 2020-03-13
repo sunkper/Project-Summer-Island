@@ -6,7 +6,7 @@
 flags_transparent = true
 params_depth_draw_mode = 3
 albedo_color = Color( 1, 1, 1, 0 )
-roughness = 0.39
+roughness = 0.52
 roughness_texture = ExtResource( 1 )
 transmission_enabled = true
 transmission = Color( 0, 0, 0, 1 )

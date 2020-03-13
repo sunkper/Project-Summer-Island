@@ -8,3 +8,5 @@ albedo_texture = ExtResource( 1 )
 normal_enabled = true
 normal_scale = 1.0
 normal_texture = ExtResource( 2 )
+transmission_enabled = true
+transmission = Color( 0.480469, 0.480469, 0.480469, 1 )
