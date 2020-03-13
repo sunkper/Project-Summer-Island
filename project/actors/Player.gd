@@ -82,7 +82,7 @@ func _input(event):
 		is_sprinting = false
 	
 	if event.is_action_pressed("flashlight"):
-		$Flashlight.visible = !$Flashlight.visible
+		$Camera/Flashlight.visible = !$Camera/Flashlight.visible
 	
 	if event.is_action_pressed("capture_mouse"):
 		if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
