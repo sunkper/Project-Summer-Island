@@ -5,6 +5,7 @@
 [ext_resource path="res://assets/textures/pbr/WallPlaster/WallPlaster_normal.png" type="Texture" id=3]
 
 [resource]
+albedo_color = Color( 0.898438, 0.87738, 0.814209, 1 )
 albedo_texture = ExtResource( 2 )
 roughness_texture = ExtResource( 1 )
 normal_enabled = true
