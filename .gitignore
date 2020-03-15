@@ -10,12 +10,15 @@ addons/
 # geometry/
 # unigrnoed for now. Let's see how bloated this will be...
 
+# GIProbe data files
+gidata/
+
 # Ignore Trenchbroom autosave files.
 autosave/
 
 #Krita backup files
 *.png~
 
-# Things temporary or  using assets I have no rights to use for reference
+# Things temporary or assets I have no rights to use. Reference purpose
 _TEMP_THEFT_ASSETS/
 _LABS/
