@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/FridgeDoorGlass.png-766ba17c74f44f2b5290ec7056f93f80.s3tc.stex"
-path.etc2="res://.import/FridgeDoorGlass.png-766ba17c74f44f2b5290ec7056f93f80.etc2.stex"
+path.s3tc="res://.import/IceFridgeDoorGlass.png-a7201cefa3a6f1e7018cd3efc3d1318f.s3tc.stex"
+path.etc2="res://.import/IceFridgeDoorGlass.png-a7201cefa3a6f1e7018cd3efc3d1318f.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/materials/FridgeDoorGlass.png"
-dest_files=[ "res://.import/FridgeDoorGlass.png-766ba17c74f44f2b5290ec7056f93f80.s3tc.stex", "res://.import/FridgeDoorGlass.png-766ba17c74f44f2b5290ec7056f93f80.etc2.stex" ]
+source_file="res://assets/textures/materials/IceFridgeDoorGlass.png"
+dest_files=[ "res://.import/IceFridgeDoorGlass.png-a7201cefa3a6f1e7018cd3efc3d1318f.s3tc.stex", "res://.import/IceFridgeDoorGlass.png-a7201cefa3a6f1e7018cd3efc3d1318f.etc2.stex" ]
 
 [params]
 
