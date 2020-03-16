@@ -1421,7 +1421,6 @@ capture_mouse={
 [rendering]
 
 quality/shadows/filter_mode=2
-quality/reflections/atlas_size=512
 quality/filters/msaa=3
 environment/default_environment="res://default_env.tres"
 quality/godrays/dither_amount=3.0

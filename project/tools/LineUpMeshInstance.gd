@@ -142,8 +142,7 @@ func update() -> void:
 	if grid_random.z != 0.0:
 		final_grid.z = final_grid.z + randi() % int(grid_random.z)
 	
-	var count: = int(final_grid.x * final_grid.y * final_grid.z)
-	multimesh.instance_count = count
+	multimesh.instance_count = int(final_grid.x * final_grid.y * final_grid.z)
 	
 	var i: = 0
 	for x in range(int(final_grid.x)):

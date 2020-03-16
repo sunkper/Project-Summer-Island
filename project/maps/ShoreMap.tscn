@@ -1,4 +1,4 @@
-[gd_scene load_steps=144 format=2]
+[gd_scene load_steps=143 format=2]
 
 [ext_resource path="res://maps/geometry/HouseGeometry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/pbr/Rocks_08.png" type="Texture" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://assets/textures/pbr/Rocks_08/Rocks_08_depth.png" type="Texture" id=5]
 [ext_resource path="res://assets/textures/pbr/Rocks_08/Rocks_08_normal.png" type="Texture" id=6]
 [ext_resource path="res://assets/models/Cliff.glb" type="PackedScene" id=7]
-[ext_resource path="res://assets/models/MilkBottle.glb" type="PackedScene" id=8]
 [ext_resource path="res://assets/shaders/water/seaweed/Seaweed.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/textures/pbr/WannaBeJetpaca/WannaBeJetpaca_ao.png" type="Texture" id=10]
 [ext_resource path="res://maps/environs/ShoreMapEnv.tres" type="Environment" id=11]
@@ -290,13 +289,13 @@ surfaces/2 = {
 "vertex_count": 420
 }
 
-[sub_resource type="MultiMesh" id=17]
+[sub_resource type="MultiMesh" id=44]
 transform_format = 1
 instance_count = 20
 mesh = SubResource( 1 )
 transform_array = PoolVector3Array( 0.803743, 0, 0.594977, 0, 1, 0, -0.594977, 0, 0.803743, 0, 0, 0, 0.838428, 0, 0.545013, 0, 1, 0, -0.545013, 0, 0.838428, 0, 0, 0.23416, 0.770101, 0, 0.637922, 0, 1, 0, -0.637922, 0, 0.770101, 0, 0, 0.492012, 0.798682, 0, 0.601753, 0, 1, 0, -0.601753, 0, 0.798682, 0, 0, 0.735871, 0.842793, 0, 0.538237, 0, 1, 0, -0.538237, 0, 0.842793, 0, 0, 0.938758, 0.856113, 0, 0.516788, 0, 1, 0, -0.516788, 0, 0.856113, 0.223183, 0, 0, 0.837327, 0, 0.546703, 0, 1, 0, -0.546703, 0, 0.837327, 0.225414, 0, 0.231482, 0.769634, 0, 0.638486, 0, 1, 0, -0.638486, 0, 0.769634, 0.220788, 0, 0.487103, 0.818434, 0, 0.574601, 0, 1, 0, -0.574601, 0, 0.818434, 0.220453, 0, 0.745505, 0.80088, 0, 0.598825, 0, 1, 0, -0.598825, 0, 0.80088, 0.227533, 0, 0.990691, 0.781173, 0, 0.624315, 0, 1, 0, -0.624315, 0, 0.781173, 0.459027, 0, 0, 0.792561, 0, 0.609793, 0, 1, 0, -0.609793, 0, 0.792561, 0.44711, 0, 0.239708, 0.77201, 0, 0.635611, 0, 1, 0, -0.635611, 0, 0.77201, 0.453862, 0, 0.469771, 0.822357, 0, 0.568971, 0, 1, 0, -0.568971, 0, 0.822357, 0.44572, 0, 0.706907, 0.795594, 0, 0.60583, 0, 1, 0, -0.60583, 0, 0.795594, 0.459885, 0, 0.953097, 0.81263, 0, 0.582781, 0, 1, 0, -0.582781, 0, 0.81263, 0.672423, 0, 0, 0.856656, 0, 0.515888, 0, 1, 0, -0.515888, 0, 0.856656, 0.666445, 0, 0.233211, 0.771782, 0, 0.635887, 0, 1, 0, -0.635887, 0, 0.771782, 0.665358, 0, 0.482745, 0.790463, 0, 0.61251, 0, 1, 0, -0.61251, 0, 0.790463, 0.689486, 0, 0.699594, 0.846274, 0, 0.532747, 0, 1, 0, -0.532747, 0, 0.846274, 0.683989, 0, 0.921904 )
 
-[sub_resource type="ArrayMesh" id=18]
+[sub_resource type="ArrayMesh" id=45]
 resource_name = "CanLOW"
 surfaces/0 = {
 "aabb": AABB( -0.112458, 0.0310479, -0.123235, 3.14679, 0.519785, 0.24647 ),
@@ -311,10 +310,10 @@ surfaces/0 = {
 "vertex_count": 2112
 }
 
-[sub_resource type="MultiMesh" id=19]
+[sub_resource type="MultiMesh" id=46]
 transform_format = 1
 instance_count = 16
-mesh = SubResource( 18 )
+mesh = SubResource( 45 )
 transform_array = PoolVector3Array( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.258002, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.51214, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.767829, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.248285, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.242858, 0, 0.254165, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24249, 0, 0.514878, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240625, 0, 0.758357, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.498854, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.519997, 0, 0.259808, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.490521, 0, 0.500384, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.507772, 0, 0.759116, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.778752, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.77115, 0, 0.255626, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.748097, 0, 0.508428, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.731395, 0, 0.750403 )
 
 [sub_resource type="ArrayMesh" id=20]
@@ -356,7 +355,7 @@ surfaces/2 = {
 "vertex_count": 468
 }
 
-[sub_resource type="MultiMesh" id=21]
+[sub_resource type="MultiMesh" id=47]
 transform_format = 1
 instance_count = 12
 mesh = SubResource( 20 )
@@ -377,7 +376,7 @@ surfaces/0 = {
 "vertex_count": 849
 }
 
-[sub_resource type="MultiMesh" id=23]
+[sub_resource type="MultiMesh" id=48]
 transform_format = 1
 instance_count = 48
 mesh = SubResource( 22 )
@@ -615,13 +614,14 @@ dir_light = NodePath("../Sunlight")
 environment = ExtResource( 11 )
 
 [node name="Sunlight" type="DirectionalLight" parent="."]
-transform = Transform( -0.590918, -0.786903, 0.177764, 0.726049, -0.422694, 0.542386, -0.351665, 0.449571, 0.821108, 0, 13.2882, 12.2218 )
+transform = Transform( -0.949214, 0.19978, 0.243066, 0.0565128, -0.651719, 0.756353, 0.309515, 0.731677, 0.60733, 0, 10.7513, 9.17531 )
 light_color = Color( 0.98, 0.97, 0.93, 1 )
 light_energy = 1.25
 light_indirect_energy = 2.0
 shadow_enabled = true
 shadow_bias = 0.0
 directional_shadow_blend_splits = true
+directional_shadow_normal_bias = 0.4
 directional_shadow_max_distance = 200.0
 __meta__ = {
 "_editor_description_": ""
@@ -683,10 +683,9 @@ transform = Transform( 0.743145, 0.303779, -0.5962, 0, 0.891006, 0.453991, 0.669
 transform = Transform( -0.970296, 0.0210848, -0.241001, 0, 0.996194, 0.0871558, 0.241921, 0.0845668, -0.966604, 8, 9.3, 5.1 )
 
 [node name="GIProbe" type="GIProbe" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, -7.45058e-09, 0, 7.45058e-09, 1, 4.76837e-07, -1.90735e-06, 5.453 )
-subdiv = 2
-extents = Vector3( 18.919, 25.511, 34.4976 )
-propagation = 0.58
+transform = Transform( 1, 0, 0, 0, 1, -7.45058e-09, 0, 7.45058e-09, 1, -2.189, 13.6255, 3.81232 )
+subdiv = 3
+extents = Vector3( 15.0534, 15.973, 33.1271 )
 data = ExtResource( 100 )
 
 [node name="Lightings" type="Node" parent="."]
@@ -696,61 +695,111 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="RefProbeHouseHall" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
+[node name="HouseHall" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.9885, 16.6918 )
 intensity = 0.5
 extents = Vector3( 10.2862, 8.5642, 8.50647 )
 origin_offset = Vector3( 0.341797, -0.269531, -0.725586 )
 box_projection = true
+
+[node name="HouseSeasideExt" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.9885, 33.4512 )
+intensity = 0.5
+extents = Vector3( 10.2862, 8.5642, 9.51835 )
+origin_offset = Vector3( 0.341797, -2.42188, -0.725586 )
+box_projection = true
 enable_shadows = true
 
-[node name="RefProbeHouseBar" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13932, 11.7661, 3.83866 )
+[node name="HouseBar" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0384516, 11.7661, 7.76782 )
 intensity = 0.5
-extents = Vector3( 12, 8.551, 8.72016 )
+extents = Vector3( 10.0224, 8.551, 8.06038 )
 origin_offset = Vector3( -0.217773, -0.774414, 0.574219 )
+box_projection = true
+enable_shadows = true
+interior_enable = true
+interior_ambient_color = Color( 0.14, 0.12125, 0.11, 1 )
+interior_ambient_energy = 0.8
+
+[node name="HouseBarWindow" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
+transform = Transform( 0.945052, 0.326921, 0, -0.326921, 0.945052, 0, 0, 0, 1, 6.68923, 10.0092, 5.23936 )
+intensity = 0.5
+extents = Vector3( 7.12298, 3.92018, 3.15448 )
+origin_offset = Vector3( 4.78125, 0.519531, 0.522793 )
 box_projection = true
 enable_shadows = true
 interior_ambient_color = Color( 0.11, 0.12, 0.14, 1 )
 
-[node name="RefProbeFront" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1828, 11.5353, 6.72674 )
+[node name="Front" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5665, 8.29502, 6.72674 )
 intensity = 0.5
-extents = Vector3( 11.9727, 5.83466, 9.73908 )
+extents = Vector3( 7.48404, 7.43578, 10.926 )
 origin_offset = Vector3( 1.93164, -0.213867, -1.58203 )
 box_projection = true
 enable_shadows = true
 interior_ambient_color = Color( 0.109804, 0.121569, 0.14902, 1 )
 interior_ambient_contrib = 0.1
 
-[node name="RefProbeBridge" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
+[node name="Bridge" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.51223, 18.8188, -14.5112 )
 intensity = 0.5
 extents = Vector3( 2.8556, 5.20544, 31.5563 )
 box_projection = true
 enable_shadows = true
 
-[node name="RefProbeUnderHouse" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
+[node name="UnderHouse" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4445, 3.60575, 16.9792 )
 extents = Vector3( 24.8981, 2.14331, 23.1701 )
 origin_offset = Vector3( 3.11719, -1.02734, -3.61914 )
 box_projection = true
 enable_shadows = true
 
-[node name="RefProbeBack" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
+[node name="Back" type="ReflectionProbe" parent="Lightings/ReflectionProbes"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2873, 12.9524, -13.2706 )
 extents = Vector3( 36.902, 17.5605, 8.268 )
 origin_offset = Vector3( -2.45996, -1.02734, -0.942383 )
 box_projection = true
 enable_shadows = true
 
+[node name="HackjobSeeDescription" type="Spatial" parent="Lightings/ReflectionProbes"]
+__meta__ = {
+"_editor_description_": "These reflection probes are hackjob to tone down GIProbe leaks to some extent. Don't try this at home I guess?"
+}
+
+[node name="PLUGHouseSeaside" type="ReflectionProbe" parent="Lightings/ReflectionProbes/HackjobSeeDescription"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.20885, 19.2601, 20.9145 )
+intensity = 0.5
+extents = Vector3( 13.4813, 2.68967, 5.42205 )
+origin_offset = Vector3( -4.27832, 0.155273, -0.824219 )
+box_projection = true
+enable_shadows = true
+interior_enable = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="PLUGRoof" type="ReflectionProbe" parent="Lightings/ReflectionProbes/HackjobSeeDescription"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.60069, 19.4242, 12.4466 )
+intensity = 0.5
+extents = Vector3( 9.06055, 2.85619, 4.79611 )
+origin_offset = Vector3( 0.341797, -0.269531, -0.725586 )
+box_projection = true
+enable_shadows = true
+interior_enable = true
+
+[node name="PLUGBridge" type="ReflectionProbe" parent="Lightings/ReflectionProbes/HackjobSeeDescription"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.51223, 20.4163, -14.5112 )
+intensity = 0.5
+extents = Vector3( 2.8556, 3.7406, 31.5563 )
+box_projection = true
+enable_shadows = true
+interior_enable = true
+
 [node name="HangingLamp" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 16.2 )
-pattern = 0
 
 [node name="HangingLamp2" parent="Lightings" instance=ExtResource( 20 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28489, 19.4594, 4.54348 )
-pattern = 0
 
 [node name="Structures" type="Node" parent="."]
 
@@ -763,7 +812,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000452042, 6.07498, 0.002353
 [node name="RockWall" type="Spatial" parent="Structures"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.471199 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="RockWall" parent="Structures/RockWall" instance=ExtResource( 93 )]
@@ -776,6 +826,7 @@ transform = Transform( 1, 0, 0, 0, 0.99974, -0.022792, 0, 0.022792, 0.99974, 12.
 
 [node name="ReflectingSphere" type="CSGMesh" parent="Objects"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1757, 11.1316, 8.90272 )
+visible = false
 mesh = SubResource( 3 )
 material = SubResource( 4 )
 
@@ -786,7 +837,7 @@ transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.49529, 7.70132, 16.693
 transform = Transform( -0.0994947, 0, 0.995038, 0, 1, 0, -0.995038, 0, -0.0994947, 0.499266, 0.818089, -0.0446243 )
 
 [node name="CruetStand" parent="Objects/Table" instance=ExtResource( 48 )]
-transform = Transform( -0.815996, 0, 0.578057, 0, 1, 0, -0.578057, 0, -0.815996, -0.354032, 0.822187, 0.129778 )
+transform = Transform( -0.815996, 0, 0.578057, 0, 1, 0, -0.578057, 0, -0.815996, -0.354032, 0.822186, 0.129778 )
 
 [node name="CruetSoy" parent="Objects/Table/CruetStand" instance=ExtResource( 49 )]
 transform = Transform( 0.693452, 0, 0.720503, 0, 1, 0, -0.720503, 0, 0.693452, 0.126612, 0.187033, 0.123423 )
@@ -804,16 +855,13 @@ transform = Transform( 0.678031, 0, -0.735033, 0, 0.999999, 0, 0.735033, 0, 0.67
 transform = Transform( 0.88132, 0, 0.47252, 0, 0.999999, 0, -0.47252, 0, 0.88132, 0.17977, 0.200106, -0.0829964 )
 
 [node name="BottleFood01" parent="Objects/Table" instance=ExtResource( 87 )]
-transform = Transform( 0.951848, 0, 0.573195, 0, 1.11111, 0, -0.573195, 0, 0.951848, -0.100701, 0.968141, -1.79201 )
+transform = Transform( 0.951848, 0, 0.573195, 0, 1.11111, 0, -0.573195, 0, 0.951848, 0.330648, 0.968141, 3.05836 )
 
 [node name="BottleFood02" parent="Objects/Table" instance=ExtResource( 89 )]
-transform = Transform( -0.166648, 0, -0.986017, 0, 1, 0, 0.986017, 0, -0.166648, -0.258918, 0.924914, -2.09869 )
+transform = Transform( -0.166648, 0, -0.986017, 0, 1, 0, 0.986017, 0, -0.166648, 0.905959, 0.924914, 3.28281 )
 
 [node name="BottleFood03" parent="Objects/Table" instance=ExtResource( 89 )]
-transform = Transform( 0.0888822, -0.655493, -0.749953, -0.99305, -1.91747e-08, -0.117693, 0.0771471, 0.755202, -0.650937, -0.480478, 0.941886, -1.8594 )
-
-[node name="MilkBottle" parent="Objects/Table" instance=ExtResource( 8 )]
-transform = Transform( 0.667249, 0, 0.744835, 0, 1, 0, -0.744835, 0, 0.667249, 0.313725, 1.00937, -2.51051 )
+transform = Transform( 0.0888822, -0.655493, -0.749953, -0.99305, -1.91747e-08, -0.117693, 0.0771471, 0.755202, -0.650937, 0.650162, 0.941886, 3.19732 )
 
 [node name="BarSmallProps" type="Spatial" parent="Objects"]
 transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, -0.10278, 8.67886, 8.49482 )
@@ -846,13 +894,13 @@ offset = Vector3( 0.3, 0.13, 0.3 )
 rot_random = Vector3( 0, 45, 0 )
 
 [node name="CupGlass" parent="Objects/BarSmallProps/TrayRect" instance=ExtResource( 74 )]
-transform = Transform( 0.663747, 0, -0.747963, 0, 1, 0, 0.747963, 0, 0.663747, -0.628444, 0.0471687, 3.03952 )
+transform = Transform( 0.663747, 0, -0.747963, 0, 1, 0, 0.747963, 0, 0.663747, -0.599484, 0.0471687, 3.53226 )
 
 [node name="ChopstickHolder" parent="Objects/BarSmallProps" instance=ExtResource( 56 )]
 transform = Transform( 0.850746, 0, 0.525575, 0, 1, 0, -0.525575, 0, 0.850746, -1.06307, 0.139513, -0.062602 )
 
 [node name="BottleBeer" parent="Objects/BarSmallProps" instance=ExtResource( 84 )]
-transform = Transform( -0.999792, 0, -0.0203146, 0, 1, 0, 0.0203146, 0, -0.999792, 1.23553, 0.428587, 0.396729 )
+transform = Transform( 0.679632, 0, -0.733551, 0, 1, 0, 0.733551, 0, 0.679632, 1.23553, 0.428587, 0.396731 )
 
 [node name="Cups2" parent="Objects/BarSmallProps" instance=ExtResource( 57 )]
 transform = Transform( -0.0998371, 3.88781e-08, 0.793747, -3.11531e-07, -0.8, 1.42108e-15, 0.793747, -3.09097e-07, 0.0998371, 1.4744, -0.887222, 0.13002 )
@@ -873,7 +921,7 @@ offset = Vector3( 0.8, 0.06, 0.8 )
 rot_random = Vector3( 5, 50, 4 )
 
 [node name="Yakisoba" parent="Objects/BarSmallProps" instance=ExtResource( 72 )]
-transform = Transform( -0.356134, 0, 0.934432, 0, 1, 0, -0.934432, 0, -0.356134, 0.216287, 0.0158176, 0.269957 )
+transform = Transform( -0.356134, 0, 0.934432, 0, 1, 0, -0.934432, 0, -0.356134, 0.491632, 0.0158176, 0.269958 )
 
 [node name="Steam" type="Particles" parent="Objects/BarSmallProps/Yakisoba"]
 transform = Transform( -0.356135, 0, -0.934435, 0, 1, 0, 0.934435, 0, -0.356135, 2.86102e-06, 0.0983486, 9.53674e-07 )
@@ -1045,10 +1093,10 @@ transform = Transform( 0.0355156, 0, -1.19947, 0, 1.2, 0, 1.19947, 0, 0.0355156,
 transform = Transform( 0.277163, -0.960822, -1.56538e-07, 0, -1.62921e-07, 0.999999, -0.960822, -0.277163, -4.51557e-08, 3.73794, 1.16276, 0.649636 )
 
 [node name="CrateStatic" parent="Objects" instance=ExtResource( 40 )]
-transform = Transform( -0.862781, 0, 0.505577, 0, 1, 0, -0.505577, 0, -0.862781, -12.0219, 6.04267, 14.4141 )
+transform = Transform( -0.96841, 0, 0.249361, 0, 1, 0, -0.249361, 0, -0.96841, -11.6344, 6.04267, 14.1989 )
 
 [node name="Bottle6" parent="Objects/CrateStatic" instance=ExtResource( 38 )]
-transform = Transform( -0.0366227, 0.0929994, 0.0031505, -0.00127216, 0.002885, -0.0999503, -0.093044, -0.0366445, 0.000126535, -0.746985, 0.192448, 0.351314 )
+transform = Transform( -0.0366227, 0.0929994, 0.0031505, -0.00127216, 0.002885, -0.0999503, -0.093044, -0.0366445, 0.000126535, -0.746985, 0.192448, 0.351315 )
 
 [node name="CrateStatic2" parent="Objects" instance=ExtResource( 40 )]
 transform = Transform( 0.993238, 0, -0.116093, 0, 1, 0, 0.116093, 0, 0.993238, 8.384, 6, 4.182 )
@@ -1081,7 +1129,7 @@ rot_random = Vector3( 0, 30, 0 )
 [node name="BottlesMilk" parent="Objects/BeverageRefrigerator" instance=ExtResource( 57 )]
 transform = Transform( -1.63913e-07, 0, 0.999998, 0, 1, 0, -0.999998, 0, -1.63913e-07, -0.920973, 2.90858, -0.379407 )
 cast_shadow = 0
-multimesh = SubResource( 17 )
+multimesh = SubResource( 44 )
 node = "res://assets/models/MilkBottle.glb"
 seedn = 30862
 grid = Vector3( 4, 1, 5 )
@@ -1093,7 +1141,7 @@ rot_random = Vector3( 0, 10, 0 )
 [node name="Cans" parent="Objects/BeverageRefrigerator" instance=ExtResource( 57 )]
 transform = Transform( -1.63913e-07, 0, 0.999998, 0, 1, 0, -0.999998, 0, -1.63913e-07, -0.807633, 1.90086, 2.58387 )
 cast_shadow = 0
-multimesh = SubResource( 19 )
+multimesh = SubResource( 46 )
 node = "res://assets/models/BeverageCans.glb"
 seedn = 40687
 grid = Vector3( 4, 1, 4 )
@@ -1103,17 +1151,17 @@ offset_random = Vector3( 0.02, 0, 0.01 )
 [node name="BottlesOrange" parent="Objects/BeverageRefrigerator" instance=ExtResource( 57 )]
 transform = Transform( -1.63913e-07, 0, 0.999998, 0, 1, 0, -0.999998, 0, -1.63913e-07, -0.831934, 2.9132, 0.555738 )
 cast_shadow = 0
-multimesh = SubResource( 21 )
+multimesh = SubResource( 47 )
 node = "res://assets/models/BottleFood01.glb"
 seedn = 24518
 grid = Vector3( 3, 1, 4 )
 offset = Vector3( 0.31, 0.27, 0.3 )
 object_scale = Vector3( 1.2, 1.7, 1.2 )
 
-[node name="BottlesOrange2" parent="Objects/BeverageRefrigerator" instance=ExtResource( 57 )]
-transform = Transform( -1.63913e-07, 0, 0.999998, 0, 1, 0, -0.999998, 0, -1.63913e-07, -0.901233, 2.9132, 2.54 )
+[node name="Apples" parent="Objects/BeverageRefrigerator" instance=ExtResource( 57 )]
+transform = Transform( -1.63913e-07, 0, 0.999998, 0, 1, 0, -0.999998, 0, -1.63913e-07, -0.901235, 2.95583, 2.54 )
 cast_shadow = 0
-multimesh = SubResource( 23 )
+multimesh = SubResource( 48 )
 node = "res://assets/models/Apple.glb"
 seedn = 23206
 grid = Vector3( 6, 2, 4 )
@@ -1178,7 +1226,7 @@ rot_random = Vector3( 0, 15, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.975611, 9.01183, 1.214 )
 
 [node name="FryingPan" parent="Objects/Cookwares" instance=ExtResource( 55 )]
-transform = Transform( -8.14603e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -8.14603e-08, 0.445253, -0.600501, -0.0815214 )
+transform = Transform( -8.14603e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -8.14603e-08, 1.18492, -0.600501, -0.0815214 )
 
 [node name="TrayCircular" parent="Objects/Cookwares" instance=ExtResource( 62 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2781, -0.763101, 5.22215 )
@@ -1193,7 +1241,7 @@ transform = Transform( -0.697036, -0.699174, 0.159047, -0.521696, 0.342342, -0.7
 transform = Transform( -0.595791, -0.0272655, 0.802677, -0.19267, 0.975091, -0.109888, -0.779687, -0.220122, -0.586204, -0.161586, 0.169132, 0.0871725 )
 
 [node name="Pot01" parent="Objects/Cookwares" instance=ExtResource( 66 )]
-transform = Transform( 0.875328, -0.00206548, 0.483524, 0.00172584, 0.999998, 0.00114742, -0.483526, -0.00016989, 0.87533, -0.887713, -0.58493, -0.019163 )
+transform = Transform( 0.875328, -0.00206548, 0.483524, 0.00172584, 0.999998, 0.00114742, -0.483526, -0.00016989, 0.87533, -0.576008, -0.58493, -0.199364 )
 
 [node name="Ladle" parent="Objects/Cookwares/Pot01" instance=ExtResource( 60 )]
 transform = Transform( 1, 0, 0, 0, 0.911697, -0.410862, 0, 0.410862, 0.911697, 0.02096, -0.0130529, 0.0721142 )
@@ -1349,7 +1397,6 @@ __meta__ = {
 }
 
 [node name="UI" type="Control" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
