@@ -240,6 +240,7 @@
 // entity 11
 {
 "classname" "group"
+"_shadow" "1"
 // brush 0
 {
 ( -1232 -240 768 ) ( -1232 -239 768 ) ( -1232 -240 769 ) materials/Metal03MO [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -368,5 +369,5 @@
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "HouseScaleRef"
-"_tb_id" "23"
+"_tb_id" "2"
 }

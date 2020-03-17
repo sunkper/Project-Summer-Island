@@ -6,7 +6,6 @@
 background_mode = 2
 background_sky = ExtResource( 1 )
 background_energy = 0.2
-ambient_light_color = Color( 0.133333, 0.152941, 0.156863, 1 )
 ambient_light_energy = 0.2
 fog_enabled = true
 fog_color = Color( 0.01, 0.23, 0.37, 1 )

@@ -291,7 +291,8 @@
 }
 // entity 1
 {
-"classname" "door"
+"classname" "group"
+"_shadow" "1"
 // brush 0
 {
 ( 88 -31 160 ) ( 88 -31 152 ) ( 88 97 152 ) pbr/MetalPainted01b [ 0 -1 0 -0 ] [ 0 0 -1 -0 ] -0 0.25 0.25
@@ -339,7 +340,8 @@
 }
 // entity 2
 {
-"classname" "door"
+"classname" "group"
+"_shadow" "1"
 // brush 0
 {
 ( -36 12.5 32 ) ( -36 13.5 32 ) ( -36 12.5 33 ) materials/BevFridgeDoorGlass [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -424,7 +426,8 @@
 }
 // entity 3
 {
-"classname" "door"
+"classname" "group"
+"_shadow" "1"
 // brush 0
 {
 ( 25 14 32 ) ( 25 15 32 ) ( 25 14 33 ) materials/BevFridgeDoorGlass [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -511,6 +514,7 @@
 // entity 4
 {
 "classname" "group"
+"_shadow" "1"
 // brush 0
 {
 ( -40 -32 84 ) ( -40 -31 84 ) ( -40 -32 85 ) materials/Metal01WhiteGrid [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.1 0.1
@@ -553,6 +557,7 @@
 // entity 5
 {
 "classname" "group"
+"_shadow" "1"
 // brush 0
 {
 ( 64 -46 28 ) ( 64 -45 28 ) ( 64 -46 29 ) materials/Metal03MO [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.25 0.25
@@ -962,6 +967,7 @@
 // entity 6
 {
 "classname" "a"
+"_shadow" "1"
 // brush 0
 {
 ( -24 -42 16 ) ( -24 -42 12 ) ( -24 -40 28 ) materials/Metal24MO [ 0 -1 0 156 ] [ 0 0 -1 0 ] 0 0.25 0.25
@@ -1156,6 +1162,7 @@
 {
 "classname" "group"
 "_phong" "1"
+"_shadow" "1"
 // brush 0
 {
 ( -40 -36 118 ) ( -40 -36 102 ) ( -40 92 102 ) materials/Metal01WhiteMO [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.25 0.25
@@ -1329,6 +1336,7 @@
 {
 "classname" "group"
 "_phong" "1"
+"_shadow" "1"
 // brush 0
 {
 ( 87 4 53 ) ( 88 6 52 ) ( 88 6 54 ) materials/Metal01WhiteMO [ 0.894427 0.447214 3.17764e-15 0 ] [ 2.84217e-15 1.42109e-15 -1 0 ] 0 0.25 0.25
