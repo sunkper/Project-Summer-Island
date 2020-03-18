@@ -296,7 +296,8 @@
 }
 // entity 1
 {
-"classname" "func_group"
+"classname" "group"
+"_shadow" "1"
 // brush 0
 {
 ( 44 32 92 ) ( 44 160 104 ) ( 44 32 104 ) pbr/Metal03 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 0.25 0.25

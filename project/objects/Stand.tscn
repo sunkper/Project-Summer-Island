@@ -407,82 +407,84 @@ shape = SubResource( 36 )
 [node name="entity_0_brush_31_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn/entity_0_physics_body"]
 shape = SubResource( 37 )
 
-[node name="entity_1_func_group" type="Spatial" parent="QodotMap"]
+[node name="entity_1_group" type="Spatial" parent="QodotMap"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.183949, 0.892045, -0.133523 )
 script = ExtResource( 2 )
 properties = {
-"classname": "func_group"
+"_shadow": "1",
+"classname": "group"
 }
 
-[node name="entity_1_physics_body" type="StaticBody" parent="QodotMap/entity_1_func_group"]
+[node name="entity_1_physics_body" type="StaticBody" parent="QodotMap/entity_1_group"]
 
-[node name="entity_1_mesh_instance" type="MeshInstance" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_mesh_instance" type="MeshInstance" parent="QodotMap/entity_1_group/entity_1_physics_body"]
+use_in_baked_light = true
 mesh = SubResource( 39 )
 material/0 = null
 material/1 = null
 
-[node name="entity_1_brush_0_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_0_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 40 )
 
-[node name="entity_1_brush_1_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_1_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 41 )
 
-[node name="entity_1_brush_2_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_2_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 42 )
 
-[node name="entity_1_brush_3_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_3_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 43 )
 
-[node name="entity_1_brush_4_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_4_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 44 )
 
-[node name="entity_1_brush_5_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_5_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 45 )
 
-[node name="entity_1_brush_6_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_6_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 46 )
 
-[node name="entity_1_brush_7_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_7_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 47 )
 
-[node name="entity_1_brush_8_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_8_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 48 )
 
-[node name="entity_1_brush_9_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_9_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 49 )
 
-[node name="entity_1_brush_10_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_10_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 50 )
 
-[node name="entity_1_brush_11_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_11_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 51 )
 
-[node name="entity_1_brush_12_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_12_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 52 )
 
-[node name="entity_1_brush_13_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_13_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 53 )
 
-[node name="entity_1_brush_14_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_14_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 54 )
 
-[node name="entity_1_brush_15_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_15_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 55 )
 
-[node name="entity_1_brush_16_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_16_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 56 )
 
-[node name="entity_1_brush_17_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_17_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 57 )
 
-[node name="entity_1_brush_18_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_18_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 58 )
 
-[node name="entity_1_brush_19_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_19_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 59 )
 
-[node name="entity_1_brush_20_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_20_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 60 )
 
-[node name="entity_1_brush_21_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_func_group/entity_1_physics_body"]
+[node name="entity_1_brush_21_collision_shape" type="CollisionShape" parent="QodotMap/entity_1_group/entity_1_physics_body"]
 shape = SubResource( 61 )

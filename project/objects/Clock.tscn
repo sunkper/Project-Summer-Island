@@ -49,21 +49,24 @@ height = 0.01
 
 [sub_resource type="CylinderMesh" id=5]
 material = ExtResource( 2 )
-top_radius = 0.03
-bottom_radius = 0.03
+top_radius = 0.02
+bottom_radius = 0.02
 height = 0.5
 radial_segments = 5
+rings = 1
 
 [sub_resource type="CylinderMesh" id=6]
 material = ExtResource( 2 )
-top_radius = 0.03
-bottom_radius = 0.03
+top_radius = 0.02
+bottom_radius = 0.02
 height = 0.4
 radial_segments = 5
+rings = 1
 
 [node name="Clock" type="Spatial"]
 
 [node name="Body" type="MeshInstance" parent="."]
+use_in_baked_light = true
 mesh = SubResource( 1 )
 material/0 = null
 material/1 = null
@@ -90,21 +93,25 @@ save_dir = "res://assets/models/"
 convert_to_meshinstance = false
 
 [node name="ClockFace" type="MeshInstance" parent="."]
-transform = Transform( -1.62921e-07, -1, -1.62921e-07, 0, -1.62921e-07, 1, -1, 1.62921e-07, 2.65431e-14, 0, 0.0231134, 0 )
+transform = Transform( -1.62921e-07, -1, -1.62921e-07, 0, -1.62921e-07, 1, -1, 1.62921e-07, 2.65431e-14, 0, 0.0680237, 0 )
+use_in_baked_light = true
 mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Glass" type="MeshInstance" parent="."]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0.0736345, 0 )
+use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
 
 [node name="HandMinute" type="MeshInstance" parent="."]
-transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, -0.2562, 0.00399313, 0 )
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, -0.2562, 0.0557992, 0 )
+use_in_baked_light = true
 mesh = SubResource( 5 )
 material/0 = null
 
 [node name="HandHour" type="MeshInstance" parent="."]
-transform = Transform( -7.18317e-09, -0.04409, -0.999028, 1, -1.62921e-07, 0, -1.62762e-07, -0.999028, 0.04409, -0.0213455, 0.00399313, -0.198761 )
+transform = Transform( -7.18317e-09, -0.04409, -0.999028, 1, -1.62921e-07, 0, -1.62762e-07, -0.999028, 0.04409, -0.0213455, 0.0557992, -0.198761 )
+use_in_baked_light = true
 mesh = SubResource( 6 )
 material/0 = null

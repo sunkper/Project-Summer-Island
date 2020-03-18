@@ -137,7 +137,7 @@ radial_segments = 8
 
 [sub_resource type="SpatialMaterial" id=10]
 albedo_texture = ExtResource( 2 )
-metallic = 0.72
+metallic = 0.57
 metallic_specular = 0.0
 roughness_texture = ExtResource( 5 )
 uv1_triplanar = true
@@ -254,12 +254,11 @@ material/1 = null
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -5.20745, 0 )
 visible = false
 light_color = Color( 0.890196, 0.709804, 0.478431, 1 )
-light_indirect_energy = 4.0
 light_bake_mode = 2
 shadow_enabled = true
 shadow_bias = 0.05
-omni_range = 27.0
-omni_attenuation = 6.96652
+omni_range = 15.0
+omni_attenuation = 4.14232
 
 [node name="Ray" type="MeshInstance" parent="HangingLight"]
 transform = Transform( -4.37114e-08, 4.37114e-08, -1, -4.37114e-08, 1, 4.37114e-08, 1, 4.37114e-08, -4.37114e-08, 0, 9.31234e-08, -2.13041 )

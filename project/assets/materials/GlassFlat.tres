@@ -3,6 +3,7 @@
 [ext_resource path="res://assets/textures/pbr/MetalPainted01/MetalPainted01_roughness.png" type="Texture" id=2]
 
 [resource]
+flags_transparent = true
 params_blend_mode = 1
 params_depth_draw_mode = 3
 albedo_color = Color( 0.407843, 0.407843, 0.407843, 0.952941 )

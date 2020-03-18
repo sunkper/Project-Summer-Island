@@ -60,14 +60,12 @@ transform_array = PoolVector3Array( -0.108592, 6.38324e-11, -0.0087373, 1.4877e-
 [sub_resource type="QuadMesh" id=6]
 size = Vector2( 1.5, 1.1 )
 
-[node name="CrateStatic" type="StaticBody"]
+[node name="CrateStatic" type="Spatial"]
 
 [node name="QodotMap" type="Spatial" parent="."]
 script = ExtResource( 5 )
 map_file = "res://maps/mapsrc/CrateStatic.map"
 inverse_scale_factor = 32.0
-static_collision_build_type = 1
-base_texture_path = "res://assets/textures"
 default_material = SubResource( 1 )
 
 [node name="Meshes" type="Spatial" parent="QodotMap"]
