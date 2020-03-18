@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/materials/Wood02.tres" type="Material" id=1]
 [ext_resource path="res://assets/models/TV.glb" type="PackedScene" id=2]
 [ext_resource path="res://assets/videos/ManWithACamera.webm" type="VideoStream" id=4]
 [ext_resource path="res://objects/TVStand.gd" type="Script" id=5]
@@ -8,67 +7,16 @@
 [ext_resource path="res://assets/models/TVScreen.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/models/TVScreenOn.material" type="Material" id=8]
 
-[sub_resource type="CylinderMesh" id=1]
-material = ExtResource( 1 )
-top_radius = 0.1
-bottom_radius = 0.1
-height = 6.4
-radial_segments = 6
-
-[sub_resource type="CylinderMesh" id=2]
-material = ExtResource( 1 )
-top_radius = 0.1
-bottom_radius = 0.1
-height = 7.6
-radial_segments = 6
-
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=1]
 script/source = "extends VideoPlayer
 
 func _on_VideoPlayer_finished() -> void:
 	play()
 "
 
-[node name="TVStand" type="Spatial"]
+[node name="TV" type="Spatial"]
 script = ExtResource( 5 )
 switch = true
-
-[node name="Stand" type="CSGPolygon" parent="."]
-transform = Transform( 1.31134e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, -1.31134e-07, -5.73206e-15, -0.5, 2.67351, -1.5 )
-use_in_baked_light = true
-polygon = PoolVector2Array( 0, -0.5, 2.5, 2, 2.5, -0.5 )
-depth = 0.2
-material = ExtResource( 1 )
-
-[node name="Foot" type="MeshInstance" parent="Stand"]
-transform = Transform( 1.31134e-07, 4.23516e-22, 1, 1, -4.37114e-08, -1.31134e-07, 4.37114e-08, 1, -5.73206e-15, 1.73583, 0.231458, -3.36592 )
-use_in_baked_light = true
-mesh = SubResource( 1 )
-material/0 = null
-
-[node name="Hand" type="MeshInstance" parent="Stand"]
-transform = Transform( 1.31134e-07, 4.23516e-22, 1, 1, -4.37114e-08, -1.31134e-07, 4.37114e-08, 1, -5.73206e-15, 0.41238, -0.333926, 3.20571 )
-use_in_baked_light = true
-mesh = SubResource( 1 )
-material/0 = null
-
-[node name="Hand2" type="MeshInstance" parent="Stand"]
-transform = Transform( 1.31134e-07, 4.23516e-22, 1, 1, -4.37114e-08, -1.31134e-07, 4.37114e-08, 1, -5.73206e-15, 2.22014, -0.281014, 3.20571 )
-use_in_baked_light = true
-mesh = SubResource( 1 )
-material/0 = null
-
-[node name="Hand3" type="MeshInstance" parent="Stand"]
-transform = Transform( 1.31134e-07, 4.23516e-22, 1, 1, -4.37114e-08, -1.31134e-07, 4.37114e-08, 1, -5.73206e-15, 2.28647, 1.47218, 3.65106 )
-use_in_baked_light = true
-mesh = SubResource( 2 )
-material/0 = null
-
-[node name="Sound" type="AudioStreamPlayer3D" parent="."]
-transform = Transform( 0.852795, 0, -0.522246, 0, 1, 0, 0.522246, 0, 0.852795, -0.308365, 3.18849, -0.71533 )
-stream = ExtResource( 6 )
-unit_db = -25.0
-bus = "TVSound"
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 256, 206 )
@@ -78,19 +26,24 @@ margin_right = 40.0
 margin_bottom = 40.0
 stream = ExtResource( 4 )
 expand = false
-script = SubResource( 3 )
+script = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="Viewport"]
 visible = false
 margin_right = 500.0
 margin_bottom = 500.0
-color = Color( 0.521569, 0.643137, 0.631373, 1 )
+color = Color( 0.466667, 0.576471, 0.564706, 1 )
 
-[node name="TV" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.690365, 0, 0.723461, 0, 1, 0, -0.723461, 0, 0.690365, -0.365824, 3.32102, 0.270738 )
+[node name="Model" parent="." instance=ExtResource( 2 )]
 
-[node name="Screen" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.690365, 0, 0.723461, 0, -1, 0, -0.723461, 0, 0.690365, -0.365824, 3.32102, 0.270738 )
+[node name="Screen" parent="Model" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0 )
 material_override = ExtResource( 8 )
 use_in_baked_light = true
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="Model"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.547367, -0.13253, -0.639178 )
+stream = ExtResource( 6 )
+unit_db = -25.0
+bus = "TVSound"
 [connection signal="finished" from="Viewport/VideoPlayer" to="Viewport/VideoPlayer" method="_on_VideoPlayer_finished"]

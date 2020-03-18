@@ -13,11 +13,11 @@ func _toggle_switch(new_state) -> void:
 	switch = new_state
 	if switch:
 		$Viewport/VideoPlayer.play()
-		$Sound.play()
+		$Model/Sound.play()
 		$Viewport/ColorRect.visible = false
-		$Screen.material_override.emission_enabled = true
+		$Model/Screen.material_override.emission_enabled = true
 	else:
 		$Viewport/VideoPlayer.stop()
-		$Sound.stop()
+		$Model/Sound.stop()
 		$Viewport/ColorRect.visible = true
-		$Screen.material_override.emission_enabled = false
+		$Model/Screen.material_override.emission_enabled = false
