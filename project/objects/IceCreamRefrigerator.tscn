@@ -435,27 +435,23 @@ use_in_baked_light = true
 mesh = SubResource( 49 )
 material/0 = null
 
-[node name="SpotLight" type="SpotLight" parent="."]
-transform = Transform( -5.77445e-08, -0.0871556, 0.996195, 1.6611e-07, 0.996195, 0.0871556, -1, 1.70511e-07, -4.30473e-08, -0.53, 2.06771, 0.85 )
-light_energy = 8.0
-light_indirect_energy = 3.0
+[node name="LightLeft" type="OmniLight" parent="."]
+transform = Transform( -5.77445e-08, -0.0871556, 0.996195, 1.6611e-07, 0.996195, 0.0871556, -1, 1.70511e-07, -4.30474e-08, -1.2684, 1.8796, 0.984747 )
+light_energy = 1.5
+light_indirect_energy = 2.0
 light_bake_mode = 2
 shadow_enabled = true
-spot_range = 1.8
-spot_attenuation = 1.07178
-spot_angle = 85.0
-spot_angle_attenuation = 2.63902
+omni_range = 3.0
+omni_attenuation = 5.65685
 
-[node name="SpotLight2" type="SpotLight" parent="."]
-transform = Transform( -5.77445e-08, -0.0871556, 0.996195, 1.6611e-07, 0.996195, 0.0871556, -1, 1.70511e-07, -4.30473e-08, -0.53, 2.06771, 2.09 )
-light_energy = 8.0
-light_indirect_energy = 3.0
+[node name="LightRight" type="OmniLight" parent="."]
+transform = Transform( -5.77445e-08, -0.0871556, 0.996195, 1.6611e-07, 0.996195, 0.0871556, -1, 1.70511e-07, -4.30474e-08, -1.2684, 1.8796, 2.27971 )
+light_energy = 1.5
+light_indirect_energy = 2.0
 light_bake_mode = 2
 shadow_enabled = true
-spot_range = 1.8
-spot_attenuation = 1.07178
-spot_angle = 85.0
-spot_angle_attenuation = 2.63902
+omni_range = 3.0
+omni_attenuation = 5.65685
 
 [node name="MachineSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 23 )

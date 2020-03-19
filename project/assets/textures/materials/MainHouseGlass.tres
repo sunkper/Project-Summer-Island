@@ -1,8 +1,8 @@
 [gd_resource type="SpatialMaterial" load_steps=6 format=2]
 
-[ext_resource path="res://assets/textures/pbr/GachaInside/GachaInside_normal.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/pbr/OpaqueGlass/OpaqueGlass_depth.png" type="Texture" id=1]
 [ext_resource path="res://assets/textures/pbr/MetalPainted01/MetalPainted01_roughness.png" type="Texture" id=2]
-[ext_resource path="res://assets/textures/pbr/RoofMetal/RoofMetal_ao.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/pbr/Glass/Glass_normal.png" type="Texture" id=3]
 
 [sub_resource type="OpenSimplexNoise" id=1]
 period = 117.9
@@ -16,19 +16,24 @@ seamless = true
 noise = SubResource( 1 )
 
 [resource]
+flags_transparent = true
+params_diffuse_mode = 4
 params_depth_draw_mode = 3
-albedo_color = Color( 0.337255, 0.407843, 0.466667, 1 )
+albedo_color = Color( 0.0352941, 0.192157, 0.309804, 0.733333 )
 albedo_texture = SubResource( 2 )
-roughness = 0.59
 roughness_texture = ExtResource( 2 )
 normal_enabled = true
-normal_scale = 0.2
-normal_texture = ExtResource( 1 )
+normal_scale = 1.0
+normal_texture = ExtResource( 3 )
+rim_enabled = true
+rim = 1.0
+rim_tint = 1.0
 depth_enabled = true
-depth_scale = -1.0
-depth_deep_parallax = true
-depth_min_layers = 8
-depth_max_layers = 32
+depth_scale = 2.0
+depth_deep_parallax = false
 depth_flip_tangent = false
 depth_flip_binormal = false
-depth_texture = ExtResource( 3 )
+depth_texture = ExtResource( 1 )
+refraction_enabled = true
+refraction_scale = 0.04
+refraction_texture_channel = 0

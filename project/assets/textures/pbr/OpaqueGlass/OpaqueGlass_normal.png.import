@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/BookSpines_ao.png-193ef7d5569be44676061337cdbdd090.s3tc.stex"
-path.etc2="res://.import/BookSpines_ao.png-193ef7d5569be44676061337cdbdd090.etc2.stex"
+path.s3tc="res://.import/OpaqueGlass_normal.png-b207d0f190a535b561df9468c03f5d62.s3tc.stex"
+path.etc2="res://.import/OpaqueGlass_normal.png-b207d0f190a535b561df9468c03f5d62.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/pbr/BookSpines/BookSpines_ao.png"
-dest_files=[ "res://.import/BookSpines_ao.png-193ef7d5569be44676061337cdbdd090.s3tc.stex", "res://.import/BookSpines_ao.png-193ef7d5569be44676061337cdbdd090.etc2.stex" ]
+source_file="res://assets/textures/pbr/OpaqueGlass/OpaqueGlass_normal.png"
+dest_files=[ "res://.import/OpaqueGlass_normal.png-b207d0f190a535b561df9468c03f5d62.s3tc.stex", "res://.import/OpaqueGlass_normal.png-b207d0f190a535b561df9468c03f5d62.etc2.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
-compress/normal_map=0
+compress/normal_map=1
 flags/repeat=true
 flags/filter=false
 flags/mipmaps=true

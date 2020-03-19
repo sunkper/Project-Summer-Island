@@ -7,7 +7,7 @@
 [resource]
 flags_transparent = true
 params_depth_draw_mode = 3
-albedo_color = Color( 0.470588, 0.462745, 0.423529, 0.0862745 )
+albedo_color = Color( 0.462745, 0.462745, 0.462745, 0.0470588 )
 metallic = 1.0
 metallic_texture = ExtResource( 2 )
 roughness = 0.54
