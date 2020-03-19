@@ -17,7 +17,6 @@ zoom_fov = 15.0
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0319737, 0 )
 current = true
-fov = 75.0
 size = 0.1
 far = 500.0
 
