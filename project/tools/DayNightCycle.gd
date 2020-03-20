@@ -9,8 +9,8 @@ export (times) var time setget _set_time
 export (NodePath) var environment
 export (NodePath) var dir_light
 
-onready var panorama_day = preload("res://assets/textures/base/Sky2.png")
-onready var panorama_night = preload("res://assets/textures/base/Sky4.png")
+onready var panorama_day = preload("res://assets/sky/Epic_BlueSunset_EquiRect_flat_1024.png")
+onready var panorama_night = preload("res://assets/sky/Epic_GloriousPink_EquiRect.png")
 
 func _set_time(new_time) -> void:
 	time = new_time
