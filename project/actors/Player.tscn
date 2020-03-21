@@ -6,8 +6,8 @@
 extents = Vector3( 0.244978, 0.256154, 0.599509 )
 
 [sub_resource type="CapsuleShape" id=2]
-radius = 0.682626
-height = 1.31132
+radius = 0.947692
+height = 2.38434
 
 [node name="Player" type="KinematicBody"]
 collision_mask = 6
@@ -40,6 +40,6 @@ spot_range = 14.0
 spot_angle = 37.9926
 
 [node name="Collision" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.230311, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -1.43419, 0 )
 shape = SubResource( 2 )
 disabled = true
