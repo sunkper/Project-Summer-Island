@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/wood_02_normal.png-9be8181ba94aefb07c657298f9ee38de.s3tc.stex"
-path.etc2="res://.import/wood_02_normal.png-9be8181ba94aefb07c657298f9ee38de.etc2.stex"
+path.s3tc="res://.import/Wavy_normal.png-9c6b1b4654c23ec1e29555bce6fbb12f.s3tc.stex"
+path.etc2="res://.import/Wavy_normal.png-9c6b1b4654c23ec1e29555bce6fbb12f.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/pbr/wood_02_darker/wood_02_normal.png"
-dest_files=[ "res://.import/wood_02_normal.png-9be8181ba94aefb07c657298f9ee38de.s3tc.stex", "res://.import/wood_02_normal.png-9be8181ba94aefb07c657298f9ee38de.etc2.stex" ]
+source_file="res://assets/textures/details/Wavy_normal.png"
+dest_files=[ "res://.import/Wavy_normal.png-9c6b1b4654c23ec1e29555bce6fbb12f.s3tc.stex", "res://.import/Wavy_normal.png-9c6b1b4654c23ec1e29555bce6fbb12f.etc2.stex" ]
 
 [params]
 
@@ -23,9 +23,9 @@ compress/bptc_ldr=0
 compress/normal_map=1
 flags/repeat=true
 flags/filter=false
-flags/mipmaps=false
+flags/mipmaps=true
 flags/anisotropic=true
-flags/srgb=2
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

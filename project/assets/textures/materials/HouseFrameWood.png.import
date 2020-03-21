@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/wood_02_roughness.png-632bd48c99c7fe213acca51aeaf9497e.s3tc.stex"
-path.etc2="res://.import/wood_02_roughness.png-632bd48c99c7fe213acca51aeaf9497e.etc2.stex"
+path.s3tc="res://.import/HouseFrameWood.png-abde2e17253515f54f29841d91324130.s3tc.stex"
+path.etc2="res://.import/HouseFrameWood.png-abde2e17253515f54f29841d91324130.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/pbr/wood_02_darker/wood_02_roughness.png"
-dest_files=[ "res://.import/wood_02_roughness.png-632bd48c99c7fe213acca51aeaf9497e.s3tc.stex", "res://.import/wood_02_roughness.png-632bd48c99c7fe213acca51aeaf9497e.etc2.stex" ]
+source_file="res://assets/textures/materials/HouseFrameWood.png"
+dest_files=[ "res://.import/HouseFrameWood.png-abde2e17253515f54f29841d91324130.s3tc.stex", "res://.import/HouseFrameWood.png-abde2e17253515f54f29841d91324130.etc2.stex" ]
 
 [params]
 

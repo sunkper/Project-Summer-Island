@@ -1,0 +1,35 @@
+[gd_resource type="SpatialMaterial" load_steps=7 format=2]
+
+[ext_resource path="res://assets/textures/details/WaterpaintPoints_trans.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/pbr/wood_02_darker/wood_02_darker_roughness.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/pbr/wood_02_darker/wood_02_darker_ao.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/pbr/wood_02_darker/wood_02_darker_normal.png" type="Texture" id=4]
+[ext_resource path="res://assets/textures/pbr/wood_02_darker.png" type="Texture" id=5]
+[ext_resource path="res://assets/textures/pbr/wood_01/wood_01_ao.png" type="Texture" id=6]
+
+[resource]
+albedo_texture = ExtResource( 5 )
+metallic_specular = 0.2
+roughness_texture = ExtResource( 2 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 4 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 3 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+depth_enabled = true
+depth_scale = 0.15
+depth_deep_parallax = true
+depth_min_layers = 8
+depth_max_layers = 32
+depth_flip_tangent = false
+depth_flip_binormal = false
+detail_enabled = true
+detail_mask = ExtResource( 6 )
+detail_blend_mode = 3
+detail_uv_layer = 1
+detail_albedo = ExtResource( 1 )
+uv2_scale = Vector3( 0.05, 0.05, 0.05 )
+uv2_triplanar = true
