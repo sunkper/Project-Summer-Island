@@ -320,7 +320,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24679, 2.27595, 1.80494 )
 light_energy = 0.5
 light_bake_mode = 2
 shadow_enabled = true
-omni_range = 3.0
+omni_range = 2.5
 omni_attenuation = 2.21913
 
 [node name="OmniLight2" type="OmniLight" parent="."]
@@ -328,11 +328,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20719, 2.44043, -0.408324 )
 light_energy = 0.5
 light_bake_mode = 2
 shadow_enabled = true
-omni_range = 3.0
+omni_range = 2.5
 omni_attenuation = 2.21913
 
 [node name="MachineSound" type="AudioStreamPlayer3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.842654, -0.0136311, 0.667958 )
 stream = ExtResource( 8 )
-unit_db = -8.0
+attenuation_model = 1
 autoplay = true

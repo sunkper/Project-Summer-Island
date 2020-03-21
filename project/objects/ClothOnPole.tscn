@@ -34,27 +34,27 @@ mesh = SubResource( 1 )
 material/0 = null
 
 [node name="PoleClothSoftBody" type="SoftBody" parent="PoleCloth"]
-transform = Transform( 1, 0, 0, 0, 0.904113, -0.427295, 0, 0.427295, 0.904112, 3.37937, 0.237015, -0.0201309 )
+transform = Transform( 1, 0, 0, 0, 0.904113, -0.427295, 0, 0.427295, 0.904112, -3.34066, 0.237015, -0.0201309 )
 use_in_baked_light = true
 mesh = SubResource( 2 )
 material/0 = null
 linear_stiffness = 0.1
 areaAngular_stiffness = 0.2
 volume_stiffness = 0.3
-pinned_points = [ 129, 50, 77, 103, 51 ]
-attachments/0/point_index = 129
+pinned_points = [ 104, 78, 52, 2, 0 ]
+attachments/0/point_index = 104
 attachments/0/spatial_attachment_path = NodePath("")
 attachments/0/offset = Vector3( 0, 0, 0 )
-attachments/1/point_index = 50
+attachments/1/point_index = 78
 attachments/1/spatial_attachment_path = NodePath("")
 attachments/1/offset = Vector3( 0, 0, 0 )
-attachments/2/point_index = 77
+attachments/2/point_index = 52
 attachments/2/spatial_attachment_path = NodePath("")
 attachments/2/offset = Vector3( 0, 0, 0 )
-attachments/3/point_index = 103
+attachments/3/point_index = 2
 attachments/3/spatial_attachment_path = NodePath("")
 attachments/3/offset = Vector3( 0, 0, 0 )
-attachments/4/point_index = 51
+attachments/4/point_index = 0
 attachments/4/spatial_attachment_path = NodePath("")
 attachments/4/offset = Vector3( 0, 0, 0 )
 
@@ -62,33 +62,33 @@ attachments/4/offset = Vector3( 0, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.688275, 0, 0.175474 )
 
 [node name="Wind" parent="WindObjects" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.706565, 0.0756803, 1.05042 )
-dir = Vector3( 0.75, 0, -1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41157, 0.0756803, 2.53215 )
+dir = Vector3( -0.75, 0, -1 )
 speed = 1.5
 length = 5.0
-radius = 0.8
+radius = 0.7
 blow = true
 
 [node name="Wind2" parent="WindObjects" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.759585, -0.716644, 0.82489 )
-dir = Vector3( 0.75, 0, -1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.392526, -1.3586, 0.82489 )
+dir = Vector3( -0.75, 0, -1 )
 speed = 1.2
 length = 4.0
-radius = 0.75
+radius = 0.6
 blow = true
 
 [node name="Wind3" parent="WindObjects" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.160662, -1.7828, 0.82489 )
-dir = Vector3( 0.75, 0, -1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.772521, -1.7828, 1.33103 )
+dir = Vector3( -0.75, 0, -1 )
 speed = 1.3
 length = 5.0
-radius = 0.8
+radius = 0.6
 blow = true
 
 [node name="Wind4" parent="WindObjects" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.09725, -2.5442, 1.06577 )
-dir = Vector3( 0.75, 0, -1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.601668, -2.5442, 0.294356 )
+dir = Vector3( -0.75, 0, -1 )
 speed = 0.5
 length = 6.0
-radius = 0.8
+radius = 0.6
 blow = true

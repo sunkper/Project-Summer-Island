@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://addons/qodot/src/nodes/qodot_entity.gd" type="Script" id=1]
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://assets/textures/pbr/Metal11.png" type="Texture" id=16]
 [ext_resource path="res://assets/textures/pbr/Metal11/Metal11_depth.png" type="Texture" id=17]
 [ext_resource path="res://assets/textures/pbr/MetalPaintedRust01/MetalPaintedRust01_metallic.png" type="Texture" id=18]
+[ext_resource path="res://addons/qodot/game-definitions/fgd/qodot_fgd.tres" type="Resource" id=19]
 [ext_resource path="res://assets/textures/pbr/GoDoIceCreamTag.png" type="Texture" id=20]
 [ext_resource path="res://assets/textures/materials/IceFridgeDoorGlass.tres" type="Material" id=21]
 [ext_resource path="res://assets/textures/pbr/GoDoIceCreamTag/GoDoIceCreamTag_roughness.png" type="Texture" id=22]
@@ -281,8 +282,20 @@ extents = Vector3( 1, 1.4, 1.5 )
 script = ExtResource( 2 )
 map_file = "D:/_gamedev/summer_island/Project-Summer-Island/project/maps/mapsrc/IceCreamRefrigerator.map"
 inverse_scale_factor = 32.0
+entity_fgd = ExtResource( 19 )
 base_texture_dir = "res://assets/textures"
+texture_file_extension = ".png"
+worldspawn_layers = [  ]
+brush_clip_texture = "special/clip"
+face_skip_texture = "special/skip"
+texture_wads = [  ]
+material_file_extension = ".tres"
 default_material = SubResource( 1 )
+uv_unwrap_texel_size = 1.0
+print_profiling_data = false
+use_trenchbroom_group_hierarchy = false
+tree_attach_batch_size = 16
+set_owner_batch_size = 16
 
 [node name="entity_0_worldspawn" type="Spatial" parent="QodotMap"]
 script = ExtResource( 1 )
@@ -455,7 +468,7 @@ omni_attenuation = 5.65685
 
 [node name="MachineSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 23 )
-unit_db = -8.0
+attenuation_model = 1
 autoplay = true
 
 [node name="CollisionShape" type="CollisionShape" parent="."]

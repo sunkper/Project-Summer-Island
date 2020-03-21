@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/textures/pbr/WallPlasterRough.png" type="Texture" id=4]
 [ext_resource path="res://assets/textures/pbr/WallPlasterRough/WallPlasterRough_mask.png" type="Texture" id=5]
 [ext_resource path="res://assets/textures/details/Wavy_trans_b.png" type="Texture" id=6]
-[ext_resource path="res://assets/textures/details/Wavy_normal.png" type="Texture" id=7]
+[ext_resource path="res://assets/textures/details/Wavy_normal_soft.png" type="Texture" id=7]
 
 [resource]
 albedo_texture = ExtResource( 4 )
@@ -16,7 +16,7 @@ normal_enabled = true
 normal_scale = 1.0
 normal_texture = ExtResource( 3 )
 ao_enabled = true
-ao_light_affect = 0.0
+ao_light_affect = 0.15
 ao_texture = ExtResource( 2 )
 ao_on_uv2 = false
 ao_texture_channel = 0

@@ -1,14 +1,14 @@
-[gd_resource type="SpatialMaterial" load_steps=8 format=2]
+[gd_resource type="SpatialMaterial" load_steps=7 format=2]
 
 [ext_resource path="res://assets/textures/pbr/WallPlaster.png" type="Texture" id=1]
-[ext_resource path="res://assets/textures/pbr/WallPlaster/WallPlaster_normal.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/details/Wavy_normal_soft.png" type="Texture" id=2]
 [ext_resource path="res://assets/textures/pbr/WallPlaster/WallPlaster_ao.png" type="Texture" id=3]
 [ext_resource path="res://assets/textures/pbr/WallPlaster/WallPlaster_roughness.png" type="Texture" id=4]
 [ext_resource path="res://assets/textures/details/Wavy_trans_rt.png" type="Texture" id=5]
-[ext_resource path="res://assets/textures/details/Wavy_normal_rt.png" type="Texture" id=6]
 [ext_resource path="res://assets/textures/pbr/wood_01/wood_01_mask_rt.png" type="Texture" id=7]
 
 [resource]
+albedo_color = Color( 0.898438, 0.870361, 0.828247, 1 )
 albedo_texture = ExtResource( 1 )
 metallic_specular = 0.2
 roughness_texture = ExtResource( 4 )
@@ -16,7 +16,7 @@ normal_enabled = true
 normal_scale = 1.0
 normal_texture = ExtResource( 2 )
 ao_enabled = true
-ao_light_affect = 0.0
+ao_light_affect = 0.17
 ao_texture = ExtResource( 3 )
 ao_on_uv2 = false
 ao_texture_channel = 0
@@ -32,5 +32,4 @@ detail_mask = ExtResource( 7 )
 detail_blend_mode = 1
 detail_uv_layer = 0
 detail_albedo = ExtResource( 5 )
-detail_normal = ExtResource( 6 )
 uv1_scale = Vector3( 0.5, 0.5, 0.5 )
