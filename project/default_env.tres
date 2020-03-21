@@ -1,16 +1,16 @@
-[gd_resource type="Environment" load_steps=2 format=2]
+[gd_resource type="Environment" load_steps=3 format=2]
 
-[sub_resource type="ProceduralSky" id=1]
-sky_top_color = Color( 1, 1, 1, 1 )
-sky_horizon_color = Color( 0.780392, 0.827451, 0.866667, 1 )
-ground_bottom_color = Color( 0.188235, 0.2, 0.211765, 1 )
-ground_horizon_color = Color( 0.243137, 0.231373, 0.219608, 1 )
+[ext_resource path="res://assets/hdri/old_apartments_walkway_2k.hdr" type="Texture" id=1]
+
+[sub_resource type="PanoramaSky" id=1]
+panorama = ExtResource( 1 )
 
 [resource]
 background_mode = 2
 background_sky = SubResource( 1 )
-ambient_light_color = Color( 0.886275, 0.886275, 0.886275, 1 )
-ambient_light_sky_contribution = 0.39
+background_energy = 3.0
+ambient_light_color = Color( 0.184314, 0.172549, 0.172549, 1 )
+ambient_light_sky_contribution = 0.83
 tonemap_mode = 2
 tonemap_white = 6.0
 ss_reflections_enabled = true

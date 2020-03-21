@@ -186,7 +186,7 @@ texture={
 "compress/normal_map": 0,
 "detect_3d": false,
 "flags/anisotropic": true,
-"flags/filter": false,
+"flags/filter": true,
 "flags/mipmaps": true,
 "flags/repeat": true,
 "flags/srgb": 1,
