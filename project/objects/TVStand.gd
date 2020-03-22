@@ -1,17 +1,16 @@
-tool
 extends Spatial
 
 export var switch: = false setget _toggle_switch
 
 func _toggle_switch(new_state) -> void:
-	if new_state == switch:
-		return
-	
-	if get_child_count() == 0:
+	if not has_node("Model/Sound"):
 		return
 	
 	switch = new_state
-	if switch:
+	turn_on_tv(switch)
+
+func turn_on_tv(state: bool) -> void:
+	if state:
 		$Viewport/VideoPlayer.play()
 		$Model/Sound.play()
 		$Viewport/ColorRect.visible = false

@@ -44,6 +44,6 @@ use_in_baked_light = true
 [node name="Sound" type="AudioStreamPlayer3D" parent="Model"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.547367, -0.13253, -0.639178 )
 stream = ExtResource( 6 )
-unit_db = -25.0
-bus = "TVSound"
+unit_db = -10.0
+max_distance = 35.0
 [connection signal="finished" from="Viewport/VideoPlayer" to="Viewport/VideoPlayer" method="_on_VideoPlayer_finished"]
