@@ -8,15 +8,18 @@ func _ready() -> void:
 	Directory.new().make_dir(_screenshot_directory)
 
 func _input(event):
-	if event is InputEventKey and event.pressed:
-		if event.scancode == KEY_F10:
-			_capture()
 	if event.is_action_pressed("ui_cancel"):
 		if $DayNightCycle.time == $DayNightCycle.times.DAY:
 			$DayNightCycle.time = $DayNightCycle.times.NIGHT
 		else:
 			$DayNightCycle.time = $DayNightCycle.times.DAY
 	if event is InputEventKey and event.pressed:
+		if event.scancode == KEY_F10:
+			_capture()
+		if event.scancode == KEY_F1:
+			$DebugUI/ControlHelpPanel.visible = !$DebugUI/ControlHelpPanel.visible
+		if event.scancode == KEY_F2:
+			$DebugUI/Performance.visible = !$DebugUI/Performance.visible
 		if event.scancode == KEY_1:
 			if $Lightings/HangingLamp.pattern == $Lightings/HangingLamp.patterns.ON:
 				$Lightings/HangingLamp.pattern = $Lightings/HangingLamp.patterns.OFF
