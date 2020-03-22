@@ -159,8 +159,8 @@ _global_script_class_icons={
 [application]
 
 config/name="Project Summer Island"
-run/main_scene="res://maps/ShoreMap.tscn"
-boot_splash/image="res://icon.png"
+run/main_scene="res://Main.tscn"
+boot_splash/image="res://assets/ui/Banner.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://icon.png"
@@ -174,7 +174,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "qodot" )
+enabled=PoolStringArray( "SIsilicon.vfx.godrays", "qodot" )
 
 [importer_defaults]
 
@@ -1303,6 +1303,6 @@ capture_mouse={
 quality/shadows/filter_mode=2
 quality/filters/msaa=3
 environment/default_environment="res://default_env.tres"
-quality/godrays/dither_amount=3.0
+quality/godrays/dither_amount=1.0
 quality/godrays/use_pcf5=true
 quality/godrays/sample_number=32

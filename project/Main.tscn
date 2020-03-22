@@ -5,3 +5,4 @@
 [node name="Main" type="Node"]
 
 [node name="MainViewport" parent="." instance=ExtResource( 1 )]
+stretch = false
