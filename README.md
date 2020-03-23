@@ -3,12 +3,13 @@ Project Summer Island (PSI) is a small 3D scene made with Godot Engine. It is a 
 
 ## Dependency
 ### Godot version
-This project is made with Godot Engine 3.2.
+This project is made with Godot Engine 3.2.1.
 
 ### Plugins
 Plugins used in this project are not included in the repositary. You should install them yourself. Versions may or may not be relavant for compatibility, look for version history of each plugin.
 
-* [Qodot](https://github.com/ShiftyAxel/Qodot) (1.6.3)
+* [Qodot](https://github.com/ShiftyAxel/Qodot) (1.6.4)
+* [Godot God Rays Plugin](1.0.1)
 
 ## License
 My original creations are licensed under MIT License. **HOWEVER** as this is a re-creation of a scene from a commerical game, there are important caveats. Please refer to [License file](https://github.com/sunkper/Project-Summer-Island/blob/master/LICENSE.md).
