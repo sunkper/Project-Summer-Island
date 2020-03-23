@@ -174,7 +174,7 @@ void fragment()
 			}
 	
 	// Set all values:
-	ALBEDO = color * vec3(0.0, 1.5, 1.5);
+	ALBEDO = color;
 	METALLIC = 0.1;
 	ROUGHNESS = 0.14;
 	SPECULAR = depth_blend_pow * 1.0;

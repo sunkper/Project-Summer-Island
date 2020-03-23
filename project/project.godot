@@ -1301,7 +1301,6 @@ capture_mouse={
 [rendering]
 
 quality/shadows/filter_mode=2
-quality/filters/msaa=3
 environment/default_environment="res://default_env.tres"
 quality/godrays/dither_amount=1.0
 quality/godrays/use_pcf5=true
