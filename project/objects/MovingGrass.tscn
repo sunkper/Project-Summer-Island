@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/shaders/MovingGrass.material" type="Material" id=1]
+
+[sub_resource type="ArrayMesh" id=1]
+resource_name = "Plane"
+surfaces/0 = {
+"aabb": AABB( -2.41922e-08, -0.0142804, -0.809612, 1e-05, 0.811767, 1.61923 ),
+"array_data": PoolByteArray( 81, 207, 207, 178, 111, 39, 76, 63, 184, 66, 79, 63, 127, 0, 0, 0, 0, 0, 130, 127, 139, 6, 143, 6, 81, 207, 207, 50, 53, 248, 105, 188, 184, 66, 79, 191, 127, 0, 0, 0, 0, 0, 130, 127, 250, 59, 255, 59, 81, 207, 207, 50, 53, 248, 105, 188, 184, 66, 79, 63, 127, 0, 0, 0, 0, 0, 129, 127, 139, 6, 255, 59, 81, 207, 207, 178, 111, 39, 76, 63, 184, 66, 79, 63, 127, 0, 0, 0, 0, 0, 130, 127, 139, 6, 143, 6, 81, 207, 207, 178, 111, 39, 76, 63, 184, 66, 79, 191, 127, 0, 0, 0, 0, 0, 129, 127, 250, 59, 137, 6, 81, 207, 207, 50, 53, 248, 105, 188, 184, 66, 79, 191, 127, 0, 0, 0, 0, 0, 130, 127, 250, 59, 255, 59 ),
+"array_index_data": PoolByteArray(  ),
+"blend_shape_data": [  ],
+"format": 97303,
+"index_count": 0,
+"material": ExtResource( 1 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 6
+}
+
+[node name="GrassS" type="MeshInstance"]
+mesh = SubResource( 1 )
+material/0 = null
