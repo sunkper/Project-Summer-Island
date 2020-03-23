@@ -35,6 +35,6 @@ func _set_time(new_time) -> void:
 			env.background_energy = 0.2
 			env.fog_color = Color(0.03, 0.05, 0.07)
 			env.fog_sun_color = Color(0.25, 0.29, 0.39)
-			get_node(dir_light).light_color = Color(0.16, 0.23, 0.27)
+			get_node(dir_light).light_color = Color(0.25, 0.33, 0.36)
 			get_node("../Lightings/RefProbeManager/HouseBarInt").interior_ambient_color = Color(0.01, 0.01, 0.02)
 	get_node(refprobe_manager).update_probes()
