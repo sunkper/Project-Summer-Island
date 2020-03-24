@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/MetalRustedPainted04_depth.png-a87f727943f5a53d4d104d57dbf4ca36.s3tc.stex"
-path.etc2="res://.import/MetalRustedPainted04_depth.png-a87f727943f5a53d4d104d57dbf4ca36.etc2.stex"
+path.s3tc="res://.import/ConcreteWhiteFloor.png-eae99a354d67e6b4765ffea49a6634e0.s3tc.stex"
+path.etc2="res://.import/ConcreteWhiteFloor.png-eae99a354d67e6b4765ffea49a6634e0.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/pbr/MetalRustedPainted04/MetalRustedPainted04_depth.png"
-dest_files=[ "res://.import/MetalRustedPainted04_depth.png-a87f727943f5a53d4d104d57dbf4ca36.s3tc.stex", "res://.import/MetalRustedPainted04_depth.png-a87f727943f5a53d4d104d57dbf4ca36.etc2.stex" ]
+source_file="res://assets/textures/materials/ConcreteWhiteFloor.png"
+dest_files=[ "res://.import/ConcreteWhiteFloor.png-eae99a354d67e6b4765ffea49a6634e0.s3tc.stex", "res://.import/ConcreteWhiteFloor.png-eae99a354d67e6b4765ffea49a6634e0.etc2.stex" ]
 
 [params]
 

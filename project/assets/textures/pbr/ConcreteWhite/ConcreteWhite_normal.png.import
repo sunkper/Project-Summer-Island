@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/StoneWall02_depth.png-6487e782e3bd3a0001ea2ce70c7a7a07.s3tc.stex"
-path.etc2="res://.import/StoneWall02_depth.png-6487e782e3bd3a0001ea2ce70c7a7a07.etc2.stex"
+path.s3tc="res://.import/ConcreteWhite_normal.png-cf0240411a6b0d7f62b4f5ac13e53204.s3tc.stex"
+path.etc2="res://.import/ConcreteWhite_normal.png-cf0240411a6b0d7f62b4f5ac13e53204.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/pbr/StoneWall02/StoneWall02_depth.png"
-dest_files=[ "res://.import/StoneWall02_depth.png-6487e782e3bd3a0001ea2ce70c7a7a07.s3tc.stex", "res://.import/StoneWall02_depth.png-6487e782e3bd3a0001ea2ce70c7a7a07.etc2.stex" ]
+source_file="res://assets/textures/pbr/ConcreteWhite/ConcreteWhite_normal.png"
+dest_files=[ "res://.import/ConcreteWhite_normal.png-cf0240411a6b0d7f62b4f5ac13e53204.s3tc.stex", "res://.import/ConcreteWhite_normal.png-cf0240411a6b0d7f62b4f5ac13e53204.etc2.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
-compress/normal_map=0
+compress/normal_map=1
 flags/repeat=true
 flags/filter=true
 flags/mipmaps=true

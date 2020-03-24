@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/shaders/MovingGrass.material" type="Material" id=1]
 
-[sub_resource type="ArrayMesh" id=1]
+[sub_resource type="ArrayMesh" id=63]
 resource_name = "Plane"
 surfaces/0 = {
 "aabb": AABB( -2.41922e-08, -0.0142804, -0.809612, 1e-05, 0.811767, 1.61923 ),
@@ -18,5 +18,6 @@ surfaces/0 = {
 }
 
 [node name="GrassS" type="MeshInstance"]
-mesh = SubResource( 1 )
+use_in_baked_light = true
+mesh = SubResource( 63 )
 material/0 = null
