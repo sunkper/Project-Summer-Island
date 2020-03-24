@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ClockTicking.wav-222e534432e0780e9d2d20d94450a52d.sample"
+
+[deps]
+
+source_file="res://assets/audio/se/objects/ClockTicking.wav"
+dest_files=[ "res://.import/ClockTicking.wav-222e534432e0780e9d2d20d94450a52d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
