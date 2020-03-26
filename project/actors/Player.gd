@@ -89,3 +89,7 @@ func _input(event):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	if event.is_action_pressed("noclip"):
+		$BodyCollision.disabled = !$BodyCollision.disabled
+		$FeetCollision.disabled = !$FeetCollision.disabled
