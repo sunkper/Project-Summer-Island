@@ -21,7 +21,6 @@ func _set_time(new_time) -> void:
 		return
 	var env = get_node(environment).environment
 	
-	
 	match time:
 		times.DAY:
 			env.background_sky.panorama = panorama_day
@@ -32,9 +31,9 @@ func _set_time(new_time) -> void:
 			get_node("../Lightings/RefProbeManager/HouseBarInt").interior_ambient_color = Color(0.11, 0.12, 0.14)
 		times.NIGHT:
 			env.background_sky.panorama = panorama_night
-			env.background_energy = 0.2
-			env.fog_color = Color(0.03, 0.05, 0.07)
+			env.background_energy = 0.1
+			env.fog_color = Color(0.01, 0.01, 0.02)
 			env.fog_sun_color = Color(0.25, 0.29, 0.39)
-			get_node(dir_light).light_color = Color(0.25, 0.33, 0.36)
+			get_node(dir_light).light_color = Color(0.13, 0.17, 0.18)
 			get_node("../Lightings/RefProbeManager/HouseBarInt").interior_ambient_color = Color(0.01, 0.01, 0.02)
 	get_node(refprobe_manager).update_probes()

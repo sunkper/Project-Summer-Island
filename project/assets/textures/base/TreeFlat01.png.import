@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/TreeFlat01.png-1edb63e83db12b6ef1dc9887420aa6af.s3tc.stex"
+path.etc2="res://.import/TreeFlat01.png-1edb63e83db12b6ef1dc9887420aa6af.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://assets/textures/base/TreeFlat01.png"
+dest_files=[ "res://.import/TreeFlat01.png-1edb63e83db12b6ef1dc9887420aa6af.s3tc.stex", "res://.import/TreeFlat01.png-1edb63e83db12b6ef1dc9887420aa6af.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=true
+flags/srgb=1
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
