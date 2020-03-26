@@ -1,0 +1,41 @@
+@SolidClass = worldspawn : "World Entity" [
+]
+
+@SolidClass = group : "Brush Group" [
+]
+
+@SolidClass = detail : "Detail Brush" [
+]
+
+@SolidClass = reference : "Reference object, ignored during build" [
+]
+
+@SolidClass = trigger : "Trigger Volume" [
+]
+
+@BaseClass color(255 255 40) = Light[
+	_color(color255) : "Light color"  : "255 255 255"
+	delay(choices) : "Attenuation"  = [
+		1 : "Inverse distance falloff"
+		2 : "Inverse distance squared"
+		5 : "Inverse distance squared B"
+		0 : "Linear falloff (Default)"
+		4 : "Local minlight"
+		3 : "No falloff"
+	]
+	light(integer) : "Brightness"  : 300
+	mangle(string) : "Spotlight angle"  : "0.005 0 0"
+	wait(integer) : "Fade distance multiplier"  : 1
+]
+
+@PointClass size(-8 -8 -8, 8 8 8) base(Light) = light : "Invisible light source" [
+	angle(float) : "Rotation Angle"  : 0
+]
+
+@PointClass size(-8 -8 -8, 8 8 8) base(Targetname, Target) = signal : "Signal" [
+	signal_name(string) : "Signal to target"  : ""
+]
+
+@PointClass size(-8 -8 -8, 8 8 8) base(Targetname, Target) = slot : "Slot" [
+	slot_name(string) : "Slot to target"  : ""
+]

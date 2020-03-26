@@ -5,16 +5,18 @@
 [resource]
 background_mode = 2
 background_sky = ExtResource( 1 )
-background_sky_orientation = Basis( 0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195 )
-background_energy = 0.2
-ambient_light_energy = 0.3
+background_sky_orientation = Basis( 0.642788, 0, -0.766044, 0, 1, 0, 0.766044, 0, 0.642788 )
+background_energy = 0.1
+ambient_light_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+ambient_light_energy = 0.6
+ambient_light_sky_contribution = 0.8
 fog_enabled = true
-fog_color = Color( 0.09, 0.15, 0.24, 1 )
-fog_sun_color = Color( 0.8, 0.71, 0.62, 1 )
+fog_color = Color( 0.0117647, 0.0117647, 0.0156863, 1 )
+fog_sun_color = Color( 0.25, 0.29, 0.39, 1 )
 fog_sun_amount = 0.05
-fog_depth_begin = 60.0
-fog_depth_end = 220.0
-fog_depth_curve = 1.6245
+fog_depth_begin = 100.0
+fog_depth_end = 300.0
+fog_depth_curve = 1.27456
 fog_transmit_enabled = true
 fog_height_enabled = true
 fog_height_min = -0.5

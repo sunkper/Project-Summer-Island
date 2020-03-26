@@ -97,6 +97,5 @@ material/0 = null
 
 [node name="Ticking" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 6 )
-unit_db = -5.0
+attenuation_model = 1
 autoplay = true
-max_distance = 15.0

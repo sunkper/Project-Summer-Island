@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/BridgePart.map-c5bb45643aa92f5d2787efadc34d1076.tres"
+
+[deps]
+
+source_file="res://maps/mapsrc/BridgePart.map"
+dest_files=[ "res://.import/BridgePart.map-c5bb45643aa92f5d2787efadc34d1076.tres" ]
+
+[params]
+
