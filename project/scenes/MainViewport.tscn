@@ -1,9 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://maps/ShoreMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/fonts/UITextDefault.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/ui/Logo.png" type="Texture" id=3]
 [ext_resource path="res://scenes/MainViewport.gd" type="Script" id=4]
+[ext_resource path="res://maps/ShoreMap.tscn" type="PackedScene" id=5]
+
+[sub_resource type="ViewportTexture" id=4]
+viewport_path = NodePath("Viewport")
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Label
@@ -33,25 +37,45 @@ use_mipmaps = true
 use_filter = true
 font_data = SubResource( 2 )
 
-[node name="MainViewport" type="ViewportContainer"]
+[node name="MainView" type="ViewportContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+stretch = true
 script = ExtResource( 4 )
+
+[node name="Container" type="Container" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 4 )
+expand = true
+flip_v = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 1280, 720 )
-size_override_stretch = true
 handle_input_locally = false
 msaa = 2
 render_target_update_mode = 3
 audio_listener_enable_3d = true
 shadow_atlas_size = 1024
 
-[node name="ShoreMap" parent="Viewport" instance=ExtResource( 1 )]
+[node name="ShoreMap" parent="Viewport" instance=ExtResource( 5 )]
+
+[node name="Player" parent="Viewport" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 8.36192, 20.0986, -33.7599 )
 
 [node name="DebugUI" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 1280.0
+margin_bottom = 720.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -60,18 +84,18 @@ __meta__ = {
 visible = false
 margin_left = 605.0
 margin_top = 43.0
-margin_right = 1255.0
-margin_bottom = 443.0
+margin_right = 1885.0
+margin_bottom = 763.0
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Performance" type="Label" parent="DebugUI"]
-margin_left = 17.1
-margin_top = 14.25
-margin_right = 57.1
-margin_bottom = 28.25
+margin_left = 37.4783
+margin_top = 27.1395
+margin_right = 367.478
+margin_bottom = 61.1395
 custom_fonts/font = ExtResource( 2 )
 text = "00"
 script = SubResource( 1 )
@@ -80,14 +104,15 @@ __meta__ = {
 }
 
 [node name="ControlHelpPanel" type="ColorRect" parent="DebugUI"]
-margin_left = 23.0
-margin_top = 465.0
-margin_right = 763.0
-margin_bottom = 694.0
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 23.2625
+margin_top = -240.262
+margin_right = 756.262
+margin_bottom = -23.2625
 color = Color( 0, 0, 0, 0.686275 )
 __meta__ = {
 "_edit_group_": true,
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 

@@ -3,7 +3,10 @@ extends Control
 var _screenshot_directory = "user://screenshots"
 var _capture_tasks = []
 
+var scale_factor = 1.0
+
 func _ready() -> void:
+	get_viewport().connect("size_changed", self, "_root_viewport_size_changed")
 	Directory.new().make_dir(_screenshot_directory)
 
 func _input(event) -> void:
@@ -32,3 +35,6 @@ func _capture_thread(_arg):
 func _exit_tree():
 	for task in _capture_tasks:
 		task.wait_to_finish()
+
+func _root_viewport_size_changed():
+	$Viewport.size = get_viewport().size * scale_factor
