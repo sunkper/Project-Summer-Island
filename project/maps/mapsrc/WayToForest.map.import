@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/WayToForest.map-181f415b6ad7db96f7f2ba923303c3c2.tres"
+
+[deps]
+
+source_file="res://maps/mapsrc/WayToForest.map"
+dest_files=[ "res://.import/WayToForest.map-181f415b6ad7db96f7f2ba923303c3c2.tres" ]
+
+[params]
+

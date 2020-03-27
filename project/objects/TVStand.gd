@@ -1,12 +1,13 @@
+tool
 extends Spatial
 
 export var switch: = false setget _toggle_switch
 
 func _toggle_switch(new_state) -> void:
-	if not has_node("Model/Sound"):
-		return
-	
 	switch = new_state
+	turn_on_tv(switch)
+
+func _ready() -> void:
 	turn_on_tv(switch)
 
 func turn_on_tv(state: bool) -> void:

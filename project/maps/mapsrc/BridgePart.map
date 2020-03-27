@@ -12,13 +12,13 @@
 "classname" "func_group"
 "_tb_type" "_tb_group"
 "_tb_name" "bridge"
-"_tb_id" "12"
+"_tb_id" "2"
 }
 // entity 2
 {
 "classname" "group"
 "_shadow" "1"
-"_tb_group" "12"
+"_tb_group" "2"
 // brush 0
 {
 ( 12 10 210 ) ( 12 6 206 ) ( 12 10 206 ) materials/HouseFrameWood [ 0 -1 0 184 ] [ 0 0 -1 -0 ] -0 0.5 0.5
@@ -102,7 +102,7 @@
 {
 "classname" "group"
 "_shadow" "1"
-"_tb_group" "12"
+"_tb_group" "2"
 // brush 0
 {
 ( 38 18 52 ) ( 38 19 52 ) ( 38 18 53 ) materials/HouseFrameWood [ 0 4.37114e-08 1 -0 ] [ 0 -1 4.37114e-08 183 ] 270 0.5 0.5
@@ -277,7 +277,7 @@
 {
 "classname" "group"
 "_shadow" "1"
-"_tb_group" "12"
+"_tb_group" "2"
 // brush 0
 {
 ( 136 148 52 ) ( 136 149 52 ) ( 136 148 53 ) materials/HouseFrameWood [ 0 4.37114e-08 1 -0 ] [ 0 -1 4.37114e-08 183 ] 270 0.5 0.5
@@ -296,24 +296,24 @@
 {
 "classname" "group"
 "_shadow" "1"
-"_tb_group" "12"
+"_tb_group" "2"
 // brush 0
 {
-( 12 11 210 ) ( 12 7 206 ) ( 12 11 206 ) materials/WindowGlassFlat [ 0 -1 0 92 ] [ 0 0 -1 -0 ] -0 1 1
-( -488 153 52 ) ( -488 153 53 ) ( -487 153 52 ) materials/WindowGlassFlat [ 1 0 0 68 ] [ 0 0 -1 -0 ] -0 1 1
-( -488 163 52 ) ( -487 163 52 ) ( -488 164 52 ) materials/WindowGlassFlat [ -1 0 0 -68 ] [ 0 -1 0 92 ] -0 1 1
-( -472 169 202 ) ( -472 170 202 ) ( -471 169 202 ) materials/WindowGlassFlat [ 1 0 0 68 ] [ 0 -1 0 92 ] -0 1 1
-( -472 155 54 ) ( -471 155 54 ) ( -472 155 55 ) materials/WindowGlassFlat [ -1 0 0 -68 ] [ 0 0 -1 -0 ] -0 1 1
-( 268 169 54 ) ( 268 169 55 ) ( 268 170 54 ) materials/WindowGlassFlat [ 0 1 0 -92 ] [ 0 0 -1 -0 ] -0 1 1
+( 12 11 210 ) ( 12 7 206 ) ( 12 11 206 ) materials/WindowGlassFlat [ 0 -1 0 92 ] [ 0 0 -1 -0 ] -0 0.5 0.5
+( -488 153 52 ) ( -488 153 53 ) ( -487 153 52 ) materials/WindowGlassFlat [ 1 0 0 68 ] [ 0 0 -1 -0 ] -0 0.5 0.5
+( -488 163 52 ) ( -487 163 52 ) ( -488 164 52 ) materials/WindowGlassFlat [ -1 0 0 -68 ] [ 0 -1 0 92 ] -0 0.5 0.5
+( -472 169 202 ) ( -472 170 202 ) ( -471 169 202 ) materials/WindowGlassFlat [ 1 0 0 68 ] [ 0 -1 0 92 ] -0 0.5 0.5
+( -472 155 54 ) ( -471 155 54 ) ( -472 155 55 ) materials/WindowGlassFlat [ -1 0 0 -36 ] [ 0 0 -1 -80 ] -0 0.5 0.5
+( 268 169 54 ) ( 268 169 55 ) ( 268 170 54 ) materials/WindowGlassFlat [ 0 1 0 -92 ] [ 0 0 -1 -0 ] -0 0.5 0.5
 }
 // brush 1
 {
-( 12 9 210 ) ( 12 5 206 ) ( 12 9 206 ) materials/WindowGlassFlat [ 0 -1 0 92 ] [ 0 0 -1 -0 ] -0 1 1
-( -488 13 52 ) ( -488 13 53 ) ( -487 13 52 ) materials/WindowGlassFlat [ 1 0 0 68 ] [ 0 0 -1 -0 ] -0 1 1
-( -488 19 52 ) ( -487 19 52 ) ( -488 20 52 ) materials/WindowGlassFlat [ -1 0 0 -68 ] [ 0 -1 0 92 ] -0 1 1
-( -472 25 202 ) ( -472 26 202 ) ( -471 25 202 ) materials/WindowGlassFlat [ 1 0 0 68 ] [ 0 -1 0 92 ] -0 1 1
-( -472 15 54 ) ( -471 15 54 ) ( -472 15 55 ) materials/WindowGlassFlat [ -1 0 0 -68 ] [ 0 0 -1 -0 ] -0 1 1
-( 268 25 54 ) ( 268 25 55 ) ( 268 26 54 ) materials/WindowGlassFlat [ 0 1 0 -92 ] [ 0 0 -1 -0 ] -0 1 1
+( 12 9 210 ) ( 12 5 206 ) ( 12 9 206 ) materials/WindowGlassFlat [ 0 -1 0 92 ] [ 0 0 -1 -0 ] -0 0.5 0.5
+( -488 13 52 ) ( -488 13 53 ) ( -487 13 52 ) materials/WindowGlassFlat [ 1 0 0 180 ] [ 0 0 -1 -64 ] -0 0.5 0.5
+( -488 19 52 ) ( -487 19 52 ) ( -488 20 52 ) materials/WindowGlassFlat [ -1 0 0 -68 ] [ 0 -1 0 92 ] -0 0.5 0.5
+( -472 25 208 ) ( -472 26 208 ) ( -471 25 208 ) materials/WindowGlassFlat [ 1 0 0 68 ] [ 0 -1 0 92 ] -0 0.5 0.5
+( -472 15 54 ) ( -471 15 54 ) ( -472 15 55 ) materials/WindowGlassFlat [ -1 0 0 -68 ] [ 0 0 -1 -0 ] -0 0.5 0.5
+( 268 25 54 ) ( 268 25 55 ) ( 268 26 54 ) materials/WindowGlassFlat [ 0 1 0 -92 ] [ 0 0 -1 -0 ] -0 0.5 0.5
 }
 // brush 2
 {
@@ -462,7 +462,7 @@
 {
 "classname" "group"
 "_shadow" "1"
-"_tb_group" "12"
+"_tb_group" "2"
 // brush 0
 {
 ( -1 158 210 ) ( -1 158 206 ) ( -1 162 206 ) materials/HouseFrameWood [ 0 1 8.74228e-08 -183 ] [ 0 -8.74228e-08 1 -0 ] 180 0.5 0.5
@@ -481,7 +481,7 @@
 {
 "classname" "group"
 "_shadow" "1"
-"_tb_group" "12"
+"_tb_group" "2"
 // brush 0
 {
 ( -0 -0 52 ) ( -0 1 52 ) ( -0 -0 53 ) materials/HouseFrameWood [ 0 4.37114e-08 1 -0 ] [ 0 -1 4.37114e-08 183 ] 270 0.5 0.5
@@ -500,7 +500,7 @@
 {
 "classname" "group"
 "_shadow" "1"
-"_tb_group" "12"
+"_tb_group" "2"
 // brush 0
 {
 ( 156 151 52 ) ( 156 152 52 ) ( 156 151 53 ) materials/HouseFrameWood [ 0 4.37114e-08 1 -0 ] [ 0 -1 4.37114e-08 183 ] 270 0.5 0.5

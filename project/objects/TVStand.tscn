@@ -16,7 +16,6 @@ func _on_VideoPlayer_finished() -> void:
 
 [node name="TV" type="Spatial"]
 script = ExtResource( 5 )
-switch = true
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 256, 206 )
@@ -29,7 +28,6 @@ expand = false
 script = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="Viewport"]
-visible = false
 margin_right = 500.0
 margin_bottom = 500.0
 color = Color( 0.466667, 0.576471, 0.564706, 1 )
