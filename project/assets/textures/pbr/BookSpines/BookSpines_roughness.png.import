@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/wood_plank_2_metallic.png-923b74fb11ca42370b4b74c6822f2b9b.s3tc.stex"
-path.etc2="res://.import/wood_plank_2_metallic.png-923b74fb11ca42370b4b74c6822f2b9b.etc2.stex"
+path.s3tc="res://.import/BookSpines_roughness.png-4e2649e5cbd815643519adee0c4bb2fd.s3tc.stex"
+path.etc2="res://.import/BookSpines_roughness.png-4e2649e5cbd815643519adee0c4bb2fd.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/pbr/wood_plank_2/wood_plank_2_metallic.png"
-dest_files=[ "res://.import/wood_plank_2_metallic.png-923b74fb11ca42370b4b74c6822f2b9b.s3tc.stex", "res://.import/wood_plank_2_metallic.png-923b74fb11ca42370b4b74c6822f2b9b.etc2.stex" ]
+source_file="res://assets/textures/pbr/BookSpines/BookSpines_roughness.png"
+dest_files=[ "res://.import/BookSpines_roughness.png-4e2649e5cbd815643519adee0c4bb2fd.s3tc.stex", "res://.import/BookSpines_roughness.png-4e2649e5cbd815643519adee0c4bb2fd.etc2.stex" ]
 
 [params]
 
