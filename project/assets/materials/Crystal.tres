@@ -1,14 +1,13 @@
-[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
 
 [ext_resource path="res://assets/textures/pbr/HangingGlass/HangingGlass_normal.png" type="Texture" id=1]
-[ext_resource path="res://assets/textures/pbr/HangingGlass/HangingGlass_depth.png" type="Texture" id=2]
 [ext_resource path="res://assets/textures/pbr/HangingGlass/HangingGlass_roughness.png" type="Texture" id=3]
 [ext_resource path="res://assets/textures/pbr/HangingGlassB.png" type="Texture" id=4]
 
 [resource]
 flags_transparent = true
 params_depth_draw_mode = 3
-albedo_color = Color( 1, 1, 1, 0.0509804 )
+albedo_color = Color( 1, 1, 1, 0.0156863 )
 albedo_texture = ExtResource( 4 )
 roughness_texture = ExtResource( 3 )
 normal_enabled = true
@@ -17,16 +16,9 @@ normal_texture = ExtResource( 1 )
 rim_enabled = true
 rim = 0.65
 rim_tint = 0.82
-depth_enabled = true
-depth_scale = 1.0
-depth_deep_parallax = true
-depth_min_layers = 8
-depth_max_layers = 32
-depth_flip_tangent = false
-depth_flip_binormal = false
-depth_texture = ExtResource( 2 )
 refraction_enabled = true
 refraction_scale = 0.15
+refraction_texture = ExtResource( 3 )
 refraction_texture_channel = 0
 uv1_scale = Vector3( 4, 4, 4 )
 uv1_triplanar = true
