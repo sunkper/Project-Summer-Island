@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/FabricRed01.png-9087032f5b9d8792a07746f939c31a25.s3tc.stex"
-path.etc2="res://.import/FabricRed01.png-9087032f5b9d8792a07746f939c31a25.etc2.stex"
+path.s3tc="res://.import/GodetteFace_normal.png-c003a0f981dca6ee1e004e65fbdf4560.s3tc.stex"
+path.etc2="res://.import/GodetteFace_normal.png-c003a0f981dca6ee1e004e65fbdf4560.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/pbr/FabricRed01.png"
-dest_files=[ "res://.import/FabricRed01.png-9087032f5b9d8792a07746f939c31a25.s3tc.stex", "res://.import/FabricRed01.png-9087032f5b9d8792a07746f939c31a25.etc2.stex" ]
+source_file="res://assets/models/textures/GodetteFace_normal.png"
+dest_files=[ "res://.import/GodetteFace_normal.png-c003a0f981dca6ee1e004e65fbdf4560.s3tc.stex", "res://.import/GodetteFace_normal.png-c003a0f981dca6ee1e004e65fbdf4560.etc2.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
-compress/normal_map=0
+compress/normal_map=1
 flags/repeat=true
 flags/filter=true
 flags/mipmaps=true

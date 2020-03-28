@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/FabricRed01.png-9087032f5b9d8792a07746f939c31a25.s3tc.stex"
-path.etc2="res://.import/FabricRed01.png-9087032f5b9d8792a07746f939c31a25.etc2.stex"
+path.s3tc="res://.import/GodetteFace.png-0d8725d3e34f1a1904440945d3f81d6c.s3tc.stex"
+path.etc2="res://.import/GodetteFace.png-0d8725d3e34f1a1904440945d3f81d6c.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/pbr/FabricRed01.png"
-dest_files=[ "res://.import/FabricRed01.png-9087032f5b9d8792a07746f939c31a25.s3tc.stex", "res://.import/FabricRed01.png-9087032f5b9d8792a07746f939c31a25.etc2.stex" ]
+source_file="res://assets/models/textures/GodetteFace.png"
+dest_files=[ "res://.import/GodetteFace.png-0d8725d3e34f1a1904440945d3f81d6c.s3tc.stex", "res://.import/GodetteFace.png-0d8725d3e34f1a1904440945d3f81d6c.etc2.stex" ]
 
 [params]
 
