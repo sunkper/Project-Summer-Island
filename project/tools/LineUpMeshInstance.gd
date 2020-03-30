@@ -2,6 +2,7 @@
 # set instances on grid
 
 tool
+class_name LineUpMeshInstance
 extends MultiMeshInstance
 
 export (String, FILE) var node setget _set_mesh
