@@ -16,3 +16,8 @@ func update_probes() -> void:
 #	yield(get_tree(), "idle_frame")
 	for p in probes:
 		p.update_mode = ReflectionProbe.UPDATE_ONCE
+
+func change_ambient_color(new_color: Color) -> void:
+	for p in probes:
+		if p.interior_enable:
+			p.interior_ambient_color = new_color

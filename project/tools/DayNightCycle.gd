@@ -1,39 +1,40 @@
 tool
 extends Node
 
-# Current implementation: just switching between day and night
+# drag one of custom resources from 'times' to 'setting'
+export (Array, Resource) var times = []
+export (Resource) var setting setget _set_day_env
 
-enum times {DAY, NIGHT}
-export (times) var time setget _set_time
+export (NodePath) var environment_path
+export (NodePath) var sunlight_path
+export (NodePath) var refprobe_manager_path
+export (Array, NodePath) var giprobes
 
-export (NodePath) var environment
-export (NodePath) var dir_light
-export (NodePath) var refprobe_manager
-
-onready var panorama_day = preload("res://assets/sky/EpicBlueSunset.png")
-onready var panorama_night = preload("res://assets/sky/NightMoonburst.png")
-
-func _set_time(new_time) -> void:
-	time = new_time
-	if get_parent() == null:
+func _set_day_env(new_setting) -> void:
+	if setting == new_setting:
 		return
-	if not get_parent().get_child_count() > 0:
-		return
-	var env = get_node(environment).environment
+	setting = new_setting
 	
-	match time:
-		times.DAY:
-			env.background_sky.panorama = panorama_day
-			env.background_energy = 0.2
-			env.fog_color = Color(0.09, 0.15, 0.24)
-			env.fog_sun_color = Color(0.8, 0.71, 0.62)
-			get_node(dir_light).light_color = Color(0.98, 0.97, 0.93)
-			get_node("../Lightings/RefProbeManager/HouseBarInt").interior_ambient_color = Color(0.11, 0.12, 0.14)
-		times.NIGHT:
-			env.background_sky.panorama = panorama_night
-			env.background_energy = 0.1
-			env.fog_color = Color(0.01, 0.01, 0.02)
-			env.fog_sun_color = Color(0.25, 0.29, 0.39)
-			get_node(dir_light).light_color = Color(0.13, 0.17, 0.18)
-			get_node("../Lightings/RefProbeManager/HouseBarInt").interior_ambient_color = Color(0.01, 0.01, 0.02)
-	get_node(refprobe_manager).update_probes()
+	var env = get_node(environment_path).environment
+	var sun = get_node(sunlight_path)
+	var rp_manager = get_node(refprobe_manager_path)
+	
+	var panorama = load(setting.sky_panorama)
+	env.background_sky.panorama = panorama
+	env.background_energy = setting.background_energy
+	sun.light_color = setting.sunlight_color
+	sun.light_indirect_energy = setting.sun_indirect_energy
+	sun.get_node("GodRays").exposure = setting.sun_godrays_exposure
+	sun.get_node("GodRays").light_size = setting.sun_godrays_light_size
+	sun.rotation_degrees = setting.sun_direction
+	env.ambient_light_color = setting.ambient_light_color
+	env.ambient_light_energy = setting.ambient_light_energy
+	env.ambient_light_sky_contribution = setting.ambient_light_sky_contribution
+	rp_manager.change_ambient_color(setting.refprobe_ambient_color)
+	env.fog_color = setting.fog_color
+	env.fog_sun_color = setting.fog_sun_color
+	env.fog_depth_begin = setting.fog_depth_begin
+	env.fog_depth_end = setting.fog_depth_end
+	env.fog_depth_curve = setting.fog_depth_curve
+	
+	rp_manager.update_probes()

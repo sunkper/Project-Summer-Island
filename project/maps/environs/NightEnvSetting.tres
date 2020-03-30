@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://resources/TimeOfDaySettings.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+note = "Night time setting"
+sky_panorama = "res://assets/sky/NightMoonburst.png"
+background_energy = 0.1
+sunlight_color = Color( 0.1, 0.14, 0.18, 1 )
+sun_indirect_energy = 1.0
+sun_direction = Vector3( -9.77, 4.72, -48.366 )
+sun_godrays_exposure = 0.2
+sun_godrays_light_size = 0.5
+ambient_light_color = Color( 0.109804, 0.109804, 0.160784, 1 )
+ambient_light_energy = 0.4
+ambient_light_sky_contribution = 1.0
+refprobe_ambient_color = Color( 0.11, 0.11, 0.16, 1 )
+fog_color = Color( 0.01, 0.01, 0.02, 1 )
+fog_sun_color = Color( 0.25, 0.29, 0.39, 1 )
+fog_depth_begin = 80.0
+fog_depth_end = 400.0
+fog_depth_curve = 1.0
