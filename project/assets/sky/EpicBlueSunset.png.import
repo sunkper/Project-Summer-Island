@@ -2,21 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/EpicBlueSunset.png-161b0aec047593c8ac05589e29032f2c.s3tc.stex"
-path.etc2="res://.import/EpicBlueSunset.png-161b0aec047593c8ac05589e29032f2c.etc2.stex"
+path="res://.import/EpicBlueSunset.png-161b0aec047593c8ac05589e29032f2c.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/sky/EpicBlueSunset.png"
-dest_files=[ "res://.import/EpicBlueSunset.png-161b0aec047593c8ac05589e29032f2c.s3tc.stex", "res://.import/EpicBlueSunset.png-161b0aec047593c8ac05589e29032f2c.etc2.stex" ]
+dest_files=[ "res://.import/EpicBlueSunset.png-161b0aec047593c8ac05589e29032f2c.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

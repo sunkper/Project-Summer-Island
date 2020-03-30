@@ -3,18 +3,21 @@ extends Node
 
 # drag one of custom resources from 'times' to 'setting'
 export (Array, Resource) var times = []
-export (Resource) var setting setget _set_day_env
+export (Resource) var setting setget _change_setting
 
 export (NodePath) var environment_path
 export (NodePath) var sunlight_path
 export (NodePath) var refprobe_manager_path
 export (Array, NodePath) var giprobes
 
-func _set_day_env(new_setting) -> void:
+func _change_setting(new_setting) -> void:
 	if setting == new_setting:
 		return
 	setting = new_setting
-	
+	if get_node(environment_path) != null:
+		_set_day_env()
+
+func _set_day_env() -> void:
 	var env = get_node(environment_path).environment
 	var sun = get_node(sunlight_path)
 	var rp_manager = get_node(refprobe_manager_path)
@@ -38,3 +41,6 @@ func _set_day_env(new_setting) -> void:
 	env.fog_depth_curve = setting.fog_depth_curve
 	
 	rp_manager.update_probes()
+
+func _ready() -> void:
+	_set_day_env()

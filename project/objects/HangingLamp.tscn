@@ -17,8 +17,6 @@ extends Spatial
 
 enum patterns {OFF, ON, FLICKER}
 export (patterns) var pattern setget _set_pattern
-#export var turn_on: = false setget _turn_onoff
-#export var flicker: = false setget _set_flicker
 
 func _set_pattern(new_pattern) -> void:
 	if new_pattern == pattern:
@@ -40,28 +38,6 @@ func turn_on(state: bool) -> void:
 	$Hanger/BulbBody/BulbHeadOn.visible = bool(state)
 	$Hanger/BulbBody/BulbHeadOff.visible = !bool(state)
 	$HangingLight.visible = bool(state)
-
-#func _turn_onoff(new_state):
-#	if new_state == turn_on:
-#		return
-#
-#	turn_on = new_state
-#	if not turn_on and flicker:
-#		self.flicker = false
-#	if has_node(\"HangingLight\"):
-#		$Hanger/BulbBody/BulbHeadOn.visible = turn_on
-#		$Hanger/BulbBody/BulbHeadOff.visible = !turn_on
-#		$HangingLight.visible = turn_on
-#
-#func _set_flicker(new_state):
-#	if new_state == flicker or not turn_on:
-#		return
-#
-#	flicker = new_state
-#	if flicker:
-#		$Anim.play(\"Flicker00\")
-#	else:
-#		$Anim.stop()
 "
 
 [sub_resource type="CylinderMesh" id=2]

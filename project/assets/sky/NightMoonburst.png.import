@@ -2,21 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/NightMoonburst.png-2d51bc32ddc4872519d734a78169a5cd.s3tc.stex"
-path.etc2="res://.import/NightMoonburst.png-2d51bc32ddc4872519d734a78169a5cd.etc2.stex"
+path="res://.import/NightMoonburst.png-2d51bc32ddc4872519d734a78169a5cd.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/sky/NightMoonburst.png"
-dest_files=[ "res://.import/NightMoonburst.png-2d51bc32ddc4872519d734a78169a5cd.s3tc.stex", "res://.import/NightMoonburst.png-2d51bc32ddc4872519d734a78169a5cd.etc2.stex" ]
+dest_files=[ "res://.import/NightMoonburst.png-2d51bc32ddc4872519d734a78169a5cd.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
