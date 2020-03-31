@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/textures/pbr/PlasticDarkGreenDirty01b/PlasticDarkGreenDirty01b_normal.png" type="Texture" id=4]
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=5]
 [ext_resource path="res://assets/textures/pbr/PlasticDarkGreenDirty01b/PlasticDarkGreenDirty01b_roughness.png" type="Texture" id=6]
+[ext_resource path="res://addons/qodot/game-definitions/fgd/qodot_fgd.tres" type="Resource" id=7]
 
 [sub_resource type="SpatialMaterial" id=1]
 depth_enabled = true
@@ -57,16 +58,26 @@ instance_count = 5
 mesh = ExtResource( 3 )
 transform_array = PoolVector3Array( -0.108592, 6.38324e-11, -0.0087373, 1.4877e-09, 0.108942, -1.7694e-08, 0.0087373, -1.77563e-08, -0.108592, -0.239313, 0.0700001, 0.46859, -0.0898327, 0, -0.0472609, 7.74666e-09, 0.101506, -1.47247e-08, 0.0472609, -1.66382e-08, -0.0898327, -0.17976, 0.07, -0.164109, 0.0302851, 5.40358e-11, 0.0871081, -1.42153e-08, 0.0922226, 4.88507e-09, -0.0871081, -1.50312e-08, 0.0302851, 0.677991, 0.0700001, 0.33954, -0.0125388, 5.34282e-11, 0.0903206, -1.47138e-08, 0.0911868, -2.0966e-09, -0.0903206, -1.48623e-08, -0.0125388, 0.311088, 0.07, 0.156269, -0.0884908, 0, -0.0359247, 5.88852e-09, 0.095505, -1.45048e-08, 0.0359247, -1.56545e-08, -0.0884908, -0.671177, 0.0699999, -0.450634 )
 
-[sub_resource type="QuadMesh" id=6]
-size = Vector2( 1.5, 1.1 )
-
 [node name="CrateStatic" type="Spatial"]
 
 [node name="QodotMap" type="Spatial" parent="."]
 script = ExtResource( 5 )
 map_file = "res://maps/mapsrc/CrateStatic.map"
 inverse_scale_factor = 32.0
+entity_fgd = ExtResource( 7 )
+base_texture_dir = "res://textures"
+texture_file_extension = ".png"
+worldspawn_layers = [  ]
+brush_clip_texture = "special/clip"
+face_skip_texture = "special/skip"
+texture_wads = [  ]
+material_file_extension = ".tres"
 default_material = SubResource( 1 )
+uv_unwrap_texel_size = 1.0
+print_profiling_data = false
+use_trenchbroom_group_hierarchy = false
+tree_attach_batch_size = 16
+set_owner_batch_size = 16
 
 [node name="Meshes" type="Spatial" parent="QodotMap"]
 script = ExtResource( 1 )
@@ -108,16 +119,3 @@ __meta__ = {
 [node name="Bottles" type="MultiMeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.374, 0 )
 multimesh = SubResource( 5 )
-
-[node name="Bottle" type="MeshInstance" parent="Bottles"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.503, 0 )
-visible = false
-mesh = ExtResource( 3 )
-material/0 = null
-material/1 = null
-
-[node name="Surface" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0.07, 0 )
-visible = false
-mesh = SubResource( 6 )
-material/0 = null
