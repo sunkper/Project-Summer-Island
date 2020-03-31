@@ -6,10 +6,10 @@
 [ext_resource path="res://scenes/MainViewport.gd" type="Script" id=4]
 [ext_resource path="res://maps/ShoreMap.tscn" type="PackedScene" id=5]
 
-[sub_resource type="ViewportTexture" id=4]
+[sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="GDScript" id=2]
 script/source = "extends Label
 
 func _process(delta: float) -> void:
@@ -27,15 +27,15 @@ func print_perf() -> String:
 	return out
 "
 
-[sub_resource type="DynamicFontData" id=2]
+[sub_resource type="DynamicFontData" id=3]
 font_path = "res://assets/fonts/NotoSans-Bold.ttf"
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 outline_size = 1
 outline_color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
 use_mipmaps = true
 use_filter = true
-font_data = SubResource( 2 )
+font_data = SubResource( 3 )
 
 [node name="MainView" type="ViewportContainer"]
 anchor_right = 1.0
@@ -53,7 +53,7 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = SubResource( 4 )
+texture = SubResource( 1 )
 expand = true
 flip_v = true
 __meta__ = {
@@ -98,7 +98,7 @@ margin_right = 367.478
 margin_bottom = 61.1395
 custom_fonts/font = ExtResource( 2 )
 text = "00"
-script = SubResource( 1 )
+script = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -125,11 +125,11 @@ margin_left = -348.0
 margin_top = -89.5
 margin_right = 348.0
 margin_bottom = 89.5
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "** Control Help ** (Press F1 to show/hide this)
 ------
 - Cursor toggle: R / Move: WASD + QE / Sprint: Shift / Flashlight: F
-- Switch sky: Esc / Toggle hall light: 1 / Toggle kitchen light: 2
+- Switch sky: 1 (day), 2 (night) / Toggle hall light: 3 / Toggle kitchen light: 4
 - Capture screenshot: F10 (will be saved to '[Godot user folder]/Project Summer Island')
 - Show/hide performace: F2
 - You can change window size, no fullscreen right now, sorry!"
