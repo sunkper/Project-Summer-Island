@@ -1,6 +1,11 @@
 @SolidClass = worldspawn : "World Entity" [
 ]
 
+@SolidClass = rotate : "Rotating bursh" [
+	axis(string) : "Rotation axis"  : "0 1 0"
+	speed(float) : "Rotation speed"  : 360
+]
+
 @SolidClass = group : "Brush Group" [
 ]
 
