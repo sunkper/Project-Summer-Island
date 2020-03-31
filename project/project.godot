@@ -19,6 +19,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/zylann.hterrain/hterrain_resource_saver.gd"
 }, {
+"base": "MultiMeshInstance",
+"class": "LineUpMeshInstance",
+"language": "GDScript",
+"path": "res://tools/LineUpMeshInstance.gd"
+}, {
+"base": "MultiMeshInstance",
+"class": "MergeToMultiMesh",
+"language": "GDScript",
+"path": "res://tools/MergeToMultiMesh.gd"
+}, {
 "base": "Reference",
 "class": "QodotDependencies",
 "language": "GDScript",
@@ -119,6 +129,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/qodot/src/import_plugins/quake_wad_import_plugin.gd"
 }, {
+"base": "KinematicBody",
+"class": "RotateEntity",
+"language": "GDScript",
+"path": "res://fgd/RotateEntity.gd"
+}, {
 "base": "Resource",
 "class": "TimeOfDaySettings",
 "language": "GDScript",
@@ -147,6 +162,8 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "HTerrainDataLoader": "",
 "HTerrainDataSaver": "",
+"LineUpMeshInstance": "",
+"MergeToMultiMesh": "",
 "QodotDependencies": "",
 "QodotEntity": "",
 "QodotFGDBaseClass": "",
@@ -167,6 +184,7 @@ _global_script_class_icons={
 "QuakePaletteImportPlugin": "",
 "QuakeWadFile": "",
 "QuakeWadImportPlugin": "",
+"RotateEntity": "",
 "TimeOfDaySettings": "",
 "TrenchBroomFaceAttrib": "",
 "TrenchBroomGameConfigFile": "",
