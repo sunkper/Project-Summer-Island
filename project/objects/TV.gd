@@ -1,11 +1,12 @@
 tool
 extends Spatial
 
-export var switch: = false setget _toggle_switch
+export var switch: = true setget _toggle_switch
 
 func _toggle_switch(new_state) -> void:
 	switch = new_state
-	turn_on_tv(switch)
+	if has_node("Viewport"):
+		turn_on_tv(switch)
 
 func _ready() -> void:
 	turn_on_tv(switch)

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/models/TV.glb" type="PackedScene" id=2]
 [ext_resource path="res://assets/videos/ManWithACamera.webm" type="VideoStream" id=4]
-[ext_resource path="res://objects/TVStand.gd" type="Script" id=5]
+[ext_resource path="res://objects/TV.gd" type="Script" id=5]
 [ext_resource path="res://assets/audio/music/Canal3.ogg" type="AudioStream" id=6]
 [ext_resource path="res://assets/models/TVScreen.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/models/TVScreenOn.material" type="Material" id=8]
@@ -28,6 +28,7 @@ expand = false
 script = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="Viewport"]
+visible = false
 margin_right = 500.0
 margin_bottom = 500.0
 color = Color( 0.466667, 0.576471, 0.564706, 1 )
@@ -40,8 +41,9 @@ material_override = ExtResource( 8 )
 use_in_baked_light = true
 
 [node name="Sound" type="AudioStreamPlayer3D" parent="Model"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.547367, -0.13253, -0.639178 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.517691, -0.13253, -0.610265 )
 stream = ExtResource( 6 )
-unit_db = -10.0
-max_distance = 35.0
+attenuation_model = 1
+max_distance = 30.0
+bus = "TVSound"
 [connection signal="finished" from="Viewport/VideoPlayer" to="Viewport/VideoPlayer" method="_on_VideoPlayer_finished"]
