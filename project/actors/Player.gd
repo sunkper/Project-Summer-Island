@@ -3,6 +3,14 @@ extends KinematicBody
 enum State {IDLE, MOVING}
 var state = State.IDLE setget _set_state
 
+export (NodePath) var camera_path
+onready var camera = get_node(camera_path)
+onready var flashlight = camera.get_node("Flashlight")
+onready var switch_sound = flashlight.get_node("SwitchSound")
+
+onready var se_switch_on = preload("res://assets/audio/se/objects/LightSwitchOn.wav")
+onready var se_switch_off = preload("res://assets/audio/se/objects/LightSwitchOff.wav")
+
 export var speed_def_max: = 7.0
 export var speed_sprint_max: = 15.0
 
@@ -54,7 +62,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	dir = Vector3.ZERO
-	var cam_xform = $Smoothing/Camera.get_camera_transform()
+	var cam_xform = camera.get_camera_transform()
 	
 	var move_vector = _get_move_input()
 	
@@ -79,11 +87,11 @@ func _physics_process(delta: float) -> void:
 	
 	# crude implementation of zoom-in
 	if zooming:
-		$Smoothing/Camera.fov = lerp($Smoothing/Camera.fov, zoom_fov, zoomin_lerp)
+		camera.fov = lerp(camera.fov, zoom_fov, zoomin_lerp)
 		mouse_sensi = lerp(mouse_sensi, mouse_zoomin_sensi, zoomin_lerp)
 		$UI/Vignette.modulate.a = lerp($UI/Vignette.modulate.a, 1.0, zoomin_lerp)
 	else:
-		$Smoothing/Camera.fov = lerp($Smoothing/Camera.fov, def_fov, zoomout_lerp)
+		camera.fov = lerp(camera.fov, def_fov, zoomout_lerp)
 		mouse_sensi = lerp(mouse_sensi, mouse_def_sensi, zoomout_lerp)
 		$UI/Vignette.modulate.a = lerp($UI/Vignette.modulate.a, 0.0, zoomout_lerp)
 
@@ -108,12 +116,12 @@ func _get_move_input():
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		$Smoothing/Camera.rotate_x(deg2rad(event.relative.y * mouse_sensi * -1))
+		camera.rotate_x(deg2rad(event.relative.y * mouse_sensi * -1))
 		rotate_y(deg2rad(event.relative.x * mouse_sensi * -1))
 		
-		var camera_rot = $Smoothing/Camera.rotation_degrees
+		var camera_rot = camera.rotation_degrees
 		camera_rot.x = clamp(camera_rot.x, -70, 70)
-		$Smoothing/Camera.rotation_degrees = camera_rot
+		camera.rotation_degrees = camera_rot
 	
 	if event.is_action_pressed("sprint"):
 		is_sprinting = true
@@ -121,7 +129,12 @@ func _input(event):
 		is_sprinting = false
 	
 	if event.is_action_pressed("flashlight"):
-		$Smoothing/Camera/Flashlight.visible = !$Smoothing/Camera/Flashlight.visible
+		flashlight.visible = !flashlight.visible
+		if flashlight.visible:
+			switch_sound.stream = se_switch_on
+		else:
+			switch_sound.stream = se_switch_off
+		switch_sound.play()
 	
 	if event.is_action_pressed("capture_mouse"):
 		if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:

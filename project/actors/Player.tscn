@@ -3,7 +3,7 @@
 [ext_resource path="res://actors/Player.gd" type="Script" id=1]
 [ext_resource path="res://actors/PlayerCamera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/ui/vignette.png" type="Texture" id=3]
-[ext_resource path="res://addons/smoothing/smoothing.gd" type="Script" id=4]
+[ext_resource path="res://assets/audio/se/objects/LightSwitchOn.wav" type="AudioStream" id=4]
 
 [sub_resource type="SphereShape" id=1]
 
@@ -13,27 +13,27 @@ extents = Vector3( 1.03023, 0.783215, 1.17154 )
 [node name="Player" type="KinematicBody"]
 collision_mask = 6
 script = ExtResource( 1 )
+camera_path = NodePath("Camera")
 mov_lerp_weight = 0.15
 zoom_fov = 25.0
 
-[node name="Smoothing" type="Spatial" parent="."]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
-script = ExtResource( 4 )
-target = NodePath("..")
-flags = 5
-
-[node name="Camera" parent="Smoothing" instance=ExtResource( 2 )]
+[node name="Camera" parent="." instance=ExtResource( 2 )]
 far = 800.0
 
-[node name="Flashlight" type="SpotLight" parent="Smoothing/Camera"]
+[node name="Flashlight" type="SpotLight" parent="Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0319736, 0 )
 visible = false
 light_color = Color( 1, 0.937255, 0.764706, 1 )
 light_energy = 2.0
 light_indirect_energy = 3.0
 shadow_enabled = true
-spot_range = 14.0
-spot_angle = 37.9926
+shadow_bias = 0.3
+spot_range = 18.1949
+spot_angle = 35.0
+spot_angle_attenuation = 1.41421
+
+[node name="SwitchSound" type="AudioStreamPlayer" parent="Camera/Flashlight"]
+stream = ExtResource( 4 )
 
 [node name="BodyCollision" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
