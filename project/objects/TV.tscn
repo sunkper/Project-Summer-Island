@@ -44,6 +44,5 @@ use_in_baked_light = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.517691, -0.13253, -0.610265 )
 stream = ExtResource( 6 )
 attenuation_model = 1
-max_distance = 30.0
 bus = "TVSound"
 [connection signal="finished" from="Viewport/VideoPlayer" to="Viewport/VideoPlayer" method="_on_VideoPlayer_finished"]
