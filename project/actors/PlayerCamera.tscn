@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="PlayerCamera" type="Camera"]
+current = true
+fov = 75.0
+size = 0.1
+far = 700.0

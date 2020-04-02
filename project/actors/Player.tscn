@@ -1,32 +1,32 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://actors/Player.gd" type="Script" id=1]
+[ext_resource path="res://actors/PlayerCamera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/ui/vignette.png" type="Texture" id=3]
+[ext_resource path="res://addons/smoothing/smoothing.gd" type="Script" id=4]
 
-[sub_resource type="CapsuleShape" id=2]
-radius = 0.68129
-height = 2.29144
+[sub_resource type="SphereShape" id=1]
 
-[sub_resource type="BoxShape" id=3]
-extents = Vector3( 0.458851, 0.171436, 0.437613 )
-
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="BoxShape" id=2]
 extents = Vector3( 1.03023, 0.783215, 1.17154 )
 
 [node name="Player" type="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.58289, 0 )
 collision_mask = 6
 script = ExtResource( 1 )
-zoom_fov = 15.0
+mov_lerp_weight = 0.15
+zoom_fov = 25.0
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.356074, 0 )
-current = true
-fov = 75.0
-size = 0.1
-far = 500.0
+[node name="Smoothing" type="Spatial" parent="."]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+script = ExtResource( 4 )
+target = NodePath("..")
+flags = 5
 
-[node name="Flashlight" type="SpotLight" parent="Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0319737, 0 )
+[node name="Camera" parent="Smoothing" instance=ExtResource( 2 )]
+far = 800.0
+
+[node name="Flashlight" type="SpotLight" parent="Smoothing/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0319736, 0 )
 visible = false
 light_color = Color( 1, 0.937255, 0.764706, 1 )
 light_energy = 2.0
@@ -36,16 +36,24 @@ spot_range = 14.0
 spot_angle = 37.9926
 
 [node name="BodyCollision" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -1.65329, 0 )
-shape = SubResource( 2 )
-
-[node name="FeetCollision" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.39073, 0 )
-shape = SubResource( 3 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 1 )
 
 [node name="Detector" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.541269, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.155462, 0 )
 
 [node name="Collision" type="CollisionShape" parent="Detector"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.03399 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Vignette" type="TextureRect" parent="UI"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
