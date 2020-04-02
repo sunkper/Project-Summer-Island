@@ -3,13 +3,13 @@
 [ext_resource path="res://assets/materials/MetalRusted01.tres" type="Material" id=1]
 [ext_resource path="res://assets/textures/pbr/FabricRed01.png" type="Texture" id=2]
 [ext_resource path="res://assets/textures/pbr/FabricRed01/FabricRed01_normal.png" type="Texture" id=3]
-[ext_resource path="res://assets/textures/pbr/Fabric24/Fabric24_roughness.png" type="Texture" id=4]
+[ext_resource path="res://assets/textures/pbr/FabricRed01/FabricRed01_roughness.png" type="Texture" id=4]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )
 roughness_texture = ExtResource( 4 )
 normal_enabled = true
-normal_scale = 3.0
+normal_scale = 1.0
 normal_texture = ExtResource( 3 )
 subsurf_scatter_enabled = true
 subsurf_scatter_strength = 0.38
