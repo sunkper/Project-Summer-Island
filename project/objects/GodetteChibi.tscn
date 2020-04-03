@@ -5,7 +5,6 @@
 [ext_resource path="res://assets/models/_borrowed/GodetteChibiBody.material" type="Material" id=3]
 [ext_resource path="res://objects/GodetteChibi.gd" type="Script" id=4]
 
-
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "head"
 surfaces/0 = {
@@ -938,10 +937,10 @@ length = 5.0
 
 [sub_resource type="SpatialMaterial" id=29]
 albedo_color = Color( 0.0823529, 0.309804, 0.454902, 1 )
-roughness = 0.68
+roughness = 0.81
 roughness_texture = ExtResource( 1 )
 transmission_enabled = true
-transmission = Color( 0.580392, 0.580392, 0.580392, 1 )
+transmission = Color( 0.6, 0.6, 0.6, 1 )
 
 [sub_resource type="CylinderMesh" id=30]
 material = SubResource( 29 )
@@ -1247,7 +1246,7 @@ bones/56/enabled = true
 bones/56/bound_children = [  ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="Model/Armature/Skeleton"]
-transform = Transform( 0.994939, 0.0190224, -0.0986653, -0.0344916, 0.98691, -0.157539, 0.094377, 0.160145, 0.982572, 0.00442366, 2.69539, 0.430322 )
+transform = Transform( 0.998571, -0.0371879, -0.0383836, 0.0343519, 0.996808, -0.0720737, 0.0409412, 0.0706521, 0.996661, 0.000966586, 2.74382, 0.379198 )
 bone_name = "head"
 
 [node name="head" type="MeshInstance" parent="Model/Armature/Skeleton/BoneAttachment"]
@@ -1310,7 +1309,7 @@ mesh = SubResource( 11 )
 material/0 = null
 
 [node name="BoneAttachment 2" type="BoneAttachment" parent="Model/Armature/Skeleton"]
-transform = Transform( 0.960227, 0.0721648, 0.269735, 0.116635, 0.774046, -0.622295, -0.253695, 0.629005, 0.734842, -0.00933736, 2.54779, 0.310378 )
+transform = Transform( 0.977009, 0.0483647, 0.207641, 0.0765584, 0.829382, -0.553413, -0.198979, 0.556586, 0.806611, -0.008256, 2.58566, 0.273064 )
 bone_name = "neck"
 
 [node name="Cylinder002" type="MeshInstance" parent="Model/Armature/Skeleton/BoneAttachment 2"]
@@ -1320,7 +1319,7 @@ mesh = SubResource( 12 )
 material/0 = null
 
 [node name="BoneAttachment 3" type="BoneAttachment" parent="Model/Armature/Skeleton"]
-transform = Transform( 0.960226, -0.0399797, 0.276345, 0.116635, 0.956648, -0.266875, -0.253696, 0.288492, 0.923261, 0.0105889, 2.07099, 0.166591 )
+transform = Transform( 0.977009, -0.0373818, 0.209897, 0.0765586, 0.980359, -0.18176, -0.19898, 0.19365, 0.960681, 0.0103754, 2.09704, 0.176547 )
 bone_name = "chest"
 
 [node name="Plane" type="MeshInstance" parent="Model/Armature/Skeleton/BoneAttachment 3"]
@@ -1336,7 +1335,7 @@ mesh = SubResource( 14 )
 material/0 = null
 
 [node name="BoneAttachment 4" type="BoneAttachment" parent="Model/Armature/Skeleton"]
-transform = Transform( 0.999834, 0.00964636, 0.0154601, 0.00798367, -0.994523, 0.104215, 0.0163807, -0.104074, -0.994435, 1.33173e-09, 1.72498, 0.124626 )
+transform = Transform( 0.998966, 0.0454279, -0.00190971, 0.0451747, -0.986882, 0.154994, 0.00515639, -0.15492, -0.987914, -0.000453981, 1.75211, 0.126543 )
 bone_name = "pelvis"
 
 [node name="buttons" type="MeshInstance" parent="Model/Armature/Skeleton/BoneAttachment 4"]
@@ -1346,7 +1345,7 @@ mesh = SubResource( 15 )
 material/0 = null
 
 [node name="BoneAttachment 5" type="BoneAttachment" parent="Model/Armature/Skeleton"]
-transform = Transform( 0.999834, 0.00964636, 0.0154601, 0.00798367, -0.994523, 0.104215, 0.0163807, -0.104074, -0.994435, 1.33173e-09, 1.72498, 0.124626 )
+transform = Transform( 0.998966, 0.0454279, -0.00190971, 0.0451747, -0.986882, 0.154994, 0.00515639, -0.15492, -0.987914, -0.000453981, 1.75211, 0.126543 )
 bone_name = "pelvis"
 
 [node name="buttons001" type="MeshInstance" parent="Model/Armature/Skeleton/BoneAttachment 5"]
