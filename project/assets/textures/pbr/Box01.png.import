@@ -17,7 +17,7 @@ dest_files=[ "res://.import/Box01.png-4e828608b5737165a4046b3f233fc537.s3tc.stex
 [params]
 
 compress/mode=2
-compress/lossy_quality=0.7
+compress/lossy_quality=0.8
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
