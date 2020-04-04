@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Banner.png-7365a1822d6b4592f381cc1d8ad27865.s3tc.stex"
-path.etc2="res://.import/Banner.png-7365a1822d6b4592f381cc1d8ad27865.etc2.stex"
+path.s3tc="res://.import/Book02Cover.png-1ab2f9a1339eed5c4b9a4abcd25abe7f.s3tc.stex"
+path.etc2="res://.import/Book02Cover.png-1ab2f9a1339eed5c4b9a4abcd25abe7f.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,13 +11,13 @@ metadata={
 
 [deps]
 
-source_file="res://assets/ui/Banner.png"
-dest_files=[ "res://.import/Banner.png-7365a1822d6b4592f381cc1d8ad27865.s3tc.stex", "res://.import/Banner.png-7365a1822d6b4592f381cc1d8ad27865.etc2.stex" ]
+source_file="res://assets/textures/pbr/Book02Cover.png"
+dest_files=[ "res://.import/Book02Cover.png-1ab2f9a1339eed5c4b9a4abcd25abe7f.s3tc.stex", "res://.import/Book02Cover.png-1ab2f9a1339eed5c4b9a4abcd25abe7f.etc2.stex" ]
 
 [params]
 
 compress/mode=2
-compress/lossy_quality=0.7
+compress/lossy_quality=0.77
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

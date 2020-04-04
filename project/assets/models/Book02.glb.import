@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/TableCoverBaked.glb-b43e3f7270d3ff7c4addfb94f941068c.scn"
+path="res://.import/Book02.glb-870a0a228e1cb3a48661e6b1a4b5d181.scn"
 
 [deps]
 
-source_file="res://assets/models/TableCoverBaked.glb"
-dest_files=[ "res://.import/TableCoverBaked.glb-b43e3f7270d3ff7c4addfb94f941068c.scn" ]
+source_file="res://assets/models/Book02.glb"
+dest_files=[ "res://.import/Book02.glb-870a0a228e1cb3a48661e6b1a4b5d181.scn" ]
 
 [params]
 
