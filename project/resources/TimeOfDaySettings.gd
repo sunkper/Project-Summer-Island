@@ -13,6 +13,8 @@ export (float, 0.0, 10.0) var sun_indirect_energy := 1.0
 
 export (Vector3) var sun_direction := Vector3(-90.0, 0.0, 0.0)
 
+export (Vector3) var sky_rotation := Vector3(0.0, 0.0, 0.0)
+
 export (float, 0.0, 2.0) var sun_godrays_exposure := 0.5
 
 export (float, 0.0, 2.0) var sun_godrays_light_size := 0.5

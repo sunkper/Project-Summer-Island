@@ -196,8 +196,7 @@ _global_script_class_icons={
 
 config/name="Project Summer Island"
 run/main_scene="res://Main.tscn"
-boot_splash/image="res://assets/ui/Banner.png"
-boot_splash/fullsize=false
+boot_splash/image="res://assets/ui/Splash.png"
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://icon.png"
 
@@ -1352,7 +1351,6 @@ zoom_view={
 [rendering]
 
 quality/shadows/filter_mode=2
-quality/filters/msaa=2
 environment/default_environment="res://default_env.tres"
 quality/godrays/dither_amount=1.0
 quality/godrays/use_pcf5=true

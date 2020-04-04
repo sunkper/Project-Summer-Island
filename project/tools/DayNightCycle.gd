@@ -25,6 +25,7 @@ func _set_day_env() -> void:
 	var panorama = load(setting.sky_panorama)
 	env.background_sky.panorama = panorama
 	env.background_energy = setting.background_energy
+	env.background_sky_rotation_degrees = setting.sky_rotation
 	sun.light_color = setting.sunlight_color
 	sun.light_indirect_energy = setting.sun_indirect_energy
 	sun.get_node("GodRays").exposure = setting.sun_godrays_exposure
