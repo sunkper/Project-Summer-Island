@@ -18,6 +18,16 @@ extends Spatial
 enum patterns {OFF, ON, FLICKER}
 export (patterns) var pattern setget _set_pattern
 
+export var case := true setget _change_case
+
+
+func _change_case(new_state) -> void:
+	if new_state == case:
+		return
+	
+	case = new_state
+	$Hanger/LampOuterMesh.visible = case
+
 func _set_pattern(new_pattern) -> void:
 	if new_pattern == pattern:
 		return
@@ -108,7 +118,7 @@ rings = 6
 material = ExtResource( 9 )
 top_radius = 0.2
 bottom_radius = 0.2
-height = 0.1
+height = 0.3
 radial_segments = 8
 
 [sub_resource type="SpatialMaterial" id=10]
@@ -196,6 +206,7 @@ material/0 = null
 
 [node name="BulbBody" type="MeshInstance" parent="Hanger"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.40294, 0 )
+cast_shadow = 0
 use_in_baked_light = true
 mesh = SubResource( 4 )
 material/0 = null
@@ -214,7 +225,8 @@ mesh = SubResource( 8 )
 material/0 = null
 
 [node name="MeshInstance" type="MeshInstance" parent="Hanger"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.15337, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.18891, 0 )
+cast_shadow = 0
 use_in_baked_light = true
 mesh = SubResource( 9 )
 material/0 = null
@@ -226,7 +238,9 @@ mesh = SubResource( 12 )
 material/0 = null
 material/1 = null
 
-[node name="HangingLight" type="OmniLight" parent="."]
+[node name="HangingLight" type="OmniLight" parent="." groups=[
+"lights",
+]]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -5.20745, 0 )
 visible = false
 light_color = Color( 0.890196, 0.709804, 0.478431, 1 )

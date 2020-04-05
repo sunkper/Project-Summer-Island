@@ -305,7 +305,9 @@ mesh = SubResource( 11 )
 material/0 = null
 material/1 = null
 
-[node name="OmniLight" type="OmniLight" parent="."]
+[node name="OmniLight" type="OmniLight" parent="." groups=[
+"lights",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24679, 2.27595, 1.80494 )
 light_energy = 0.5
 light_bake_mode = 2
@@ -313,7 +315,9 @@ shadow_enabled = true
 omni_range = 2.5
 omni_attenuation = 2.21913
 
-[node name="OmniLight2" type="OmniLight" parent="."]
+[node name="OmniLight2" type="OmniLight" parent="." groups=[
+"lights",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20719, 2.44043, -0.408324 )
 light_energy = 0.5
 light_bake_mode = 2
