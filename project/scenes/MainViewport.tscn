@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
+[ext_resource path="res://assets/fonts/UITextWall.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/fonts/UITextDefault.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/ui/Logo.png" type="Texture" id=3]
 [ext_resource path="res://scenes/MainViewport.gd" type="Script" id=4]
@@ -26,28 +27,11 @@ func print_perf() -> String:
 	return out
 "
 
-[sub_resource type="DynamicFontData" id=3]
-font_path = "res://assets/fonts/NotoSans-Bold.ttf"
-
-[sub_resource type="DynamicFont" id=4]
-outline_size = 1
-outline_color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
-use_mipmaps = true
-use_filter = true
-font_data = SubResource( 3 )
-
 [node name="MainView" type="ViewportContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 stretch = true
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Container" type="Container" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -105,33 +89,44 @@ __meta__ = {
 [node name="ControlHelpPanel" type="ColorRect" parent="DebugUI"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 23.2625
-margin_top = -240.262
-margin_right = 756.262
-margin_bottom = -23.2625
+margin_left = 23.0
+margin_top = -270.0
+margin_right = 756.0
+margin_bottom = -23.0
 color = Color( 0, 0, 0, 0.686275 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="ControlHelp" type="Label" parent="DebugUI/ControlHelpPanel"]
+[node name="ControlHelp" type="RichTextLabel" parent="DebugUI/ControlHelpPanel"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -348.0
-margin_top = -89.5
+margin_top = -110.5
 margin_right = 348.0
-margin_bottom = 89.5
-custom_fonts/font = SubResource( 4 )
-text = "** Control Help ** (Press F1 to show/hide this)
-------
-- Cursor toggle: R / Move: WASD + QE / Sprint: Shift / Flashlight: F
+margin_bottom = 110.5
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[b]Control Help[/b] (Press F1 to show/hide this)
+----
+- Cursor toggle: R / Toggle collision: T
+- Move: WASD + QE[ / Sprint: Shift / Flashlight:F / Zoom-view: RMB
 - Switch sky: 1 (day), 2 (night) / Toggle hall light: 3 / Toggle kitchen light: 4
 - Capture screenshot: F10 (will be saved to '[Godot user folder]/Project Summer Island')
 - Show/hide performace: F2
-- You can change window size, no fullscreen right now, sorry!"
+- Toggle Fullscreen: Alt+Enter"
+text = "Control Help (Press F1 to show/hide this)
+----
+- Cursor toggle: R / Toggle collision: T
+- Move: WASD + QE[ / Sprint: Shift / Flashlight:F / Zoom-view: RMB
+- Switch sky: 1 (day), 2 (night) / Toggle hall light: 3 / Toggle kitchen light: 4
+- Capture screenshot: F10 (will be saved to '[Godot user folder]/Project Summer Island')
+- Show/hide performace: F2
+- Toggle Fullscreen: Alt+Enter"
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -17,6 +17,8 @@ func _input(event) -> void:
 			$DebugUI/ControlHelpPanel.visible = !$DebugUI/ControlHelpPanel.visible
 		if event.scancode == KEY_F2:
 			$DebugUI/Performance.visible = !$DebugUI/Performance.visible
+	if event.is_action_pressed("fullscreen"):
+		OS.window_fullscreen = !OS.window_fullscreen
 
 func _capture():
 	# Start thread for capturing images
