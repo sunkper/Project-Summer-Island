@@ -1,13 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/fonts/UITextWall.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/fonts/UITextDefault.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/ui/Logo.png" type="Texture" id=3]
 [ext_resource path="res://scenes/MainViewport.gd" type="Script" id=4]
 [ext_resource path="res://maps/ShoreMap.tscn" type="PackedScene" id=5]
-
-[sub_resource type="ViewportTexture" id=1]
-viewport_path = NodePath("Viewport")
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends Label
@@ -32,16 +29,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 stretch = true
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = SubResource( 1 )
-expand = true
-flip_v = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -126,7 +113,7 @@ text = "Control Help (Press F1 to show/hide this)
 - Switch sky: 1 (day), 2 (night) / Toggle hall light: 3 / Toggle kitchen light: 4
 - Capture screenshot: F10 (will be saved to '[Godot user folder]/Project Summer Island')
 - Show/hide performace: F2
-- Toggle Fullscreen: Alt+Enter"
+- Toggle Fullscreen: F11"
 __meta__ = {
 "_edit_use_anchors_": false
 }

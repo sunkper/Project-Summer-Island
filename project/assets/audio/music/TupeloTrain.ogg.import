@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/TupeloTrain.ogg-9e893699fd4789c37e8eaf81411354ce.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/music/TupeloTrain.ogg"
+dest_files=[ "res://.import/TupeloTrain.ogg-9e893699fd4789c37e8eaf81411354ce.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
