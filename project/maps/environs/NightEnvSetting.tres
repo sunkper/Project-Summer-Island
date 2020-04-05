@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 note = "Night time setting"
+signal_to_send = ""
 sky_panorama = "res://assets/sky/NightMoonburst.png"
 background_energy = 0.1
 sunlight_color = Color( 0.14, 0.19, 0.24, 1 )

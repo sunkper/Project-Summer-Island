@@ -41,6 +41,9 @@ func _set_day_env() -> void:
 	env.fog_depth_end = setting.fog_depth_end
 	env.fog_depth_curve = setting.fog_depth_curve
 	
+	if setting.signal_to_send:
+		emit_signal(setting.signal_to_send)
+	
 	rp_manager.update_probes()
 
 func _ready() -> void:

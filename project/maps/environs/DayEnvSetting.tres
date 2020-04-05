@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 note = "Day time setting"
+signal_to_send = ""
 sky_panorama = "res://assets/sky/EpicBlueSunset.png"
 background_energy = 0.4
 sunlight_color = Color( 0.98, 0.97, 0.93, 1 )

@@ -3,6 +3,9 @@ extends Resource
 
 export (String, MULTILINE) var note = ""
 
+# make the parser script to send this signal so other objects can react when time changes
+export (String) var signal_to_send := null
+
 export (String, FILE) var sky_panorama := ""
 
 export (float, 0.0, 1.0) var background_energy := 1.0
