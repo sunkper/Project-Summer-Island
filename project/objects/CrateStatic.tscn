@@ -104,18 +104,6 @@ __meta__ = {
 [node name="CollisionShape" type="CollisionShape" parent="QodotMap/Collision/Static Collision"]
 shape = SubResource( 4 )
 
-[node name="Triggers" type="Spatial" parent="QodotMap"]
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Entity Spawns" type="Spatial" parent="QodotMap"]
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Bottles" type="MultiMeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.374, 0 )
 multimesh = SubResource( 5 )

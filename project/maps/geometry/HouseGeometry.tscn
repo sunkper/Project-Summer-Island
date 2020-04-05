@@ -5415,7 +5415,7 @@ shape = SubResource( 471 )
 [node name="entity_39_func_group" type="Spatial" parent="."]
 script = ExtResource( 31 )
 properties = {
-"_tb_id": "3",
+"_tb_id": "1",
 "_tb_name": "BlackWalls",
 "_tb_type": "_tb_group",
 "classname": "func_group"
@@ -6172,7 +6172,7 @@ shape = SubResource( 672 )
 [node name="entity_68_func_group" type="Spatial" parent="."]
 script = ExtResource( 31 )
 properties = {
-"_tb_id": "8",
+"_tb_id": "1",
 "_tb_name": "Refs",
 "_tb_type": "_tb_layer",
 "classname": "func_group"

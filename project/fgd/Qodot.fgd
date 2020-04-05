@@ -9,7 +9,7 @@
 @SolidClass = group : "Brush Group" [
 ]
 
-@SolidClass = detail : "Detail Brush" [
+@SolidClass = facade : "Facade brushes without collision" [
 ]
 
 @SolidClass = reference : "Reference object, ignored during build" [
