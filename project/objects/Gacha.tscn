@@ -1,34 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://assets/textures/pbr/Gacha.png" type="Texture" id=1]
+[ext_resource path="res://objects/GachaMesh.tres" type="SphereMesh" id=1]
 
-[sub_resource type="SpatialMaterial" id=35]
-params_depth_draw_mode = 3
-albedo_texture = ExtResource( 1 )
-metallic_specular = 0.74
-roughness = 0.22
-subsurf_scatter_enabled = true
-subsurf_scatter_strength = 0.32
-
-[sub_resource type="SphereMesh" id=36]
-material = SubResource( 35 )
-radius = 0.1
-height = 0.2
-radial_segments = 8
-rings = 6
-
-[sub_resource type="SphereShape" id=3]
-radius = 0.101882
-
-[node name="Gacha" type="StaticBody"]
+[node name="Gacha" type="Spatial"]
 
 [node name="Gacha" type="MeshInstance" parent="."]
-mesh = SubResource( 36 )
+use_in_baked_light = true
+mesh = ExtResource( 1 )
 material/0 = null
-
-[node name="Gacha2" type="MeshInstance" parent="."]
-mesh = SubResource( 36 )
-material/0 = null
-
-[node name="CollisionShape" type="CollisionShape" parent="."]
-shape = SubResource( 3 )

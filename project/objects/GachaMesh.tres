@@ -1,0 +1,10 @@
+[gd_resource type="SphereMesh" load_steps=2 format=2]
+
+[ext_resource path="res://objects/GachaMaterial.tres" type="Material" id=1]
+
+[resource]
+material = ExtResource( 1 )
+radius = 0.1
+height = 0.2
+radial_segments = 8
+rings = 6

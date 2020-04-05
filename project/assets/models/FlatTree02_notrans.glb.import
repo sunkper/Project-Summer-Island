@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/TrashCan.glb-ce16193d4e63e813ee11ca4b4c8094d7.scn"
+path="res://.import/FlatTree02_notrans.glb-8c702286952bbbaf0a50dfbe5c3a1eb7.scn"
 
 [deps]
 
-source_file="res://assets/models/TrashCan.glb"
-dest_files=[ "res://.import/TrashCan.glb-ce16193d4e63e813ee11ca4b4c8094d7.scn" ]
+source_file="res://assets/models/FlatTree02_notrans.glb"
+dest_files=[ "res://.import/FlatTree02_notrans.glb-8c702286952bbbaf0a50dfbe5c3a1eb7.scn" ]
 
 [params]
 

@@ -217,7 +217,7 @@ material/1 = null
 material/2 = null
 
 [node name="Star" type="MeshInstance" parent="."]
-transform = Transform( 1.27899, -1.93121e-07, 0.783892, -2.26494e-07, -1.5, 0, 0.783892, -1.18363e-07, -1.27899, -0.106377, 6.86728, -0.102276 )
+transform = Transform( -0.967371, 1.46067e-07, 1.14657, -2.26494e-07, -1.5, 0, 1.14657, -1.73125e-07, 0.967371, -0.106377, 6.86728, -0.102276 )
 use_in_baked_light = true
 mesh = SubResource( 9 )
 material/0 = null
