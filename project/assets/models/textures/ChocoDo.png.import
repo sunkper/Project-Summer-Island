@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/ChocoDo.png-56ad02f81a9feba68a5aae32489b67b3.s3tc.stex"
+path.etc2="res://.import/ChocoDo.png-56ad02f81a9feba68a5aae32489b67b3.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://assets/models/textures/ChocoDo.png"
+dest_files=[ "res://.import/ChocoDo.png-56ad02f81a9feba68a5aae32489b67b3.s3tc.stex", "res://.import/ChocoDo.png-56ad02f81a9feba68a5aae32489b67b3.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.8
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=true
+flags/srgb=1
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
