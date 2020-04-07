@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "# Simple spinner for looking at lighting and showcasing
+tool
+extends Spatial
+
+const AXIS := Vector3.UP
+
+export (bool) var spin:= false setget _set_spin
+export (float) var rotate_speed := 20.0
+
+func _set_spin(new_state) -> void:
+	spin = new_state
+	set_process(spin)
+
+func _process(delta: float) -> void:
+	rotate(AXIS, deg2rad(rotate_speed * delta))
+"
+
+[node name="Spinner" type="Spatial"]
+transform = Transform( 0.99735, 0, -0.0733311, 0, 1, 0, 0.0733311, 0, 0.99735, 0, 0, 0 )
+script = SubResource( 1 )
+rotate_speed = 360.0

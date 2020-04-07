@@ -20,6 +20,8 @@
 {
 "classname" "facade"
 "_shadow" "1"
+"_phong" "1"
+"_phong_angle" "80"
 // brush 0
 {
 ( 45 31 144 ) ( 45 -15 144 ) ( 45 31 138 ) pbr/Metal11 [ 0 1 0 -0 ] [ 0 0 -1 -0 ] -0 0.25 0.25
