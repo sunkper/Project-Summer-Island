@@ -12,9 +12,6 @@ export (float, 0.0, 10.0) var string_length: = 1.0 setget _string_length_changed
 
 export (String, \"Crystal\", \"Bird\") var type: = \"Crystal\" setget _type_changed
 
-export var sway: = false
-export var sway_intensity: = 100.0
-
 onready var str_mt: = preload(\"res://assets/materials/WallPlasterWhite.tres\")
 
 func _string_length_changed(new_length) -> void:
@@ -48,10 +45,6 @@ func _type_changed(new_type) -> void:
 	type = new_type
 	
 	$String/Bodies.get_node(type).visible = true
-
-func _ready() -> void:
-	if sway and not Engine.is_editor_hint():
-		pass
 "
 
 [sub_resource type="CylinderMesh" id=2]
@@ -75,6 +68,7 @@ resource_name = "sway"
 [node name="HangingGlass" type="Spatial"]
 script = SubResource( 1 )
 sway = true
+sway_intensity = 100.0
 
 [node name="String" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
@@ -93,7 +87,7 @@ mesh = ExtResource( 4 )
 material/0 = null
 
 [node name="Crystal" type="MeshInstance" parent="String/Bodies"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.241, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0919999, 0 )
 use_in_baked_light = true
 mesh = ExtResource( 3 )
 material/0 = null
