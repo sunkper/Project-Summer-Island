@@ -5,9 +5,9 @@
 [sub_resource type="SpatialMaterial" id=1]
 resource_name = "gochi_para_godot_material"
 params_cull_mode = 2
-albedo_color = Color( 1, 0.823529, 0.360784, 1 )
+albedo_color = Color( 0.772549, 0.560784, 0.160784, 1 )
 metallic = 1.0
-roughness = 0.23
+roughness = 0.3
 rim_enabled = true
 rim = 1.0
 rim_tint = 0.0

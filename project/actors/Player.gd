@@ -22,7 +22,7 @@ var is_sprinting: = false
 var vel: = Vector3.ZERO
 var dir: = Vector3.ZERO
 
-var float_effect: = true
+var float_effect: = false
 var elpased: = 0.0
 
 export var mouse_def_sensi: = 0.2
@@ -90,10 +90,12 @@ func _physics_process(delta: float) -> void:
 		camera.fov = lerp(camera.fov, zoom_fov, zoomin_lerp)
 		mouse_sensi = lerp(mouse_sensi, mouse_zoomin_sensi, zoomin_lerp)
 		$UI/Vignette.modulate.a = lerp($UI/Vignette.modulate.a, 1.0, zoomin_lerp)
+		float_effect = false
 	else:
 		camera.fov = lerp(camera.fov, def_fov, zoomout_lerp)
 		mouse_sensi = lerp(mouse_sensi, mouse_def_sensi, zoomout_lerp)
 		$UI/Vignette.modulate.a = lerp($UI/Vignette.modulate.a, 0.0, zoomout_lerp)
+		float_effect = true
 
 func _get_move_input():
 	var out: = Vector3.ZERO
