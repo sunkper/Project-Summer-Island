@@ -1,0 +1,9 @@
+[gd_resource type="MultiMesh" load_steps=2 format=2]
+
+[ext_resource path="res://assets/models/HouseFacadeRed.tres" type="ArrayMesh" id=1]
+
+[resource]
+transform_format = 1
+instance_count = 3
+mesh = ExtResource( 1 )
+transform_array = PoolVector3Array( 0.905532, 0, -0.424278, 0, 1, 0, 0.424278, 0, 0.905532, 77.5495, 4.20825, -34.0151, 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9709, -0.271458, -78.6073, 0.889209, 0, -0.228751, 0, 0.5, 0, 0.457502, 0, 0.444604, 130.721, 7.84339, -34.0151 )
