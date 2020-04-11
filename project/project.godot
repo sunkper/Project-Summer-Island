@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody",
+"class": "DoorEntity",
+"language": "GDScript",
+"path": "res://fgd/DoorEntity.gd"
+}, {
 "base": "ResourceFormatLoader",
 "class": "HTerrainDataLoader",
 "language": "GDScript",
@@ -160,6 +165,7 @@ _global_script_classes=[ {
 "path": "res://addons/qodot/src/resources/game-definitions/trenchbroom/trenchbroom_tag.gd"
 } ]
 _global_script_class_icons={
+"DoorEntity": "",
 "HTerrainDataLoader": "",
 "HTerrainDataSaver": "",
 "LineUpMeshInstance": "",
@@ -1350,13 +1356,15 @@ fullscreen={
 
 [layer_names]
 
+3d_render/layer_1="World"
 3d_physics/layer_1="base"
 3d_physics/layer_2="wind"
 
 [rendering]
 
 quality/shadows/filter_mode=2
+quality/filters/msaa=2
 environment/default_environment="res://default_env.tres"
 quality/godrays/dither_amount=1.0
-quality/godrays/use_pcf5=true
-quality/godrays/sample_number=32
+quality/godrays/use_pcf5=false
+quality/godrays/sample_number=16
