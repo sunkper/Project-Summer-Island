@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/WaitingForGodot4.png-ebc73effc7098dc0c7a9aaf629f9fd73.s3tc.stex"
-path.etc2="res://.import/WaitingForGodot4.png-ebc73effc7098dc0c7a9aaf629f9fd73.etc2.stex"
+path.s3tc="res://.import/PosterQodot.png-1700da0031f6b2b6d6706a66c0f92414.s3tc.stex"
+path.etc2="res://.import/PosterQodot.png-1700da0031f6b2b6d6706a66c0f92414.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/pbr/WaitingForGodot4.png"
-dest_files=[ "res://.import/WaitingForGodot4.png-ebc73effc7098dc0c7a9aaf629f9fd73.s3tc.stex", "res://.import/WaitingForGodot4.png-ebc73effc7098dc0c7a9aaf629f9fd73.etc2.stex" ]
+source_file="res://assets/textures/pbr/PosterQodot.png"
+dest_files=[ "res://.import/PosterQodot.png-1700da0031f6b2b6d6706a66c0f92414.s3tc.stex", "res://.import/PosterQodot.png-1700da0031f6b2b6d6706a66c0f92414.etc2.stex" ]
 
 [params]
 
