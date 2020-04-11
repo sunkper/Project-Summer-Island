@@ -14,13 +14,14 @@ export (bool) var remove_children_after := true
 var mesh: Mesh
 
 func _merge(new_state) -> void:
-	mesh = _get_mesh(get_child(0))
-	var transforms = _get_transforms()
-	multimesh = create_multimesh(transforms)
-	
-	if remove_children_after:
-		for c in get_children():
-			remove_child(c)
+	if not multimesh:
+		mesh = _get_mesh(get_child(0))
+		var transforms = _get_transforms()
+		multimesh = create_multimesh(transforms)
+		
+		if remove_children_after:
+			for c in get_children():
+				remove_child(c)
 
 func _get_mesh(node):
 	var result: Mesh
