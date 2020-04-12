@@ -1,5 +1,6 @@
 extends Node
 
+export (String, FILE) var scene_to_load
 
 var queue
 
@@ -11,18 +12,18 @@ func _ready():
 	queue.start()
 	set_process(true)
 	# Queue a resource.
-	queue.queue_resource("res://scenes/MainViewport.tscn", true)
+	queue.queue_resource(scene_to_load, true)
 
 func _process(_delta):
 	# Returns true if a resource is done loading and ready to be retrieved.
-	if queue.is_ready("res://scenes/MainViewport.tscn"):
+	if queue.is_ready(scene_to_load):
 		set_process(false)
 		# Returns the fully loaded resource.
-		var next_scene = queue.get_resource("res://scenes/MainViewport.tscn").instance()
-		get_node("/root").add_child(next_scene)
-		get_node("/root").remove_child(self)
-		queue_free()
+		var next_scene = queue.get_resource(scene_to_load).instance()
+		add_child(next_scene)
+		$LoadingSplash.queue_free()
+		$LoadingUI/LoadingText.hide()
 	else:
 		# Get the progress of a resource.
-		var progress = round(queue.get_progress("res://scenes/MainViewport.tscn") * 100)
+		var progress = round(queue.get_progress(scene_to_load) * 100)
 		get_node("ProgressBar").set_value(progress)

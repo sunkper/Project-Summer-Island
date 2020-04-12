@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/shaders/water/seaweed/Seaweed_R.png" type="Texture" id=2]
+[ext_resource path="res://assets/shaders/water/seaweed/Seaweed_B.png" type="Texture" id=3]
+[ext_resource path="res://assets/shaders/water/seaweed/Seaweed_N.png" type="Texture" id=4]
+
+[sub_resource type="Shader" id=3]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_disabled, diffuse_burley, specular_schlick_ggx;
+
+
+uniform sampler2D albedo_sampler : hint_albedo;
+uniform sampler2D roughness_sampler : hint_white;
+uniform sampler2D normal_sampler : hint_normal;
+
+uniform float	scale			= 1.0;
+
+uniform float	wind_speed		= 0.5;
+uniform float	wind_strength	= 0.3;
+uniform vec2	wind_direction	= vec2(0.6 , 0.0);
+
+
+void vertex()
+{
+	vec4	vertex			 = vec4(VERTEX * scale, 1.0);
+	vec3	vertex_world	 = (WORLD_MATRIX * vertex).xyz;
+	
+	vec2	wind_flow		 = wind_direction * TIME * wind_speed;
+	
+	float	wind 		 	 = ((cos(vertex.x + wind_flow.x)+cos(vertex.z + wind_flow.y)) * 0.25) * wind_strength;
+
+	float 	f 				 = dot(wind_direction, vertex.xz);
+
+			vertex.x 		 += wind_direction.x * wind * (vertex.y) * cos(f);
+			vertex.z 		 += wind_direction.y * wind * (vertex.y) * cos(f);
+
+			VERTEX			 = vertex.xyz;
+}
+
+
+void fragment()
+{
+	vec2 	base_uv			 = UV;
+	vec4 	albedo_tex		 = texture(albedo_sampler, base_uv);
+
+	if (albedo_tex.a < 0.6) { discard;}
+	
+	ALBEDO = albedo_tex.rgb;
+	METALLIC = 0.2;
+	ROUGHNESS = 0.5+texture(roughness_sampler, base_uv).r*0.4;
+	SPECULAR = 0.5;
+	NORMALMAP = texture(normal_sampler, base_uv).rgb;
+	NORMALMAP_DEPTH = 0.75;
+	TRANSMISSION = vec3(0.8);
+}
+"
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = SubResource( 3 )
+shader_param/scale = 2.0
+shader_param/wind_speed = 0.5
+shader_param/wind_strength = 0.3
+shader_param/wind_direction = Vector2( 1, 0.6 )
+shader_param/albedo_sampler = ExtResource( 3 )
+shader_param/roughness_sampler = ExtResource( 2 )
+shader_param/normal_sampler = ExtResource( 4 )
+
+[sub_resource type="ArrayMesh" id=2]
+surfaces/0 = {
+"aabb": AABB( -0.792576, -0.041193, -0.7627, 2.05, 2.79693, 1.60393 ),
+"array_data": PoolByteArray( 51, 196, 177, 60, 0, 0, 0, 0, 194, 51, 177, 62, 43, 10, 138, 0, 137, 3, 213, 127, 108, 58, 90, 59, 108, 235, 119, 63, 0, 0, 0, 64, 251, 90, 87, 63, 34, 13, 135, 0, 135, 17, 224, 127, 253, 56, 59, 56, 219, 82, 135, 189, 231, 53, 18, 64, 246, 93, 21, 63, 49, 13, 140, 0, 140, 253, 207, 127, 134, 58, 21, 56, 13, 114, 39, 191, 23, 97, 240, 63, 108, 63, 41, 62, 65, 13, 148, 0, 153, 224, 190, 127, 236, 59, 94, 56, 31, 190, 108, 190, 30, 168, 211, 60, 164, 254, 122, 62, 47, 5, 139, 0, 139, 11, 210, 127, 92, 59, 90, 59, 69, 44, 98, 189, 225, 211, 28, 188, 156, 138, 20, 189, 230, 235, 134, 0, 132, 2, 26, 127, 231, 53, 219, 55, 130, 168, 91, 62, 154, 153, 231, 63, 191, 156, 29, 191, 150, 250, 187, 0, 197, 75, 83, 127, 40, 52, 22, 45, 129, 207, 143, 189, 31, 248, 15, 64, 231, 58, 13, 190, 195, 251, 145, 0, 145, 6, 60, 127, 38, 54, 22, 45, 67, 230, 74, 191, 181, 54, 243, 63, 64, 134, 174, 189, 249, 250, 130, 0, 141, 205, 9, 127, 18, 56, 22, 45, 30, 54, 169, 190, 21, 87, 149, 188, 105, 25, 41, 60, 236, 245, 132, 0, 131, 253, 21, 127, 170, 54, 219, 55, 184, 146, 165, 62, 225, 211, 28, 188, 233, 183, 47, 60, 121, 245, 222, 0, 223, 7, 134, 127, 49, 59, 232, 55, 239, 56, 33, 63, 158, 63, 175, 63, 168, 87, 26, 62, 109, 217, 207, 0, 196, 220, 151, 127, 156, 58, 252, 52, 108, 35, 6, 63, 166, 66, 182, 63, 100, 58, 20, 190, 119, 223, 228, 0, 232, 16, 133, 127, 55, 59, 150, 52, 217, 147, 0, 63, 208, 41, 148, 63, 121, 7, 12, 191, 125, 241, 5, 0, 11, 55, 143, 127, 198, 59, 169, 53, 23, 217, 198, 62, 252, 139, 160, 188, 184, 91, 114, 190, 122, 253, 32, 0, 32, 252, 134, 127, 147, 59, 232, 55, 245, 215, 39, 63, 213, 151, 26, 64, 79, 64, 67, 191, 100, 207, 198, 0, 244, 84, 163, 127, 250, 59, 213, 50, 69, 243, 160, 63, 188, 61, 29, 64, 180, 117, 208, 61, 99, 199, 202, 0, 192, 248, 147, 127, 106, 58, 33, 48, 128, 73, 150, 63, 15, 94, 48, 64, 43, 49, 183, 190, 95, 200, 194, 0, 210, 42, 146, 127, 60, 59, 22, 45, 211, 50, 50, 63, 10, 247, 202, 59, 152, 24, 11, 63, 35, 13, 135, 0, 135, 255, 221, 127, 125, 57, 90, 59, 225, 184, 140, 62, 38, 56, 245, 188, 76, 111, 159, 189, 239, 221, 136, 0, 131, 7, 15, 127, 35, 53, 219, 55, 208, 66, 2, 63, 254, 185, 40, 189, 236, 47, 91, 62, 92, 245, 170, 0, 171, 14, 163, 127, 207, 58, 232, 55 ),
+"array_index_data": PoolByteArray( 0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 5, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, 10, 0, 13, 0, 14, 0, 12, 0, 15, 0, 13, 0, 12, 0, 16, 0, 17, 0, 18, 0, 1, 0, 0, 0, 2, 0, 3, 0, 0, 0, 19, 0, 6, 0, 5, 0, 7, 0, 8, 0, 5, 0, 20, 0, 11, 0, 10, 0, 12, 0, 13, 0, 10, 0, 17, 0, 15, 0, 12, 0, 11, 0, 16, 0, 12, 0 ),
+"blend_shape_data": [  ],
+"format": 97559,
+"index_count": 48,
+"material": SubResource( 1 ),
+"name": "Seaweed",
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 21
+}
+
+[node name="SeaweedNode" type="MeshInstance"]
+mesh = SubResource( 2 )
+material/0 = null

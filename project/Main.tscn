@@ -1,23 +1,43 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/LoadingSplash.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/fonts/UITextDefault.tres" type="DynamicFont" id=3]
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
+scene_to_load = "res://scenes/MainViewport.tscn"
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -218.5
-margin_top = -43.0
-margin_right = 218.5
-margin_bottom = 43.0
+visible = false
+margin_left = 774.759
+margin_top = 606.299
+margin_right = 1124.76
+margin_bottom = 634.299
+rect_min_size = Vector2( 200, 28 )
 step = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LoadingSplash" parent="." instance=ExtResource( 2 )]
+
+[node name="LoadingUI" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="LoadingText" type="RichTextLabel" parent="LoadingUI"]
+margin_left = 774.759
+margin_top = 518.229
+margin_right = 1124.76
+margin_bottom = 668.229
+rect_min_size = Vector2( 0, 150 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "
+[center][wave amp=100 freq=2]Loading...[/wave][/center]"
+text = "
+Loading..."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}

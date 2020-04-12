@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/MainViewport.gd" type="Script" id=4]
 [ext_resource path="res://maps/ShoreMap.tscn" type="PackedScene" id=5]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Label
 
 func _process(delta: float) -> void:
@@ -68,7 +68,7 @@ margin_right = 367.478
 margin_bottom = 61.1395
 custom_fonts/font = ExtResource( 2 )
 text = "00"
-script = SubResource( 2 )
+script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -113,7 +113,7 @@ text = "Control Help (Press F1 to show/hide this)
 - Switch sky: 1 (day), 2 (night) / Toggle hall light: 3 / Toggle kitchen light: 4
 - Capture screenshot: F10 (will be saved to '[Godot user folder]/Project Summer Island')
 - Show/hide performace: F2
-- Toggle Fullscreen: F11"
+- Toggle Fullscreen: Alt+Enter"
 __meta__ = {
 "_edit_use_anchors_": false
 }

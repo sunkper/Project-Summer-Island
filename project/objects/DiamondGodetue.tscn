@@ -890,7 +890,7 @@ mesh = SubResource( 5 )
 material/0 = null
 
 [node name="SpotLight" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.0755181, 0.997144, 0, -0.997144, 0.0755181, 0, 4.15685, 0.486406 )
+transform = Transform( 1, 0, 0, 0, 0.180124, 0.983644, 0, -0.983644, 0.180124, 0, 4.15685, 0.701175 )
 light_color = Color( 0.933333, 0.87451, 0.733333, 1 )
 light_bake_mode = 2
 spot_range = 6.0
