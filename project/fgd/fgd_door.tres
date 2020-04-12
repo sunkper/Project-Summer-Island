@@ -12,7 +12,9 @@ qodot_internal = false
 base_classes = [  ]
 class_properties = {
 "direction": Vector3( 0, 0, 0 ),
-"distance": 0.0
+"distance": 0.0,
+"speed": 1.0,
+"targetname": ""
 }
 class_property_descriptions = {
 

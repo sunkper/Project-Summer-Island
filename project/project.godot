@@ -30,6 +30,11 @@ _global_script_classes=[ {
 "path": "res://tools/LineUpMeshInstance.gd"
 }, {
 "base": "MultiMeshInstance",
+"class": "MergeSplitMultiMesh",
+"language": "GDScript",
+"path": "res://tools/MergeSplitMultiMesh.gd"
+}, {
+"base": "MultiMeshInstance",
 "class": "MergeToMultiMesh",
 "language": "GDScript",
 "path": "res://tools/MergeToMultiMesh.gd"
@@ -169,6 +174,7 @@ _global_script_class_icons={
 "HTerrainDataLoader": "",
 "HTerrainDataSaver": "",
 "LineUpMeshInstance": "",
+"MergeSplitMultiMesh": "",
 "MergeToMultiMesh": "",
 "QodotDependencies": "",
 "QodotEntity": "",

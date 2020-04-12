@@ -44,3 +44,10 @@
 @PointClass size(-8 -8 -8, 8 8 8) base(Targetname, Target) = slot : "Slot" [
 	slot_name(string) : "Slot to target"  : ""
 ]
+
+@SolidClass color(204 204 204) size(-8 -8 -8, 8 8 8) = door : "Door" [
+	direction(string) : ""  : "0 0 0"
+	distance(float) : ""  : 0
+	targetname(string) : ""  : ""
+	speed(float) : ""  : 1
+]

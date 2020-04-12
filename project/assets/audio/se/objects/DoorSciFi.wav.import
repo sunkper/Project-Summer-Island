@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DoorSciFi.wav-75a2ea695376931ddc00e2a506de13bc.sample"
+
+[deps]
+
+source_file="res://assets/audio/se/objects/DoorSciFi.wav"
+dest_files=[ "res://.import/DoorSciFi.wav-75a2ea695376931ddc00e2a506de13bc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
