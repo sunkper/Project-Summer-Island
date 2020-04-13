@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/SnackStand01.png-6a0f34be9b2245823ec0c34acf4e42cf.s3tc.stex"
-path.etc2="res://.import/SnackStand01.png-6a0f34be9b2245823ec0c34acf4e42cf.etc2.stex"
+path.s3tc="res://.import/SnackStand01_roughness.png-0a762a50fce13375bf3570816286c48c.s3tc.stex"
+path.etc2="res://.import/SnackStand01_roughness.png-0a762a50fce13375bf3570816286c48c.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,13 +11,13 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/textures/SnackStand01.png"
-dest_files=[ "res://.import/SnackStand01.png-6a0f34be9b2245823ec0c34acf4e42cf.s3tc.stex", "res://.import/SnackStand01.png-6a0f34be9b2245823ec0c34acf4e42cf.etc2.stex" ]
+source_file="res://assets/models/textures/SnackStand01_roughness.png"
+dest_files=[ "res://.import/SnackStand01_roughness.png-0a762a50fce13375bf3570816286c48c.s3tc.stex", "res://.import/SnackStand01_roughness.png-0a762a50fce13375bf3570816286c48c.etc2.stex" ]
 
 [params]
 
 compress/mode=2
-compress/lossy_quality=0.8
+compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
