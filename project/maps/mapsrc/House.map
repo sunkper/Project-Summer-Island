@@ -8031,12 +8031,8 @@
 }
 // entity 69
 {
-"classname" "signal"
-"origin" "216 280 136"
-}
-// entity 70
-{
 "classname" "trigger"
+"target" "secret_door"
 // brush 0
 {
 ( 248 288 96 ) ( 248 289 96 ) ( 248 288 97 ) materials/HouseFrameWood [ 0 -1 0 -0 ] [ 0 0 -1 -0 ] -0 1 1
@@ -8047,14 +8043,14 @@
 ( 256 304 112 ) ( 256 304 113 ) ( 256 305 112 ) materials/HouseFrameWood [ 0 1 0 -0 ] [ 0 0 -1 -0 ] -0 1 1
 }
 }
-// entity 71
+// entity 70
 {
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "Refs"
 "_tb_id" "1"
 }
-// entity 72
+// entity 71
 {
 "classname" "reference"
 "_tb_layer" "1"
@@ -8177,7 +8173,7 @@
 ( -912 -1296 288 ) ( -912 800 288 ) ( -912 800 -0 ) pbr/Ground029 [ 0 -0.9717 -0.236218 -236.407 ] [ 0 -0.236218 0.9717 -103.153 ] 166.337 1 1
 }
 }
-// entity 73
+// entity 72
 {
 "classname" "reference"
 "_tb_layer" "1"

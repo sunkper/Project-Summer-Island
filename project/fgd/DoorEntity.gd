@@ -60,6 +60,7 @@ func _physics_process(delta: float) -> void:
 	dist_to_go -= delta
 
 func trigger() -> void:
+	print("Door triggered")
 	open()
 
 func open() -> void:

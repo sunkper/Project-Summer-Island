@@ -168,6 +168,11 @@ _global_script_classes=[ {
 "class": "TrenchBroomTag",
 "language": "GDScript",
 "path": "res://addons/qodot/src/resources/game-definitions/trenchbroom/trenchbroom_tag.gd"
+}, {
+"base": "Area",
+"class": "Trigger",
+"language": "GDScript",
+"path": "res://fgd/Trigger.gd"
 } ]
 _global_script_class_icons={
 "DoorEntity": "",
@@ -201,7 +206,8 @@ _global_script_class_icons={
 "TrenchBroomFaceAttrib": "",
 "TrenchBroomGameConfigFile": "",
 "TrenchBroomGameConfigFolder": "",
-"TrenchBroomTag": ""
+"TrenchBroomTag": "",
+"Trigger": ""
 }
 
 [application]

@@ -3652,17 +3652,18 @@ shape = SubResource( 233 )
 [node name="entity_68_brush_3_collision_shape" type="CollisionShape" parent="entity_68_group"]
 shape = SubResource( 234 )
 
-[node name="entity_70_trigger" type="Area" parent="."]
+[node name="entity_69_trigger" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.125, 3.0625, 7.875 )
 script = ExtResource( 96 )
 properties = {
-"classname": "trigger"
+"classname": "trigger",
+"target": "secret_door"
 }
 
-[node name="entity_70_brush_0_collision_shape" type="CollisionShape" parent="entity_70_trigger"]
+[node name="entity_69_brush_0_collision_shape" type="CollisionShape" parent="entity_69_trigger"]
 shape = SubResource( 235 )
 
-[node name="entity_71_func_group" type="Spatial" parent="."]
+[node name="entity_70_func_group" type="Spatial" parent="."]
 script = ExtResource( 31 )
 properties = {
 "_tb_id": "1",
