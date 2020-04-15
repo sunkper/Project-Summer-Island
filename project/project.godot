@@ -14,25 +14,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://fgd/DoorEntity.gd"
 }, {
-"base": "ResourceFormatLoader",
-"class": "HTerrainDataLoader",
-"language": "GDScript",
-"path": "res://addons/zylann.hterrain/hterrain_resource_loader.gd"
-}, {
-"base": "ResourceFormatSaver",
-"class": "HTerrainDataSaver",
-"language": "GDScript",
-"path": "res://addons/zylann.hterrain/hterrain_resource_saver.gd"
-}, {
 "base": "MultiMeshInstance",
 "class": "LineUpMeshInstance",
 "language": "GDScript",
 "path": "res://tools/LineUpMeshInstance.gd"
-}, {
-"base": "MultiMeshInstance",
-"class": "MergeSplitMultiMesh",
-"language": "GDScript",
-"path": "res://tools/MergeSplitMultiMesh.gd"
 }, {
 "base": "MultiMeshInstance",
 "class": "MergeToMultiMesh",
@@ -176,10 +161,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "DoorEntity": "",
-"HTerrainDataLoader": "",
-"HTerrainDataSaver": "",
 "LineUpMeshInstance": "",
-"MergeSplitMultiMesh": "",
 "MergeToMultiMesh": "",
 "QodotDependencies": "",
 "QodotEntity": "",
