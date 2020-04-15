@@ -1,5 +1,5 @@
 ## IMPORTANT
-This project is a recreation based on a scene from Sony Interactive Entertainment's 2002 game Boku no Natsuyasumi 2. While I didn't use any of assets directly from the game, this is a derivative work so keep that in mind and use these assets at your own dicrestion and responsibility.
+This project is a re-creation based on a scene from Sony Interactive Entertainment's 2002 game Boku no Natsuyasumi 2. While I didn't use any of assets directly from the game, this is a derivative work so keep that in mind and use these assets at your own dicrestion and responsibility.
 
 ## Assets Based on Godot's Design Assets
 This scene uses some of design elements from [Godot's design assets](https://github.com/godotengine/godot-design) under the license of Creative Commons Attribution 4.0 International. You can use modified assets here under the same license. See the license text [here](https://creativecommons.org/licenses/by/4.0/).
