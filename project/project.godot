@@ -227,7 +227,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "SIsilicon.vfx.godrays", "qodot", "smoothing", "zylann.hterrain" )
+enabled=PoolStringArray( "SIsilicon.vfx.godrays", "qodot", "smoothing" )
 
 [importer_defaults]
 

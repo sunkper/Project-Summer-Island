@@ -9,7 +9,7 @@
 radius = 0.8
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.104568, 0.117793, 0.516717 )
+extents = Vector3( 0.104568, 0.117793, 0.839747 )
 
 [node name="Player" type="KinematicBody" groups=[
 "player",
@@ -47,7 +47,7 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.573012 )
 
 [node name="Collision" type="CollisionShape" parent="Detector"]
-transform = Transform( 1, 0, 0, 0, -1, 3.25841e-07, 0, -3.25841e-07, -1, 0, 1.49012e-08, 0 )
+transform = Transform( 1, 0, 0, 0, -1, 3.25841e-07, 0, -3.25841e-07, -1, 0, 1.49012e-08, -0.23791 )
 shape = SubResource( 2 )
 
 [node name="UI" type="CanvasLayer" parent="."]
