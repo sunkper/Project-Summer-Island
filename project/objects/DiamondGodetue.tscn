@@ -397,7 +397,7 @@ size = Vector2( 0.25, 0.25 )
 [node name="DiamondGodetue" type="Spatial"]
 
 [node name="Skeleton" type="Skeleton" parent="."]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.675953, 0 )
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.520631, 0 )
 bones/0/name = "root"
 bones/0/parent = -1
 bones/0/rest = Transform( -1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0.372427, -0.025255 )
@@ -878,7 +878,7 @@ material/0 = null
 material/1 = null
 
 [node name="Base" type="MeshInstance" parent="."]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.0300396, 0 )
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.0300396, 0 )
 use_in_baked_light = true
 mesh = SubResource( 5 )
 material/0 = null
@@ -888,13 +888,6 @@ transform = Transform( 0.9, 0, 0, 0, 1, 0, 0, 0, 0.9, 0, 0.290302, 0 )
 use_in_baked_light = true
 mesh = SubResource( 5 )
 material/0 = null
-
-[node name="SpotLight" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.180124, 0.983644, 0, -0.983644, 0.180124, 0, 4.15685, 0.701175 )
-light_color = Color( 0.933333, 0.87451, 0.733333, 1 )
-light_bake_mode = 2
-spot_range = 6.0
-spot_angle = 15.272
 
 [node name="Particles" type="Particles" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.704903, 0 )
