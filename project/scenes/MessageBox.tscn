@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/MessageBox.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/UITextWall.tres" type="DynamicFont" id=2]
+
+[node name="MessageBox" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0.690196 )
+anchor_right = 1.0
+margin_bottom = 43.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="VBoxContainer" parent="Panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1265.0
+margin_bottom = 179.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Message" type="Label" parent="Panel/HBox"]
+margin_top = -1.0
+margin_right = 1255.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 0, 24 )
+custom_fonts/font = ExtResource( 2 )
+text = "You can extend"
+autowrap = true
+
+[node name="Message2" type="Label" parent="Panel/HBox"]
+margin_top = 27.0
+margin_right = 1255.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 0, 24 )
+custom_fonts/font = ExtResource( 2 )
+text = "You can extend"
+autowrap = true
+
+[node name="Message3" type="Label" parent="Panel/HBox"]
+margin_top = 55.0
+margin_right = 1255.0
+margin_bottom = 79.0
+rect_min_size = Vector2( 0, 24 )
+custom_fonts/font = ExtResource( 2 )
+text = "You can extend"
+autowrap = true
+
+[node name="Timer" type="Timer" parent="."]

@@ -1,8 +1,5 @@
 extends KinematicBody
 
-enum State {IDLE, MOVING}
-var state = State.IDLE setget _set_state
-
 export (NodePath) var camera_path
 onready var camera = get_node(camera_path)
 onready var flashlight = camera.get_node("Flashlight")
@@ -22,7 +19,8 @@ var is_sprinting: = false
 var vel: = Vector3.ZERO
 var dir: = Vector3.ZERO
 
-var float_effect: = false
+var float_effect: = true
+var float_effect_set: = true
 var elpased: = 0.0
 
 export var mouse_def_sensi: = 0.2
@@ -36,26 +34,6 @@ var zooming: = false
 var zoomin_lerp: = 0.10
 var zoomout_lerp: = 0.30
 
-# simple state management
-func _set_state(new_state) -> void:
-	if new_state == state:
-		return
-	
-	# exit behavior
-	match state:
-		State.IDLE:
-			pass
-		State.MOVING:
-			pass
-	
-	state = new_state
-	
-	# init behavior
-	match state:
-		State.IDLE:
-			pass
-		State.MOVING:
-			pass
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -74,10 +52,6 @@ func _physics_process(delta: float) -> void:
 		dir += cam_xform.basis.y * move_vector.z
 	
 	vel = lerp(vel, dir * move_speed, 0.1)
-	if vel.length() > 0.0:
-		self.state == State.MOVING
-	else:
-		self.state == State.IDLE
 	
 	vel = move_and_slide(vel, Vector3(0, 1, 0), true)
 	
@@ -90,12 +64,10 @@ func _physics_process(delta: float) -> void:
 		camera.fov = lerp(camera.fov, zoom_fov, zoomin_lerp)
 		mouse_sensi = lerp(mouse_sensi, mouse_zoomin_sensi, zoomin_lerp)
 		$UI/Vignette.modulate.a = lerp($UI/Vignette.modulate.a, 1.0, zoomin_lerp)
-		float_effect = false
 	else:
 		camera.fov = lerp(camera.fov, def_fov, zoomout_lerp)
 		mouse_sensi = lerp(mouse_sensi, mouse_def_sensi, zoomout_lerp)
 		$UI/Vignette.modulate.a = lerp($UI/Vignette.modulate.a, 0.0, zoomout_lerp)
-		float_effect = true
 
 func _get_move_input():
 	var out: = Vector3.ZERO
@@ -144,10 +116,17 @@ func _input(event):
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
+	if event.is_action_pressed("toggle_float") and not zooming:
+		float_effect = !float_effect
+		float_effect_set = !float_effect_set
+	
 	if event.is_action_pressed("zoom_view"):
 		zooming = true
+		if float_effect:
+			float_effect = false
 	elif event.is_action_released("zoom_view"):
 		zooming = false
+		float_effect = float_effect_set
 	
 	if event.is_action_pressed("noclip"):
 		$BodyCollision.disabled = !$BodyCollision.disabled

@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/textures/pbr/FabricRed01/FabricRed01_roughness.png" type="Texture" id=4]
 
 [sub_resource type="SpatialMaterial" id=1]
+flags_disable_ambient_light = true
 albedo_texture = ExtResource( 2 )
 roughness_texture = ExtResource( 4 )
 normal_enabled = true

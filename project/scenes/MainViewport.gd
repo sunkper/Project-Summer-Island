@@ -1,5 +1,9 @@
 extends Control
 
+# Screenshot capture code by Filip Lundby, https://twitter.com/skooterkurt
+# https://github.com/FilipLundby/godot-snippets/blob/master/Screenshot.gd
+
+
 var _screenshot_directory = "user://screenshots"
 var _capture_tasks = []
 
@@ -15,7 +19,7 @@ func _ready() -> void:
 
 func _input(event) -> void:
 	if event is InputEventKey and event.pressed:
-		if event.scancode == KEY_F9:
+		if event.scancode == KEY_F12:
 			_capture()
 		if event.scancode == KEY_F1:
 			$DebugUI/ControlHelpPanel.visible = !$DebugUI/ControlHelpPanel.visible

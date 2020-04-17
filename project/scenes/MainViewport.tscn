@@ -47,17 +47,7 @@ shadow_atlas_size = 1024
 margin_right = 1280.0
 margin_bottom = 720.0
 __meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Logo" type="TextureRect" parent="DebugUI"]
-visible = false
-margin_left = 605.0
-margin_top = 43.0
-margin_right = 1885.0
-margin_bottom = 763.0
-texture = ExtResource( 3 )
-__meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -100,20 +90,29 @@ custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[b]Control Help[/b] (Press F1 to show/hide this)
 ----
-- Cursor toggle: R / Toggle collision: T
-- Move: WASD + QE[ / Sprint: Shift / Flashlight:F / Zoom-view: RMB
-- Switch sky: 1 (day), 2 (night) / Toggle hall light: 3 / Toggle kitchen light: 4
-- Capture screenshot: F10 (will be saved to '[Godot user folder]/Project Summer Island')
-- Show/hide performace: F2
-- Toggle Fullscreen: Alt+Enter"
+- Cursor toggle: Esc / Toggle collision: T / Toggle performace: F2 / Toggle float effect: R
+- Move: WASD + QE / Sprint: Shift / Flashlight: F / Zoom-view: RMB
+- Switch sky: F5 (day), F6 (night) / Toggle hall light: F7 / Toggle kitchen light: F8
+- Capture screenshot: F12 (will be saved to '[Godot user folder]/Project Summer Island')
+- Toggle Fullscreen: F11"
 text = "Control Help (Press F1 to show/hide this)
 ----
-- Cursor toggle: R / Toggle collision: T
-- Move: WASD + QE[ / Sprint: Shift / Flashlight:F / Zoom-view: RMB
-- Switch sky: 1 (day), 2 (night) / Toggle hall light: 3 / Toggle kitchen light: 4
-- Capture screenshot: F10 (will be saved to '[Godot user folder]/Project Summer Island')
-- Show/hide performace: F2
-- Toggle Fullscreen: Alt+Enter"
+- Cursor toggle: Esc / Toggle collision: T / Toggle performace: F2 / Toggle float effect: R
+- Move: WASD + QE / Sprint: Shift / Flashlight: F / Zoom-view: RMB
+- Switch sky: F5 (day), F6 (night) / Toggle hall light: F7 / Toggle kitchen light: F8
+- Capture screenshot: F12 (will be saved to '[Godot user folder]/Project Summer Island')
+- Toggle Fullscreen: F11"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="DebugUI/ControlHelpPanel"]
+margin_left = 749.811
+margin_top = -3.94684
+margin_right = 1217.81
+margin_bottom = 259.053
+texture = ExtResource( 3 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
