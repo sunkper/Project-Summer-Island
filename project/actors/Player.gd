@@ -1,3 +1,4 @@
+class_name Player
 extends KinematicBody
 
 export (NodePath) var camera_path
@@ -34,6 +35,11 @@ var zooming: = false
 var zoomin_lerp: = 0.10
 var zoomout_lerp: = 0.30
 
+var show_keypad_ui := false setget _toggle_keypad_ui
+
+
+func _toggle_keypad_ui(new_state) -> void:
+	pass
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -116,7 +122,7 @@ func _input(event):
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
-	if event.is_action_pressed("toggle_float") and not zooming:
+	if event.is_action_pressed("toggle_bobbing") and not zooming:
 		float_effect = !float_effect
 		float_effect_set = !float_effect_set
 	
@@ -130,3 +136,5 @@ func _input(event):
 	
 	if event.is_action_pressed("noclip"):
 		$BodyCollision.disabled = !$BodyCollision.disabled
+
+

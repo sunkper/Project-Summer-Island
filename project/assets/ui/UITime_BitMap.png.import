@@ -1,0 +1,15 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+path="res://.import/UITime_BitMap.png-e1864400551d7fd708c30ca18b9edcc0.res"
+
+[deps]
+
+source_file="res://assets/ui/UITime_BitMap.png"
+dest_files=[ "res://.import/UITime_BitMap.png-e1864400551d7fd708c30ca18b9edcc0.res" ]
+
+[params]
+
+create_from=0
+threshold=0.5

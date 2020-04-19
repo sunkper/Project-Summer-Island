@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://tools/MergeToMultiMesh.gd"
 }, {
+"base": "KinematicBody",
+"class": "Player",
+"language": "GDScript",
+"path": "res://actors/Player.gd"
+}, {
 "base": "Reference",
 "class": "QodotDependencies",
 "language": "GDScript",
@@ -163,6 +168,7 @@ _global_script_class_icons={
 "DoorEntity": "",
 "LineUpMeshInstance": "",
 "MergeToMultiMesh": "",
+"Player": "",
 "QodotDependencies": "",
 "QodotEntity": "",
 "QodotFGDBaseClass": "",
@@ -202,7 +208,6 @@ config/icon="res://icon.png"
 
 [autoload]
 
-MessageBox="*res://scenes/MessageBox.tscn"
 ResourceQueue="*res://scenes/ResourceQueue.gd"
 
 [display]
@@ -1347,7 +1352,7 @@ zoom_view={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
-toggle_float={
+toggle_bobbing={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"unicode":0,"echo":false,"script":null)
  ]
