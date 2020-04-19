@@ -1,25 +1,20 @@
 /*
 Realistic Water Shader for GODOT 3.1.1
-
 Copyright (c) 2019 UnionBytes, Achim Menzel (alias AiYori)
-
 Permission is hereby granted, free of charge, to any person obtaining a copy of this 
 software and associated documentation files (the "Software"), to deal in the Software
 without restriction, including without limitation the rights to use, copy, modify,
 merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
 permit persons to whom the Software is furnished to do so, subject to the following
 conditions:
-
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
 INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
 PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.
-
 -- UnionBytes <https://www.unionbytes.de/>
 -- YouTube: <https://www.youtube.com/user/UnionBytes>
 */
@@ -27,7 +22,7 @@ OR OTHER DEALINGS IN THE SOFTWARE.
 
 // For this shader min. GODOT 3.1.1 is required, because 3.1 has a depth buffer bug!
 shader_type 	spatial;
-render_mode 	cull_back,diffuse_burley,specular_schlick_ggx,blend_mix;
+render_mode 	cull_back,diffuse_burley,specular_schlick_ggx, blend_mix;
 
 
 // Wave settings:
@@ -179,5 +174,5 @@ void fragment()
 	ROUGHNESS = 0.15;
 	SPECULAR = depth_blend_pow * 1.0;
 	NORMALMAP = normalmap;
-	NORMALMAP_DEPTH = 3.0;
+	NORMALMAP_DEPTH = 2.5;
 }

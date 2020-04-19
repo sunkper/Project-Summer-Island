@@ -178,6 +178,7 @@
 [ext_resource path="res://assets/textures/pbr/Plastic05.png" type="Texture" id=196]
 
 [sub_resource type="SpatialMaterial" id=1]
+metallic_specular = 0.2
 
 [sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( -40.5, 53.5, -35.5, -40.5, 9, -35.5, -23, 9, -35.5, -23, 53.5, -35.5, -40.5, 53.5, -26, -40.5, 9, -26, -39, 9, -24.5, -23, 9, -24.5, -23, 53.5, -24.5, -39, 53.5, -24.5 )
@@ -255,9 +256,11 @@ points = PoolVector3Array( -0.25, 0.25, -3.5, -0.25, -0.25, -3.5, 0.25, -0.25, -
 
 [sub_resource type="SpatialMaterial" id=23]
 albedo_texture = ExtResource( 104 )
+metallic_specular = 0.2
 
 [sub_resource type="SpatialMaterial" id=24]
 albedo_texture = ExtResource( 106 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 95 )
 normal_enabled = true
 normal_scale = 1.0
@@ -308,6 +311,7 @@ points = PoolVector3Array( 9.89092, 0.447519, -0.290866, 9.51485, 0.447519, -0.0
 
 [sub_resource type="SpatialMaterial" id=30]
 albedo_texture = ExtResource( 16 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 19 )
 normal_enabled = true
 normal_scale = 1.0
@@ -349,6 +353,7 @@ points = PoolVector3Array( -8.88178e-16, -4.9375, -1.6, 0.125, -4.875, -1.6, 0.1
 
 [sub_resource type="SpatialMaterial" id=37]
 albedo_texture = ExtResource( 29 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 31 )
 normal_enabled = true
 normal_scale = 1.0
@@ -356,6 +361,7 @@ normal_texture = ExtResource( 30 )
 
 [sub_resource type="SpatialMaterial" id=38]
 albedo_texture = ExtResource( 5 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 21 )
 normal_enabled = true
 normal_scale = 1.0
@@ -368,6 +374,7 @@ ao_texture_channel = 0
 
 [sub_resource type="SpatialMaterial" id=39]
 albedo_texture = ExtResource( 55 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 54 )
 normal_enabled = true
 normal_scale = 1.0
@@ -472,6 +479,7 @@ surfaces/6 = {
 
 [sub_resource type="SpatialMaterial" id=41]
 albedo_texture = ExtResource( 177 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 178 )
 normal_enabled = true
 normal_scale = 1.0
@@ -484,14 +492,17 @@ ao_texture_channel = 0
 
 [sub_resource type="SpatialMaterial" id=42]
 albedo_texture = ExtResource( 99 )
+metallic_specular = 0.2
 metallic_texture = ExtResource( 97 )
 roughness_texture = ExtResource( 98 )
 
 [sub_resource type="SpatialMaterial" id=43]
 albedo_texture = ExtResource( 100 )
+metallic_specular = 0.2
 
 [sub_resource type="SpatialMaterial" id=44]
 albedo_texture = ExtResource( 8 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 7 )
 normal_enabled = true
 normal_scale = 1.0
@@ -504,6 +515,7 @@ ao_texture_channel = 0
 
 [sub_resource type="SpatialMaterial" id=45]
 albedo_texture = ExtResource( 36 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 35 )
 
 [sub_resource type="ArrayMesh" id=46]
@@ -594,6 +606,7 @@ surfaces/6 = {
 
 [sub_resource type="SpatialMaterial" id=47]
 albedo_texture = ExtResource( 23 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 24 )
 normal_enabled = true
 normal_scale = 1.0
@@ -601,6 +614,7 @@ normal_texture = ExtResource( 32 )
 
 [sub_resource type="SpatialMaterial" id=48]
 albedo_texture = ExtResource( 66 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 63 )
 normal_enabled = true
 normal_scale = 1.0
@@ -613,6 +627,7 @@ ao_texture_channel = 0
 
 [sub_resource type="SpatialMaterial" id=49]
 albedo_texture = ExtResource( 196 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 192 )
 normal_enabled = true
 normal_scale = 1.0
@@ -626,6 +641,7 @@ depth_texture = ExtResource( 194 )
 
 [sub_resource type="SpatialMaterial" id=50]
 albedo_texture = ExtResource( 44 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 34 )
 normal_enabled = true
 normal_scale = 1.0
@@ -638,9 +654,11 @@ ao_texture_channel = 0
 
 [sub_resource type="SpatialMaterial" id=51]
 albedo_texture = ExtResource( 182 )
+metallic_specular = 0.2
 
 [sub_resource type="SpatialMaterial" id=52]
 albedo_texture = ExtResource( 135 )
+metallic_specular = 0.2
 
 [sub_resource type="ArrayMesh" id=53]
 surfaces/0 = {
@@ -854,6 +872,7 @@ surfaces/1 = {
 
 [sub_resource type="SpatialMaterial" id=56]
 albedo_texture = ExtResource( 41 )
+metallic_specular = 0.2
 metallic_texture = ExtResource( 40 )
 roughness_texture = ExtResource( 39 )
 normal_enabled = true
@@ -868,6 +887,7 @@ depth_texture = ExtResource( 37 )
 
 [sub_resource type="SpatialMaterial" id=57]
 albedo_texture = ExtResource( 26 )
+metallic_specular = 0.2
 metallic_texture = ExtResource( 25 )
 roughness_texture = ExtResource( 43 )
 normal_enabled = true
@@ -876,6 +896,7 @@ normal_texture = ExtResource( 27 )
 
 [sub_resource type="SpatialMaterial" id=58]
 albedo_texture = ExtResource( 47 )
+metallic_specular = 0.2
 metallic_texture = ExtResource( 49 )
 roughness_texture = ExtResource( 46 )
 normal_enabled = true
@@ -884,6 +905,7 @@ normal_texture = ExtResource( 48 )
 
 [sub_resource type="SpatialMaterial" id=59]
 albedo_texture = ExtResource( 33 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 28 )
 
 [sub_resource type="ArrayMesh" id=60]
@@ -1220,6 +1242,7 @@ surfaces/5 = {
 
 [sub_resource type="SpatialMaterial" id=81]
 albedo_texture = ExtResource( 123 )
+metallic_specular = 0.2
 metallic_texture = ExtResource( 122 )
 roughness_texture = ExtResource( 120 )
 normal_enabled = true
@@ -1451,6 +1474,7 @@ surfaces/1 = {
 
 [sub_resource type="SpatialMaterial" id=89]
 albedo_texture = ExtResource( 118 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 108 )
 normal_enabled = true
 normal_scale = 1.0
@@ -1489,6 +1513,7 @@ surfaces/1 = {
 
 [sub_resource type="SpatialMaterial" id=91]
 albedo_texture = ExtResource( 114 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 115 )
 normal_enabled = true
 normal_scale = 1.0
@@ -1527,6 +1552,7 @@ surfaces/1 = {
 
 [sub_resource type="SpatialMaterial" id=93]
 albedo_texture = ExtResource( 131 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 129 )
 ao_enabled = true
 ao_light_affect = 0.0
@@ -1556,6 +1582,7 @@ surfaces/0 = {
 
 [sub_resource type="SpatialMaterial" id=95]
 albedo_texture = ExtResource( 125 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 126 )
 normal_enabled = true
 normal_scale = 1.0
@@ -1563,6 +1590,7 @@ normal_texture = ExtResource( 124 )
 
 [sub_resource type="SpatialMaterial" id=96]
 albedo_texture = ExtResource( 143 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 146 )
 normal_enabled = true
 normal_scale = 1.0
@@ -1581,6 +1609,7 @@ depth_texture = ExtResource( 147 )
 
 [sub_resource type="SpatialMaterial" id=97]
 albedo_texture = ExtResource( 171 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 168 )
 normal_enabled = true
 normal_scale = 1.0
@@ -1593,6 +1622,7 @@ ao_texture_channel = 0
 
 [sub_resource type="SpatialMaterial" id=98]
 albedo_texture = ExtResource( 151 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 170 )
 normal_enabled = true
 normal_scale = 1.0
@@ -1611,9 +1641,11 @@ depth_texture = ExtResource( 155 )
 
 [sub_resource type="SpatialMaterial" id=99]
 albedo_texture = ExtResource( 161 )
+metallic_specular = 0.2
 
 [sub_resource type="SpatialMaterial" id=100]
 albedo_texture = ExtResource( 172 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 174 )
 normal_enabled = true
 normal_scale = 1.0
@@ -1626,9 +1658,11 @@ ao_texture_channel = 0
 
 [sub_resource type="SpatialMaterial" id=101]
 albedo_texture = ExtResource( 166 )
+metallic_specular = 0.2
 
 [sub_resource type="SpatialMaterial" id=102]
 albedo_texture = ExtResource( 187 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 186 )
 normal_enabled = true
 normal_scale = 1.0
@@ -1641,6 +1675,7 @@ ao_texture_channel = 0
 
 [sub_resource type="SpatialMaterial" id=103]
 albedo_texture = ExtResource( 81 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 79 )
 normal_enabled = true
 normal_scale = 1.0
@@ -1656,6 +1691,7 @@ transmission_texture = ExtResource( 113 )
 
 [sub_resource type="SpatialMaterial" id=104]
 albedo_texture = ExtResource( 132 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 127 )
 normal_enabled = true
 normal_scale = 1.0
@@ -1671,6 +1707,7 @@ transmission_texture = ExtResource( 110 )
 
 [sub_resource type="SpatialMaterial" id=105]
 albedo_texture = ExtResource( 149 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 148 )
 normal_enabled = true
 normal_scale = 1.0
@@ -2008,6 +2045,7 @@ points = PoolVector3Array( -1.24661, 6.39405, 4.58341, -8.97402, 2.39405, 2.5128
 
 [sub_resource type="SpatialMaterial" id=125]
 albedo_texture = ExtResource( 78 )
+metallic_specular = 0.2
 metallic_texture = ExtResource( 84 )
 roughness_texture = ExtResource( 134 )
 normal_enabled = true
@@ -2022,6 +2060,7 @@ depth_texture = ExtResource( 83 )
 
 [sub_resource type="SpatialMaterial" id=126]
 albedo_texture = ExtResource( 52 )
+metallic_specular = 0.2
 metallic_texture = ExtResource( 53 )
 roughness_texture = ExtResource( 59 )
 normal_enabled = true
@@ -2030,6 +2069,7 @@ normal_texture = ExtResource( 60 )
 
 [sub_resource type="SpatialMaterial" id=127]
 albedo_texture = ExtResource( 69 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 64 )
 normal_enabled = true
 normal_scale = 1.0
@@ -2110,6 +2150,7 @@ surfaces/4 = {
 
 [sub_resource type="SpatialMaterial" id=129]
 albedo_texture = ExtResource( 92 )
+metallic_specular = 0.2
 normal_enabled = true
 normal_scale = 1.0
 normal_texture = ExtResource( 90 )
@@ -2127,6 +2168,7 @@ depth_texture = ExtResource( 89 )
 
 [sub_resource type="SpatialMaterial" id=130]
 albedo_texture = ExtResource( 87 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 86 )
 normal_enabled = true
 normal_scale = 1.0
@@ -2137,6 +2179,7 @@ transmission_texture = ExtResource( 195 )
 
 [sub_resource type="SpatialMaterial" id=131]
 albedo_texture = ExtResource( 74 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 76 )
 normal_enabled = true
 normal_scale = 1.0
@@ -2144,6 +2187,7 @@ normal_texture = ExtResource( 73 )
 
 [sub_resource type="SpatialMaterial" id=132]
 albedo_texture = ExtResource( 77 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 72 )
 normal_enabled = true
 normal_scale = 1.0
@@ -2543,6 +2587,7 @@ surfaces/3 = {
 
 [sub_resource type="SpatialMaterial" id=144]
 albedo_texture = ExtResource( 12 )
+metallic_specular = 0.2
 roughness_texture = ExtResource( 9 )
 normal_enabled = true
 normal_scale = 1.0

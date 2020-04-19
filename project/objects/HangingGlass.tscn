@@ -15,8 +15,6 @@ export (String, \"Crystal\", \"Bird\") var type: = \"Crystal\" setget _type_chan
 onready var str_mt: = preload(\"res://assets/materials/WallPlasterWhite.tres\")
 
 func _string_length_changed(new_length) -> void:
-	if not Engine.editor_hint:
-		return
 	if new_length == string_length or not has_node(\"String\"):
 		print(\"same\")
 		return
