@@ -4,6 +4,8 @@ export (String, FILE) var scene_to_load
 
 var queue
 
+onready var progress_bar = $LoadingUI/ProgressBar
+
 onready var splash = $LoadingSplash
 onready var loading_text = $LoadingUI/LoadingText
 
@@ -28,4 +30,4 @@ func _process(_delta):
 	else:
 		# Get the progress of a resource.
 		var progress = round(queue.get_progress(scene_to_load) * 100)
-		get_node("ProgressBar").set_value(progress)
+		progress_bar.set_value(progress)

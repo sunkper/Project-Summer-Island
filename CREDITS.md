@@ -16,11 +16,8 @@ This project is a re-creation based on a scene from Boku no Natsuyasumi 2. Boku 
 - Used and modified many textures from [3D TEXTURES](https://3dtextures.me/), [CC0 Textures](https://cc0textures.com/), [Texture Haven](https://texturehaven.com/), and [cgbookcase.com](https://www.cgbookcase.com/).
 - Bicyle image [from Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Fiets_Elv%C3%A9.jpg).
 
+## Code
+- [Screenshot capture code](https://github.com/FilipLundby/godot-snippets/blob/master/Screenshot.gd) by [Filip Lundby](https://twitter.com/skooterkurt)
+
 ## Fonts
 - NotoSans, used under [SIL Open Font License](https://github.com/googlefonts/noto-fonts/blob/master/LICENSE).
-
-## Software Used
-- [Trenchbroom](https://kristianduske.com/trenchbroom/) and [Qodot](https://github.com/ShiftyAxel/Qodot), the Quake map importer for Godot, for the base structure of the house and geometries around it.
-- [Blender](https://www.blender.org/) for props.
-- [Material Maker](https://github.com/RodZill4/material-maker) for creating and generating textures and materials.
-- [Materialize](http://boundingboxsoftware.com/materialize/) for generating materials from images.

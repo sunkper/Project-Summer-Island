@@ -8,18 +8,6 @@
 script = ExtResource( 1 )
 scene_to_load = "res://scenes/MainViewport.tscn"
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-visible = false
-margin_left = 774.759
-margin_top = 606.299
-margin_right = 1124.76
-margin_bottom = 634.299
-rect_min_size = Vector2( 200, 28 )
-step = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="LoadingSplash" parent="." instance=ExtResource( 2 )]
 
 [node name="LoadingUI" type="CanvasLayer" parent="."]
@@ -38,6 +26,18 @@ bbcode_text = "
 text = "
 Loading..."
 scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="LoadingUI"]
+visible = false
+margin_left = 774.759
+margin_top = 606.299
+margin_right = 1124.76
+margin_bottom = 634.299
+rect_min_size = Vector2( 200, 28 )
+step = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

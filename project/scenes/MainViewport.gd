@@ -61,6 +61,8 @@ func _on_main_load_finished(splash, loading_text) -> void:
 	player.translation = player_init_pos[0]
 	player.rotation_degrees = player_init_pos[1]
 	
+	yield(get_tree(), "idle_frame")
+	
 	print("removing loading screen...")
 	splash.queue_free()
 	loading_text.queue_free()
