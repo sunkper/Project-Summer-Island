@@ -48,5 +48,5 @@ This scene is made by me, SunkPer. :sunny: You can follow me on [Twitter](https:
 As a learning project I tried to make most of the assets myself, but there are some things that are out of my capabilities and used other people's work. (Notably characrer models and shaders.) Also some elements are included because I thought it would be cool :sunglasses: See [credits page](https://github.com/sunkper/Project-Summer-Island/blob/master/CREDITS.md) for details.
 
 ## Special Thanks
-- [Shifty](https://twitter.com/shiftyaxel) for Qodot and making me less nervious about 3D development with it.
+- [Shifty](https://twitter.com/shiftyaxel) for Qodot, and with it, making me less nervous about 3D development.
 - [Yo soy Freeman](https://twitter.com/YoSoyFreeman) for giving advices with beta-ish versions.
