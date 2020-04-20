@@ -244,5 +244,6 @@ anims/FadeIn = SubResource( 2 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+volume_db = -10.0
 autoplay = true
 bus = "TVSound"

@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/MainViewport.gd" type="Script" id=4]
 [ext_resource path="res://maps/ShoreMap.tscn" type="PackedScene" id=5]
 
-[node name="MainView" type="ViewportContainer"]
+[node name="MainViewport" type="ViewportContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 stretch = true

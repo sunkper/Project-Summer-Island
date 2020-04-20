@@ -4,6 +4,9 @@ export (String, FILE) var scene_to_load
 
 var queue
 
+onready var splash = $LoadingSplash
+onready var loading_text = $LoadingUI/LoadingText
+
 
 func _ready():
 	# Initialize.
@@ -21,8 +24,7 @@ func _process(_delta):
 		# Returns the fully loaded resource.
 		var next_scene = queue.get_resource(scene_to_load).instance()
 		add_child(next_scene)
-		$LoadingSplash.queue_free()
-		$LoadingUI/LoadingText.hide()
+		next_scene._on_main_load_finished(splash, loading_text)
 	else:
 		# Get the progress of a resource.
 		var progress = round(queue.get_progress(scene_to_load) * 100)

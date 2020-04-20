@@ -1,9 +1,10 @@
 extends Control
 
+var player_init_pos = [Vector3(8.2, 19.38, -30.70), Vector3(0, -180, 0)]
+var player_cache_pos = [Vector3(135, 35, 174), Vector3(0, 35, 0)]
+
 # Screenshot capture code by Filip Lundby, https://twitter.com/skooterkurt
 # https://github.com/FilipLundby/godot-snippets/blob/master/Screenshot.gd
-
-
 var _screenshot_directory = "user://screenshots"
 var _capture_tasks = []
 
@@ -44,3 +45,22 @@ func _exit_tree():
 
 func _root_viewport_size_changed() -> void:
 	$Viewport.size = get_viewport().size * scale_factor
+
+func _on_main_load_finished(splash, loading_text) -> void:
+	var player = $Viewport/ShoreMap/Player
+	
+	# Temporaily move player to a position that can see the entire map
+	# to reduce stutter/freeze after the initial one
+	print("moving player to cache position...")
+	player.translation = player_cache_pos[0]
+	player.rotation_degrees = player_cache_pos[1]
+	
+	yield(get_tree(), "idle_frame")
+	
+	print("get player back to init position...")
+	player.translation = player_init_pos[0]
+	player.rotation_degrees = player_init_pos[1]
+	
+	print("removing loading screen...")
+	splash.queue_free()
+	loading_text.queue_free()
