@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/ui/Logo.png" type="Texture" id=1]
 [ext_resource path="res://assets/ui/UITheme.tres" type="Theme" id=2]
@@ -16,6 +16,7 @@
 
 [sub_resource type="InputEventAction" id=1]
 action = "toggle_bobbing"
+pressed = true
 
 [sub_resource type="ShortCut" id=2]
 shortcut = SubResource( 1 )
@@ -27,13 +28,7 @@ pressed = true
 [sub_resource type="ShortCut" id=4]
 shortcut = SubResource( 3 )
 
-[sub_resource type="InputEventKey" id=5]
-pressed = true
-
-[sub_resource type="ShortCut" id=6]
-shortcut = SubResource( 5 )
-
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.337255, 0.27451, 0.184314, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -43,7 +38,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 shadow_size = 1
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.141176, 0.113725, 0.0705882, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -53,7 +48,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 shadow_size = 1
 
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.333333, 0.333333, 0.333333, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -63,7 +58,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 shadow_size = 1
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.337255, 0.27451, 0.184314, 1 )
 border_width_left = 1
 border_width_top = 1
@@ -73,21 +68,21 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 shadow_size = 1
 
-[sub_resource type="InputEventKey" id=10]
+[sub_resource type="InputEventKey" id=9]
 pressed = true
 scancode = 16777244
 
-[sub_resource type="ShortCut" id=11]
-shortcut = SubResource( 10 )
+[sub_resource type="ShortCut" id=10]
+shortcut = SubResource( 9 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=11]
 size = 18
 font_data = ExtResource( 11 )
 
-[sub_resource type="StyleBoxFlat" id=14]
+[sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0, 0, 0, 0.392157 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=13]
 size = 18
 font_data = ExtResource( 13 )
 
@@ -100,7 +95,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 toggle_transition = 3
-tween_duration = 0.5
+tween_duration = 0.4
 
 [node name="Tween" type="Tween" parent="."]
 
@@ -126,6 +121,7 @@ margin_right = -26.0
 margin_bottom = 256.0
 rect_min_size = Vector2( 256, 256 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
@@ -174,12 +170,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PnaelLightBox" type="Control" parent="SettingPanels"]
+[node name="PnaelLightsBox" type="Control" parent="SettingPanels"]
 margin_right = 372.0
 margin_bottom = 230.0
 rect_min_size = Vector2( 372, 230 )
 
-[node name="PanelLights" type="PanelContainer" parent="SettingPanels/PnaelLightBox"]
+[node name="PanelLights" type="PanelContainer" parent="SettingPanels/PnaelLightsBox"]
 margin_left = 121.668
 margin_top = 4.0
 margin_right = 371.668
@@ -189,7 +185,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingPanels/PnaelLightBox/PanelLights"]
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingPanels/PnaelLightsBox/PanelLights"]
 margin_left = 20.0
 margin_top = 25.0
 margin_right = 230.0
@@ -198,7 +194,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LabelLamp" type="Label" parent="SettingPanels/PnaelLightBox/PanelLights/VBoxContainer"]
+[node name="LabelLights" type="Label" parent="SettingPanels/PnaelLightsBox/PanelLights/VBoxContainer"]
 margin_right = 210.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 0, 45 )
@@ -206,7 +202,7 @@ theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 3 )
 text = "Lights"
 
-[node name="ButtonHall" type="CheckButton" parent="SettingPanels/PnaelLightBox/PanelLights/VBoxContainer"]
+[node name="ButtonHall" type="CheckButton" parent="SettingPanels/PnaelLightsBox/PanelLights/VBoxContainer"]
 margin_top = 49.0
 margin_right = 210.0
 margin_bottom = 85.0
@@ -216,7 +212,7 @@ theme = ExtResource( 2 )
 enabled_focus_mode = 0
 text = "Hall"
 
-[node name="ButtonKitchen" type="CheckButton" parent="SettingPanels/PnaelLightBox/PanelLights/VBoxContainer"]
+[node name="ButtonKitchen" type="CheckButton" parent="SettingPanels/PnaelLightsBox/PanelLights/VBoxContainer"]
 margin_top = 89.0
 margin_right = 210.0
 margin_bottom = 125.0
@@ -225,7 +221,7 @@ theme = ExtResource( 2 )
 enabled_focus_mode = 0
 text = "Kitchen"
 
-[node name="ButtonShack" type="CheckButton" parent="SettingPanels/PnaelLightBox/PanelLights/VBoxContainer"]
+[node name="ButtonShack" type="CheckButton" parent="SettingPanels/PnaelLightsBox/PanelLights/VBoxContainer"]
 margin_top = 129.0
 margin_right = 210.0
 margin_bottom = 165.0
@@ -302,44 +298,15 @@ shortcut = SubResource( 4 )
 text = "Collision"
 align = 1
 
-[node name="PanelPerformance" type="PanelContainer" parent="SettingPanels"]
-visible = false
-margin_top = 400.0
-margin_right = 372.0
-margin_bottom = 481.0
-grow_horizontal = 0
-theme = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingPanels/PanelPerformance"]
-margin_left = 20.0
-margin_top = 25.0
-margin_right = 352.0
-margin_bottom = 61.0
-grow_horizontal = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ButtonPerformance" type="CheckButton" parent="SettingPanels/PanelPerformance/VBoxContainer"]
-margin_right = 332.0
-margin_bottom = 36.0
-grow_horizontal = 0
-theme = ExtResource( 2 )
-shortcut = SubResource( 6 )
-text = "Toggle Performance"
-align = 2
-
 [node name="ControlHelp" type="Control" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 10.0
+margin_left = 30.0
 margin_top = -248.0
-margin_right = 50.0
+margin_right = 70.0
 margin_bottom = -208.0
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
@@ -352,17 +319,17 @@ margin_top = -67.0
 margin_right = 710.0
 margin_bottom = -39.0
 focus_mode = 0
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/disabled = SubResource( 13 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
 custom_fonts/font = ExtResource( 12 )
 custom_colors/font_color = Color( 0.792157, 0.756863, 0.701961, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 toggle_mode = true
 shortcut_in_tooltip = false
 enabled_focus_mode = 0
-shortcut = SubResource( 11 )
+shortcut = SubResource( 10 )
 text = "Hide"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -424,7 +391,7 @@ margin_left = 48.0
 margin_top = 3.0
 margin_right = 154.0
 margin_bottom = 29.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.156863, 0.121569, 0.0666667, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 0.298039 )
 text = "Toggle UI"
@@ -446,7 +413,7 @@ margin_left = 194.0
 margin_top = 3.0
 margin_right = 328.0
 margin_bottom = 29.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.156863, 0.121569, 0.0666667, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 0.298039 )
 text = "Control Help"
@@ -465,7 +432,7 @@ margin_left = 368.0
 margin_top = 3.0
 margin_right = 505.0
 margin_bottom = 29.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.156863, 0.121569, 0.0666667, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 0.298039 )
 text = "Performance"
@@ -487,7 +454,7 @@ margin_left = 555.0
 margin_top = 3.0
 margin_right = 669.0
 margin_bottom = 29.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.156863, 0.121569, 0.0666667, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 0.298039 )
 text = "Fullscreen"
@@ -519,7 +486,7 @@ margin_left = 102.0
 margin_top = 3.0
 margin_right = 171.0
 margin_bottom = 29.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.156863, 0.121569, 0.0666667, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 0.298039 )
 text = "Move"
@@ -541,7 +508,7 @@ margin_left = 201.0
 margin_top = 3.0
 margin_right = 312.0
 margin_bottom = 29.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.156863, 0.121569, 0.0666667, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 0.298039 )
 text = "Flashlight"
@@ -563,7 +530,7 @@ margin_left = 373.0
 margin_top = 3.0
 margin_right = 492.0
 margin_bottom = 29.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.156863, 0.121569, 0.0666667, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 0.298039 )
 text = "Zoom-view"
@@ -592,7 +559,7 @@ margin_left = 28.0
 margin_top = 3.0
 margin_right = 187.0
 margin_bottom = 29.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.156863, 0.121569, 0.0666667, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 0.298039 )
 text = "Toggle Bobbing"
@@ -614,7 +581,7 @@ margin_left = 217.0
 margin_top = 3.0
 margin_right = 380.0
 margin_bottom = 29.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.156863, 0.121569, 0.0666667, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 0.298039 )
 text = "Toggle Collision"
@@ -643,7 +610,7 @@ margin_left = 46.0
 margin_top = 3.0
 margin_right = 696.0
 margin_bottom = 29.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.156863, 0.121569, 0.0666667, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 0.298039 )
 text = "Screenshot (save folder: '[Godot user folder]/Project Summer Island')"
@@ -652,8 +619,9 @@ text = "Screenshot (save folder: '[Godot user folder]/Project Summer Island')"
 visible = false
 anchor_right = 1.0
 margin_bottom = 34.0
-custom_styles/panel = SubResource( 14 )
+custom_styles/panel = SubResource( 12 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true
 }
 
@@ -662,6 +630,6 @@ margin_left = 8.0
 margin_top = 4.0
 margin_right = 451.0
 margin_bottom = 30.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 13 )
 text = "FPS: 00 | Draw Calls : 0000 | Video Mem: 000.00 MiB"
 script = ExtResource( 14 )

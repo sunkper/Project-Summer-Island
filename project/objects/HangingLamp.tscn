@@ -20,6 +20,8 @@ export (patterns) var pattern setget _set_pattern
 
 export var case := true setget _change_case
 
+export var id := \"\"
+
 
 func _change_case(new_state) -> void:
 	if new_state == case:
@@ -195,7 +197,9 @@ tracks/0/keys = {
 } ]
 }
 
-[node name="HangingLamp" type="Spatial"]
+[node name="HangingLamp" type="Spatial" groups=[
+"lamp",
+]]
 script = SubResource( 1 )
 
 [node name="Hanger" type="MeshInstance" parent="."]

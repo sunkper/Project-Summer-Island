@@ -9,6 +9,11 @@ onready var time_menu = $TimeOfDay/ChooseTime
 onready var time_image = $TimeOfDay/TimeImage
 
 onready var settings = $SettingPanels
+onready var light_hall = $SettingPanels/PnaelLightsBox/PanelLights/VBoxContainer/ButtonHall
+onready var light_kitchen = $SettingPanels/PnaelLightsBox/PanelLights/VBoxContainer/ButtonKitchen
+onready var light_shack = $SettingPanels/PnaelLightsBox/PanelLights/VBoxContainer/ButtonShack
+onready var button_bobbing = $SettingPanels/PanelViewer/VBoxContainer/HBoxContainer/ButtonBob
+onready var button_collision = $SettingPanels/PanelViewer/VBoxContainer/HBoxContainer/ButtonCollision
 
 onready var control_help = $ControlHelp
 onready var toggle_controls = $ControlHelp/ToggleControlHelp
@@ -24,9 +29,9 @@ const TIME_INVISIBLE_MARGIN = PoolRealArray([-282, -250, -26, 6])
 const SETTINGS_VISIBLE_MARGIN = PoolRealArray([-397, -415, -26, -19])
 const SETTINGS_INVISIBLE_MARGIN = PoolRealArray([10, -415, 382, -19])
 
-const CONTROLS_SHOW_MARGIN = PoolRealArray([10, -248, 50, -208])
-const CONTROLS_HIDE_MARGIN = PoolRealArray([10, -10, 50, 30])
-const CONTROLS_INVISIBLE_MARGIN = PoolRealArray([10, 40, 50, 80])
+const CONTROLS_SHOW_MARGIN = PoolRealArray([30, -248, 70, -208])
+const CONTROLS_HIDE_MARGIN = PoolRealArray([30, -10, 70, 30])
+const CONTROLS_INVISIBLE_MARGIN = PoolRealArray([30, 40, 70, 80])
 
 onready var margin_array = [
 		[logo, [LOGO_VISIBLE_MARGIN, LOGO_INVISIBLE_MARGIN]],
@@ -45,7 +50,11 @@ export (EaseType) var toggle_ease
 
 export var tween_duration := 1.0
 
-var is_visible: = true setget _set_visible
+var is_visible := true setget _set_visible
+
+var player
+var time_manager
+var lamps := {}
 
 
 func _set_visible(new_state):
@@ -55,11 +64,13 @@ func _set_visible(new_state):
 	is_visible = new_state
 	
 	if is_visible:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		for i in margin_array:
 			set_tween_margin(i[0], i[1][1], i[1][0], tween_duration, toggle_transition, toggle_ease)
 		if toggle_controls.pressed:
 			set_tween_margin(control_help, CONTROLS_INVISIBLE_MARGIN, CONTROLS_HIDE_MARGIN, tween_duration, toggle_transition, toggle_ease)
 	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		for i in margin_array:
 			set_tween_margin(i[0], i[1][0], i[1][1], tween_duration, toggle_transition, toggle_ease)
 		if toggle_controls.pressed:
@@ -75,11 +86,29 @@ func _set_visible(new_state):
 		toggle_controls.text = "Show"
 
 func _ready():
+	player = get_tree().get_nodes_in_group("player")[0]
+	
+	time_manager = get_tree().get_nodes_in_group("time_manager")[0]
+	
+	var lamp_nodes = get_tree().get_nodes_in_group("lamp")
+	for lamp in lamp_nodes:
+		lamps[lamp.id] = lamp
+	
 	time_menu.connect("item_selected", self, "_on_time_selected")
+	
+	light_hall.connect("toggled", self, "_toggle_light", ["hall"])
+	light_kitchen.connect("toggled", self, "_toggle_light", ["kitchen"])
+	light_shack.connect("toggled", self, "_toggle_light", ["shack"])
+	
+	button_bobbing.connect("toggled", self, "_toggle_bobbing")
+	button_collision.connect("toggled", self, "_toggle_collision")
+	
 	toggle_controls.connect("pressed", self, "_on_toggle_controls_pressed")
 
 func _on_time_selected(new_time: int) -> void:
 	time_menu.disabled = true
+	
+	time_manager.setting = time_manager.times[new_time]
 	
 	tween.interpolate_property(time_image, "rect_rotation", time_image.rect_rotation, time_image.rect_rotation + 180.0, 1.5, Tween.TRANS_ELASTIC, Tween.EASE_IN_OUT)
 	tween.start()
@@ -128,3 +157,12 @@ func set_tween_margin(object: Object, from: PoolRealArray, to: PoolRealArray, du
 	tween.interpolate_property(object, "margin_top", from[1], to[1], duration, transition_type, ease_type)
 	tween.interpolate_property(object, "margin_right", from[2], to[2], duration, transition_type, ease_type)
 	tween.interpolate_property(object, "margin_bottom", from[3], to[3], duration, transition_type, ease_type)
+
+func _toggle_light(pressed: bool, id: String) -> void:
+	lamps[id].pattern = int(pressed)
+
+func _toggle_bobbing(pressed: bool) -> void:
+	player.float_effect = pressed
+
+func _toggle_collision(pressed: bool) -> void:
+	player.get_node("BodyCollision").disabled = !pressed

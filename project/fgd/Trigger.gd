@@ -19,8 +19,8 @@ var keypad_ui
 signal triggered()
 signal interacted()
 
-onready var se_beep = preload("res://assets/audio/se/objects/BeepShort.wav")
-onready var se_no = preload("res://assets/audio/se/objects/No.wav")
+var se_beep = preload("res://assets/audio/se/objects/BeepShort.wav")
+var se_no = preload("res://assets/audio/se/objects/No.wav")
 
 
 func set_properties(new_properties : Dictionary) -> void:

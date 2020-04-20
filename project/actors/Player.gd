@@ -6,8 +6,8 @@ onready var camera = get_node(camera_path)
 onready var flashlight = camera.get_node("Flashlight")
 onready var switch_sound = flashlight.get_node("SwitchSound")
 
-onready var se_switch_on = preload("res://assets/audio/se/objects/LightSwitchOn.wav")
-onready var se_switch_off = preload("res://assets/audio/se/objects/LightSwitchOff.wav")
+var se_switch_on = preload("res://assets/audio/se/objects/LightSwitchOn.wav")
+var se_switch_off = preload("res://assets/audio/se/objects/LightSwitchOff.wav")
 
 export var speed_def_max: = 7.0
 export var speed_sprint_max: = 15.0
@@ -116,12 +116,6 @@ func _input(event):
 			switch_sound.stream = se_switch_off
 		switch_sound.play()
 	
-	if event.is_action_pressed("toggle_ui"):
-		if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
 	if event.is_action_pressed("toggle_bobbing") and not zooming:
 		float_effect = !float_effect
 		float_effect_set = !float_effect_set
@@ -136,5 +130,3 @@ func _input(event):
 	
 	if event.is_action_pressed("noclip"):
 		$BodyCollision.disabled = !$BodyCollision.disabled
-
-

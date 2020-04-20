@@ -1,3 +1,5 @@
+extends Node
+
 var thread
 var mutex
 var sem
