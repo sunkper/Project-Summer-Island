@@ -36,7 +36,7 @@ This project is made with Godot Engine 3.2.1.
 ### Plugins
 Plugins used in this project are not included in the repositary. You should install them yourself. Versions may or may not be relavant for compatibility, look for version history of each plugin.
 
-* [Qodot](https://github.com/ShiftyAxel/Qodot) (1.6.4) - note that I added `transmission` property to automatic PBR texturing. Very few materials actually used if you want to make use of it: in `qodot_texture_loader.gd`, add a constant `PBR_TRANSMISSION := 'transmission'`, and add `[ PBR_TRANSMISSION, SpatialMaterial.TEXTURE_TRANSMISSION, 'transmission_enabled' ]` to `PBR_SUFFICES` array.
+* [Qodot](https://github.com/ShiftyAxel/Qodot) (1.6.4) - note that I added `transmission` property to automatic PBR texturing. Very few materials actually used it, but if you want to make use of it: in `qodot_texture_loader.gd`, add a constant `PBR_TRANSMISSION := 'transmission'`, and add `[ PBR_TRANSMISSION, SpatialMaterial.TEXTURE_TRANSMISSION, 'transmission_enabled' ]` to `PBR_SUFFICES` array.
 * [Godot God Rays Plugin](https://github.com/SIsilicon/Godot-God-Rays-Plugin) (1.0.1)
 
 ## License
@@ -46,3 +46,7 @@ My original creations are licensed under MIT License. **HOWEVER** as this is a r
 This scene is made by me, SunkPer. :sunny: You can follow me on [Twitter](https://twitter.com/SunkPer).
 
 As a learning project I tried to make most of the assets myself, but there are some things that are out of my capabilities and used other people's work. (Notably characrer models and shaders.) Also some elements are included because I thought it would be cool :sunglasses: See [credits page](https://github.com/sunkper/Project-Summer-Island/blob/master/CREDITS.md) for details.
+
+## Special Thanks
+- [Shifty](https://twitter.com/shiftyaxel) for Qodot and making me less nervious about 3D development with it.
+- [Yo soy Freeman](https://twitter.com/YoSoyFreeman) for giving advices with beta-ish versions.
