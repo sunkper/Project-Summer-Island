@@ -1,8 +1,24 @@
-[gd_resource type="Theme" load_steps=9 format=2]
+[gd_resource type="Theme" load_steps=15 format=2]
 
 [ext_resource path="res://assets/fonts/UITextWall.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/ui/IconLightOn.png" type="Texture" id=2]
 [ext_resource path="res://assets/ui/IconLightOff.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/Blank.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/UIOptionButtonArrow.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.453125, 0.453125, 0.453125, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 3.0
+expand_margin_right = 3.0
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 15.0
@@ -32,7 +48,33 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxLine" id=9]
+color = Color( 0.756863, 0.666667, 0.556863, 1 )
+thickness = 2
+
 [sub_resource type="StyleBoxEmpty" id=3]
+content_margin_left = 5.0
+content_margin_right = 15.0
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.592157, 0.592157, 0.592157, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
+shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id=4]
 content_margin_left = 20.0
@@ -40,10 +82,6 @@ content_margin_right = 20.0
 content_margin_top = 25.0
 content_margin_bottom = 20.0
 bg_color = Color( 1, 0.968627, 0.839216, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
 border_color = Color( 0.647059, 0.533333, 0.356863, 1 )
 corner_radius_top_left = 30
 corner_radius_top_right = 20
@@ -72,7 +110,7 @@ Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
 Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 Button/colors/icon_color_hover = Color( 0, 0, 0, 1 )
 Button/colors/icon_color_pressed = Color( 0, 0, 0, 1 )
-Button/styles/disabled = null
+Button/styles/disabled = SubResource( 8 )
 Button/styles/focus = null
 Button/styles/hover = null
 Button/styles/normal = null
@@ -892,7 +930,7 @@ HScrollBar/styles/grabber_highlight = null
 HScrollBar/styles/grabber_pressed = null
 HScrollBar/styles/scroll = null
 HScrollBar/styles/scroll_focus = null
-HSeparator/styles/separator = null
+HSeparator/styles/separator = SubResource( 9 )
 HSlider/icons/grabber = null
 HSlider/icons/grabber_highlight = null
 HSlider/styles/grabber_area = null
@@ -944,20 +982,20 @@ MenuButton/styles/focus = null
 MenuButton/styles/hover = null
 MenuButton/styles/normal = null
 MenuButton/styles/pressed = null
-OptionButton/colors/font_color = Color( 0, 0, 0, 1 )
-OptionButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
-OptionButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
-OptionButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+OptionButton/colors/font_color = Color( 1, 1, 1, 1 )
+OptionButton/colors/font_color_disabled = Color( 1, 1, 1, 1 )
+OptionButton/colors/font_color_hover = Color( 1, 1, 1, 1 )
+OptionButton/colors/font_color_pressed = Color( 0.882353, 0.882353, 0.882353, 1 )
 OptionButton/colors/icon_color_hover = Color( 0, 0, 0, 1 )
 OptionButton/constants/arrow_margin = 4
 OptionButton/constants/hseparation = 4
 OptionButton/constants/modulate_arrow = 1
-OptionButton/icons/arrow = null
-OptionButton/styles/disabled = null
+OptionButton/icons/arrow = ExtResource( 5 )
+OptionButton/styles/disabled = SubResource( 7 )
 OptionButton/styles/focus = null
-OptionButton/styles/hover = null
-OptionButton/styles/normal = null
-OptionButton/styles/pressed = null
+OptionButton/styles/hover = SubResource( 6 )
+OptionButton/styles/normal = SubResource( 6 )
+OptionButton/styles/pressed = SubResource( 6 )
 Panel/styles/panel = null
 PanelContainer/styles/panel = SubResource( 4 )
 PopupDialog/styles/panel = null
@@ -967,8 +1005,8 @@ PopupMenu/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 PopupMenu/colors/font_color_hover = Color( 0, 0, 0, 1 )
 PopupMenu/constants/vseparation = 5
 PopupMenu/icons/checked = null
-PopupMenu/icons/radio_checked = null
-PopupMenu/icons/radio_unchecked = null
+PopupMenu/icons/radio_checked = ExtResource( 4 )
+PopupMenu/icons/radio_unchecked = ExtResource( 4 )
 PopupMenu/icons/submenu = null
 PopupMenu/icons/unchecked = null
 PopupMenu/icons/visibility_hidden = null
@@ -980,7 +1018,7 @@ PopupMenu/styles/hover = null
 PopupMenu/styles/labeled_separator_left = null
 PopupMenu/styles/labeled_separator_right = null
 PopupMenu/styles/normal = null
-PopupMenu/styles/panel = null
+PopupMenu/styles/panel = SubResource( 6 )
 PopupMenu/styles/pressed = null
 PopupMenu/styles/separator = null
 PopupPanel/styles/panel = null
@@ -988,8 +1026,8 @@ ProgressBar/colors/font_color = Color( 0, 0, 0, 1 )
 ProgressBar/styles/bg = null
 ProgressBar/styles/fg = null
 ProjectSettingsEditor/styles/panel = null
-RichTextLabel/colors/default_color = Color( 0, 0, 0, 1 )
-RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+RichTextLabel/colors/default_color = Color( 0.156863, 0.121569, 0.0666667, 1 )
+RichTextLabel/colors/font_color_shadow = Color( 1, 1, 1, 0.298039 )
 RichTextLabel/constants/shadow_as_outline = 0
 RichTextLabel/constants/shadow_offset_x = 1
 RichTextLabel/constants/shadow_offset_y = 1

@@ -12,7 +12,7 @@ onready var se_switch_off = preload("res://assets/audio/se/objects/LightSwitchOf
 export var speed_def_max: = 7.0
 export var speed_sprint_max: = 15.0
 
-export var mov_lerp_weight: = 0.1
+export var move_lerp: = 0.1
 
 var move_speed: = 0.0
 var is_sprinting: = false
@@ -57,7 +57,7 @@ func _physics_process(delta: float) -> void:
 		dir += cam_xform.basis.x * move_vector.x
 		dir += cam_xform.basis.y * move_vector.z
 	
-	vel = lerp(vel, dir * move_speed, 0.1)
+	vel = lerp(vel, dir * move_speed, move_lerp)
 	
 	vel = move_and_slide(vel, Vector3(0, 1, 0), true)
 	
@@ -116,7 +116,7 @@ func _input(event):
 			switch_sound.stream = se_switch_off
 		switch_sound.play()
 	
-	if event.is_action_pressed("capture_mouse"):
+	if event.is_action_pressed("toggle_ui"):
 		if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		else:

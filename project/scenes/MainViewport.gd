@@ -21,10 +21,6 @@ func _input(event) -> void:
 	if event is InputEventKey and event.pressed:
 		if event.scancode == KEY_F12:
 			_capture()
-		if event.scancode == KEY_F1:
-			$DebugUI/ControlHelpPanel.visible = !$DebugUI/ControlHelpPanel.visible
-		if event.scancode == KEY_F2:
-			$DebugUI/Performance.visible = !$DebugUI/Performance.visible
 		if event.scancode == KEY_F11:
 			OS.window_fullscreen = !OS.window_fullscreen
 

@@ -1,28 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/fonts/UITextWall.tres" type="DynamicFont" id=1]
-[ext_resource path="res://assets/fonts/UITextDefault.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scenes/MainUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/MainViewport.gd" type="Script" id=4]
 [ext_resource path="res://maps/ShoreMap.tscn" type="PackedScene" id=5]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Label
-
-func _process(delta: float) -> void:
-	text = print_perf()
-
-func print_perf() -> String:
-	var format := \"FPS: %d\\nDraw Calls: %d\\nVideo Mem: %.2f MiB\"
-
-	var fps = Performance.get_monitor(Performance.TIME_FPS)
-	var dc = Performance.get_monitor(Performance.RENDER_DRAW_CALLS_IN_FRAME)
-	var vm = Performance.get_monitor(Performance.RENDER_VIDEO_MEM_USED) / (1024 * 1024)
-
-	var out = format % [fps, dc, vm]
-	
-	return out
-"
 
 [node name="MainView" type="ViewportContainer"]
 anchor_right = 1.0
@@ -44,66 +24,3 @@ shadow_atlas_size = 1024
 [node name="ShoreMap" parent="Viewport" instance=ExtResource( 5 )]
 
 [node name="MainUI" parent="." instance=ExtResource( 3 )]
-
-[node name="DebugUI" type="Control" parent="."]
-margin_right = 1280.0
-margin_bottom = 720.0
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Performance" type="Label" parent="DebugUI"]
-margin_left = 37.4783
-margin_top = 27.1395
-margin_right = 367.478
-margin_bottom = 61.1395
-custom_fonts/font = ExtResource( 2 )
-text = "00"
-script = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ControlHelpPanel" type="ColorRect" parent="DebugUI"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 23.0
-margin_top = -270.0
-margin_right = 756.0
-margin_bottom = -23.0
-color = Color( 0, 0, 0, 0.686275 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="ControlHelp" type="RichTextLabel" parent="DebugUI/ControlHelpPanel"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -348.0
-margin_top = -110.5
-margin_right = 348.0
-margin_bottom = 110.5
-custom_fonts/bold_font = ExtResource( 2 )
-custom_fonts/normal_font = ExtResource( 1 )
-bbcode_enabled = true
-bbcode_text = "[b]Control Help[/b] (Press F1 to show/hide this)
-----
-- Cursor toggle: Esc / Toggle collision: T / Toggle performace: F2 / Toggle float effect: R
-- Move: WASD + QE / Sprint: Shift / Flashlight: F / Zoom-view: RMB
-- Switch sky: F5 (day), F6 (night) / Toggle hall light: F7 / Toggle kitchen light: F8
-- Capture screenshot: F12 (will be saved to '[Godot user folder]/Project Summer Island')
-- Toggle Fullscreen: F11"
-text = "Control Help (Press F1 to show/hide this)
-----
-- Cursor toggle: Esc / Toggle collision: T / Toggle performace: F2 / Toggle float effect: R
-- Move: WASD + QE / Sprint: Shift / Flashlight: F / Zoom-view: RMB
-- Switch sky: F5 (day), F6 (night) / Toggle hall light: F7 / Toggle kitchen light: F8
-- Capture screenshot: F12 (will be saved to '[Godot user folder]/Project Summer Island')
-- Toggle Fullscreen: F11"
-__meta__ = {
-"_edit_use_anchors_": false
-}
