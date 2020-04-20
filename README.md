@@ -3,7 +3,7 @@
 
 Project Summer Island (PSI) is a small 3D scene made with Godot Engine. It is a re-creation of and fan work based on [a scene](https://imgur.com/a/fghC9C2) from 2002 game [Boku no Natsuyasumi 2](https://en.wikipedia.org/wiki/Boku_no_Natsuyasumi_2).
 
-:tv: [Tour video on YouTube](https://www.youtube.com/watch?v=8ZscxvGynzM) | :floppy_disk: [Downloads](https://github.com/sunkper/Project-Summer-Island/releases)
+:floppy_disk: [Downloads](https://github.com/sunkper/Project-Summer-Island/releases) | :tv: [Tour video on YouTube](https://www.youtube.com/watch?v=8ZscxvGynzM) | :framed_picture: [Screenshots](https://github.com/sunkper/Project-Summer-Island/tree/master/images)
 
 Although you can move around the scene and there are some interactive elements (plus a little puzzle-ish thing or two) this is a non-game scene. You can see controls in the initial screen and you can always bring up the control help with `F1` key. You can take screenshots with `F12` key, and they will be saved to Godot Engine's user folder. (Windows for example, `C:\Users\<username>\AppData\Roaming\Godot\app_userdata\Project Summer Island`)
 
