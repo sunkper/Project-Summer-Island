@@ -42,5 +42,7 @@ Plugins used in this project are not included in the repositary. You should inst
 ## License
 My original creations are licensed under MIT License. **HOWEVER** as this is a re-creation of a scene from a commerical game, there are important caveats. Please refer to [License file](https://github.com/sunkper/Project-Summer-Island/blob/master/LICENSE.md).
 
-## :sunny: Author
-You can follow me on [Twitter](https://twitter.com/SunkPer).
+## Credits
+This scene is made by me, SunkPer. :sunny: You can follow me on [Twitter](https://twitter.com/SunkPer).
+
+As a learning project I tried to make most of the assets myself, but there are some things that are out of my capabilities and used other people's work. (Notably characrer models and shaders.) Also some elements are included because I thought it would be cool :sunglasses: See [credits page](https://github.com/sunkper/Project-Summer-Island/blob/master/CREDITS.md) for details.
