@@ -5,7 +5,7 @@ Although you can move around the scene and there are some interactive elements (
 
 **This is my first 3D scene!** It's my baby steps into 3D content creation, a learning project. You get the idea. It's fairly unoptimized and, I think, inefficient, as you may can tell from the long loading time and performace.
 
-**System requirements?** With my low-end GPU (GTX 1050Ti), and 720p, it generally runs at mid-40 fps (50~60 at less busy view, 30~ at the busiest view). As I said this is pretty unpotimized scene, if your system is weaker than mine this scene may give your system a hard time. So be aware.
+**System requirements?** With my low-end GPU (GTX 1050Ti), and at 720p, it generally runs at over 40 fps (50 to 60 at less busy view, 30 something at the busiest view). As I said this is pretty unpotimized scene, if your system is weaker than mine this scene may give your system a hard time. So be aware.
 
 **This source release is definitley NOT intended as a good example of 3D scene in Godot or pre-made assets.** Of course you can use assets and code here as per [the license](https://github.com/sunkper/Project-Summer-Island/blob/master/LICENSE.md) if you know what you're doing or don't mind. Also be aware that the tool scripts (like MergeToMultiMesh) I made for this project are for quick and specific tasks and may not be suitable for a general use. I only release this scene so someone can poke around it and see if they can learn anything even from my mistakes. (Also would be appreciate some advices too ;))
 
