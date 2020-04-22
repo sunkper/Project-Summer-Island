@@ -3,7 +3,10 @@
 [ext_resource path="res://addons/qodot/src/nodes/qodot_spatial.gd" type="Script" id=1]
 [ext_resource path="res://assets/models/CrateOrange.tres" type="ArrayMesh" id=2]
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=5]
-[ext_resource path="res://addons/qodot/game-definitions/fgd/qodot_fgd.tres" type="Resource" id=7]
+[ext_resource path="res://fgd/qodot_fgd.tres" type="Resource" id=7]
+
+
+
 
 [sub_resource type="SpatialMaterial" id=1]
 depth_enabled = true

@@ -12,7 +12,7 @@
 [ext_resource path="res://assets/textures/pbr/Metal24.png" type="Texture" id=10]
 [ext_resource path="res://assets/textures/pbr/GachaFlyer/GodotGachaFlyer_depth.png" type="Texture" id=11]
 [ext_resource path="res://assets/textures/pbr/Metal24/Metal24_roughness.png" type="Texture" id=12]
-[ext_resource path="res://addons/qodot/game-definitions/fgd/qodot_fgd.tres" type="Resource" id=13]
+[ext_resource path="res://fgd/qodot_fgd.tres" type="Resource" id=13]
 [ext_resource path="res://assets/textures/pbr/Metal24/Metal24_metallic.png" type="Texture" id=14]
 [ext_resource path="res://assets/textures/materials/Metal24MO.tres" type="Material" id=15]
 [ext_resource path="res://objects/GachaMesh.tres" type="SphereMesh" id=16]
@@ -25,6 +25,9 @@
 [ext_resource path="res://tools/LineUpMeshInstance.tscn" type="PackedScene" id=27]
 [ext_resource path="res://assets/textures/pbr/GachaFlyer_Qodot.png" type="Texture" id=29]
 [ext_resource path="res://assets/textures/base/Black.png" type="Texture" id=31]
+
+
+
 
 [sub_resource type="SpatialMaterial" id=1]
 

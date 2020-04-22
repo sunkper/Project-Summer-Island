@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/textures/pbr/WallPlaster/WallPlaster_roughness.png" type="Texture" id=3]
 [ext_resource path="res://assets/textures/pbr/PaintedMetal_02/PaintedMetal_02_normal.png" type="Texture" id=4]
 [ext_resource path="res://assets/textures/pbr/BookSpines/BookSpines_depth.png" type="Texture" id=5]
-[ext_resource path="res://addons/qodot/game-definitions/fgd/qodot_fgd.tres" type="Resource" id=6]
+[ext_resource path="res://fgd/qodot_fgd.tres" type="Resource" id=6]
 [ext_resource path="res://assets/textures/pbr/BookSpines/BookSpines_ao.png" type="Texture" id=7]
 [ext_resource path="res://assets/textures/pbr/BookSpines/BookSpines_normal.png" type="Texture" id=8]
 [ext_resource path="res://assets/textures/pbr/BookSpines/BookSpines_roughness.png" type="Texture" id=9]
@@ -14,6 +14,9 @@
 [ext_resource path="res://assets/textures/pbr/WallPlaster.png" type="Texture" id=12]
 [ext_resource path="res://assets/textures/pbr/WallPlaster/WallPlaster_normal.png" type="Texture" id=13]
 [ext_resource path="res://assets/textures/pbr/BookSpines.png" type="Texture" id=15]
+
+
+
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.789148, 1.67082, 1 )

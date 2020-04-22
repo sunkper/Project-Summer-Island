@@ -17,12 +17,15 @@
 [ext_resource path="res://assets/textures/pbr/Metal11.png" type="Texture" id=16]
 [ext_resource path="res://assets/textures/pbr/Metal11/Metal11_depth.png" type="Texture" id=17]
 [ext_resource path="res://assets/textures/pbr/MetalPaintedRust01/MetalPaintedRust01_metallic.png" type="Texture" id=18]
-[ext_resource path="res://addons/qodot/game-definitions/fgd/qodot_fgd.tres" type="Resource" id=19]
+[ext_resource path="res://fgd/qodot_fgd.tres" type="Resource" id=19]
 [ext_resource path="res://assets/textures/pbr/GoDoIceCreamTag.png" type="Texture" id=20]
 [ext_resource path="res://assets/textures/materials/IceFridgeDoorGlass.tres" type="Material" id=21]
 [ext_resource path="res://assets/textures/pbr/GoDoIceCreamTag/GoDoIceCreamTag_roughness.png" type="Texture" id=22]
 [ext_resource path="res://assets/audio/se/objects/Refrigerator.wav" type="AudioStream" id=23]
 [ext_resource path="res://assets/textures/pbr/Metal11/Metal11_metallic.png" type="Texture" id=24]
+
+
+
 
 [sub_resource type="SpatialMaterial" id=1]
 

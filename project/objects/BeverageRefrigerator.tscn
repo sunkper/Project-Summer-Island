@@ -11,10 +11,13 @@
 [ext_resource path="res://assets/textures/materials/Metal03MO.tres" type="Material" id=9]
 [ext_resource path="res://assets/textures/materials/Metal24MO.tres" type="Material" id=10]
 [ext_resource path="res://assets/textures/materials/CoolDrinks.tres" type="Material" id=11]
-[ext_resource path="res://addons/qodot/game-definitions/fgd/qodot_fgd.tres" type="Resource" id=12]
+[ext_resource path="res://fgd/qodot_fgd.tres" type="Resource" id=12]
 [ext_resource path="res://assets/textures/pbr/Metal01White/Metal01White_roughness.png" type="Texture" id=13]
 [ext_resource path="res://assets/textures/pbr/Metal01White/Metal01White_metallic.png" type="Texture" id=14]
 [ext_resource path="res://assets/textures/pbr/Metal01White/Metal01White_normal.png" type="Texture" id=15]
+
+
+
 
 [sub_resource type="SpatialMaterial" id=1]
 

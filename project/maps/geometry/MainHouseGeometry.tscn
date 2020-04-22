@@ -1,6 +1,6 @@
 [gd_scene load_steps=322 format=2]
 
-[ext_resource path="res://addons/qodot/game-definitions/fgd/qodot_fgd.tres" type="Resource" id=1]
+[ext_resource path="res://fgd/qodot_fgd.tres" type="Resource" id=1]
 [ext_resource path="res://assets/textures/materials/RoofMetalRed.tres" type="Material" id=2]
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=3]
 [ext_resource path="res://assets/textures/materials/MetalRustedPainted04MO.tres" type="Material" id=4]
@@ -176,6 +176,9 @@
 [ext_resource path="res://assets/textures/pbr/Plastic05/Plastic05_depth.png" type="Texture" id=194]
 [ext_resource path="res://assets/textures/pbr/YakisobaFriedEgg/YakisobaFriedEgg_transmission.png" type="Texture" id=195]
 [ext_resource path="res://assets/textures/pbr/Plastic05.png" type="Texture" id=196]
+
+
+
 
 [sub_resource type="SpatialMaterial" id=1]
 metallic_specular = 0.2

@@ -42,7 +42,7 @@
 [ext_resource path="res://assets/textures/materials/HouseFrameWood.tres" type="Material" id=40]
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=41]
 [ext_resource path="res://assets/textures/materials/Metal03MO.tres" type="Material" id=42]
-[ext_resource path="res://addons/qodot/game-definitions/fgd/qodot_fgd.tres" type="Resource" id=43]
+[ext_resource path="res://fgd/qodot_fgd.tres" type="Resource" id=43]
 [ext_resource path="res://assets/textures/pbr/SunShade/SunShade_roughness.png" type="Texture" id=44]
 [ext_resource path="res://assets/textures/pbr/SunShade/SunShade_ao.png" type="Texture" id=45]
 [ext_resource path="res://assets/textures/pbr/MenuYakisoba.png" type="Texture" id=46]
@@ -113,6 +113,9 @@
 [ext_resource path="res://assets/textures/materials/Metal24MO.tres" type="Material" id=117]
 [ext_resource path="res://assets/textures/pbr/wood_04/wood_04_normal.png" type="Texture" id=118]
 [ext_resource path="res://assets/textures/pbr/wood_04.png" type="Texture" id=119]
+
+
+
 
 [sub_resource type="SpatialMaterial" id=1]
 

@@ -3,9 +3,12 @@
 [ext_resource path="res://assets/textures/materials/SunShadeMO.tres" type="Material" id=1]
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=2]
 [ext_resource path="res://assets/textures/pbr/SunShade/SunShade_roughness.png" type="Texture" id=4]
-[ext_resource path="res://addons/qodot/game-definitions/fgd/qodot_fgd.tres" type="Resource" id=6]
+[ext_resource path="res://fgd/qodot_fgd.tres" type="Resource" id=6]
 [ext_resource path="res://assets/materials/MetalRusted01.tres" type="Material" id=7]
 [ext_resource path="res://assets/textures/pbr/SunShade/SunShade_transmission.png" type="Texture" id=8]
+
+
+
 
 [sub_resource type="SpatialMaterial" id=1]
 subsurf_scatter_enabled = true

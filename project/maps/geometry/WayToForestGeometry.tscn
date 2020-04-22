@@ -1,7 +1,7 @@
 [gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=1]
-[ext_resource path="res://addons/qodot/game-definitions/fgd/qodot_fgd.tres" type="Resource" id=2]
+[ext_resource path="res://fgd/qodot_fgd.tres" type="Resource" id=2]
 [ext_resource path="res://assets/textures/pbr/Rock014.png" type="Texture" id=3]
 [ext_resource path="res://assets/textures/materials/ConcreteWhiteFloor.tres" type="Material" id=4]
 [ext_resource path="res://assets/textures/materials/StoneWallMix.tres" type="Material" id=5]
@@ -44,6 +44,9 @@
 [ext_resource path="res://assets/textures/pbr/FabricRed01.png" type="Texture" id=42]
 [ext_resource path="res://assets/textures/pbr/FabricRed01/FabricRed01_depth.png" type="Texture" id=43]
 [ext_resource path="res://assets/textures/pbr/FabricRed01/FabricRed01_metallic.png" type="Texture" id=44]
+
+
+
 
 [sub_resource type="SpatialMaterial" id=1]
 
