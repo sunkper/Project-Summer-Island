@@ -39,7 +39,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/qodot/src/nodes/qodot_entity.gd"
 }, {
-"base": "Reference",
+"base": "QodotFGDClass",
 "class": "QodotFGDBaseClass",
 "language": "GDScript",
 "path": "res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_base_class.gd"
@@ -54,7 +54,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_file.gd"
 }, {
-"base": "Reference",
+"base": "QodotFGDClass",
 "class": "QodotFGDPointClass",
 "language": "GDScript",
 "path": "res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd"
@@ -220,7 +220,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "SIsilicon.vfx.godrays", "qodot", "smoothing" )
+enabled=PoolStringArray( "SIsilicon.vfx.godrays", "qodot" )
 
 [importer_defaults]
 

@@ -33,10 +33,10 @@ Also see [the issue board](https://github.com/sunkper/Project-Summer-Island/issu
 ### Godot version
 This project is made with Godot Engine 3.2.1.
 
-### Plugins
-Plugins used in this project are not included in the repositary. You should install them yourself. Versions may or may not be relavant for compatibility, look for version history of each plugin.
+### Plugins Used
+Plugins are now included in this repositary. Since I did some modifications to Qodot plugin and overwrote its default FGD file, this removes some complications.
 
-* [Qodot](https://github.com/ShiftyAxel/Qodot) (1.6.4) - note that I added `transmission` property to automatic PBR texturing. Very few materials actually used it, but if you want to make use of it: in `qodot_texture_loader.gd`, add a constant `PBR_TRANSMISSION := 'transmission'`, and add `[ PBR_TRANSMISSION, SpatialMaterial.TEXTURE_TRANSMISSION, 'transmission_enabled' ]` to `PBR_SUFFICES` array.
+* [Qodot](https://github.com/ShiftyAxel/Qodot) (1.6.4)
 * [Godot God Rays Plugin](https://github.com/SIsilicon/Godot-God-Rays-Plugin) (1.0.1)
 
 ## License
@@ -49,4 +49,4 @@ As a learning project I tried to make most of the assets myself, but there are s
 
 ## Special Thanks
 - [Shifty](https://twitter.com/shiftyaxel) for Qodot, and with it, making me less nervous about 3D development.
-- [Yo soy Freeman](https://twitter.com/YoSoyFreeman) for giving advices with beta-ish versions.
+- [Yo soy Freeman](https://twitter.com/YoSoyFreeman) for giving me advices with beta-ish versions.

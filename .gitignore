@@ -3,9 +3,6 @@
 export.cfg
 export_presets.cfg
 
-# Ignore addons.
-addons/
-
 # Ignore generated geometry files.
 # geometry/
 # unigrnoed for now. Let's see how bloated this will be...
